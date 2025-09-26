@@ -1,5 +1,5 @@
 import type {NextConfig} from 'next';
-import {genkit} from '@genkit-ai/next/plugin';
+import {genkit} from '@genkit-ai/next';
 
 const nextConfig: NextConfig = {
   /* config options here */
