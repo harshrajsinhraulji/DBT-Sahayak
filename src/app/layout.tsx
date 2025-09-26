@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { LanguageProvider } from '@/hooks/use-language';
 import { AuthProvider } from '@/hooks/use-auth';
+import { Chatbot } from '@/components/chatbot';
 
 export const metadata: Metadata = {
   title: 'DBT Sahayak',
@@ -31,6 +32,7 @@ export default function RootLayout({
               <Header />
               <main className="flex-1">{children}</main>
               <Footer />
+              <Chatbot />
             </div>
             <Toaster />
           </LanguageProvider>
