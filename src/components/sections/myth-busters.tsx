@@ -1,20 +1,61 @@
+
 "use client";
 
+import { useState } from "react";
 import { useLanguage } from "@/hooks/use-language";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Lightbulb, LightbulbOff } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Lightbulb, LightbulbOff, CheckCircle, XCircle, RotateCw, Share2 } from "lucide-react";
+import { Progress } from "../ui/progress";
+
+type AnswerStatus = 'unanswered' | 'correct' | 'incorrect';
 
 export function MythBustersSection() {
   const { content } = useLanguage();
+  const { myths } = content.mythBusters;
+  const totalMyths = myths.length;
+
+  const [currentMythIndex, setCurrentMythIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [answerStatus, setAnswerStatus] = useState<AnswerStatus>('unanswered');
+  const [showResult, setShowResult] = useState(false);
+
+  const currentMyth = myths[currentMythIndex];
+
+  const handleAnswer = (isMyth: boolean) => {
+    // A "fact" in our data is the correct explanation that debunks the myth.
+    // Therefore, the statement presented is always a myth. The correct answer is always "Myth".
+    if (isMyth) {
+      setAnswerStatus('correct');
+      setScore(score + 1);
+    } else {
+      setAnswerStatus('incorrect');
+    }
+
+    setTimeout(() => {
+      if (currentMythIndex < totalMyths - 1) {
+        setCurrentMythIndex(currentMythIndex + 1);
+        setAnswerStatus('unanswered');
+      } else {
+        setShowResult(true);
+      }
+    }, 2500);
+  };
+
+  const resetQuiz = () => {
+    setCurrentMythIndex(0);
+    setScore(0);
+    setAnswerStatus('unanswered');
+    setShowResult(false);
+  };
+  
+  const shareScore = () => {
+    const text = `I scored ${score}/${totalMyths} on the DBT MythBusters Challenge! Test your knowledge on DBT Sahayak.`;
+    navigator.share({ title: 'DBT MythBusters Challenge', text: text, url: window.location.href });
+  }
 
   return (
-    <section id="myths" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section id="myths" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -26,29 +67,73 @@ export function MythBustersSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto max-w-4xl py-12">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {content.mythBusters.myths.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b-0">
-                <Card className="bg-muted/30">
-                  <AccordionTrigger className="p-6 text-left text-lg font-semibold hover:no-underline">
-                    <div className="flex items-center gap-4">
-                      <LightbulbOff className="h-8 w-8 text-destructive/80 flex-shrink-0" />
-                      <span>{item.myth}</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-6">
-                    <Card className="bg-background border-primary shadow-md">
-                      <CardHeader className="flex flex-row items-center gap-4">
-                        <Lightbulb className="h-8 w-8 text-primary" />
-                        <p className="font-semibold text-primary">{item.fact}</p>
+        <div className="mx-auto max-w-2xl py-12">
+          <Card className="min-h-[350px] flex flex-col justify-between">
+            <CardHeader>
+              <CardTitle className="text-center font-headline">The DBT Challenge!</CardTitle>
+              <Progress value={((showResult ? totalMyths : currentMythIndex) / totalMyths) * 100} className="w-full mt-2" />
+            </CardHeader>
+            <CardContent className="flex-1 flex flex-col items-center justify-center text-center p-6">
+              {showResult ? (
+                <div className="flex flex-col items-center gap-4">
+                  <h3 className="text-2xl font-bold">Quiz Complete!</h3>
+                  <p className="text-lg">You Scored</p>
+                  <p className="text-5xl font-bold text-primary">{score} / {totalMyths}</p>
+                  <p className="text-muted-foreground">You're now a certified Myth Buster!</p>
+                </div>
+              ) : (
+                <>
+                  <blockquote className="text-xl font-semibold mb-6">
+                    “{currentMyth.myth}”
+                  </blockquote>
+                  {answerStatus === 'unanswered' ? (
+                     <p className="text-muted-foreground font-semibold">Is this a Myth or a Fact?</p>
+                  ) : (
+                    <Card className={`w-full ${answerStatus === 'correct' ? 'bg-green-100 dark:bg-green-900 border-green-500' : 'bg-red-100 dark:bg-red-900 border-red-500'}`}>
+                      <CardHeader className="flex-row items-center gap-4 p-4">
+                        {answerStatus === 'correct' ? 
+                          <CheckCircle className="h-8 w-8 text-green-500 flex-shrink-0" /> : 
+                          <XCircle className="h-8 w-8 text-red-500 flex-shrink-0" />}
+                        <div>
+                          <h4 className="font-bold">{answerStatus === 'correct' ? "Correct! It's a Myth." : "That's a common misconception."}</h4>
+                          <p className="text-sm text-muted-foreground mt-1">{currentMyth.fact}</p>
+                        </div>
                       </CardHeader>
                     </Card>
-                  </AccordionContent>
-                </Card>
-              </AccordionItem>
-            ))}
-          </Accordion>
+                  )}
+                </>
+              )}
+            </CardContent>
+            <CardFooter className="flex justify-center gap-4">
+              {showResult ? (
+                <>
+                    <Button onClick={resetQuiz} variant="outline"><RotateCw /> Play Again</Button>
+                    <Button onClick={shareScore}><Share2 /> Share Score</Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    size="lg"
+                    variant="destructive"
+                    onClick={() => handleAnswer(true)}
+                    disabled={answerStatus !== 'unanswered'}
+                    className="gap-2"
+                  >
+                    <LightbulbOff /> Myth
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    onClick={() => handleAnswer(false)}
+                    disabled={answerStatus !== 'unanswered'}
+                     className="gap-2"
+                  >
+                    <Lightbulb /> Fact
+                  </Button>
+                </>
+              )}
+            </CardFooter>
+          </Card>
         </div>
       </div>
     </section>
