@@ -30,6 +30,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Fix for "Module not found: Can't resolve 'async_hooks'"
+      // This is a server-side module that shouldn't be bundled on the client.
+      config.externals = [...config.externals, 'async_hooks'];
+    }
+    return config;
+  },
 };
 
 export default nextConfig;

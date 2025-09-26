@@ -1,38 +1,22 @@
-'use server';
-
 /**
- * @fileOverview An AI agent that helps users draft formal grievance letters related to scholarship issues.
+ * @fileOverview A function that defines a Genkit flow for the Grievance Helper.
  *
- * - grievanceHelper - A function that takes a user's problem description and generates a formal letter.
- * - GrievanceHelperInput - The input type for the grievanceHelper function.
- * - GrievanceHelperOutput - The return type for the grievanceHelper function.
+ * This file exports a function that creates a Genkit flow capable of drafting a formal
+ * grievance letter based on a user's simple problem description.
  */
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import type {GrievanceHelperInput, GrievanceHelperOutput} from './flow-types';
+import {GrievanceHelperInputSchema, GrievanceHelperOutputSchema} from './flow-types';
 
-const GrievanceHelperInputSchema = z.object({
-  name: z.string().describe("The user's full name."),
-  problemDescription: z.string().describe("A simple description of the user's problem."),
-  language: z.string().describe("The language for the output letter (e.g., 'English', 'Hindi')."),
-});
-export type GrievanceHelperInput = z.infer<typeof GrievanceHelperInputSchema>;
-
-const GrievanceHelperOutputSchema = z.object({
-  grievanceLetter: z.string().describe('The formally drafted grievance letter.'),
-});
-export type GrievanceHelperOutput = z.infer<typeof GrievanceHelperOutputSchema>;
-
-export async function grievanceHelper(input: GrievanceHelperInput): Promise<GrievanceHelperOutput> {
-  return grievanceHelperFlow(input);
-}
-
-const prompt = ai.definePrompt({
-  name: 'grievanceHelperPrompt',
-  model: 'gemini-pro',
-  input: {schema: GrievanceHelperInputSchema},
-  output: {schema: GrievanceHelperOutputSchema},
-  prompt: `You are an expert assistant for drafting formal grievance letters for students facing issues with their scholarships. Your task is to convert a user's simple problem description into a polite, well-structured, and formal letter that can be sent to the appropriate authorities.
+export function defineGrievanceHelperFlow() {
+  const prompt = ai.definePrompt({
+    name: 'grievanceHelperPrompt',
+    model: 'gemini-pro',
+    input: {schema: GrievanceHelperInputSchema},
+    output: {schema: GrievanceHelperOutputSchema},
+    prompt: `You are an expert assistant for drafting formal grievance letters for students facing issues with their scholarships. Your task is to convert a user's simple problem description into a polite, well-structured, and formal letter that can be sent to the appropriate authorities.
 
 The user's name is {{name}}.
 Their problem is: "{{problemDescription}}".
@@ -48,16 +32,17 @@ Generate a formal grievance letter based on this information. The letter should 
 - The student's name at the end.
 
 Do not make up any information that is not provided. The output should be only the letter itself.`,
-});
+  });
 
-const grievanceHelperFlow = ai.defineFlow(
-  {
-    name: 'grievanceHelperFlow',
-    inputSchema: GrievanceHelperInputSchema,
-    outputSchema: GrievanceHelperOutputSchema,
-  },
-  async input => {
-    const {output} = await prompt(input);
-    return output!;
-  }
-);
+  return ai.defineFlow(
+    {
+      name: 'grievanceHelperFlow',
+      inputSchema: GrievanceHelperInputSchema,
+      outputSchema: GrievanceHelperOutputSchema,
+    },
+    async input => {
+      const {output} = await prompt(input);
+      return output!;
+    }
+  );
+}
