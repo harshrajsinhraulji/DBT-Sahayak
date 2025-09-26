@@ -67,7 +67,7 @@ const getBankInfo = ai.defineTool({
 
 const prompt = ai.definePrompt({
   name: 'aadhaarDostChatbotPrompt',
-  model: 'googleai/gemini-1.0-pro',
+  model: 'gemini-1.0-pro',
   input: {schema: AadhaarDostChatbotInputSchema},
   output: {schema: AadhaarDostChatbotOutputSchema},
   tools: [askClarifyingQuestion, getBankInfo],
