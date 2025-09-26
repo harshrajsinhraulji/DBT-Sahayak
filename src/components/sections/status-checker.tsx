@@ -61,7 +61,12 @@ export function StatusCheckerSection() {
   const handleLoginForGuidance = () => {
     setShowLoginPrompt(false);
     router.push("/login");
-  }
+  };
+  
+  const handleStartJourney = () => {
+    setShowStatusPrompt(false);
+    setShowGuidance(true);
+  };
 
   return (
     <>
@@ -115,7 +120,7 @@ export function StatusCheckerSection() {
           <AlertDialogHeader>
             <AlertDialogTitle>Login for Personalized Guidance</AlertDialogTitle>
             <AlertDialogDescription>
-              It looks like your account isn't DBT-enabled. Please log in or create an account to get personalized steps on how to fix it.
+              It looks like your account isn't DBT-enabled. Please log in or create an account to get personalized steps on how to fix it and track your progress.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -137,38 +142,42 @@ export function StatusCheckerSection() {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogAction onClick={() => handleStatusResponse(false)}>
-              No, it&apos;s not enabled
+             <AlertDialogAction onClick={() => handleStatusResponse(false)}>
+              No, it's not enabled
             </AlertDialogAction>
             <AlertDialogAction onClick={() => handleStatusResponse(true)}>
-              Yes, it is enabled
+              Yes, it's enabled!
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
 
-      {/* Guidance Dialog */}
+      {/* Guidance Dialog / Journey Tracker */}
       <Dialog open={showGuidance} onOpenChange={setShowGuidance}>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-2">
-              <Info className="text-primary" /> Steps to Enable DBT
+            <DialogTitle className="flex items-center gap-2 font-headline text-primary">
+              <Info className="text-primary" /> My DBT Journey
             </DialogTitle>
             <DialogDescription>
-              Don&apos;t worry, here&apos;s how you can get your account seeded for DBT payments.
+              Don&apos;t worry! Follow these steps to get your account DBT-enabled. Track your progress here.
             </DialogDescription>
           </DialogHeader>
           <div className="py-4 text-sm text-muted-foreground space-y-4">
               <p>
-                To receive scholarships, your bank account must be 'seeded' with your Aadhaar in the NPCI database. Follow these steps:
+                To receive scholarships, your bank account must be 'seeded' with your Aadhaar in the NPCI database.
               </p>
-              <ol className="list-decimal list-inside space-y-2 font-semibold text-foreground">
-                  <li>Visit your nearest bank branch.</li>
-                  <li>Fill out the "Aadhaar Seeding and NPCI Mapping Application Form". You can find many of these forms in our <a href="#contact" onClick={() => setShowGuidance(false)} className="text-primary underline">Contact section</a>.</li>
-                  <li>Submit the form along with a self-attested copy of your Aadhaar card.</li>
-                  <li>The bank will process your request, which may take a few business days.</li>
-                  <li>You can check the status again on the UIDAI portal after a week.</li>
+              <ol className="list-decimal list-inside space-y-3 font-medium text-foreground">
+                  <li>Download the "Aadhaar Seeding and NPCI Mapping Application Form" for your bank from our <a href="#contact" onClick={() => setShowGuidance(false)} className="text-primary underline">Contact section</a>.</li>
+                  <li>Fill out the form completely. Use our <a href="#form-checker" onClick={() => setShowGuidance(false)} className="text-primary underline">AI Form Assistant</a> to double-check it for errors!</li>
+                  <li>Visit your nearest bank branch with the completed form and a self-attested copy of your Aadhaar card.</li>
+                  <li>Submit the documents to the bank official and ask for an acknowledgement slip.</li>
+                  <li>The bank will process your request. This may take 3-5 business days.</li>
+                  <li>After a week, check your status again on the UIDAI portal to confirm it's active.</li>
               </ol>
+               <Button onClick={() => setShowGuidance(false)} className="w-full mt-4">
+                Got it, I'm on my way!
+              </Button>
           </div>
         </DialogContent>
       </Dialog>
