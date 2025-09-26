@@ -10,7 +10,6 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 import {pageContent} from '@/lib/data';
 import {Language} from '@/lib/types';
-import type {AadhaarDostChatbotInput, AadhaarDostChatbotOutput} from './flow-types';
 import {AadhaarDostChatbotInputSchema, AadhaarDostChatbotOutputSchema} from './flow-types';
 
 export function defineAadhaarDostChatbot() {

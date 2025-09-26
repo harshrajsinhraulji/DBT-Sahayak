@@ -7,7 +7,6 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import type {FormCheckerInput, FormCheckerOutput} from './flow-types';
 import {FormCheckerInputSchema, FormCheckerOutputSchema} from './flow-types';
 
 export function defineFormCheckerFlow() {

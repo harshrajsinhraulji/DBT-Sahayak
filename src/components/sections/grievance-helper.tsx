@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { LoaderCircle, Clipboard, ClipboardCheck } from "lucide-react";
-import { grievanceHelper } from "@/ai/flows/grievance-helper-flow";
+import { grievanceHelper } from "@/ai";
 
 export function GrievanceHelper() {
   const { content, language } = useLanguage();

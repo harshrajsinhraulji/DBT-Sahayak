@@ -1,3 +1,4 @@
+
 'use server';
 
 /**
@@ -7,13 +8,6 @@
  * used in the application by calling the defining functions from other files, and then
  * exports the flow functions so they can be used as Server Actions in the frontend.
  */
-
-import {config} from 'dotenv';
-config();
-
-import {genkit} from 'genkit';
-import {googleAI} from '@genkit-ai/googleai';
-import {setAi} from './genkit';
 
 import {defineAadhaarDostChatbot} from './flows/aadhaar-dost-chatbot';
 import {defineFormCheckerFlow} from './flows/form-checker-flow';
@@ -26,18 +20,6 @@ import type {
   GrievanceHelperInput,
   GrievanceHelperOutput,
 } from './flows/flow-types';
-
-// Initialize Genkit and the Google AI plugin
-const ai = genkit({
-  plugins: [
-    googleAI({
-      apiKey: process.env.GEMINI_API_KEY,
-    }),
-  ],
-});
-
-// Set the exported `ai` object so other files can use it
-setAi(ai);
 
 // Define all the flows using the configured `ai` instance
 const aadhaarDostChatbotFlow = defineAadhaarDostChatbot();

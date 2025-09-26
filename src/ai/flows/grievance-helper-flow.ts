@@ -7,7 +7,6 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import type {GrievanceHelperInput, GrievanceHelperOutput} from './flow-types';
 import {GrievanceHelperInputSchema, GrievanceHelperOutputSchema} from './flow-types';
 
 export function defineGrievanceHelperFlow() {

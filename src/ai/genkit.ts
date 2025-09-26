@@ -1,9 +1,15 @@
 import {genkit, Genkit} from 'genkit';
+import {config} from 'dotenv';
+import {googleAI} from '@genkit-ai/googleai';
 
-// This is a placeholder for the ai object that will be initialized in index.ts
-// This allows us to have a single ai object that is used throughout the app.
-export let ai: Genkit;
+config();
 
-export function setAi(newAi: Genkit) {
-  ai = newAi;
-}
+// This is the global Genkit instance. It is initialized here and then
+// imported by other files.
+export const ai: Genkit = genkit({
+  plugins: [
+    googleAI({
+      apiKey: process.env.GEMINI_API_KEY,
+    }),
+  ],
+});

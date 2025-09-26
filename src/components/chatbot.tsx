@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { aadhaarDostChatbot } from '@/ai/flows/aadhaar-dost-chatbot';
+import { aadhaarDostChatbot } from '@/ai';
 import { useLanguage } from '@/hooks/use-language';
 
 type Message = {

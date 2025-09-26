@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { LoaderCircle, Upload, AlertTriangle, CheckCircle, FileCheck, PartyPopper } from "lucide-react";
-import { formChecker } from "@/ai/flows/form-checker-flow";
+import { formChecker } from "@/ai";
 import Image from "next/image";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 
