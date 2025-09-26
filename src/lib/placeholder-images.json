@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Abstract blue and purple shapes",
+      "imageUrl": "https://images.unsplash.com/photo-1620121692029-d088224ddc74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzU4OTAxMjMzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract background"
+    },
+    {
+      "id": "infographic-aadhaar-vs-dbt",
+      "description": "Infographic explaining difference between Aadhaar Linked and DBT enabled account",
+      "imageUrl": "https://images.unsplash.com/photo-1612198273689-b437f53152ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpbmZvZ3JhcGhpYyUyMGNoYXJ0fGVufDB8fHx8MTc1ODkyMDIxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "infographic chart"
+    },
+    {
+      "id": "video-placeholder",
+      "description": "Placeholder for an educational video",
+      "imageUrl": "https://images.unsplash.com/photo-1694878981885-7647baf0d957?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dmlkZW8lMjBwbGF5fGVufDB8fHx8MTc1ODg3ODY5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "video play"
+    },
+    {
+      "id": "success-story-1",
+      "description": "Happy student who received scholarship",
+      "imageUrl": "https://images.unsplash.com/photo-1608453162650-cba45689c284?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoYXBweSUyMHN0dWRlbnR8ZW58MHx8fHwxNzU4ODcyMTA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy student"
+    },
+    {
+      "id": "success-story-2",
+      "description": "Student studying with new books",
+      "imageUrl": "https://images.unsplash.com/photo-1593698054469-2bb6fdf4b512?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzdHVkZW50JTIwc3R1ZHlpbmd8ZW58MHx8fHwxNzU4ODQwNDcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student studying"
+    },
+    {
+      "id": "success-story-3",
+      "description": "Group of students celebrating",
+      "imageUrl": "https://images.unsplash.com/photo-1613893251438-c5f02a86cbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzdHVkZW50cyUyMGNlbGVicmF0aW5nfGVufDB8fHx8MTc1ODkyMDIxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students celebrating"
+    }
+  ]
 }
