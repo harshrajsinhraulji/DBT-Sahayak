@@ -107,6 +107,27 @@ export type LanguageContent = {
       copied: string;
     }
   },
+  formChecker: {
+    subtitle: string;
+    cardTitle: string;
+    cardDescription: string;
+    uploadPrompt: string;
+    uploadHint: string;
+    uploadButton: string;
+    changeButton: string;
+    checkButton: string;
+    analyzingButton: string;
+    analyzingText: string;
+    resultTitle: string;
+    error: {
+        title: string;
+        suggestion: string;
+    };
+    success: {
+        title: string;
+        subtitle: string;
+    };
+  }
   contact: {
     title: string;
     subtitle: string;

@@ -16,7 +16,7 @@ type FeedbackResult = {
 }
 
 export function FormChecker() {
-  const { content } = useLanguage(); // Assuming you'll add content for this
+  const { content } = useLanguage();
   const [isPending, startTransition] = useTransition();
   const [feedback, setFeedback] = useState<FeedbackResult | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -78,15 +78,15 @@ export function FormChecker() {
               AI-Powered Form Assistant
             </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Filled out your Aadhaar seeding form? Upload a photo, and our AI will double-check it for common mistakes before you visit the bank!
+              {content.formChecker.subtitle}
             </p>
           </div>
         </div>
         <div className="mx-auto max-w-4xl py-12">
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2"><FileCheck /> Check Your Form</CardTitle>
-              <CardDescription>Upload a clear photo of your completed Aadhaar Seeding / NPCI Mapping form.</CardDescription>
+              <CardTitle className="flex items-center gap-2"><FileCheck /> {content.formChecker.cardTitle}</CardTitle>
+              <CardDescription>{content.formChecker.cardDescription}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
                 <Card className="flex flex-col items-center justify-center border-2 border-dashed p-8 text-center bg-background">
@@ -97,8 +97,8 @@ export function FormChecker() {
                     ) : (
                         <div className="flex flex-col items-center gap-2 text-muted-foreground">
                             <Upload className="h-12 w-12" />
-                            <p className="font-semibold">Click button to upload a photo</p>
-                            <p className="text-xs">PNG, JPG, or WEBP up to 5MB</p>
+                            <p className="font-semibold">{content.formChecker.uploadPrompt}</p>
+                            <p className="text-xs">{content.formChecker.uploadHint}</p>
                         </div>
                     )}
                 </Card>
@@ -112,36 +112,36 @@ export function FormChecker() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button onClick={handleUploadClick} variant="outline" size="lg" disabled={isPending}>
                         <Upload className="mr-2 h-5 w-5" />
-                        {preview ? "Change Photo" : "Upload Photo"}
+                        {preview ? content.formChecker.changeButton : content.formChecker.uploadButton}
                     </Button>
                     <Button onClick={handleSubmit} size="lg" disabled={!preview || isPending}>
                         {isPending ? (
                             <>
                                 <LoaderCircle className="mr-2 h-5 w-5 animate-spin" />
-                                Analyzing...
+                                {content.formChecker.analyzingButton}
                             </>
-                        ) : "Check for Errors"}
+                        ) : content.formChecker.checkButton}
                     </Button>
                 </div>
 
                 {isPending && (
                     <div className="text-center text-muted-foreground flex items-center justify-center gap-2">
                         <LoaderCircle className="animate-spin" />
-                        <p>Our AI is analyzing your form. This may take a moment...</p>
+                        <p>{content.formChecker.analyzingText}</p>
                     </div>
                 )}
                 
                 {error && (
                     <Alert variant="destructive">
                         <AlertTriangle className="h-4 w-4" />
-                        <AlertTitle>Analysis Failed</AlertTitle>
+                        <AlertTitle>{content.formChecker.error.title}</AlertTitle>
                         <AlertDescription>{error}</AlertDescription>
                     </Alert>
                 )}
 
                 {feedback && (
                   <div className="mt-8">
-                  <h3 className="text-xl font-semibold mb-4 text-center">AI Analysis Complete</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-center">{content.formChecker.resultTitle}</h3>
                   <Card className="bg-background relative">
                     <CardContent className="p-6">
                       {feedback.errorCount > 0 ? (
@@ -152,19 +152,19 @@ export function FormChecker() {
                                 <ul className="mt-4 space-y-3">
                                 {parseFeedback(feedback.feedback)}
                                 </ul>
-                                <p className="mt-4 font-semibold">Please review these points on your form before submitting it to the bank.</p>
+                                <p className="mt-4 font-semibold">{content.formChecker.error.suggestion}</p>
                             </AlertDescription>
                         </Alert>
                       ) : (
                          <Alert variant="default" className="border-green-500 text-green-700">
                             <CheckCircle className="h-4 w-4 text-green-500" />
-                            <AlertTitle className="text-green-600">Looking Good!</AlertTitle>
+                            <AlertTitle className="text-green-600">{content.formChecker.success.title}</AlertTitle>
                             <AlertDescription>
                                 <div className="flex items-center gap-4">
                                   <PartyPopper className="h-10 w-10 text-green-500" />
                                   <div>
                                     <p className="font-semibold">{feedback.feedback}</p>
-                                    <p className="text-xs mt-1">Our AI analysis did not find any common errors. You look ready to visit the bank!</p>
+                                    <p className="text-xs mt-1">{content.formChecker.success.subtitle}</p>
                                   </div>
                                 </div>
                             </AlertDescription>

@@ -23,7 +23,7 @@ const FormCheckerInputSchema = z.object({
 export type FormCheckerInput = z.infer<typeof FormCheckerInputSchema>;
 
 const FormCheckerOutputSchema = z.object({
-  feedback: z.string().describe('Constructive feedback on the form, highlighting potential errors or omissions.'),
+  feedback: z.string().describe('Constructive, bulleted feedback on the form, highlighting potential errors or omissions. If the form is perfect, provide a confirmation message like "Everything looks great!".'),
   errorCount: z.number().describe('The total number of potential errors found.'),
 });
 export type FormCheckerOutput = z.infer<typeof FormCheckerOutputSchema>;
@@ -45,10 +45,13 @@ Analyze the image and check for the following potential errors:
 1.  **Missing Signature:** Check if the signature field is empty.
 2.  **Missing Date or Name:** Ensure the date and name fields are filled out.
 3.  **Account Number Missing:** Verify that the bank account number is provided.
-4.  **Incorrect Options Selected:** Users should typically select the option to 'Link Aadhaar to my account'. Check if this or a similar option is ticked.
-5.  **Illegible Handwriting:** Note if any critical information is hard to read.
+4.  **Aadhaar Number Missing:** Verify that the Aadhaar number is provided.
+5.  **Incorrect Options Selected:** Users should typically select the option to 'Link Aadhaar to my account'. Check if this or a similar option is ticked.
+6.  **Illegible Handwriting:** Note if any critical information is hard to read.
 
-Based on your analysis, provide constructive, bulleted feedback in the 'feedback' field. For each potential error found, create a bullet point explaining the issue and how to fix it. If the form looks complete and correct, provide positive confirmation.
+Based on your analysis, provide constructive, bulleted feedback in the 'feedback' field. Start each point with a '*'. For each potential error found, create a bullet point explaining the issue and how to fix it. 
+
+If the form looks complete and correct, provide a positive confirmation like "Our AI analysis did not find any common errors. You look ready to visit the bank!". Do not use bullet points if there are no errors.
 
 Finally, count the number of potential errors you found and set the 'errorCount' field. If everything looks good, this should be 0.`,
 });

@@ -134,8 +134,16 @@ export const pageContent: Record<Language, LanguageContent> = {
           answer: "No, you can only have one Aadhaar-seeded account for receiving DBT. If you seed a new account, the previous one gets de-linked automatically.",
         },
         {
-          question: "How do I seed my bank account with Aadhaar?",
-          answer: "Visit your bank branch with a copy of your Aadhaar card and fill out the Aadhaar Seeding form. You can also do it through the bank's mobile app or internet banking if the option is available.",
+          question: "How long does it take for Aadhaar seeding to be completed?",
+          answer: "The process usually takes 3-5 business days after you submit the form at your bank branch. However, it's a good idea to check your status on the UIDAI portal after about a week.",
+        },
+        {
+          question: "What should I do if my Aadhaar seeding request fails?",
+          answer: "If your request fails, revisit your bank branch. Common reasons for failure include a name mismatch between your Aadhaar card and bank records, or an incorrect account number on the form. The bank official can tell you the exact reason.",
+        },
+        {
+          question: "Do I need to have a minimum balance for a DBT-enabled account?",
+          answer: "Many scholarship-related accounts are opened under schemes like the Pradhan Mantri Jan Dhan Yojana (PMJDY), which are often zero-balance accounts. However, you should confirm this with your specific bank.",
         },
         {
           question: "What if my scholarship is delayed?",
@@ -157,6 +165,27 @@ export const pageContent: Record<Language, LanguageContent> = {
         copied: "Copied!",
       }
     },
+    formChecker: {
+        subtitle: "Filled out your Aadhaar seeding form? Upload a photo, and our AI will double-check it for common mistakes before you visit the bank!",
+        cardTitle: "Check Your Form",
+        cardDescription: "Upload a clear photo of your completed Aadhaar Seeding / NPCI Mapping form.",
+        uploadPrompt: "Click button to upload a photo",
+        uploadHint: "PNG, JPG, or WEBP up to 5MB",
+        uploadButton: "Upload Photo",
+        changeButton: "Change Photo",
+        checkButton: "Check for Errors",
+        analyzingButton: "Analyzing...",
+        analyzingText: "Our AI is analyzing your form. This may take a moment...",
+        resultTitle: "AI Analysis Complete",
+        error: {
+            title: "Analysis Failed",
+            suggestion: "Please review these points on your form before submitting it to the bank."
+        },
+        success: {
+            title: "Looking Good!",
+            subtitle: "Our AI analysis did not find any common errors. You look ready to visit the bank!"
+        }
+    },
     contact: {
       title: "Contact & Resources",
       subtitle: "Find official contact information and downloadable bank forms.",
@@ -166,6 +195,9 @@ export const pageContent: Record<Language, LanguageContent> = {
         { name: "State Bank of India (SBI)", description: "Aadhaar seeding application form for SBI customers.", link: "https://sbi.co.in/documents/16012/25194947/Aadhaar+Seeding+Process+for+Customers+of+Other+Banks+having+SBI+account.pdf" },
         { name: "Punjab National Bank (PNB)", description: "Aadhaar seeding application form for PNB customers.", link: "https://www.pnbindia.in/downloadprocess.aspx?fid=3532E743-4C98-43B0-A227-22F091054C35" },
         { name: "Bank of Baroda (BOB)", description: "Aadhaar seeding application form for BOB customers.", link: "https://www.bankofbaroda.in/-/media/project/bob/countrysites/india/personal-banking/accounts/documents/application-for-linking-aadhaar-number.pdf" },
+        { name: "HDFC Bank", description: "Aadhaar seeding application form for HDFC customers.", link: "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c86c" },
+        { name: "ICICI Bank", description: "Aadhaar seeding instructions for ICICI customers.", link: "https://www.icicibank.com/personal-banking/insta-banking/internet-banking/link-aadhaar-card" },
+        { name: "Axis Bank", description: "Aadhaar seeding application form for Axis customers.", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
       ]
     },
     chatbot: {
@@ -315,8 +347,16 @@ export const pageContent: Record<Language, LanguageContent> = {
           answer: "नहीं, डीबीटी प्राप्त करने के लिए आपके पास केवल एक आधार-सीडेड खाता हो सकता है। यदि आप कोई नया खाता सीड करते हैं, तो पिछला खाता स्वतः डी-लिंक हो जाता है।",
         },
         {
-          question: "मैं अपना बैंक खाता आधार से कैसे सीड करूं?",
-          answer: "अपने आधार कार्ड की एक प्रति के साथ अपनी बैंक शाखा में जाएं और आधार सीडिंग फॉर्म भरें। यदि विकल्प उपलब्ध है तो आप इसे बैंक के मोबाइल ऐप या इंटरनेट बैंकिंग के माध्यम से भी कर सकते हैं।",
+            question: "आधार सीडिंग को पूरा होने में कितना समय लगता है?",
+            answer: "जब आप अपनी बैंक शाखा में फॉर्म जमा करते हैं तो इस प्रक्रिया में आमतौर पर 3-5 कार्यदिवस लगते हैं। हालांकि, लगभग एक सप्ताह के बाद यूआईडीएआई पोर्टल पर अपनी स्थिति की जांच करना एक अच्छा विचार है।"
+        },
+        {
+            question: "यदि मेरा आधार सीडिंग अनुरोध विफल हो जाए तो मुझे क्या करना चाहिए?",
+            answer: "यदि आपका अनुरोध विफल हो जाता है, तो अपनी बैंक शाखा में फिर से जाएँ। विफलता के सामान्य कारणों में आपके आधार कार्ड और बैंक रिकॉर्ड के बीच नाम का मेल न होना, या फॉर्म पर गलत खाता संख्या शामिल है। बैंक अधिकारी आपको इसका सटीक कारण बता सकते हैं।"
+        },
+        {
+            question: "क्या मुझे डीबीटी-सक्षम खाते के लिए न्यूनतम शेष राशि रखने की आवश्यकता है?",
+            answer: "कई छात्रवृत्ति-संबंधी खाते प्रधानमंत्री जन धन योजना (पीएमजेडीवाई) जैसी योजनाओं के तहत खोले जाते हैं, जो अक्सर शून्य-शेष खाते होते हैं। हालांकि, आपको अपने विशिष्ट बैंक से इसकी पुष्टि करनी चाहिए।"
         },
         {
           question: "यदि मेरी छात्रवृत्ति में देरी हो तो क्या होगा?",
@@ -338,6 +378,27 @@ export const pageContent: Record<Language, LanguageContent> = {
         copied: "कॉपी किया गया!",
       }
     },
+    formChecker: {
+        subtitle: "क्या आपने अपना आधार सीडिंग फॉर्म भर दिया है? एक फोटो अपलोड करें, और हमारा एआई बैंक जाने से पहले सामान्य गलतियों के लिए इसकी दोबारा जांच करेगा!",
+        cardTitle: "अपना फॉर्म जांचें",
+        cardDescription: "अपने पूरे किए गए आधार सीडिंग / एनपीसीआई मैपिंग फॉर्म का एक स्पष्ट फोटो अपलोड करें।",
+        uploadPrompt: "फोटो अपलोड करने के लिए बटन पर क्लिक करें",
+        uploadHint: "5MB तक पीएनजी, जेपीजी, या वेबपी",
+        uploadButton: "फोटो अपलोड करें",
+        changeButton: "फोटो बदलें",
+        checkButton: "त्रुटियों के लिए जांचें",
+        analyzingButton: "विश्लेषण हो रहा है...",
+        analyzingText: "हमारा एआई आपके फॉर्म का विश्लेषण कर रहा है। इसमें कुछ समय लग सकता है...",
+        resultTitle: "एआई विश्लेषण पूर्ण",
+        error: {
+            title: "विश्लेषण विफल",
+            suggestion: "कृपया बैंक में जमा करने से पहले अपने फॉर्म पर इन बिंदुओं की समीक्षा करें।"
+        },
+        success: {
+            title: "बहुत बढ़िया!",
+            subtitle: "हमारे एआई विश्लेषण में कोई सामान्य त्रुटि नहीं मिली। आप बैंक जाने के लिए तैयार दिखते हैं!"
+        }
+    },
     contact: {
       title: "संपर्क और संसाधन",
       subtitle: "आधिकारिक संपर्क जानकारी और डाउनलोड करने योग्य बैंक फॉर्म प्राप्त करें।",
@@ -347,6 +408,9 @@ export const pageContent: Record<Language, LanguageContent> = {
         { name: "भारतीय स्टेट बैंक (एसबीआई)", description: "एसबीआई ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://sbi.co.in/documents/16012/25194947/Aadhaar+Seeding+Process+for+Customers+of+Other+Banks+having+SBI+account.pdf" },
         { name: "पंजाब नेशनल बैंक (पीएनબી)", description: "पीएनबी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://www.pnbindia.in/downloadprocess.aspx?fid=3532E743-4C98-43B0-A227-22F091054C35" },
         { name: "बैंक ऑफ बड़ौदा (बीoबी)", description: "बीओबी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://www.bankofbaroda.in/-/media/project/bob/countrysites/india/personal-banking/accounts/documents/application-for-linking-aadhaar-number.pdf" },
+        { name: "एचडीएफसी बैंक", description: "एचडीएफसी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c86c" },
+        { name: "आईसीआईसीआई बैंक", description: "आईसीआईसीआई ग्राहकों के लिए आधार सीडिंग निर्देश।", link: "https://www.icicibank.com/personal-banking/insta-banking/internet-banking/link-aadhaar-card" },
+        { name: "ऐक्सिस बैंक", description: "ऐक्सिस बैंक ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
       ]
     },
     chatbot: {
@@ -496,8 +560,16 @@ export const pageContent: Record<Language, LanguageContent> = {
           answer: "ના, ડીબીટી મેળવવા માટે તમારી પાસે ફક્ત એક જ આધાર-સીડેડ ખાતું હોઈ શકે છે. જો તમે નવું ખાતું સીડ કરો છો, તો પાછલું ખાતું આપમેળે ડી-લિંક થઈ જાય છે.",
         },
         {
-          question: "હું મારું બેંક ખાતું આધાર સાથે કેવી રીતે સીડ કરું?",
-          answer: "તમારા આધાર કાર્ડની નકલ સાથે તમારી બેંક શાખાની મુલાકાત લો અને આધાર સીડિંગ ફોર્મ ભરો. જો વિકલ્પ ઉપલબ્ધ હોય તો તમે બેંકની મોબાઇલ એપ્લિકેશન અથવા ઇન્ટરનેટ બેંકિંગ દ્વારા પણ તે કરી શકો છો.",
+          question: "આધાર સીડિંગ પૂર્ણ થવામાં કેટલો સમય લાગે છે?",
+          answer: "તમે તમારી બેંક શાખામાં ફોર્મ જમા કરાવ્યા પછી આ પ્રક્રિયામાં સામાન્ય રીતે 3-5 કામકાજી દિવસ લાગે છે. જોકે, લગભગ એક અઠવાડિયા પછી યુઆઈડીએઆઈ પોર્ટલ પર તમારી સ્થિતિ તપાસવી એ સારો વિચાર છે.",
+        },
+        {
+          question: "જો મારી આધાર સીડિંગ વિનંતી નિષ્ફળ જાય તો મારે શું કરવું જોઈએ?",
+          answer: "જો તમારી વિનંતી નિષ્ફળ જાય, તો તમારી બેંક શાખાની ફરી મુલાકાત લો. નિષ્ફળતાના સામાન્ય કારણોમાં તમારા આધાર કાર્ડ અને બેંક રેકોર્ડ વચ્ચે નામનો મેળ ન ખાવો, અથવા ફોર્મ પર ખોટો ખાતા નંબર શામેલ છે. બેંક અધિકારી તમને ચોક્કસ કારણ જણાવી શકે છે.",
+        },
+        {
+          question: "શું મારે ડીબીટી-સક્ષમ ખાતા માટે ન્યૂનતમ બેલેન્સ રાખવાની જરૂર છે?",
+          answer: "ઘણા શિષ્યવૃત્તિ-સંબંધિત ખાતા પ્રધાનમંત્રી જન ધન યોજના (પીએમજેડીવાય) જેવી યોજનાઓ હેઠળ ખોલવામાં આવે છે, જે ઘણીવાર શૂન્ય-બેલેન્સ ખાતા હોય છે. જોકે, તમારે તમારી ચોક્કસ બેંક સાથે આની પુષ્ટિ કરવી જોઈએ.",
         },
         {
           question: "જો મારી શિષ્યવૃત્તિમાં વિલંબ થાય તો શું?",
@@ -519,6 +591,27 @@ export const pageContent: Record<Language, LanguageContent> = {
         copied: "કૉપિ થઈ ગયું!",
       }
     },
+    formChecker: {
+        subtitle: "તમારું આધાર સીડિંગ ફોર્મ ભર્યું છે? ફોટો અપલોડ કરો, અને અમારું AI તમે બેંક પર જાઓ તે પહેલાં સામાન્ય ભૂલો માટે તેની બે વાર તપાસ કરશે!",
+        cardTitle: "તમારું ફોર્મ તપાસો",
+        cardDescription: "તમારા પૂર્ણ થયેલ આધાર સીડિંગ / NPCI મેપિંગ ફોર્મનો સ્પષ્ટ ફોટો અપલોડ કરો.",
+        uploadPrompt: "ફોટો અપલોડ કરવા માટે બટન પર ક્લિક કરો",
+        uploadHint: "5MB સુધી PNG, JPG, અથવા WEBP",
+        uploadButton: "ફોટો અપલોડ કરો",
+        changeButton: "ફોટો બદલો",
+        checkButton: "ભૂલો માટે તપાસો",
+        analyzingButton: "વિશ્લેષણ કરી રહ્યું છે...",
+        analyzingText: "અમારું AI તમારા ફોર્મનું વિશ્લેષણ કરી રહ્યું છે. આમાં થોડો સમય લાગી શકે છે...",
+        resultTitle: "AI વિશ્લેષણ પૂર્ણ",
+        error: {
+            title: "વિશ્લેષણ નિષ્ફળ",
+            suggestion: "કૃપા કરીને બેંકમાં સબમિટ કરતા પહેલા તમારા ફોર્મ પર આ મુદ્દાઓની સમીક્ષા કરો."
+        },
+        success: {
+            title: "ખૂબ સરસ!",
+            subtitle: "અમારા AI વિશ્લેષણમાં કોઈ સામાન્ય ભૂલો મળી નથી. તમે બેંકની મુલાકાત લેવા માટે તૈયાર લાગો છો!"
+        }
+    },
     contact: {
       title: "સંપર્ક અને સંસાધનો",
       subtitle: "અધિકૃત સંપર્ક માહિતી અને ડાઉનલોડ કરી શકાય તેવા બેંક ફોર્મ્સ શોધો.",
@@ -528,6 +621,9 @@ export const pageContent: Record<Language, LanguageContent> = {
         { name: "સ્ટેટ બેંક ઓફ ઈન્ડિયા (SBI)", description: "SBI ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://sbi.co.in/documents/16012/25194947/Aadhaar+Seeding+Process+for+Customers+of+Other+Banks+having+SBI+account.pdf" },
         { name: "પંજાબ નેશનલ બેંક (PNB)", description: "PNB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.pnbindia.in/downloadprocess.aspx?fid=3532E743-4C98-43B0-A227-22F091054C35" },
         { name: "બેંક ઓફ બરોડા (BOB)", description: "BOB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.bankofbaroda.in/-/media/project/bob/countrysites/india/personal-banking/accounts/documents/application-for-linking-aadhaar-number.pdf" },
+        { name: "HDFC બેંક", description: "HDFC ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c86c" },
+        { name: "ICICI બેંક", description: "ICICI ગ્રાહકો માટે આધાર સીડિંગ સૂચનાઓ.", link: "https://www.icicibank.com/personal-banking/insta-banking/internet-banking/link-aadhaar-card" },
+        { name: "Axis બેંક", description: "Axis ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
       ]
     },
     chatbot: {
