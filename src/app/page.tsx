@@ -3,6 +3,7 @@ import { AwarenessSection } from "@/components/sections/awareness";
 import { ContactSection } from "@/components/sections/contact";
 import { EducationSection } from "@/components/sections/education";
 import { FaqSection } from "@/components/sections/faq";
+import { FormChecker } from "@/components/sections/form-checker";
 import { GrievanceHelper } from "@/components/sections/grievance-helper";
 import { HeroSection } from "@/components/sections/hero";
 import { MythBustersSection } from "@/components/sections/myth-busters";
@@ -18,6 +19,7 @@ export default function Home() {
       <VideoSection />
       <StatusCheckerSection />
       <GrievanceHelper />
+      <FormChecker />
       <ScholarshipSection />
       <MythBustersSection />
       <AwarenessSection />
