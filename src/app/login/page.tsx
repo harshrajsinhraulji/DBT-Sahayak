@@ -18,9 +18,11 @@ import { ArrowLeft, LoaderCircle } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useAuth } from "@/hooks/use-auth";
 
 export default function LoginPage() {
   const router = useRouter();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,23 +31,23 @@ export default function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // This is a mock login. Replace with your actual Firebase logic.
-    setTimeout(() => {
-      if (email && password) {
-        toast({
-          title: "Login Successful",
-          description: "Welcome back!",
-        });
-        router.push("/");
-      } else {
-        toast({
-          title: "Login Failed",
-          description: "Please check your email and password.",
-          variant: "destructive",
-        });
-      }
-      setIsSubmitting(false);
-    }, 1000);
+    try {
+      await login(email, password);
+      toast({
+        title: "Login Successful",
+        description: "Welcome back!",
+      });
+      router.push("/");
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Login Failed",
+        description: "Please check your email and password.",
+        variant: "destructive",
+      });
+    } finally {
+        setIsSubmitting(false);
+    }
   };
 
   return (
@@ -80,8 +82,7 @@ export default function LoginPage() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input 
+              <Label htmlFor="password">Password</Label>              <Input 
                 id="password" 
                 type="password" 
                 required 

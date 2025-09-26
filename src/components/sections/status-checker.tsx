@@ -28,18 +28,18 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import { useAuth } from "@/hooks/use-auth";
 
 export function StatusCheckerSection() {
   const { content } = useLanguage();
   const router = useRouter();
+  const { user } = useAuth();
   const [showLoginPrompt, setShowLoginPrompt] = useState(false);
   const [showStatusPrompt, setShowStatusPrompt] = useState(false);
   const [showGuidance, setShowGuidance] = useState(false);
-  // Mock auth status
-  const isAuthenticated = false;
 
   const handleCheckStatusClick = () => {
-    if (isAuthenticated) {
+    if (user) {
       window.open("https://myaadhaar.uidai.gov.in/bank-seeding-status", "_blank");
       setShowStatusPrompt(true);
     } else {
@@ -107,7 +107,7 @@ export function StatusCheckerSection() {
           <AlertDialogHeader>
             <AlertDialogTitle>Authentication Required</AlertDialogTitle>
             <AlertDialogDescription>
-              Please log in or create an account to check your status and save your preferences.
+              Please log in or create an account to check your status and get personalized guidance.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

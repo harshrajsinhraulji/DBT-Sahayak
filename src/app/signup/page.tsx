@@ -18,9 +18,11 @@ import { ArrowLeft, LoaderCircle } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useAuth } from "@/hooks/use-auth";
 
 export default function SignupPage() {
   const router = useRouter();
+  const { signup } = useAuth();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,24 +31,32 @@ export default function SignupPage() {
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!name) {
+      toast({
+        title: "Signup Failed",
+        description: "Please enter your name.",
+        variant: "destructive",
+      });
+      return;
+    }
     setIsSubmitting(true);
-    // This is a mock signup. Replace with your actual Firebase logic.
-    setTimeout(() => {
-      if (email && password && name) {
-        toast({
-          title: "Signup Successful",
-          description: "Your account has been created.",
-        });
-        router.push("/");
-      } else {
-        toast({
-          title: "Signup Failed",
-          description: "Please fill all fields correctly.",
-          variant: "destructive",
-        });
-      }
+    try {
+      await signup(email, password, name);
+      toast({
+        title: "Signup Successful",
+        description: "Your account has been created.",
+      });
+      router.push("/");
+    } catch (error: any) {
+      console.error(error);
+      toast({
+        title: "Signup Failed",
+        description: error.message || "An error occurred.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (

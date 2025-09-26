@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Languages, Menu, User, X } from "lucide-react";
-
+import { Languages, Menu, User, X, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,14 +16,22 @@ import { LanguageSwitcher } from "../language-switcher";
 import { useLanguage } from "@/hooks/use-language";
 import { Logo } from "../logo";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/hooks/use-auth";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "../ui/avatar";
 
 export function Header() {
   const { content } = useLanguage();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
-
-  // Mock authentication status
-  const isAuthenticated = false;
+  const { user, logout } = useAuth();
 
   const navItems = [
     { href: "#education", label: content.header.nav.education },
@@ -40,21 +47,31 @@ export function Header() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     const href = e.currentTarget.href;
-    const targetId = href.replace(/.*\#/, "");
+    const targetId = href.replace(/.*\\#/, "");
     const elem = document.getElementById(targetId);
 
     if (elem) {
-        elem?.scrollIntoView({
-            behavior: "smooth",
-        });
+      elem?.scrollIntoView({
+        behavior: "smooth",
+      });
     } else {
-        router.push(`/${href.slice(href.lastIndexOf('#'))}`);
+      router.push(`/${href.slice(href.lastIndexOf('#'))}`);
     }
     setMobileMenuOpen(false);
   };
   
   const handleLoginClick = () => {
     router.push('/login');
+  }
+
+  const handleLogoutClick = async () => {
+    await logout();
+    router.push('/');
+  }
+
+  const getInitials = (name: string | null | undefined) => {
+    if (!name) return 'U';
+    return name.split(' ').map(n => n[0]).join('').toUpperCase();
   }
 
   return (
@@ -80,10 +97,37 @@ export function Header() {
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
           <LanguageSwitcher />
-          <Button onClick={handleLoginClick}>
-            <User className="mr-2 h-4 w-4" />
-            {isAuthenticated ? 'Dashboard' : content.header.login}
-          </Button>
+           {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="secondary" className="relative h-8 w-8 rounded-full">
+                  <Avatar className="h-8 w-8">
+                    <AvatarFallback>{getInitials(user.displayName)}</AvatarFallback>
+                  </Avatar>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" align="end" forceMount>
+                <DropdownMenuLabel className="font-normal">
+                  <div className="flex flex-col space-y-1">
+                    <p className="text-sm font-medium leading-none">{user.displayName}</p>
+                    <p className="text-xs leading-none text-muted-foreground">
+                      {user.email}
+                    </p>
+                  </div>
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={handleLogoutClick}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  <span>Log out</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Button onClick={handleLoginClick}>
+              <User className="mr-2 h-4 w-4" />
+              {content.header.login}
+            </Button>
+          )}
           <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="outline" size="icon">
