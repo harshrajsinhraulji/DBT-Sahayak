@@ -2,14 +2,13 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useLanguage } from "@/hooks/use-language"
-import { ArrowRight, CheckCircle, Info } from "lucide-react"
+import { CheckCircle, Info } from "lucide-react"
 import Image from "next/image"
 import { PlaceHolderImages } from "@/lib/placeholder-images"
 
 export function EducationSection() {
   const { content } = useLanguage()
   const infographicImage = PlaceHolderImages.find(p => p.id === "infographic-aadhaar-vs-dbt");
-  const videoPlaceholder = PlaceHolderImages.find(p => p.id === "video-placeholder");
 
   return (
     <section id="education" className="w-full py-12 md:py-24 lg:py-32 bg-background">
@@ -61,33 +60,6 @@ export function EducationSection() {
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
             />
           )}
-        </div>
-        <div className="mx-auto max-w-5xl pt-12">
-            <Card className="overflow-hidden">
-                <div className="grid md:grid-cols-2">
-                    {videoPlaceholder && (
-                        <div className="relative group">
-                            <Image
-                                src={videoPlaceholder.imageUrl}
-                                width={800}
-                                height={450}
-                                alt={videoPlaceholder.description}
-                                data-ai-hint={videoPlaceholder.imageHint}
-                                className="aspect-video w-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                                <button className="bg-primary/80 text-primary-foreground rounded-full p-4 group-hover:bg-primary transition-colors">
-                                    <ArrowRight className="h-8 w-8 -rotate-180" />
-                                </button>
-                            </div>
-                        </div>
-                    )}
-                    <div className="p-6 md:p-8 flex flex-col justify-center">
-                        <h3 className="text-2xl font-bold font-headline">{content.education.videoTitle}</h3>
-                        <p className="mt-2 text-muted-foreground">{content.education.videoDescription}</p>
-                    </div>
-                </div>
-            </Card>
         </div>
       </div>
     </section>

@@ -16,6 +16,11 @@ export type Resource = {
   link: string;
 }
 
+export type Myth = {
+  myth: string;
+  fact: string;
+}
+
 export type Language = 'en' | 'hi' | 'gu';
 
 export type LanguageContent = {
@@ -23,12 +28,15 @@ export type LanguageContent = {
     title: string;
     nav: {
       education: string;
+      videos: string;
       status: string;
       scholarships: string;
+      myths: string;
       faq: string;
       grievance: string;
       contact: string;
     };
+    login: string;
   };
   hero: {
     tagline: string;
@@ -47,8 +55,14 @@ export type LanguageContent = {
       title: string;
       description: string;
     };
-    videoTitle: string;
-    videoDescription: string;
+  };
+  videos: {
+    title: string;
+    subtitle: string;
+    videos: {
+      title: string;
+      description: string;
+    }[];
   };
   statusChecker: {
     title: string;
@@ -60,6 +74,11 @@ export type LanguageContent = {
     title: string;
     subtitle: string;
     scholarships: Scholarship[];
+  };
+  mythBusters: {
+    title: string;
+    subtitle: string;
+    myths: Myth[];
   };
   awareness: {
     title: string;

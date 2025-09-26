@@ -1,4 +1,4 @@
-import type { Language, LanguageContent } from './types';
+import type { Language, LanguageContent, Myth } from './types';
 
 export const pageContent: Record<Language, LanguageContent> = {
   en: {
@@ -6,12 +6,15 @@ export const pageContent: Record<Language, LanguageContent> = {
       title: "DBT Sahayak",
       nav: {
         education: "Learn",
+        videos: "Videos",
         status: "Check Status",
         scholarships: "Scholarships",
+        myths: "Myth Busters",
         faq: "FAQ",
         grievance: "Grievance",
         contact: "Contact",
       },
+      login: "Login/Register"
     },
     hero: {
       tagline: "Empowering Students, Ensuring Scholarships",
@@ -30,8 +33,16 @@ export const pageContent: Record<Language, LanguageContent> = {
         title: "DBT-Enabled Aadhaar Seeded Account",
         description: "Your Aadhaar is mapped with a specific bank account through NPCI to receive Direct Benefit Transfers (DBT) like scholarships. This is mandatory.",
       },
-      videoTitle: "Visual Guide: Linking vs. Seeding",
-      videoDescription: "Watch this short video to clearly understand the process and importance of Aadhaar seeding for DBT.",
+    },
+    videos: {
+      title: "Watch & Learn",
+      subtitle: "Watch these short videos to understand Aadhaar seeding better.",
+      videos: [
+        { title: "What is DBT?", description: "Learn the basics of Direct Benefit Transfer." },
+        { title: "Linking vs Seeding", description: "Understand the crucial difference." },
+        { title: "How to Seed", description: "A step-by-step guide to get it done." },
+        { title: "Common Myths", description: "Debunking popular misconceptions." },
+      ]
     },
     statusChecker: {
       title: "Check Your Aadhaar & Bank Account Seeding Status",
@@ -68,6 +79,28 @@ export const pageContent: Record<Language, LanguageContent> = {
           link: "https://scholarships.gov.in/",
         },
       ],
+    },
+    mythBusters: {
+      title: "Myth Busters",
+      subtitle: "Don't let misinformation stop you from getting your scholarship. Let's bust some common myths!",
+      myths: [
+        {
+          myth: "If my bank account is linked to Aadhaar, I will automatically get my scholarship.",
+          fact: "Fact: Not true! Your account must be specifically 'seeded' with Aadhaar for DBT on the NPCI mapper, not just linked. This is a separate process."
+        },
+        {
+          myth: "I can receive my scholarship in any of my Aadhaar-linked bank accounts.",
+          fact: "Fact: You can only receive DBT payments in the one bank account that is currently seeded with your Aadhaar. This is your designated DBT-enabled account."
+        },
+        {
+          myth: "Aadhaar seeding is a one-time process and never needs to be checked.",
+          fact: "Fact: It's a good practice to periodically check your Aadhaar seeding status on the UIDAI portal, especially before the scholarship season, to ensure it's active."
+        },
+        {
+          myth: "My scholarship was rejected because of my grades, not my bank account.",
+          fact: "Fact: While grades are important, a very common reason for fund disbursement failure is an inactive or incorrectly seeded bank account. Always verify your account status first!"
+        }
+      ]
     },
     awareness: {
       title: "Success Stories",
@@ -154,12 +187,15 @@ export const pageContent: Record<Language, LanguageContent> = {
       title: "डीबीटी सहायक",
       nav: {
         education: "जानें",
+        videos: "वीडियो",
         status: "स्थिति जांचें",
         scholarships: "छात्रवृत्तियाँ",
+        myths: "मिथक तोड़ें",
         faq: "अक्सर पूछे जाने वाले प्रश्न",
         grievance: "शिकायत",
         contact: "संपर्क",
       },
+      login: "लॉगिन/रजिस्टर करें"
     },
     hero: {
       tagline: "छात्रों को सशक्त बनाना, छात्रवृत्ति सुनिश्चित करना",
@@ -178,8 +214,16 @@ export const pageContent: Record<Language, LanguageContent> = {
         title: "डीबीटी-सक्षम आधार सीडेड खाता",
         description: "छात्रवृत्ति जैसे प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) प्राप्त करने के लिए आपका आधार एनपीसीआई के माध्यम से एक विशिष्ट बैंक खाते से मैप किया गया है। यह अनिवार्य है।",
       },
-      videoTitle: "विज़ुअल गाइड: लिंकिंग बनाम सीडिंग",
-      videoDescription: "डीबीटी के लिए आधार सीडिंग की प्रक्रिया और महत्व को स्पष्ट रूप से समझने के लिए यह छोटा वीडियो देखें।",
+    },
+    videos: {
+      title: "देखें और जानें",
+      subtitle: "आधार सीडिंग को बेहतर ढंग से समझने के लिए ये छोटे वीडियो देखें।",
+      videos: [
+        { title: "डीबीटी क्या है?", description: "प्रत्यक्ष लाभ हस्तांतरण की मूल बातें जानें।" },
+        { title: "लिंकिंग बनाम सीडिंग", description: "महत्वपूर्ण अंतर को समझें।" },
+        { title: "कैसे सीड करें", description: "इसे पूरा करने के लिए चरण-दर-चरण मार्गदर्शिका।" },
+        { title: "आम मिथक", description: "लोकप्रिय भ्रांतियों का खंडन।" },
+      ]
     },
     statusChecker: {
       title: "अपने आधार और बैंक खाता सीडिंग स्थिति की जाँच करें",
@@ -216,6 +260,28 @@ export const pageContent: Record<Language, LanguageContent> = {
           link: "https://scholarships.gov.in/",
         },
       ],
+    },
+    mythBusters: {
+      title: "मिथक तोड़ें",
+      subtitle: "गलत सूचना को आपको अपनी छात्रवृत्ति प्राप्त करने से रोकने न दें। आइए कुछ आम मिथकों को तोड़ें!",
+      myths: [
+        {
+          myth: "यदि मेरा बैंक खाता आधार से जुड़ा हुआ है, तो मुझे स्वतः ही मेरी छात्रवृत्ति मिल जाएगी।",
+          fact: "तथ्य: यह सच नहीं है! आपके खाते को केवल लिंक ही नहीं, बल्कि एनपीसीआई मैपर पर डीबीटी के लिए आधार के साथ विशेष रूप से 'सीड' किया जाना चाहिए। यह एक अलग प्रक्रिया है।"
+        },
+        {
+          myth: "मैं अपने किसी भी आधार-लिंक्ड बैंक खाते में अपनी छात्रवृत्ति प्राप्त कर सकता हूँ।",
+          fact: "तथ्य: आप केवल उसी एक बैंक खाते में डीबीटी भुगतान प्राप्त कर सकते हैं जो वर्तमान में आपके आधार के साथ सीड किया गया है। यह आपका निर्दिष्ट डीबीटी-सक्षम खाता है।"
+        },
+        {
+          myth: "आधार सीडिंग एक बार की प्रक्रिया है और इसे कभी जांचने की आवश्यकता नहीं है।",
+          fact: "तथ्य: यह सुनिश्चित करने के लिए कि यह सक्रिय है, समय-समय पर यूआईडीएआई पोर्टल पर अपनी आधार सीडिंग स्थिति की जांच करना एक अच्छा अभ्यास है, खासकर छात्रवृत्ति के मौसम से पहले।"
+        },
+        {
+          myth: "मेरी छात्रवृत्ति मेरे ग्रेड के कारण खारिज कर दी गई थी, मेरे बैंक खाते के कारण नहीं।",
+          fact: "तथ्य: जबकि ग्रेड महत्वपूर्ण हैं, फंड वितरण विफलता का एक बहुत ही सामान्य कारण एक निष्क्रिय या गलत तरीके से सीड किया गया बैंक खाता है। हमेशा पहले अपने खाते की स्थिति सत्यापित करें!"
+        }
+      ]
     },
     awareness: {
       title: "सफलता की कहानियाँ",
@@ -302,12 +368,15 @@ export const pageContent: Record<Language, LanguageContent> = {
       title: "ડીબીટી સહાયક",
       nav: {
         education: "જાણો",
+        videos: "વીડિયો",
         status: "સ્થિતિ તપાસો",
         scholarships: "શિષ્યવૃત્તિ",
+        myths: "માન્યતા તોડો",
         faq: "વારંવાર પૂછાતા પ્રશ્નો",
         grievance: "ફરિયાદ",
         contact: "સંપર્ક",
       },
+      login: "લોગિન/રજીસ્ટર કરો"
     },
     hero: {
       tagline: "વિદ્યાર્થીઓને સશક્ત બનાવવા, શિષ્યવૃત્તિ સુનિશ્ચિત કરવી",
@@ -326,8 +395,16 @@ export const pageContent: Record<Language, LanguageContent> = {
         title: "ડીબીટી-સક્ષમ આધાર સીડેડ એકાઉન્ટ",
         description: "શિષ્યવૃત્તિ જેવા ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર (ડીબીટી) મેળવવા માટે તમારું આધાર એનપીસીઆઈ દ્વારા ચોક્કસ બેંક ખાતા સાથે મેપ થયેલું છે. આ ફરજિયાત છે.",
       },
-      videoTitle: "વિઝ્યુઅલ માર્ગદર્શિકા: લિંકિંગ વિરુદ્ધ સીડિંગ",
-      videoDescription: "ડીબીટી માટે આધાર સીડિંગની પ્રક્રિયા અને મહત્વને સ્પષ્ટપણે સમજવા માટે આ ટૂંકી વિડિઓ જુઓ.",
+    },
+    videos: {
+      title: "જુઓ અને શીખો",
+      subtitle: "આધાર સીડિંગને વધુ સારી રીતે સમજવા માટે આ ટૂંકી વિડિઓઝ જુઓ.",
+      videos: [
+        { title: "ડીબીટી શું છે?", description: "ડાયરેક્ટ બેનિફિટ ટ્રાન્સફરની મૂળભૂત બાબતો જાણો." },
+        { title: "લિંકિંગ વિરુદ્ધ સીડિંગ", description: "મહત્વપૂર્ણ તફાવતને સમજો." },
+        { title: "કેવી રીતે સીડ કરવું", description: "તેને પૂર્ણ કરવા માટે પગલું-દર-પગલું માર્ગદર્શિકા." },
+        { title: "સામાન્ય માન્યતાઓ", description: "લોકપ્રિય ગેરસમજોનું ખંડન." },
+      ]
     },
     statusChecker: {
       title: "તમારા આધાર અને બેંક એકાઉન્ટ સીડિંગની સ્થિતિ તપાસો",
@@ -364,6 +441,28 @@ export const pageContent: Record<Language, LanguageContent> = {
           link: "https://scholarships.gov.in/",
         },
       ],
+    },
+    mythBusters: {
+      title: "માન્યતા તોડો",
+      subtitle: "ખોટી માહિતીને તમને તમારી શિષ્યવૃત્તિ મેળવવાથી રોકવા ન દો. ચાલો કેટલીક સામાન્ય માન્યતાઓને તોડીએ!",
+      myths: [
+        {
+          myth: "જો મારું બેંક ખાતું આધાર સાથે જોડાયેલું હોય, તો મને આપમેળે મારી શિષ્યવૃત્તિ મળી જશે.",
+          fact: "હકીકત: સાચું નથી! તમારું ખાતું ફક્ત લિંક જ નહીં, પણ એનપીસીઆઈ મેપર પર ડીબીટી માટે આધાર સાથે ખાસ 'સીડ' થયેલું હોવું જોઈએ. આ એક અલગ પ્રક્રિયા છે."
+        },
+        {
+          myth: "હું મારા કોઈપણ આધાર-લિંક્ડ બેંક ખાતામાં મારી શિષ્યવૃત્તિ મેળવી શકું છું.",
+          fact: "હકીકત: તમે ફક્ત તે જ એક બેંક ખાતામાં ડીબીટી ચુકવણીઓ મેળવી શકો છો જે હાલમાં તમારા આધાર સાથે સીડ થયેલ છે. આ તમારું નિયુક્ત ડીબીટી-સક્ષમ ખાતું છે."
+        },
+        {
+          myth: "આધાર સીડિંગ એક-વખતની પ્રક્રિયા છે અને તેને ક્યારેય તપાસવાની જરૂર નથી.",
+          fact: "હકીકત: તે સક્રિય છે તેની ખાતરી કરવા માટે, સમયાંતરે યુઆઈડીએઆઈ પોર્ટલ પર તમારી આધાર સીડિંગની સ્થિતિ તપાસવી એ એક સારી પ્રથા છે, ખાસ કરીને શિષ્યવૃત્તિની મોસમ પહેલાં."
+        },
+        {
+          myth: "મારી શિષ્યવૃત્તિ મારા ગ્રેડને કારણે નકારી કાઢવામાં આવી હતી, મારા બેંક ખાતાને કારણે નહીં.",
+          fact: "હકીકત: જ્યારે ગ્રેડ મહત્વપૂર્ણ છે, ભંડોળ વિતરણ નિષ્ફળતાનું એક ખૂબ જ સામાન્ય કારણ નિષ્ક્રિય અથવા ખોટી રીતે સીડ થયેલું બેંક ખાતું છે. હંમેશા પહેલા તમારા ખાતાની સ્થિતિ ચકાસો!"
+        }
+      ]
     },
     awareness: {
       title: "સફળતાની ગાથાઓ",

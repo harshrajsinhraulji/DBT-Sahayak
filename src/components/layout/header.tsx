@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Languages, Menu, X } from "lucide-react";
+import { Languages, Menu, User, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -23,9 +23,11 @@ export function Header() {
 
   const navItems = [
     { href: "#education", label: content.header.nav.education },
+    { href: "#videos", label: content.header.nav.videos },
     { href: "#status", label: content.header.nav.status },
     { href: "#grievance", label: content.header.nav.grievance },
     { href: "#scholarships", label: content.header.nav.scholarships },
+    { href: "#myths", label: content.header.nav.myths },
     { href: "#faq", label: content.header.nav.faq },
     { href: "#contact", label: content.header.nav.contact },
   ];
@@ -50,7 +52,7 @@ export function Header() {
             {content.header.title}
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm md:flex">
+        <nav className="hidden items-center gap-4 text-sm md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -64,6 +66,10 @@ export function Header() {
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
           <LanguageSwitcher />
+          <Button>
+            <User className="mr-2 h-4 w-4" />
+            {content.header.login}
+          </Button>
           <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="outline" size="icon">
