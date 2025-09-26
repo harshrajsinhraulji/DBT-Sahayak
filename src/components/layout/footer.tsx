@@ -20,10 +20,10 @@ export function Footer() {
             <p>{content.footer.credits}</p>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="https://t.me/your-telegram-bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="hover:text-primary transition-colors"><Send size={20} /></Link>
-            <a href="#" aria-label="Twitter" className="hover:text-primary transition-colors"><Twitter size={20} /></a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin size={20} /></a>
-            <a href="#" aria-label="GitHub" className="hover:text-primary transition-colors"><Github size={20} /></a>
+            <Link href="https://t.me/your-telegram-bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="hover:text-primary transition-colors"><Send /></Link>
+            <a href="#" aria-label="Twitter" className="hover:text-primary transition-colors"><Twitter /></a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin /></a>
+            <a href="#" aria-label="GitHub" className="hover:text-primary transition-colors"><Github /></a>
           </div>
         </div>
       </div>

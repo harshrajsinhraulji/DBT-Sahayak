@@ -66,7 +66,7 @@ export function GrievanceHelper() {
         <div className="mx-auto max-w-4xl py-12">
           <Card>
             <CardHeader>
-              <CardTitle>{content.grievance.title}</CardTitle>
+              <CardTitle className="font-headline">{content.grievance.title}</CardTitle>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -111,7 +111,7 @@ export function GrievanceHelper() {
 
               {(isPending || grievanceLetter) && (
                 <div className="mt-8">
-                  <h3 className="text-xl font-semibold mb-4">{content.grievance.form.resultTitle}</h3>
+                  <h3 className="text-xl font-headline font-semibold mb-4">{content.grievance.form.resultTitle}</h3>
                   <Card className="bg-muted/50 relative">
                     <CardContent className="p-6">
                       {isPending ? (
@@ -127,9 +127,9 @@ export function GrievanceHelper() {
                             className="absolute top-2 right-2"
                             onClick={handleCopy}
                           >
-                            {copied ? <ClipboardCheck className="h-5 w-5 text-green-500" /> : <Clipboard className="h-5 w-5" />}
+                            {copied ? <ClipboardCheck className="text-green-500" /> : <Clipboard />}
                           </Button>
-                          <p className="whitespace-pre-wrap font-mono text-sm">{grievanceLetter}</p>
+                          <p className="whitespace-pre-wrap font-code text-sm">{grievanceLetter}</p>
                         </>
                       )}
                     </CardContent>
