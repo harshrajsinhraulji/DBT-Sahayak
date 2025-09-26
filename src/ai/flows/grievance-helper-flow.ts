@@ -31,6 +31,7 @@ export async function grievanceHelper(input: GrievanceHelperInput): Promise<Grie
 
 const prompt = ai.definePrompt({
   name: 'grievanceHelperPrompt',
+  model: 'googleai/gemini-1.5-flash-latest',
   input: {schema: GrievanceHelperInputSchema},
   output: {schema: GrievanceHelperOutputSchema},
   prompt: `You are an expert assistant for drafting formal grievance letters for students facing issues with their scholarships. Your task is to convert a user's simple problem description into a polite, well-structured, and formal letter that can be sent to the appropriate authorities.
