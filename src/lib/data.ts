@@ -268,7 +268,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         grievance: "शिकायत",
         contact: "संपर्क",
       },
-      login: "लॉगिन/रजिस्टर करें"
+      login: "लॉगિન/રજીસ્ટર કરો"
     },
     hero: {
       tagline: "छात्रों को सशक्त बनाना, छात्रवृत्ति सुनिश्चित करना",

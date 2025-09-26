@@ -20,7 +20,7 @@ export function Footer() {
             <p>{content.footer.tagline}</p>
             <p>{content.footer.credits}</p>
             <Link href="/print-kit" className="text-primary hover:underline flex items-center justify-center gap-2 mt-2">
-                <Printer className="h-4 w-4" /> Prepare Kit for Printing
+                <Printer className="h-4 w-4" /> {content.printKit.instructions.printButton}
             </Link>
           </div>
           <div className="flex items-center gap-4">

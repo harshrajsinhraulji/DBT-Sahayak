@@ -51,7 +51,9 @@ export function MythBustersSection() {
   
   const shareScore = () => {
     const text = `I scored ${score}/${totalMyths} on the DBT MythBusters Challenge! Test your knowledge on DBT Sahayak.`;
-    navigator.share({ title: 'DBT MythBusters Challenge', text: text, url: window.location.href });
+    if (navigator.share) {
+      navigator.share({ title: 'DBT MythBusters Challenge', text: text, url: window.location.href });
+    }
   }
 
   return (
@@ -70,7 +72,7 @@ export function MythBustersSection() {
         <div className="mx-auto max-w-2xl py-12">
           <Card className="min-h-[380px] flex flex-col justify-between shadow-lg">
             <CardHeader>
-              <CardTitle className="text-center font-headline text-2xl">The DBT Challenge!</CardTitle>
+              <CardTitle className="text-center font-headline text-2xl">{content.mythBusters.title}</CardTitle>
               <Progress value={((showResult ? totalMyths : currentMythIndex) / totalMyths) * 100} className="w-full mt-2" />
             </CardHeader>
             <CardContent className="flex-1 flex flex-col items-center justify-center text-center p-6">
@@ -123,10 +125,9 @@ export function MythBustersSection() {
                   </Button>
                   <Button
                     size="lg"
-                    variant="secondary"
                     onClick={() => handleAnswer(false)}
                     disabled={answerStatus !== 'unanswered'}
-                    className="rounded-full px-6"
+                    className="rounded-full px-6 bg-green-600 hover:bg-green-700"
                   >
                     <Lightbulb /> Fact
                   </Button>
