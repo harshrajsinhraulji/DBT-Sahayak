@@ -24,8 +24,10 @@ export function Header() {
   const navItems = [
     { href: "#education", label: content.header.nav.education },
     { href: "#status", label: content.header.nav.status },
+    { href: "#grievance", label: content.header.nav.grievance },
     { href: "#scholarships", label: content.header.nav.scholarships },
     { href: "#faq", label: content.header.nav.faq },
+    { href: "#contact", label: content.header.nav.contact },
   ];
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

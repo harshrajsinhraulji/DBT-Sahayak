@@ -1,7 +1,9 @@
 import { Chatbot } from "@/components/chatbot";
 import { AwarenessSection } from "@/components/sections/awareness";
+import { ContactSection } from "@/components/sections/contact";
 import { EducationSection } from "@/components/sections/education";
 import { FaqSection } from "@/components/sections/faq";
+import { GrievanceHelper } from "@/components/sections/grievance-helper";
 import { HeroSection } from "@/components/sections/hero";
 import { ScholarshipSection } from "@/components/sections/scholarships";
 import { StatusCheckerSection } from "@/components/sections/status-checker";
@@ -12,9 +14,11 @@ export default function Home() {
       <HeroSection />
       <EducationSection />
       <StatusCheckerSection />
+      <GrievanceHelper />
       <ScholarshipSection />
       <AwarenessSection />
       <FaqSection />
+      <ContactSection />
       <Chatbot />
     </div>
   );

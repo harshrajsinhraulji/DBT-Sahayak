@@ -10,6 +10,12 @@ export type FAQ = {
   answer: string;
 };
 
+export type Resource = {
+  name: string;
+  description: string;
+  link: string;
+}
+
 export type Language = 'en' | 'hi' | 'gu';
 
 export type LanguageContent = {
@@ -20,6 +26,8 @@ export type LanguageContent = {
       status: string;
       scholarships: string;
       faq: string;
+      grievance: string;
+      contact: string;
     };
   };
   hero: {
@@ -66,6 +74,27 @@ export type LanguageContent = {
     subtitle: string;
     faqs: FAQ[];
   };
+  grievance: {
+    title: string;
+    subtitle: string;
+    form: {
+      name: string;
+      namePlaceholder: string;
+      problem: string;
+      problemPlaceholder: string;
+      generate: string;
+      resultTitle: string;
+      copy: string;
+      copied: string;
+    }
+  },
+  contact: {
+    title: string;
+    subtitle: string;
+    helpline: string;
+    resources: string;
+    bankForms: Resource[];
+  },
   chatbot: {
     title: string;
     placeholder: string;

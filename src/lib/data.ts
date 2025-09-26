@@ -9,6 +9,8 @@ export const pageContent: Record<Language, LanguageContent> = {
         status: "Check Status",
         scholarships: "Scholarships",
         faq: "FAQ",
+        grievance: "Grievance",
+        contact: "Contact",
       },
     },
     hero: {
@@ -107,6 +109,31 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
       ],
     },
+    grievance: {
+      title: "AI-Powered Grievance Helper",
+      subtitle: "Facing an issue? Describe your problem, and our AI will help you draft a formal grievance letter.",
+      form: {
+        name: "Your Full Name",
+        namePlaceholder: "e.g., Priya S.",
+        problem: "Describe your problem in simple words",
+        problemPlaceholder: "e.g., My scholarship money has been delayed for 3 months...",
+        generate: "Generate Grievance Letter",
+        resultTitle: "Your Generated Grievance Letter",
+        copy: "Copy Text",
+        copied: "Copied!",
+      }
+    },
+    contact: {
+      title: "Contact & Resources",
+      subtitle: "Find official contact information and downloadable bank forms.",
+      helpline: "National Scholarship Portal Helpline: 0120 - 6619540",
+      resources: "Bank Aadhaar Seeding Forms",
+      bankForms: [
+        { name: "State Bank of India (SBI)", description: "Aadhaar seeding application form for SBI customers.", link: "#" },
+        { name: "Punjab National Bank (PNB)", description: "Aadhaar seeding application form for PNB customers.", link: "#" },
+        { name: "Bank of Baroda (BOB)", description: "Aadhaar seeding application form for BOB customers.", link: "#" },
+      ]
+    },
     chatbot: {
       title: "Aadhaar Dost",
       placeholder: "Ask about DBT, Aadhaar, scholarships...",
@@ -130,6 +157,8 @@ export const pageContent: Record<Language, LanguageContent> = {
         status: "स्थिति जांचें",
         scholarships: "छात्रवृत्तियाँ",
         faq: "अक्सर पूछे जाने वाले प्रश्न",
+        grievance: "शिकायत",
+        contact: "संपर्क",
       },
     },
     hero: {
@@ -175,7 +204,7 @@ export const pageContent: Record<Language, LanguageContent> = {
           link: "https://scholarships.gov.in/",
         },
         {
-          title: "अनुसूचित जाति के छात्रों के लिए पोस्ट-मैट्रिक छात्रवृत्ति",
+          title: "अनुसूचित जाति के छात्रों के लिए पोस्ट-मैट્રિક छात्रवृत्ति",
           description: "मैट्रिकोत्तर या माध्यमिकोत्तर चरण में पढ़ने वाले अनुसूचित जाति के छात्रों के लिए।",
           eligibility: "माता-पिता की आय 2.5 लाख रुपये प्रति वर्ष से अधिक नहीं होनी चाहिए।",
           link: "https://scholarships.gov.in/",
@@ -228,6 +257,31 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
       ],
     },
+    grievance: {
+      title: "एआई-संचालित शिकायत सहायक",
+      subtitle: "कोई समस्या आ रही है? अपनी समस्या का वर्णन करें, और हमारा एआई आपको एक औपचारिक शिकायत पत्र का मसौदा तैयार करने में मदद करेगा।",
+      form: {
+        name: "आपका पूरा नाम",
+        namePlaceholder: "उदा., प्रिया एस.",
+        problem: "अपनी समस्या का सरल शब्दों में वर्णन करें",
+        problemPlaceholder: "उदा., मेरी छात्रवृत्ति का पैसा 3 महीने से रुका हुआ है...",
+        generate: "शिकायत पत्र उत्पन्न करें",
+        resultTitle: "आपका उत्पन्न शिकायत पत्र",
+        copy: "टेक्स्ट कॉपी करें",
+        copied: "कॉपी किया गया!",
+      }
+    },
+    contact: {
+      title: "संपर्क और संसाधन",
+      subtitle: "आधिकारिक संपर्क जानकारी और डाउनलोड करने योग्य बैंक फॉर्म प्राप्त करें।",
+      helpline: "राष्ट्रीय छात्रवृत्ति पोर्टल हेल्पलाइन: 0120 - 6619540",
+      resources: "बैंक आधार सीडिंग फॉर्म",
+      bankForms: [
+        { name: "भारतीय स्टेट बैंक (एसबीआई)", description: "एसबीआई ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "#" },
+        { name: "पंजाब नेशनल बैंक (पीएनબી)", description: "पीएनबी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "#" },
+        { name: "बैंक ऑफ बड़ौदा (बीoबी)", description: "बीओबी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "#" },
+      ]
+    },
     chatbot: {
       title: "आधार दोस्त",
       placeholder: "डीबीटी, आधार, छात्रवृत्ति के बारे में पूछें...",
@@ -251,6 +305,8 @@ export const pageContent: Record<Language, LanguageContent> = {
         status: "સ્થિતિ તપાસો",
         scholarships: "શિષ્યવૃત્તિ",
         faq: "વારંવાર પૂછાતા પ્રશ્નો",
+        grievance: "ફરિયાદ",
+        contact: "સંપર્ક",
       },
     },
     hero: {
@@ -348,6 +404,31 @@ export const pageContent: Record<Language, LanguageContent> = {
           answer: "વિલંબનું સૌથી સામાન્ય કારણ બેંક ખાતું ડીબીટી માટે આધાર-સીડ ન હોવું છે. પ્રથમ, યુઆઈડીએઆઈ પોર્ટલ પર તમારી સ્થિતિ તપાસો. જો તે સક્રિય હોય, તો તમારી શાળા/કોલેજ અથવા શિષ્યવૃત્તિ પ્રદાતાનો સંપર્ક કરો.",
         },
       ],
+    },
+    grievance: {
+      title: "AI-સંચાલિત ફરિયાદ સહાયક",
+      subtitle: "કોઈ સમસ્યાનો સામનો કરી રહ્યા છો? તમારી સમસ્યાનું વર્ણન કરો, અને અમારું AI તમને ઔપચારિક ફરિયાદ પત્રનો મુસદ્દો તૈયાર કરવામાં મદદ કરશે.",
+      form: {
+        name: "તમારું પૂરું નામ",
+        namePlaceholder: "દા.ત., પ્રિયા એસ.",
+        problem: "તમારી સમસ્યાનું સરળ શબ્દોમાં વર્ણન કરો",
+        problemPlaceholder: "દા.ત., મારી શિષ્યવૃત્તિના પૈસા 3 મહિનાથી મોડા પડ્યા છે...",
+        generate: "ફરિયાદ પત્ર જનરેટ કરો",
+        resultTitle: "તમારો જનરેટ થયેલ ફરિયાદ પત્ર",
+        copy: "ટેક્સ્ટ કૉપિ કરો",
+        copied: "કૉપિ થઈ ગયું!",
+      }
+    },
+    contact: {
+      title: "સંપર્ક અને સંસાધનો",
+      subtitle: "અધિકૃત સંપર્ક માહિતી અને ડાઉનલોડ કરી શકાય તેવા બેંક ફોર્મ્સ શોધો.",
+      helpline: "નેશનલ સ્કોલરશીપ પોર્ટલ હેલ્પલાઇન: 0120 - 6619540",
+      resources: "બેંક આધાર સીડિંગ ફોર્મ્સ",
+      bankForms: [
+        { name: "સ્ટેટ બેંક ઓફ ઈન્ડિયા (SBI)", description: "SBI ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "#" },
+        { name: "પંજાબ નેશનલ બેંક (PNB)", description: "PNB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "#" },
+        { name: "બેંક ઓફ બરોડા (BOB)", description: "BOB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "#" },
+      ]
     },
     chatbot: {
       title: "આધાર દોસ્ત",
