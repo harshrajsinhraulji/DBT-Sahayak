@@ -239,14 +239,14 @@ export const pageContent: Record<Language, LanguageContent> = {
         tip: "Pro Tip: Always check your seeding status on the official UIDAI website before scholarship season!",
       },
       instructions: {
-        printButton: "Print Kit",
+        printButton: "Prepare Kit for Printing",
         visitWebsite: "For more tools and information, visit:",
         mythLabel: "Myth:",
         footer: "This kit is for educational and awareness purposes only. Produced by DBT Sahayak.",
       },
     },
     footer: {
-      tagline: "An initiative by Team Code Technicians for Smart India Hackathon 2023.",
+      tagline: "An initiative by Team Code Technicians for Smart India Hackathon 2025.",
       credits: "Under the guidance of the Ministry of Social Justice & Empowerment.",
     },
     languages: {
@@ -422,7 +422,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         subtitle: "क्या आपने अपना आधार सीडिंग फॉर्म भर दिया है? एक फोटो अपलोड करें, और हमारा एआई बैंक जाने से पहले सामान्य गलतियों के लिए इसकी दोबारा जांच करेगा!",
         cardTitle: "अपना फॉर्म जांचें",
         cardDescription: "अपने पूरे किए गए आधार सीडिंग / एनपीसीआई मैपिंग फॉर्म का एक स्पष्ट फोटो अपलोड करें।",
-        uploadPrompt: "फोटो अपलोड करने के لیے बटन पर क्लिक करें",
+        uploadPrompt: "फोटो अपलोड करने के लिए बटन पर क्लिक करें",
         uploadHint: "5MB तक पीएनजी, जेपीजी, या वेबपी",
         uploadButton: "फोटो अपलोड करें",
         changeButton: "फोटो बदलें",
@@ -493,14 +493,14 @@ export const pageContent: Record<Language, LanguageContent> = {
         tip: "प्रो टिप: छात्रवृत्ति के मौसम से पहले हमेशा आधिकारिक यूआईडीएआई वेबसाइट पर अपनी सीडिंग स्थिति जांचें!",
       },
       instructions: {
-        printButton: "किट प्रिंट करें",
+        printButton: "प्रिंटिंग के लिए किट तैयार करें",
         visitWebsite: "अधिक उपकरणों और जानकारी के लिए, यहां जाएं:",
         mythLabel: "मिथक:",
-        footer: "यह किट केवल शैक्षिक और जागरूकता उद्देश्यों के لیے है। डीबीटी सहायक द्वारा निर्मित।",
+        footer: "यह किट केवल शैक्षिक और जागरूकता उद्देश्यों के लिए है। डीबीटी सहायक द्वारा निर्मित।",
       },
     },
     footer: {
-      tagline: "स्मार्ट इंडिया हैकथॉन 2023 के लिए टीम कोड टेक्नीशियन की एक पहल।",
+      tagline: "स्मार्ट इंडिया हैकथॉन 2025 के लिए टीम कोड टेक्नीशियन की एक पहल।",
       credits: "सामाजिक न्याय और अधिकारिता मंत्रालय के मार्गदर्शन में।",
     },
     languages: {
@@ -747,14 +747,14 @@ export const pageContent: Record<Language, LanguageContent> = {
         tip: "પ્રો ટિપ: શિષ્યવૃત્તિની મોસમ પહેલાં હંમેશા અધિકૃત યુઆઈડીએઆઈ વેબસાઇટ પર તમારી સીડિંગ સ્થિતિ તપાસો!",
       },
       instructions: {
-        printButton: "કિટ છાપો",
+        printButton: "પ્રિન્ટિંગ માટે કિટ તૈયાર કરો",
         visitWebsite: "વધુ સાધનો અને માહિતી માટે, મુલાકાત લો:",
         mythLabel: "માન્યતા:",
         footer: "આ કિટ ફક્ત શૈક્ષણિક અને જાગૃતિના હેતુઓ માટે છે. ડીબીટી સહાયક દ્વારા ઉત્પાદિત.",
       },
     },
     footer: {
-      tagline: "સ્માર્ટ ઇન્ડિયા હેકાથોન 2023 માટે ટીમ કોડ ટેકનિશિયન દ્વારા એક પહેલ.",
+      tagline: "સ્માર્ટ ઇન્ડિયા હેકાથોન 2025 માટે ટીમ કોડ ટેકનિશિયન દ્વારા એક પહેલ.",
       credits: "સામાજિક ન્યાય અને સશક્તિકરણ મંત્રાલયના માર્ગદર્શન હેઠળ.",
     },
     languages: {

@@ -20,11 +20,11 @@ export function Footer() {
             <p>{content.footer.tagline}</p>
             <p>{content.footer.credits}</p>
             <Link href="/print-kit" className="text-primary hover:underline flex items-center justify-center gap-2 mt-2">
-                <Printer className="h-4 w-4" /> Print-a-Kit for Offline Campaigns
+                <Printer className="h-4 w-4" /> Prepare Kit for Printing
             </Link>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="https://t.me/your-telegram-bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="hover:text-primary transition-colors"><Send /></Link>
+            <a href="https://t.me/your-telegram-bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="hover:text-primary transition-colors"><Send /></a>
             <a href="#" aria-label="Twitter" className="hover:text-primary transition-colors"><Twitter /></a>
             <a href="#" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin /></a>
             <a href="#" aria-label="GitHub" className="hover:text-primary transition-colors"><Github /></a>
