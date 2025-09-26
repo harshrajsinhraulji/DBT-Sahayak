@@ -1,4 +1,3 @@
-
 import type { Language, LanguageContent, Myth } from './types';
 
 export const pageContent: Record<Language, LanguageContent> = {
@@ -205,6 +204,47 @@ export const pageContent: Record<Language, LanguageContent> = {
       placeholder: "Ask about DBT, Aadhaar, scholarships...",
       initialMessage: "Hello! I am Aadhaar Dost. How can I help you today with your questions about DBT, Aadhaar seeding, or scholarships?",
     },
+    printKit: {
+      title: "Printable Awareness Kit",
+      subtitle: "Download and print these materials for offline campaigns in schools and communities.",
+      poster: {
+        title: "Is Your Bank Account Ready for Your Scholarship?",
+        subtitle: "Don't let a simple mistake stop your funds! Make sure your account is DBT-Enabled.",
+        point1: "A DBT-Enabled (Aadhaar Seeded) account is MANDATORY for all government scholarships.",
+        point2: "Just 'linking' your Aadhaar is NOT enough. Seeding is a separate, crucial step.",
+        cta: "Check Your Status Today!",
+      },
+      flyer1: {
+        title: "How to Get DBT-Ready",
+        text: "Follow these steps to ensure your bank account is seeded with Aadhaar and ready for Direct Benefit Transfer (DBT).",
+        stepsTitle: "4 Simple Steps:",
+        steps: [
+          "Download the 'Aadhaar Seeding Form' from your bank's website or our portal.",
+          "Fill the form completely. Use our AI Form Checker online to avoid errors.",
+          "Visit your bank branch with the form and a copy of your Aadhaar card.",
+          "Submit the documents and get an acknowledgement slip.",
+        ],
+      },
+      flyer2: {
+        title: "DBT Facts & Myths",
+        text: "Don't fall for common misconceptions about the scholarship process.",
+        myths: {
+          title: "Common Myths:",
+          list: [
+            "My Aadhaar-linked account will automatically get the scholarship.",
+            "I can receive funds in any of my accounts.",
+            "Aadhaar seeding is a one-time process and never needs to be checked.",
+          ],
+        },
+        tip: "Pro Tip: Always check your seeding status on the official UIDAI website before scholarship season!",
+      },
+      instructions: {
+        printButton: "Print Kit",
+        visitWebsite: "For more tools and information, visit:",
+        mythLabel: "Myth:",
+        footer: "This kit is for educational and awareness purposes only. Produced by DBT Sahayak.",
+      },
+    },
     footer: {
       tagline: "An initiative by Team Code Technicians for Smart India Hackathon 2023.",
       credits: "Under the guidance of the Ministry of Social Justice & Empowerment.",
@@ -272,7 +312,7 @@ export const pageContent: Record<Language, LanguageContent> = {
     },
     scholarships: {
       title: "उपलब्ध छात्रवृत्तियाँ",
-      subtitle: "उन छात्रवृत्ति अवसरों का अन्वेषण करें जिनके लिए डीबीटी-सक्षम खाता आवश्यक है।",
+      subtitle: "उन छात्रवृत्ति अवसरों का अन्वेષણ करें जिनके लिए डीबीटी-सक्षम खाता आवश्यक है।",
       scholarships: [
         {
           title: "अनुसूचित जाति के छात्रों के लिए प्री-मैट्रिक छात्रवृत्ति",
@@ -382,7 +422,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         subtitle: "क्या आपने अपना आधार सीडिंग फॉर्म भर दिया है? एक फोटो अपलोड करें, और हमारा एआई बैंक जाने से पहले सामान्य गलतियों के लिए इसकी दोबारा जांच करेगा!",
         cardTitle: "अपना फॉर्म जांचें",
         cardDescription: "अपने पूरे किए गए आधार सीडिंग / एनपीसीआई मैपिंग फॉर्म का एक स्पष्ट फोटो अपलोड करें।",
-        uploadPrompt: "फोटो अपलोड करने के लिए बटन पर क्लिक करें",
+        uploadPrompt: "फोटो अपलोड करने के لیے बटन पर क्लिक करें",
         uploadHint: "5MB तक पीएनजी, जेपीजी, या वेबपी",
         uploadButton: "फोटो अपलोड करें",
         changeButton: "फोटो बदलें",
@@ -410,13 +450,54 @@ export const pageContent: Record<Language, LanguageContent> = {
         { name: "बैंक ऑफ बड़ौदा (बीoबी)", description: "बीओबी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://www.bankofbaroda.in/-/media/project/bob/countrysites/india/personal-banking/accounts/documents/application-for-linking-aadhaar-number.pdf" },
         { name: "एचडीएफसी बैंक", description: "एचडीएफसी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c86c" },
         { name: "आईसीआईसीआई बैंक", description: "आईसीआईसीआई ग्राहकों के लिए आधार सीडिंग निर्देश।", link: "https://www.icicibank.com/personal-banking/insta-banking/internet-banking/link-aadhaar-card" },
-        { name: "ऐक्सिस बैंक", description: "ऐक्सिस बैंक ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
+        { name: "ऐक्सिस बैंक", description: "ऐक्सिस बैंक ग्राहकों के लिए आधार सीडING आवेदन पत्र।", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
       ]
     },
     chatbot: {
       title: "आधार दोस्त",
       placeholder: "डीबीटी, आधार, छात्रवृत्ति के बारे में पूछें...",
       initialMessage: "नमस्ते! मैं आधार दोस्त हूँ। मैं आज डीबीटी, आधार सीडिंग, या छात्रवृत्ति के बारे में आपके सवालों में कैसे मदद कर सकता हूँ?",
+    },
+    printKit: {
+      title: "प्रिंट करने योग्य जागरूकता किट",
+      subtitle: "स्कूलों और समुदायों में ऑफ़लाइन अभियानों के लिए इन सामग्रियों को डाउनलोड और प्रिंट करें।",
+      poster: {
+        title: "क्या आपका बैंक खाता आपकी छात्रवृत्ति के लिए तैयार है?",
+        subtitle: "एक साधारण सी गलती को अपने फंड को रोकने न दें! सुनिश्चित करें कि आपका खाता डीबीटी-सक्षम है।",
+        point1: "सभी सरकारी छात्रवृत्तियों के लिए एक डीबीटी-सक्षम (आधार सीडेड) खाता अनिवार्य है।",
+        point2: "सिर्फ अपने आधार को 'लिंक' करना ही काफी नहीं है। सीडिंग एक अलग, महत्वपूर्ण कदम है।",
+        cta: "आज ही अपनी स्थिति जांचें!",
+      },
+      flyer1: {
+        title: "डीबीटी-तैयार कैसे बनें",
+        text: "यह सुनिश्चित करने के लिए इन चरणों का पालन करें कि आपका बैंक खाता आधार के साथ सीड किया गया है और प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) के लिए तैयार है।",
+        stepsTitle: "4 सरल चरण:",
+        steps: [
+          "अपने बैंक की वेबसाइट या हमारे पोर्टल से 'आधार सीडिंग फॉर्म' डाउनलोड करें।",
+          "फॉर्म को पूरी तरह से भरें। त्रुटियों से बचने के लिए हमारे एआई फॉर्म चेकर का ऑनलाइन उपयोग करें।",
+          "फॉर्म और अपने आधार कार्ड की एक प्रति के साथ अपनी बैंक शाखा में जाएँ।",
+          "दस्तावेज जमा करें और एक पावती पर्ची प्राप्त करें।",
+        ],
+      },
+      flyer2: {
+        title: "डीबीटी तथ्य और मिथक",
+        text: "छात्रवृत्ति प्रक्रिया के बारे में आम भ्रांतियों में न पड़ें।",
+        myths: {
+          title: "आम मिथक:",
+          list: [
+            "मेरा आधार-लिंक्ड खाता स्वतः ही छात्रवृत्ति प्राप्त कर लेगा।",
+            "मैं अपने किसी भी खाते में फंड प्राप्त कर सकता हूँ।",
+            "आधार सीडिंग एक बार की प्रक्रिया है और इसे कभी जांचने की आवश्यकता नहीं है।",
+          ],
+        },
+        tip: "प्रो टिप: छात्रवृत्ति के मौसम से पहले हमेशा आधिकारिक यूआईडीएआई वेबसाइट पर अपनी सीडिंग स्थिति जांचें!",
+      },
+      instructions: {
+        printButton: "किट प्रिंट करें",
+        visitWebsite: "अधिक उपकरणों और जानकारी के लिए, यहां जाएं:",
+        mythLabel: "मिथक:",
+        footer: "यह किट केवल शैक्षिक और जागरूकता उद्देश्यों के لیے है। डीबीटी सहायक द्वारा निर्मित।",
+      },
     },
     footer: {
       tagline: "स्मार्ट इंडिया हैकथॉन 2023 के लिए टीम कोड टेक्नीशियन की एक पहल।",
@@ -630,6 +711,47 @@ export const pageContent: Record<Language, LanguageContent> = {
       title: "આધાર દોસ્ત",
       placeholder: "ડીબીટી, આધાર, શિષ્યવૃત્તિ વિશે પૂછો...",
       initialMessage: "નમસ્તે! હું આધાર દોસ્ત છું. હું આજે ડીબીટી, આધાર સીડિંગ, અથવા શિષ્યવૃત્તિ વિશેના તમારા પ્રશ્નોમાં કેવી રીતે મદદ કરી શકું?",
+    },
+    printKit: {
+      title: "છાપવા યોગ્ય જાગૃતિ કિટ",
+      subtitle: "શાળાઓ અને સમુદાયોમાં ઑફલાઇન ઝુંબેશ માટે આ સામગ્રી ડાઉનલોડ અને છાપો.",
+      poster: {
+        title: "શું તમારું બેંક ખાતું તમારી શિષ્યવૃત્તિ માટે તૈયાર છે?",
+        subtitle: "એક સામાન્ય ભૂલને તમારા ભંડોળને રોકવા ન દો! ખાતરી કરો કે તમારું ખાતું ડીબીટી-સક્ષમ છે.",
+        point1: "તમામ સરકારી શિષ્યવૃત્તિઓ માટે ડીબીટી-સક્ષમ (આધાર સીડેડ) ખાતું ફરજિયાત છે.",
+        point2: "ફક્ત તમારા આધારને 'લિંક' કરવું પૂરતું નથી. સીડિંગ એ એક અલગ, નિર્ણાયક પગલું છે.",
+        cta: "આજે જ તમારી સ્થિતિ તપાસો!",
+      },
+      flyer1: {
+        title: "ડીબીટી-તૈયાર કેવી રીતે થવું",
+        text: "તમારું બેંક ખાતું આધાર સાથે સીડ થયેલ છે અને ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર (ડીબીટી) માટે તૈયાર છે તેની ખાતરી કરવા માટે આ પગલાં અનુસરો.",
+        stepsTitle: "૪ સરળ પગલાં:",
+        steps: [
+          "તમારી બેંકની વેબસાઇટ અથવા અમારા પોર્ટલ પરથી 'આધાર સીડિંગ ફોર્મ' ડાઉનલોડ કરો.",
+          "ફોર્મ સંપૂર્ણપણે ભરો. ભૂલો ટાળવા માટે અમારા એઆઈ ફોર્મ ચેકરનો ઑનલાઇન ઉપયોગ કરો.",
+          "ફોર્મ અને તમારા આધાર કાર્ડની નકલ સાથે તમારી બેંક શાખાની મુલાકાત લો.",
+          "દસ્તાવેજો જમા કરો અને સ્વીકૃતિ સ્લિપ મેળવો.",
+        ],
+      },
+      flyer2: {
+        title: "ડીબીટી હકીકતો અને માન્યતાઓ",
+        text: "શિષ્યવૃત્તિ પ્રક્રિયા વિશેની સામાન્ય ગેરસમજોમાં પડશો નહીં.",
+        myths: {
+          title: "સામાન્ય માન્યતાઓ:",
+          list: [
+            "મારું આધાર-લિંક્ડ ખાતું આપમેળે શિષ્યવૃત્તિ મેળવશે.",
+            "હું મારા કોઈપણ ખાતામાં ભંડોળ મેળવી શકું છું.",
+            "આધાર સીડિંગ એક-વખતની પ્રક્રિયા છે અને તેને ક્યારેય તપાસવાની જરૂર નથી.",
+          ],
+        },
+        tip: "પ્રો ટિપ: શિષ્યવૃત્તિની મોસમ પહેલાં હંમેશા અધિકૃત યુઆઈડીએઆઈ વેબસાઇટ પર તમારી સીડિંગ સ્થિતિ તપાસો!",
+      },
+      instructions: {
+        printButton: "કિટ છાપો",
+        visitWebsite: "વધુ સાધનો અને માહિતી માટે, મુલાકાત લો:",
+        mythLabel: "માન્યતા:",
+        footer: "આ કિટ ફક્ત શૈક્ષણિક અને જાગૃતિના હેતુઓ માટે છે. ડીબીટી સહાયક દ્વારા ઉત્પાદિત.",
+      },
     },
     footer: {
       tagline: "સ્માર્ટ ઇન્ડિયા હેકાથોન 2023 માટે ટીમ કોડ ટેકનિશિયન દ્વારા એક પહેલ.",

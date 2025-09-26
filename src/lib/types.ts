@@ -41,7 +41,7 @@ export type LanguageContent = {
   hero: {
     tagline: string;
     title: string;
-    subtitle: string;
+subtitle: string;
     cta: string;
   };
   education: {
@@ -139,6 +139,38 @@ export type LanguageContent = {
     title: string;
     placeholder: string;
     initialMessage: string;
+  };
+  printKit: {
+    title: string;
+    subtitle: string;
+    poster: {
+      title: string;
+      subtitle: string;
+      point1: string;
+      point2: string;
+      cta: string;
+    };
+    flyer1: {
+      title: string;
+      text: string;
+      stepsTitle: string;
+      steps: string[];
+    };
+    flyer2: {
+      title: string;
+      text: string;
+      myths: {
+        title: string;
+        list: string[];
+      };
+      tip: string;
+    };
+    instructions: {
+      printButton: string;
+      visitWebsite: string;
+      mythLabel: string;
+      footer: string;
+    };
   };
   footer: {
     tagline: string;

@@ -1,8 +1,9 @@
+
 "use client"
 
 import { useLanguage } from "@/hooks/use-language";
 import { Logo } from "@/components/logo";
-import { Github, Linkedin, Twitter, Send } from "lucide-react";
+import { Github, Linkedin, Twitter, Send, Printer } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -18,6 +19,9 @@ export function Footer() {
           <div className="text-center">
             <p>{content.footer.tagline}</p>
             <p>{content.footer.credits}</p>
+            <Link href="/print-kit" className="text-primary hover:underline flex items-center justify-center gap-2 mt-2">
+                <Printer className="h-4 w-4" /> Print-a-Kit for Offline Campaigns
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <Link href="https://t.me/your-telegram-bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="hover:text-primary transition-colors"><Send /></Link>
