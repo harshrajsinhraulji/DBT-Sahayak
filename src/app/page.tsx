@@ -1,6 +1,7 @@
 import { Chatbot } from "@/components/chatbot";
 import { AwarenessSection } from "@/components/sections/awareness";
 import { ContactSection } from "@/components/sections/contact";
+import { DigitalDossier } from "@/components/sections/digital-dossier";
 import { EducationSection } from "@/components/sections/education";
 import { FaqSection } from "@/components/sections/faq";
 import { FormChecker } from "@/components/sections/form-checker";
@@ -20,6 +21,7 @@ export default function Home() {
       <StatusCheckerSection />
       <GrievanceHelper />
       <FormChecker />
+      <DigitalDossier />
       <ScholarshipSection />
       <MythBustersSection />
       <AwarenessSection />
