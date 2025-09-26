@@ -34,7 +34,7 @@ export async function formChecker(input: FormCheckerInput): Promise<FormCheckerO
 
 const prompt = ai.definePrompt({
   name: 'formCheckerPrompt',
-  model: 'googleai/gemini-1.5-flash',
+  model: 'googleai/gemini-1.0-pro',
   input: {schema: FormCheckerInputSchema},
   output: {schema: FormCheckerOutputSchema},
   prompt: `You are an expert assistant for verifying official bank forms, specifically the "Aadhaar Seeding and NPCI Mapping Application Form". Your task is to analyze an image of a user's filled-out form and identify common mistakes before they submit it to the bank.
@@ -64,13 +64,7 @@ const formCheckerFlow = ai.defineFlow(
     outputSchema: FormCheckerOutputSchema,
   },
   async input => {
-    const {output} = await ai.generate({
-        model: 'googleai/gemini-1.5-flash',
-        prompt: prompt.compile({input}),
-        output: {
-            schema: prompt.config.output!.schema!,
-        },
-    });
+    const {output} = await prompt(input);
     return output!;
   }
 );
