@@ -1,3 +1,4 @@
+
 // This file is machine-generated - edit with care!
 
 "use client";
@@ -61,10 +62,10 @@ export default function SignupPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted/50 py-12 px-4">
-      <div className="absolute top-4 left-4">
-        <Button asChild variant="outline">
+      <div className="absolute top-8 left-8">
+        <Button asChild variant="outline" size="lg">
           <Link href="/">
-            <ArrowLeft className="mr-2 h-4 w-4" />
+            <ArrowLeft className="mr-2 h-5 w-5" />
             Back to Home
           </Link>
         </Button>

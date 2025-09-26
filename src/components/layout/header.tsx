@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -83,7 +84,7 @@ export function Header() {
             {content.header.title}
           </span>
         </Link>
-        <nav className="hidden items-center gap-4 text-sm md:flex">
+        <nav className="hidden items-center gap-4 text-sm lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -129,7 +130,7 @@ export function Header() {
             </Button>
           )}
           <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild className="md:hidden">
+            <SheetTrigger asChild className="lg:hidden">
               <Button variant="outline" size="icon">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Open menu</span>

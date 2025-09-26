@@ -1,3 +1,4 @@
+
 import type { Language, LanguageContent, Myth } from './types';
 
 export const pageContent: Record<Language, LanguageContent> = {
@@ -162,9 +163,9 @@ export const pageContent: Record<Language, LanguageContent> = {
       helpline: "National Scholarship Portal Helpline: 0120 - 6619540",
       resources: "Bank Aadhaar Seeding Forms",
       bankForms: [
-        { name: "State Bank of India (SBI)", description: "Aadhaar seeding application form for SBI customers.", link: "#" },
-        { name: "Punjab National Bank (PNB)", description: "Aadhaar seeding application form for PNB customers.", link: "#" },
-        { name: "Bank of Baroda (BOB)", description: "Aadhaar seeding application form for BOB customers.", link: "#" },
+        { name: "State Bank of India (SBI)", description: "Aadhaar seeding application form for SBI customers.", link: "https://sbi.co.in/documents/16012/25194947/Aadhaar+Seeding+Process+for+Customers+of+Other+Banks+having+SBI+account.pdf" },
+        { name: "Punjab National Bank (PNB)", description: "Aadhaar seeding application form for PNB customers.", link: "https://www.pnbindia.in/downloadprocess.aspx?fid=3532E743-4C98-43B0-A227-22F091054C35" },
+        { name: "Bank of Baroda (BOB)", description: "Aadhaar seeding application form for BOB customers.", link: "https://www.bankofbaroda.in/-/media/project/bob/countrysites/india/personal-banking/accounts/documents/application-for-linking-aadhaar-number.pdf" },
       ]
     },
     chatbot: {
@@ -343,9 +344,9 @@ export const pageContent: Record<Language, LanguageContent> = {
       helpline: "राष्ट्रीय छात्रवृत्ति पोर्टल हेल्पलाइन: 0120 - 6619540",
       resources: "बैंक आधार सीडिंग फॉर्म",
       bankForms: [
-        { name: "भारतीय स्टेट बैंक (एसबीआई)", description: "एसबीआई ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "#" },
-        { name: "पंजाब नेशनल बैंक (पीएनબી)", description: "पीएनबी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "#" },
-        { name: "बैंक ऑफ बड़ौदा (बीoबी)", description: "बीओबी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "#" },
+        { name: "भारतीय स्टेट बैंक (एसबीआई)", description: "एसबीआई ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://sbi.co.in/documents/16012/25194947/Aadhaar+Seeding+Process+for+Customers+of+Other+Banks+having+SBI+account.pdf" },
+        { name: "पंजाब नेशनल बैंक (पीएनબી)", description: "पीएनबी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://www.pnbindia.in/downloadprocess.aspx?fid=3532E743-4C98-43B0-A227-22F091054C35" },
+        { name: "बैंक ऑफ बड़ौदा (बीoबी)", description: "बीओबी ग्राहकों के लिए आधार सीडिंग आवेदन पत्र।", link: "https://www.bankofbaroda.in/-/media/project/bob/countrysites/india/personal-banking/accounts/documents/application-for-linking-aadhaar-number.pdf" },
       ]
     },
     chatbot: {
@@ -524,9 +525,9 @@ export const pageContent: Record<Language, LanguageContent> = {
       helpline: "નેશનલ સ્કોલરશીપ પોર્ટલ હેલ્પલાઇન: 0120 - 6619540",
       resources: "બેંક આધાર સીડિંગ ફોર્મ્સ",
       bankForms: [
-        { name: "સ્ટેટ બેંક ઓફ ઈન્ડિયા (SBI)", description: "SBI ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "#" },
-        { name: "પંજાબ નેશનલ બેંક (PNB)", description: "PNB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "#" },
-        { name: "બેંક ઓફ બરોડા (BOB)", description: "BOB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "#" },
+        { name: "સ્ટેટ બેંક ઓફ ઈન્ડિયા (SBI)", description: "SBI ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://sbi.co.in/documents/16012/25194947/Aadhaar+Seeding+Process+for+Customers+of+Other+Banks+having+SBI+account.pdf" },
+        { name: "પંજાબ નેશનલ બેંક (PNB)", description: "PNB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.pnbindia.in/downloadprocess.aspx?fid=3532E743-4C98-43B0-A227-22F091054C35" },
+        { name: "બેંક ઓફ બરોડા (BOB)", description: "BOB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.bankofbaroda.in/-/media/project/bob/countrysites/india/personal-banking/accounts/documents/application-for-linking-aadhaar-number.pdf" },
       ]
     },
     chatbot: {
