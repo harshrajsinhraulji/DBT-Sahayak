@@ -11,7 +11,6 @@ export const pageContent: Record<Language, LanguageContent> = {
         scholarships: "Scholarships",
         myths: "Myth Busters",
         faq: "FAQ",
-        grievance: "Grievance",
         contact: "Contact",
       },
       login: "Login/Register"
@@ -150,41 +149,6 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
       ],
     },
-    grievance: {
-      title: "AI-Powered Grievance Helper",
-      subtitle: "Facing an issue? Describe your problem, and our AI will help you draft a formal grievance letter.",
-      form: {
-        name: "Your Full Name",
-        namePlaceholder: "e.g., Priya S.",
-        problem: "Describe your problem in simple words",
-        problemPlaceholder: "e.g., My scholarship money has been delayed for 3 months...",
-        generate: "Generate Grievance Letter",
-        resultTitle: "Your Generated Grievance Letter",
-        copy: "Copy Text",
-        copied: "Copied!",
-      }
-    },
-    formChecker: {
-        subtitle: "Filled out your Aadhaar seeding form? Upload a photo, and our AI will double-check it for common mistakes before you visit the bank!",
-        cardTitle: "Check Your Form",
-        cardDescription: "Upload a clear photo of your completed Aadhaar Seeding / NPCI Mapping form.",
-        uploadPrompt: "Click button to upload a photo",
-        uploadHint: "PNG, JPG, or WEBP up to 5MB",
-        uploadButton: "Upload Photo",
-        changeButton: "Change Photo",
-        checkButton: "Check for Errors",
-        analyzingButton: "Analyzing...",
-        analyzingText: "Our AI is analyzing your form. This may take a moment...",
-        resultTitle: "AI Analysis Complete",
-        error: {
-            title: "Analysis Failed",
-            suggestion: "Please review these points on your form before submitting it to the bank."
-        },
-        success: {
-            title: "Looking Good!",
-            subtitle: "Our AI analysis did not find any common errors. You look ready to visit the bank!"
-        }
-    },
     contact: {
       title: "Contact & Resources",
       subtitle: "Find official contact information and downloadable bank forms.",
@@ -198,11 +162,6 @@ export const pageContent: Record<Language, LanguageContent> = {
         { name: "ICICI Bank", description: "Aadhaar seeding instructions for ICICI customers.", link: "https://www.icicibank.com/personal-banking/insta-banking/internet-banking/link-aadhaar-card" },
         { name: "Axis Bank", description: "Aadhaar seeding application form for Axis customers.", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
       ]
-    },
-    chatbot: {
-      title: "Aadhaar Dost",
-      placeholder: "Ask about DBT, Aadhaar, scholarships...",
-      initialMessage: "Hello! I am Aadhaar Dost. How can I help you today with your questions about DBT, Aadhaar seeding, or scholarships?",
     },
     printKit: {
       title: "Printable Awareness Kit",
@@ -265,7 +224,6 @@ export const pageContent: Record<Language, LanguageContent> = {
         scholarships: "छात्रवृत्तियाँ",
         myths: "मिथक तोड़ें",
         faq: "अक्सर पूछे जाने वाले प्रश्न",
-        grievance: "शिकायत",
         contact: "संपर्क",
       },
       login: "लॉगિન/રજીસ્ટર કરો"
@@ -365,7 +323,7 @@ export const pageContent: Record<Language, LanguageContent> = {
           story: "\"मेरे डीबीटी-सक्षम खाते के लिए धन्यवाद, मुझे अपनी कॉलेज की फीस का भुगतान करने के लिए समय पर मेरी छात्रवृत्ति मिली। प्रक्रिया बहुत आसान थी!\"",
         },
         {
-          name: "रोहन के.",
+          name: "रोહન के.",
           story: "\"मैं सीडिंग प्रक्रिया के बारे में उलझन में था, लेकिन डीबीटी सहायक की गाइड ने मुझे इसे पूरा करने में मदद की। मुझे बिना किसी समस्या के मेरा फंड मिल गया।\"",
         },
         {
@@ -404,41 +362,6 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
       ],
     },
-    grievance: {
-      title: "एआई-संचालित शिकायत सहायक",
-      subtitle: "कोई समस्या आ रही है? अपनी समस्या का वर्णन करें, और हमारा एआई आपको एक औपचारिक शिकायत पत्र का मसौदा तैयार करने में मदद करेगा।",
-      form: {
-        name: "आपका पूरा नाम",
-        namePlaceholder: "उदा., प्रिया एस.",
-        problem: "अपनी समस्या का सरल शब्दों में वर्णन करें",
-        problemPlaceholder: "उदा., मेरी छात्रवृत्ति का पैसा 3 महीने से रुका हुआ है...",
-        generate: "शिकायत पत्र उत्पन्न करें",
-        resultTitle: "आपका उत्पन्न शिकायत पत्र",
-        copy: "टेक्स्ट कॉपी करें",
-        copied: "कॉपी किया गया!",
-      }
-    },
-    formChecker: {
-        subtitle: "क्या आपने अपना आधार सीडिंग फॉर्म भर दिया है? एक फोटो अपलोड करें, और हमारा एआई बैंक जाने से पहले सामान्य गलतियों के लिए इसकी दोबारा जांच करेगा!",
-        cardTitle: "अपना फॉर्म जांचें",
-        cardDescription: "अपने पूरे किए गए आधार सीडिंग / एनपीसीआई मैपिंग फॉर्म का एक स्पष्ट फोटो अपलोड करें।",
-        uploadPrompt: "फोटो अपलोड करने के लिए बटन पर क्लिक करें",
-        uploadHint: "5MB तक पीएनजी, जेपीजी, या वेबपी",
-        uploadButton: "फोटो अपलोड करें",
-        changeButton: "फोटो बदलें",
-        checkButton: "त्रुटियों के लिए जांचें",
-        analyzingButton: "विश्लेषण हो रहा है...",
-        analyzingText: "हमारा एआई आपके फॉर्म का विश्लेषण कर रहा है। इसमें कुछ समय लग सकता है...",
-        resultTitle: "एआई विश्लेषण पूर्ण",
-        error: {
-            title: "विश्लेषण विफल",
-            suggestion: "कृपया बैंक में जमा करने से पहले अपने फॉर्म पर इन बिंदुओं की समीक्षा करें।"
-        },
-        success: {
-            title: "बहुत बढ़िया!",
-            subtitle: "हमारे एआई विश्लेषण में कोई सामान्य त्रुटि नहीं मिली। आप बैंक जाने के लिए तैयार दिखते हैं!"
-        }
-    },
     contact: {
       title: "संपर्क और संसाधन",
       subtitle: "आधिकारिक संपर्क जानकारी और डाउनलोड करने योग्य बैंक फॉर्म प्राप्त करें।",
@@ -452,11 +375,6 @@ export const pageContent: Record<Language, LanguageContent> = {
         { name: "आईसीआईसीआई बैंक", description: "आईसीआईसीआई ग्राहकों के लिए आधार सीडिंग निर्देश।", link: "https://www.icicibank.com/personal-banking/insta-banking/internet-banking/link-aadhaar-card" },
         { name: "ऐक्सिस बैंक", description: "ऐक्सिस बैंक ग्राहकों के लिए आधार सीडING आवेदन पत्र।", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
       ]
-    },
-    chatbot: {
-      title: "आधार दोस्त",
-      placeholder: "डीबीटी, आधार, छात्रवृत्ति के बारे में पूछें...",
-      initialMessage: "नमस्ते! मैं आधार दोस्त हूँ। मैं आज डीबीटी, आधार सीडिंग, या छात्रवृत्ति के बारे में आपके सवालों में कैसे मदद कर सकता हूँ?",
     },
     printKit: {
       title: "प्रिंट करने योग्य जागरूकता किट",
@@ -519,7 +437,6 @@ export const pageContent: Record<Language, LanguageContent> = {
         scholarships: "શિષ્યવૃત્તિ",
         myths: "માન્યતા તોડો",
         faq: "વારંવાર પૂછાતા પ્રશ્નો",
-        grievance: "ફરિયાદ",
         contact: "સંપર્ક",
       },
       login: "લોગિન/રજીસ્ટર કરો"
@@ -658,41 +575,6 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
       ],
     },
-    grievance: {
-      title: "AI-સંચાલિત ફરિયાદ સહાયક",
-      subtitle: "કોઈ સમસ્યાનો સામનો કરી રહ્યા છો? તમારી સમસ્યાનું વર્ણન કરો, અને અમારું AI તમને ઔપચારિક ફરિયાદ પત્રનો મુસદ્દો તૈયાર કરવામાં મદદ કરશે.",
-      form: {
-        name: "તમારું પૂરું નામ",
-        namePlaceholder: "દા.ત., પ્રિયા એસ.",
-        problem: "તમારી સમસ્યાનું સરળ શબ્દોમાં વર્ણન કરો",
-        problemPlaceholder: "દા.ત., મારી શિષ્યવૃત્તિના પૈસા 3 મહિનાથી મોડા પડ્યા છે...",
-        generate: "ફરિયાદ પત્ર જનરેટ કરો",
-        resultTitle: "તમારો જનરેટ થયેલ ફરિયાદ પત્ર",
-        copy: "ટેક્સ્ટ કૉપિ કરો",
-        copied: "કૉપિ થઈ ગયું!",
-      }
-    },
-    formChecker: {
-        subtitle: "તમારું આધાર સીડિંગ ફોર્મ ભર્યું છે? ફોટો અપલોડ કરો, અને અમારું AI તમે બેંક પર જાઓ તે પહેલાં સામાન્ય ભૂલો માટે તેની બે વાર તપાસ કરશે!",
-        cardTitle: "તમારું ફોર્મ તપાસો",
-        cardDescription: "તમારા પૂર્ણ થયેલ આધાર સીડિંગ / NPCI મેપિંગ ફોર્મનો સ્પષ્ટ ફોટો અપલોડ કરો.",
-        uploadPrompt: "ફોટો અપલોડ કરવા માટે બટન પર ક્લિક કરો",
-        uploadHint: "5MB સુધી PNG, JPG, અથવા WEBP",
-        uploadButton: "ફોટો અપલોડ કરો",
-        changeButton: "ફોટો બદલો",
-        checkButton: "ભૂલો માટે તપાસો",
-        analyzingButton: "વિશ્લેષણ કરી રહ્યું છે...",
-        analyzingText: "અમારું AI તમારા ફોર્મનું વિશ્લેષણ કરી રહ્યું છે. આમાં થોડો સમય લાગી શકે છે...",
-        resultTitle: "AI વિશ્લેષણ પૂર્ણ",
-        error: {
-            title: "વિશ્લેષણ નિષ્ફળ",
-            suggestion: "કૃપા કરીને બેંકમાં સબમિટ કરતા પહેલા તમારા ફોર્મ પર આ મુદ્દાઓની સમીક્ષા કરો."
-        },
-        success: {
-            title: "ખૂબ સરસ!",
-            subtitle: "અમારા AI વિશ્લેષણમાં કોઈ સામાન્ય ભૂલો મળી નથી. તમે બેંકની મુલાકાત લેવા માટે તૈયાર લાગો છો!"
-        }
-    },
     contact: {
       title: "સંપર્ક અને સંસાધનો",
       subtitle: "અધિકૃત સંપર્ક માહિતી અને ડાઉનલોડ કરી શકાય તેવા બેંક ફોર્મ્સ શોધો.",
@@ -706,11 +588,6 @@ export const pageContent: Record<Language, LanguageContent> = {
         { name: "ICICI બેંક", description: "ICICI ગ્રાહકો માટે આધાર સીડિંગ સૂચનાઓ.", link: "https://www.icicibank.com/personal-banking/insta-banking/internet-banking/link-aadhaar-card" },
         { name: "Axis બેંક", description: "Axis ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
       ]
-    },
-    chatbot: {
-      title: "આધાર દોસ્ત",
-      placeholder: "ડીબીટી, આધાર, શિષ્યવૃત્તિ વિશે પૂછો...",
-      initialMessage: "નમસ્તે! હું આધાર દોસ્ત છું. હું આજે ડીબીટી, આધાર સીડિંગ, અથવા શિષ્યવૃત્તિ વિશેના તમારા પ્રશ્નોમાં કેવી રીતે મદદ કરી શકું?",
     },
     printKit: {
       title: "છાપવા યોગ્ય જાગૃતિ કિટ",

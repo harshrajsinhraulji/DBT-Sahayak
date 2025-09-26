@@ -38,7 +38,6 @@ export function Header() {
     { href: "#education", label: content.header.nav.education },
     { href: "#videos", label: content.header.nav.videos },
     { href: "#status", label: content.header.nav.status },
-    { href: "#grievance", label: content.header.nav.grievance },
     { href: "#scholarships", label: content.header.nav.scholarships },
     { href: "#myths", label: content.header.nav.myths },
     { href: "#faq", label: content.header.nav.faq },

@@ -37,7 +37,6 @@ export type LanguageContent = {
       scholarships: string;
       myths: string;
       faq: string;
-      grievance: string;
       contact: string;
     };
     login: string;
@@ -97,41 +96,6 @@ subtitle: string;
     subtitle: string;
     faqs: FAQ[];
   };
-  grievance: {
-    title: string;
-    subtitle: string;
-    form: {
-      name: string;
-      namePlaceholder: string;
-      problem: string;
-      problemPlaceholder: string;
-      generate: string;
-      resultTitle: string;
-      copy: string;
-      copied: string;
-    }
-  },
-  formChecker: {
-    subtitle: string;
-    cardTitle: string;
-    cardDescription: string;
-    uploadPrompt: string;
-    uploadHint: string;
-    uploadButton: string;
-    changeButton: string;
-    checkButton: string;
-    analyzingButton: string;
-    analyzingText: string;
-    resultTitle: string;
-    error: {
-        title: string;
-        suggestion: string;
-    };
-    success: {
-        title: string;
-        subtitle: string;
-    };
-  }
   contact: {
     title: string;
     subtitle: string;
@@ -139,11 +103,6 @@ subtitle: string;
     resources: string;
     bankForms: Resource[];
   },
-  chatbot: {
-    title: string;
-    placeholder: string;
-    initialMessage: string;
-  };
   printKit: {
     title: string;
     subtitle: string;
