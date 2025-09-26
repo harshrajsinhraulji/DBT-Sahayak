@@ -19,7 +19,7 @@ export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [isPending, startTransition] = useTransition();
-  const { content } = useLanguage();
+  const { content, language } = useLanguage();
   
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -55,7 +55,7 @@ export function Chatbot() {
 
     startTransition(async () => {
       try {
-        const result = await aadhaarDostChatbot({ query });
+        const result = await aadhaarDostChatbot({ query, language });
         setMessages((prev) => [...prev, { role: 'assistant', content: result.response }]);
       } catch (error) {
         console.error("Chatbot error:", error);

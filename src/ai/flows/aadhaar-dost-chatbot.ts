@@ -1,5 +1,3 @@
-// This file is machine-generated - edit with care!
-
 'use server';
 
 /**
@@ -13,9 +11,12 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 import { pageContent } from '@/lib/data';
+import { Language } from '@/lib/types';
+
 
 const AadhaarDostChatbotInputSchema = z.object({
   query: z.string().describe('The user query related to DBT, Aadhaar seeding, or scholarships.'),
+  language: z.nativeEnum(Language).describe('The language the user is speaking in.')
 });
 export type AadhaarDostChatbotInput = z.infer<typeof AadhaarDostChatbotInputSchema>;
 
@@ -51,6 +52,7 @@ const getBankInfo = ai.defineTool({
         link: z.string(),
     }).nullable(),
 }, async ({ bankName }) => {
+    // This tool searches in English content as bank names are universal
     const banks = pageContent.en.contact.bankForms;
     const lowerCaseBankName = bankName.toLowerCase();
     
@@ -72,6 +74,8 @@ const prompt = ai.definePrompt({
   output: {schema: AadhaarDostChatbotOutputSchema},
   tools: [askClarifyingQuestion, getBankInfo],
   prompt: `You are Aadhaar Dost, an AI chatbot that answers user questions related to Direct Benefit Transfer (DBT), Aadhaar seeding, and scholarships.
+
+  VERY IMPORTANT: You MUST respond in the same language the user is asking in. The user's language is {{language}}.
 
   If a user's question is unclear or ambiguous, use the askClarifyingQuestion tool to ask for more information. Do not make assumptions.
 

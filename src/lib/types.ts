@@ -21,7 +21,11 @@ export type Myth = {
   fact: string;
 }
 
-export type Language = 'en' | 'hi' | 'gu';
+export const enum Language {
+  en = 'en',
+  hi = 'hi',
+  gu = 'gu'
+};
 
 export type LanguageContent = {
   header: {
