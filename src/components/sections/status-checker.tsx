@@ -39,21 +39,29 @@ export function StatusCheckerSection() {
   const [showGuidance, setShowGuidance] = useState(false);
 
   const handleCheckStatusClick = () => {
-    if (user) {
-      window.open("https://myaadhaar.uidai.gov.in/bank-seeding-status", "_blank");
-      setShowStatusPrompt(true);
-    } else {
-      setShowLoginPrompt(true);
-    }
+    // Directly open the portal for all users
+    window.open("https://myaadhaar.uidai.gov.in/bank-seeding-status", "_blank");
+    // Then show the prompt to ask for their status
+    setShowStatusPrompt(true);
   };
 
   const handleStatusResponse = (isSeeded: boolean) => {
     setShowStatusPrompt(false);
     if (!isSeeded) {
-      setShowGuidance(true);
+      if (user) {
+        setShowGuidance(true);
+        // Here you would typically save the user's status to your database
+      } else {
+        // If not logged in, prompt them to log in to get guidance
+        setShowLoginPrompt(true);
+      }
     }
-    // Here you would typically save the user's status to your database
   };
+
+  const handleLoginForGuidance = () => {
+    setShowLoginPrompt(false);
+    router.push("/login");
+  }
 
   return (
     <>
@@ -101,18 +109,18 @@ export function StatusCheckerSection() {
         </div>
       </section>
 
-      {/* Login Prompt Dialog */}
+      {/* Login Prompt Dialog for Guidance */}
       <AlertDialog open={showLoginPrompt} onOpenChange={setShowLoginPrompt}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Authentication Required</AlertDialogTitle>
+            <AlertDialogTitle>Login for Personalized Guidance</AlertDialogTitle>
             <AlertDialogDescription>
-              Please log in or create an account to check your status and get personalized guidance.
+              It looks like your account isn't DBT-enabled. Please log in or create an account to get personalized steps on how to fix it.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={() => router.push("/login")}>
+            <AlertDialogAction onClick={handleLoginForGuidance}>
               Login / Sign Up
             </AlertDialogAction>
           </AlertDialogFooter>
@@ -125,7 +133,7 @@ export function StatusCheckerSection() {
           <AlertDialogHeader>
             <AlertDialogTitle>Is Your Account DBT Enabled?</AlertDialogTitle>
             <AlertDialogDescription>
-              After checking the UIDAI portal, please confirm if your bank account is active and seeded for DBT.
+              After checking the UIDAI portal, please confirm if your bank account is active and seeded for DBT. This helps us provide better guidance.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
