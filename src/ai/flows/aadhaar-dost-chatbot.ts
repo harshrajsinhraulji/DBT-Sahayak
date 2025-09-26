@@ -35,7 +35,7 @@ const askClarifyingQuestion = ai.defineTool({
   }),
   outputSchema: z.string().describe('The clarifying question that was asked to the user'),
 }, async (input) => {
-  return input.question; // Just return the question, the flow will handle sending it to the user.
+  return input.question;
 });
 
 const prompt = ai.definePrompt({
@@ -45,7 +45,7 @@ const prompt = ai.definePrompt({
   tools: [askClarifyingQuestion],
   prompt: `You are Aadhaar Dost, an AI chatbot that answers user questions related to Direct Benefit Transfer (DBT), Aadhaar seeding, and scholarships.
 
-  If a user question is unclear or ambiguous, use the askClarifyingQuestion tool to ask for more information. Do not make assumptions.
+  If a user's question is unclear or ambiguous, use the askClarifyingQuestion tool to ask for more information. Do not make assumptions.
 
   Answer the following question:
 
