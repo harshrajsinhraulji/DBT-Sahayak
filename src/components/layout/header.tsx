@@ -16,10 +16,15 @@ import {
 import { LanguageSwitcher } from "../language-switcher";
 import { useLanguage } from "@/hooks/use-language";
 import { Logo } from "../logo";
+import { useRouter } from "next/navigation";
 
 export function Header() {
   const { content } = useLanguage();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter();
+
+  // Mock authentication status
+  const isAuthenticated = false;
 
   const navItems = [
     { href: "#education", label: content.header.nav.education },
@@ -37,11 +42,20 @@ export function Header() {
     const href = e.currentTarget.href;
     const targetId = href.replace(/.*\#/, "");
     const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
+
+    if (elem) {
+        elem?.scrollIntoView({
+            behavior: "smooth",
+        });
+    } else {
+        router.push(`/${href.slice(href.lastIndexOf('#'))}`);
+    }
     setMobileMenuOpen(false);
   };
+  
+  const handleLoginClick = () => {
+    router.push('/login');
+  }
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -66,9 +80,9 @@ export function Header() {
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
           <LanguageSwitcher />
-          <Button>
+          <Button onClick={handleLoginClick}>
             <User className="mr-2 h-4 w-4" />
-            {content.header.login}
+            {isAuthenticated ? 'Dashboard' : content.header.login}
           </Button>
           <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
