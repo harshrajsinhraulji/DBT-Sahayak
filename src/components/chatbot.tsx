@@ -22,16 +22,11 @@ export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const { language } = useLanguage();
-  const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const [isCompleted, setIsCompleted] = useState(false);
 
   const scrollToBottom = () => {
-    setTimeout(() => {
-      const scrollableViewport = scrollAreaRef.current?.querySelector('[data-radix-scroll-area-viewport]');
-      if (scrollableViewport) {
-        scrollableViewport.scrollTo({ top: scrollableViewport.scrollHeight, behavior: 'smooth' });
-      }
-    }, 100);
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
   
   const resetChat = () => {
@@ -112,7 +107,7 @@ export function Chatbot() {
               </div>
             </CardHeader>
             <CardContent className="flex-1 p-0">
-              <ScrollArea className="h-full" ref={scrollAreaRef}>
+              <ScrollArea className="h-full">
                 <div className="space-y-4 p-4">
                   {messages.map((message, index) => (
                     <div key={index}>
@@ -166,6 +161,7 @@ export function Chatbot() {
 
                     </div>
                   ))}
+                  <div ref={messagesEndRef} />
                 </div>
               </ScrollArea>
             </CardContent>
