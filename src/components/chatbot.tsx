@@ -106,62 +106,64 @@ export function Chatbot() {
                 <CardTitle className="text-lg font-headline">Aadhaar Dost</CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="flex-1 p-0">
+            <CardContent className="flex-1 p-0 overflow-y-auto">
               <ScrollArea className="h-full">
-                <div className="space-y-4 p-4">
-                  {messages.map((message, index) => (
-                    <div key={index}>
-                      <div className={`flex items-start gap-2 ${message.role === 'user' ? 'justify-end' : ''}`}>
-                         {message.role === 'bot' && <Bot className="h-5 w-5 text-primary flex-shrink-0 mt-1" />}
-                        <div className={`rounded-lg px-3 py-2 text-sm ${
-                            message.role === 'user'
-                              ? 'bg-primary text-primary-foreground'
-                              : 'bg-muted'
-                          }`}
-                        >
-                          {message.text}
+                <div className="p-4">
+                  <div className="space-y-4">
+                    {messages.map((message, index) => (
+                      <div key={index}>
+                        <div className={`flex items-start gap-2 ${message.role === 'user' ? 'justify-end' : ''}`}>
+                          {message.role === 'bot' && <Bot className="h-5 w-5 text-primary flex-shrink-0 mt-1" />}
+                          <div className={`rounded-lg px-3 py-2 text-sm ${
+                              message.role === 'user'
+                                ? 'bg-primary text-primary-foreground'
+                                : 'bg-muted'
+                            }`}
+                          >
+                            {message.text}
+                          </div>
+                          {message.role === 'user' && <User className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-1" />}
                         </div>
-                         {message.role === 'user' && <User className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-1" />}
-                      </div>
-                      
-                      {index === messages.length - 1 && message.role === 'bot' && message.options && (
-                        <div className="mt-2 flex flex-wrap gap-2 justify-start">
-                          {message.options.map((opt, i) => (
-                            <Button
-                              key={i}
-                              variant="outline"
-                              size="sm"
-                              onClick={() => handleOptionClick(opt.text, opt.nextNodeId)}
-                            >
-                              {opt.text}
-                            </Button>
-                          ))}
-                        </div>
-                      )}
-                      
-                      {index === messages.length - 1 && message.role === 'bot' && message.isEnd && (
-                        <div className="mt-3 text-center border-t pt-3">
-                           <p className="text-sm font-semibold mb-2">Was this helpful?</p>
-                           <div className="flex justify-center gap-2">
-                             <Button size="sm" variant="outline" onClick={() => handleFeedback(true)}>Yes</Button>
-                             <Button size="sm" variant="outline" onClick={() => handleFeedback(false)}>No</Button>
-                           </div>
-                        </div>
-                      )}
-                      
-                       {index === messages.length - 1 && message.role === 'bot' && message.isContact && (
-                         <div className="mt-2 text-center">
-                            <a href="#contact" onClick={() => setIsOpen(false)}>
-                                <Button variant="secondary" size="sm">
-                                    <Phone className="mr-2 h-4 w-4" /> Go to Contact Section
-                                </Button>
-                            </a>
-                         </div>
-                      )}
+                        
+                        {index === messages.length - 1 && message.role === 'bot' && message.options && (
+                          <div className="mt-2 flex flex-wrap gap-2 justify-start">
+                            {message.options.map((opt, i) => (
+                              <Button
+                                key={i}
+                                variant="outline"
+                                size="sm"
+                                onClick={() => handleOptionClick(opt.text, opt.nextNodeId)}
+                              >
+                                {opt.text}
+                              </Button>
+                            ))}
+                          </div>
+                        )}
+                        
+                        {index === messages.length - 1 && message.role === 'bot' && message.isEnd && (
+                          <div className="mt-3 text-center border-t pt-3">
+                            <p className="text-sm font-semibold mb-2">Was this helpful?</p>
+                            <div className="flex justify-center gap-2">
+                              <Button size="sm" variant="outline" onClick={() => handleFeedback(true)}>Yes</Button>
+                              <Button size="sm" variant="outline" onClick={() => handleFeedback(false)}>No</Button>
+                            </div>
+                          </div>
+                        )}
+                        
+                        {index === messages.length - 1 && message.role === 'bot' && message.isContact && (
+                          <div className="mt-2 text-center">
+                              <a href="#contact" onClick={() => setIsOpen(false)}>
+                                  <Button variant="secondary" size="sm">
+                                      <Phone className="mr-2 h-4 w-4" /> Go to Contact Section
+                                  </Button>
+                              </a>
+                          </div>
+                        )}
 
-                    </div>
-                  ))}
-                  <div ref={messagesEndRef} />
+                      </div>
+                    ))}
+                    <div ref={messagesEndRef} />
+                  </div>
                 </div>
               </ScrollArea>
             </CardContent>
