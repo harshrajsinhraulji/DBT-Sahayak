@@ -51,10 +51,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signup = async (email: string, pass: string, name: string) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, pass);
-    await updateProfile(userCredential.user, { displayName: name });
-    // Refresh user to get displayName
-    await userCredential.user.reload();
-    setUser(auth.currentUser);
+    if (userCredential.user) {
+        await updateProfile(userCredential.user, { displayName: name });
+        // Manually update the user state as onAuthStateChanged might not be immediate
+        setUser({ ...userCredential.user, displayName: name });
+    }
     return userCredential;
   };
   
