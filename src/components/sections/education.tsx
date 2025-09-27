@@ -8,7 +8,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images"
 
 export function EducationSection() {
   const { content } = useLanguage()
-  const infographicImage = PlaceHolderImages.find(p => p.id === "infographic-aadhaar-vs-dbt");
+  const infographicImage = PlaceHolderImages.find(p => p.id === "infographic-abstract");
 
   return (
     <section id="education" className="w-full py-12 md:py-24 lg:py-32 bg-background">
