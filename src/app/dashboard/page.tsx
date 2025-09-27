@@ -33,7 +33,7 @@ const journeySteps = [
 ];
 
 export default function DashboardPage() {
-  const { user, loading }__ = useAuth();
+  const { user, loading } = useAuth();
   const router = useRouter();
   const [completedSteps, setCompletedSteps] = useState<string[]>([]);
   
