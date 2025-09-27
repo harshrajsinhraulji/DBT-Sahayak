@@ -1,13 +1,23 @@
+
 "use client"
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { useLanguage } from "@/hooks/use-language"
-import { GraduationCap, ArrowRight } from "lucide-react"
+import { GraduationCap, ArrowRight, ChevronDown } from "lucide-react"
 import Link from "next/link"
+import { cn } from "@/lib/utils";
+
+const INITIAL_VISIBLE_SCHOLARSHIPS = 3;
 
 export function ScholarshipSection() {
   const { content } = useLanguage()
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const visibleScholarships = isExpanded ? content.scholarships.scholarships : content.scholarships.scholarships.slice(0, INITIAL_VISIBLE_SCHOLARSHIPS);
+
+  const toggleExpansion = () => setIsExpanded(!isExpanded);
 
   return (
     <section id="scholarships" className="w-full py-12 md:py-24 lg:py-32 bg-background">
@@ -23,7 +33,7 @@ export function ScholarshipSection() {
           </div>
         </div>
         <div className="mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl py-12">
-          {content.scholarships.scholarships.map((scholarship, index) => (
+          {visibleScholarships.map((scholarship, index) => (
             <Card key={index} className="flex flex-col">
               <CardHeader>
                 <div className="flex items-start justify-between">
@@ -47,6 +57,14 @@ export function ScholarshipSection() {
             </Card>
           ))}
         </div>
+        {content.scholarships.scholarships.length > INITIAL_VISIBLE_SCHOLARSHIPS && (
+          <div className="text-center">
+            <Button onClick={toggleExpansion} variant="outline">
+              {isExpanded ? "Show Less" : "Show More"}
+              <ChevronDown className={cn("ml-2 h-4 w-4 transition-transform", isExpanded && "rotate-180")} />
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   )

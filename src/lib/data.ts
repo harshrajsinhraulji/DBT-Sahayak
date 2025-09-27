@@ -61,6 +61,18 @@ export const pageContent: Record<Language, LanguageContent> = {
       subtitle: "Explore scholarship opportunities for which a DBT-enabled account is essential.",
       scholarships: [
         {
+          title: "Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
+          description: "State-level scheme for meritorious students of Gujarat to pursue higher education.",
+          eligibility: "Varies by course. Requires specific percentile in 10th/12th and income criteria.",
+          link: "https://mysy.guj.nic.in/",
+        },
+        {
+          title: "Central Sector Scheme for College Students (CSSS)",
+          description: "For meritorious students from low-income families to meet day-to-day expenses while pursuing higher studies.",
+          eligibility: "Must be in the top 20th percentile of successful candidates in Class XII.",
+          link: "https://scholarships.gov.in/",
+        },
+        {
           title: "Post-Matric Scholarship for SC Students (National)",
           description: "For SC students studying in post-matriculation or post-secondary stage across India.",
           eligibility: "Parental income should not exceed Rs. 2.5 lakh per annum.",
@@ -71,18 +83,6 @@ export const pageContent: Record<Language, LanguageContent> = {
           description: "For meritorious students of economically weaker sections to arrest their drop out at class VIII.",
           eligibility: "Parental income up to Rs. 3.5 lakh. Must have scored at least 55% in Class VII.",
           link: "https://scholarships.gov.in/",
-        },
-        {
-          title: "Central Sector Scheme for College Students (CSSS)",
-          description: "For meritorious students from low-income families to meet day-to-day expenses while pursuing higher studies.",
-          eligibility: "Must be in the top 20th percentile of successful candidates in Class XII.",
-          link: "https://scholarships.gov.in/",
-        },
-        {
-          title: "Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
-          description: "State-level scheme for meritorious students of Gujarat to pursue higher education.",
-          eligibility: "Varies by course. Requires specific percentile in 10th/12th and income criteria.",
-          link: "https://mysy.guj.nic.in/",
         },
         {
           title: "Food Bill Assistance for Hostellers (Gujarat)",
@@ -113,6 +113,14 @@ export const pageContent: Record<Language, LanguageContent> = {
         {
           myth: "Aadhaar seeding is a one-time process and never needs to be checked.",
           fact: "Fact: It's a good practice to periodically check your Aadhaar seeding status on the UIDAI portal, especially before the scholarship season, to ensure it's active."
+        },
+        {
+          myth: "My bank has my Aadhaar card photocopy, so I am seeded.",
+          fact: "Fact: Submitting a photocopy is not enough. You must fill out and submit the specific 'Aadhaar Seeding Form' and explicitly request the bank to seed your account for DBT."
+        },
+        {
+          myth: "I can check my Aadhaar seeding status through my bank's mobile app.",
+          fact: "Fact: While some banks show linking status, the only definitive way to check your DBT seeding status with the NPCI mapper is through the official UIDAI portal."
         },
         {
           myth: "My scholarship was rejected because of my grades, not my bank account.",
@@ -292,6 +300,18 @@ export const pageContent: Record<Language, LanguageContent> = {
       subtitle: "उन छात्रवृत्ति अवसरों का अन्वेષણ करें जिनके लिए डीबीटी-सक्षम खाता आवश्यक है।",
       scholarships: [
         {
+          title: "मुख्यमंत्री युवा स्वावलंबन योजना (MYSY)",
+          description: "गुजरात के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करने हेतु राज्य स्तरीय योजना।",
+          eligibility: "पाठ्यक्रम के अनुसार बदलता है। 10वीं/12वीं में विशिष्ट प्रतिशत और आय मानदंड की आवश्यकता है।",
+          link: "https://mysy.guj.nic.in/",
+        },
+        {
+          title: "कॉलेज छात्रों के लिए केंद्रीय क्षेत्र योजना (CSSS)",
+          description: "कम आय वाले परिवारों के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करते समय दिन-प्रतिदिन के खर्चों को पूरा करने के लिए।",
+          eligibility: "कक्षा बारहवीं में सफल उम्मीदवारों के शीर्ष 20 प्रतिशत में होना चाहिए।",
+          link: "https://scholarships.gov.in/",
+        },
+        {
           title: "अनुसूचित जाति के छात्रों के लिए पोस्ट-मैट્રિક छात्रवृत्ति (राष्ट्रीय)",
           description: "मैट्रिकोत्तर या माध्यमिकोत्तर चरण में पढ़ने वाले अनुसूचित जाति के छात्रों के लिए।",
           eligibility: "माता-पिता की आय 2.5 लाख रुपये प्रति वर्ष से अधिक नहीं होनी चाहिए।",
@@ -302,18 +322,6 @@ export const pageContent: Record<Language, LanguageContent> = {
           description: "आर्थिक रूप से कमजोर वर्गों के मेधावी छात्रों के लिए ताकि वे कक्षा आठवीं में पढ़ाई न छोड़ें।",
           eligibility: "माता-पिता की आय 3.5 लाख रुपये तक। कक्षा सातवीं में कम से कम 55% अंक प्राप्त किए हों।",
           link: "https://scholarships.gov.in/",
-        },
-        {
-          title: "कॉलेज छात्रों के लिए केंद्रीय क्षेत्र योजना (CSSS)",
-          description: "कम आय वाले परिवारों के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करते समय दिन-प्रतिदिन के खर्चों को पूरा करने के लिए।",
-          eligibility: "कक्षा बारहवीं में सफल उम्मीदवारों के शीर्ष 20 प्रतिशत में होना चाहिए।",
-          link: "https://scholarships.gov.in/",
-        },
-        {
-          title: "मुख्यमंत्री युवा स्वावलंबन योजना (MYSY)",
-          description: "गुजरात के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करने हेतु राज्य स्तरीय योजना।",
-          eligibility: "पाठ्यक्रम के अनुसार बदलता है। 10वीं/12वीं में विशिष्ट प्रतिशत और आय मानदंड की आवश्यकता है।",
-          link: "https://mysy.guj.nic.in/",
         },
         {
           title: "हॉस्टलर्स के लिए भोजन बिल सहायता (गुजरात)",
@@ -344,6 +352,14 @@ export const pageContent: Record<Language, LanguageContent> = {
         {
           myth: "आधार सीडिंग एक बार की प्रक्रिया है और इसे कभी जांचने की आवश्यकता नहीं है।",
           fact: "तथ्य: यह सुनिश्चित करने के लिए कि यह सक्रिय है, समय-समय पर यूआईडीएआई पोर्टल पर अपनी आधार सीडिंग स्थिति की जांच करना एक अच्छा अभ्यास है, खासकर छात्रवृत्ति के मौसम से पहले।"
+        },
+        {
+          myth: "मेरे बैंक के पास मेरे आधार कार्ड की फोटोकॉपी है, इसलिए मैं सीडेड हूँ।",
+          fact: "तथ्य: फोटोकॉपी जमा करना पर्याप्त नहीं है। आपको विशिष्ट 'आधार सीडिंग फॉर्म' भरना और जमा करना होगा और बैंक से डीबीटी के लिए अपने खाते को सीड करने का स्पष्ट रूप से अनुरोध करना होगा।"
+        },
+        {
+          myth: "मैं अपने बैंक के मोबाइल ऐप के माध्यम से अपनी आधार सीडिंग स्थिति की जांच कर सकता हूं।",
+          fact: "तथ्य: जबकि कुछ बैंक लिंकिंग स्थिति दिखा सकते हैं, एनपीसीआई मैपर के साथ अपनी डीबीटी सीडिंग स्थिति की जांच करने का एकमात्र निश्चित तरीका आधिकारिक यूआईडीएआई पोर्टल के माध्यम से है।"
         },
         {
           myth: "मेरी छात्रवृत्ति मेरे ग्रेड के कारण खारिज कर दी गई थी, मेरे बैंक खाते के कारण नहीं।",
@@ -523,6 +539,18 @@ export const pageContent: Record<Language, LanguageContent> = {
       subtitle: "શિષ્યવૃત્તિની તકોનું અન્વેષણ કરો જેના માટે ડીબીટી-સક્ષમ ખાતું જરૂરી છે.",
       scholarships: [
         {
+          title: "મુખ્યમંત્રી યુવા સ્વાવલંબન યોજના (MYSY)",
+          description: "ગુજરાતના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ શિક્ષણ મેળવવા માટે રાજ્ય સ્તરની યોજના.",
+          eligibility: "અભ્યાસક્રમ મુજબ બદલાય છે. ૧૦મા/૧૨મા ધોરણમાં ચોક્કસ પર્સેન્ટાઇલ અને આવકના માપદંડની જરૂર છે.",
+          link: "https://mysy.guj.nic.in/",
+        },
+        {
+          title: "કોલેજના વિદ્યાર્થીઓ માટે કેન્દ્રીય ક્ષેત્રની યોજના (CSSS)",
+          description: "ઓછી આવક ધરાવતા પરિવારોના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ અભ્યાસ દરમિયાન રોજીંદા ખર્ચાઓને પહોંચી વળવા માટે.",
+          eligibility: "ધોરણ 12 માં સફળ ઉમેદવારોના ટોચના 20મા પર્સેન્ટાઇલમાં હોવા જોઈએ.",
+          link: "https://scholarships.gov.in/",
+        },
+        {
           title: "એસસી વિદ્યાર્થીઓ માટે પોસ્ટ-મેટ્રિક શિષ્યવૃત્તિ (રાષ્ટ્રીય)",
           description: "પોસ્ટ-મેટ્રિક્યુલેશન અથવા પોસ્ટ-સેકન્ડરી તબક્કામાં અભ્યાસ કરતા એસસી વિદ્યાર્થીઓ માટે.",
           eligibility: "વાલીની આવક વાર્ષિક રૂ. 2.5 લાખથી વધુ ન હોવી જોઈએ.",
@@ -533,18 +561,6 @@ export const pageContent: Record<Language, LanguageContent> = {
           description: "આર્થિક રીતે નબળા વર્ગના હોશિયાર વિદ્યાર્થીઓને ધોરણ 8 માં અભ્યાસ છોડતા અટકાવવા માટે.",
           eligibility: "વાલીની આવક રૂ. 3.5 લાખ સુધી. ધોરણ 7 માં ઓછામાં ઓછા 55% ગુણ મેળવેલા હોવા જોઈએ.",
           link: "https://scholarships.gov.in/",
-        },
-        {
-          title: "કોલેજના વિદ્યાર્થીઓ માટે કેન્દ્રીય ક્ષેત્રની યોજના (CSSS)",
-          description: "ઓછી આવક ધરાવતા પરિવારોના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ અભ્યાસ દરમિયાન રોજીંદા ખર્ચાઓને પહોંચી વળવા માટે.",
-          eligibility: "ધોરણ 12 માં સફળ ઉમેદવારોના ટોચના 20મા પર્સેન્ટાઇલમાં હોવા જોઈએ.",
-          link: "https://scholarships.gov.in/",
-        },
-        {
-          title: "મુખ્યમંત્રી યુવા સ્વાવલંબન યોજના (MYSY)",
-          description: "ગુજરાતના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ શિક્ષણ મેળવવા માટે રાજ્ય સ્તરની યોજના.",
-          eligibility: "અભ્યાસક્રમ મુજબ બદલાય છે. ૧૦મા/૧૨મા ધોરણમાં ચોક્કસ પર્સેન્ટાઇલ અને આવકના માપદંડની જરૂર છે.",
-          link: "https://mysy.guj.nic.in/",
         },
         {
           title: "હોસ્ટેલના વિદ્યાર્થીઓ માટે ફૂડ બિલ સહાય (ગુજરાત)",
@@ -575,6 +591,14 @@ export const pageContent: Record<Language, LanguageContent> = {
         {
           myth: "આધાર સીડિંગ એક-વખતની પ્રક્રિયા છે અને તેને ક્યારેય તપાસવાની જરૂર નથી.",
           fact: "હકીકત: તે સક્રિય છે તેની ખાતરી કરવા માટે, સમયાંતરે યુઆઈડીએઆઈ પોર્ટલ પર તમારી આધાર સીડિંગની સ્થિતિ તપાસવી એ એક સારી પ્રથા છે, ખાસ કરીને શિષ્યવૃત્તિની મોસમ પહેલાં."
+        },
+        {
+          myth: "મારી બેંક પાસે મારા આધાર કાર્ડની ફોટોકોપી છે, તેથી હું સીડ થયેલો છું.",
+          fact: "હકીકત: ફોટોકોપી સબમિટ કરવી પૂરતી નથી. તમારે ચોક્કસ 'આધાર સીડિંગ ફોર્મ' ભરીને સબમિટ કરવું પડશે અને બેંકને ડીબીટી માટે તમારું એકાઉન્ટ સીડ કરવા માટે સ્પષ્ટપણે વિનંતી કરવી પડશે."
+        },
+        {
+            myth: "હું મારી બેંકની મોબાઇલ એપ્લિકેશન દ્વારા મારી આધાર સીડિંગની સ્થિતિ ચકાસી શકું છું.",
+            fact: "હકીકત: જ્યારે કેટલીક બેંકો લિંકિંગ સ્ટેટસ બતાવી શકે છે, ત્યારે એનપીસીઆઈ મેપર સાથે તમારી ડીબીટી સીડિંગની સ્થિતિ તપાસવાનો એકમાત્ર નિશ્ચિત માર્ગ અધિકૃત યુઆઈડીએઆઈ પોર્ટલ દ્વારા છે."
         },
         {
           myth: "મારી શિષ્યવૃત્તિ મારા ગ્રેડને કારણે નકારી કાઢવામાં આવી હતી, મારા બેંક ખાતાને કારણે નહીં.",

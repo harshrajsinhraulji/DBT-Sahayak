@@ -1,13 +1,23 @@
+
 "use client";
 
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
-import { Phone, Download } from "lucide-react";
+import { Phone, Download, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
+
+const INITIAL_VISIBLE_FORMS = 3;
 
 export function ContactSection() {
   const { content } = useLanguage();
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const visibleForms = isExpanded ? content.contact.bankForms : content.contact.bankForms.slice(0, INITIAL_VISIBLE_FORMS);
+
+  const toggleExpansion = () => setIsExpanded(!isExpanded);
 
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
@@ -39,7 +49,7 @@ export function ContactSection() {
               <CardTitle>{content.contact.resources}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              {content.contact.bankForms.map((form, index) => (
+              {visibleForms.map((form, index) => (
                 <div key={index} className="flex items-center justify-between rounded-md border p-4">
                   <div>
                     <h4 className="font-semibold">{form.name}</h4>
@@ -53,6 +63,14 @@ export function ContactSection() {
                   </Button>
                 </div>
               ))}
+               {content.contact.bankForms.length > INITIAL_VISIBLE_FORMS && (
+                <div className="pt-4 text-center">
+                  <Button onClick={toggleExpansion} variant="secondary" className="w-full">
+                     {isExpanded ? "Show Less" : "Show More"}
+                    <ChevronDown className={cn("ml-2 h-4 w-4 transition-transform", isExpanded && "rotate-180")} />
+                  </Button>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
