@@ -1,73 +1,69 @@
 
 import { cn } from "@/lib/utils";
 
-const ChartNode = ({ label, className, children, noChildrenLine }: { label: string; className?: string; children?: React.ReactNode; noChildrenLine?: boolean }) => {
+const ChartNode = ({ label, children, className }: { label: string; children?: React.ReactNode, className?: string }) => {
     return (
-        <div className={cn("relative flex flex-col items-center", className)}>
-            <div className="bg-primary/10 border-2 border-primary text-primary-foreground rounded-lg px-3 py-2 text-sm font-semibold text-center shadow-md">
-                <p className="text-primary font-headline">{label}</p>
+        <li className="relative">
+            <div className={cn("mx-auto w-40 rounded-lg border-2 border-primary bg-background p-3 text-center font-semibold text-primary shadow-md transition-all duration-300 hover:scale-105 hover:bg-primary/10 hover:shadow-xl", className)}>
+                {label}
             </div>
-            {children && (
-                <>
-                    {!noChildrenLine && <div className="absolute top-full h-4 w-0.5 bg-border"></div>}
-                    <div className="relative mt-8 flex justify-center gap-x-2">
-                        {children}
-                    </div>
-                </>
-            )}
-        </div>
+            {children && <ul className="mt-8 flex justify-center gap-x-2 before:absolute before:left-1/2 before:top-[-32px] before:h-8 before:w-px before:bg-border">{children}</ul>}
+        </li>
     );
 };
 
-const Line = () => <div className="absolute top-[-16px] h-4 w-0.5 bg-border"></div>;
-const Connector = () => <div className="absolute left-1/2 top-[-16px] h-0.5 w-full -translate-x-1/2 bg-border"></div>;
+const ChartSubNode = ({ label, children, className }: { label: string; children?: React.ReactNode, className?: string }) => {
+  return (
+      <li className="relative before:absolute before:left-1/2 before:top-[-32px] before:h-8 before:w-px before:bg-border after:absolute after:left-[-50%] after:top-[-32px] after:h-px after:w-full after:bg-border">
+          <div className={cn("mx-auto w-40 rounded-lg border border-accent bg-background p-2 text-center text-sm font-semibold text-accent-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:bg-accent/10 hover:shadow-lg", className)}>
+              {label}
+          </div>
+          {children && <ul className="mt-8 flex justify-center gap-x-2 before:absolute before:left-1/2 before:top-[-32px] before:h-8 before:w-px before:bg-border">{children}</ul>}
+      </li>
+  );
+};
+
 
 export const OrgChart = () => {
     return (
         <div className="p-4 overflow-x-auto">
-            <div className="inline-block min-w-full">
+            <ul className="inline-block min-w-full text-center">
                 <ChartNode label="Spl. Secretary">
-                    <ChartNode label="Additional Secretary">
-                        <div className="relative">
-                             <Connector />
-                             <Line />
-                             <ChartNode label="Sr. Technical Director">
-                                 <ChartNode label="Deputy Director Scientist-C (NIC)" />
-                             </ChartNode>
-                        </div>
-                        <div className="relative">
-                            <Connector />
-                             <Line />
-                            <ChartNode label="Joint Director">
-                                <ChartNode label="Assistant Director" />
-                            </ChartNode>
-                        </div>
-                        <div className="relative">
-                            <Connector />
-                            <Line />
-                            <ChartNode label="Director">
-                                <ChartNode label="Deputy Director">
-                                     <ChartNode label="Section Officer" />
-                                </ChartNode>
-                            </ChartNode>
-                        </div>
-                        <div className="relative">
-                             <Connector />
-                            <Line />
-                            <ChartNode label="Deputy Secretary">
-                                <ChartNode label="Under Secretary" noChildrenLine>
-                                     <div className="relative">
-                                        <Connector />
-                                        <Line />
-                                        <ChartNode label="Section Officer" />
-                                     </div>
-                                </ChartNode>
-                                 <ChartNode label="Resource Person" />
-                            </ChartNode>
-                        </div>
-                    </ChartNode>
+                    <ChartSubNode label="Additional Secretary">
+                        <ul className="mt-8 grid grid-cols-4 gap-x-2">
+                             <ChartSubNode label="Sr. Technical Director" className="border-secondary text-secondary-foreground">
+                                <ul className="mt-8">
+                                    <ChartSubNode label="Deputy Director Scientist-C (NIC)" className="border-muted text-muted-foreground" />
+                                </ul>
+                             </ChartSubNode>
+                             <ChartSubNode label="Joint Director" className="border-secondary text-secondary-foreground">
+                                <ul className="mt-8">
+                                    <ChartSubNode label="Assistant Director" className="border-muted text-muted-foreground" />
+                                </ul>
+                            </ChartSubNode>
+                            <ChartSubNode label="Director" className="border-secondary text-secondary-foreground">
+                                <ul className="mt-8">
+                                    <ChartSubNode label="Deputy Director" className="border-muted text-muted-foreground">
+                                        <ul className="mt-8">
+                                            <ChartSubNode label="Section Officer" className="border-muted text-muted-foreground" />
+                                        </ul>
+                                    </ChartSubNode>
+                                </ul>
+                            </ChartSubNode>
+                            <ChartSubNode label="Deputy Secretary" className="border-secondary text-secondary-foreground">
+                                 <ul className="mt-8 grid grid-cols-2 gap-x-2">
+                                    <ChartSubNode label="Under Secretary" className="border-muted text-muted-foreground" >
+                                        <ul className="mt-8">
+                                            <ChartSubNode label="Section Officer" className="border-muted text-muted-foreground" />
+                                        </ul>
+                                    </ChartSubNode>
+                                    <ChartSubNode label="Resource Person" className="border-muted text-muted-foreground" />
+                                </ul>
+                            </ChartSubNode>
+                        </ul>
+                    </ChartSubNode>
                 </ChartNode>
-            </div>
+            </ul>
         </div>
     );
 };

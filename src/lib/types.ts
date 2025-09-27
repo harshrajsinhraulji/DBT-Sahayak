@@ -110,11 +110,18 @@ subtitle: string;
     resources: string;
     bankForms: Resource[];
   },
-  aboutDbt: {
+  about: {
     title: string;
-    subtitle: string;
-    aboutText: string[];
-    orgChartTitle: string;
+    mandate: {
+        title: string;
+        subtitle: string;
+        aboutText: string[];
+        orgChartTitle: string;
+    },
+    ourTeam: {
+        title: string;
+        subtitle: string;
+    }
   },
   printKit: {
     title: string;

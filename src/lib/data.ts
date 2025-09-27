@@ -233,16 +233,23 @@ export const pageContent: Record<Language, LanguageContent> = {
         { name: "Axis Bank", description: "Aadhaar seeding application form for Axis customers.", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
       ]
     },
-     aboutDbt: {
-      title: "About The DBT Mission",
-      subtitle: "The official mandate and history of Direct Benefit Transfer in India.",
-      aboutText: [
-        "With the aim of reforming Government delivery system by re-engineering the existing process in welfare schemes for simpler and faster flow of information/funds and to ensure accurate targeting of the beneficiaries, de-duplication and reduction of fraud Direct Benefit Transfer (DBT) was started on 1st January, 2013.",
-        "The DBT Mission was created in the Planning Commission to act as the nodal point for the implementation of the DBT programmes. The Mission was transferred to the Department of Expenditure in July, 2013. To give more impetus, the DBT Mission was placed in the Cabinet Secretariat w.e.f. 14.9.2015.",
-        "The first phase of DBT was initiated in 43 districts and later expanded to 78 more districts. The JAM trinity (Jan Dhan, Aadhaar and Mobile) are DBT enablers that provide a unique opportunity to implement DBT in all welfare schemes across the country, bringing efficiency, transparency, and accountability.",
-        "Aadhaar is not mandatory in DBT schemes. However, since Aadhaar provides unique identity and is useful in targeting the intended beneficiaries, beneficiaries are encouraged to have Aadhaar to avail benefits."
-      ],
-      orgChartTitle: "DBT Mission Organizational Structure"
+     about: {
+      title: "About Us",
+      mandate: {
+        title: "DBT Mission Mandate",
+        subtitle: "The official mandate and history of Direct Benefit Transfer in India.",
+        aboutText: [
+            "With the aim of reforming Government delivery system by re-engineering the existing process in welfare schemes for simpler and faster flow of information/funds and to ensure accurate targeting of the beneficiaries, de-duplication and reduction of fraud Direct Benefit Transfer (DBT) was started on 1st January, 2013.",
+            "The DBT Mission was created in the Planning Commission to act as the nodal point for the implementation of the DBT programmes. The Mission was transferred to the Department of Expenditure in July, 2013. To give more impetus, the DBT Mission was placed in the Cabinet Secretariat w.e.f. 14.9.2015.",
+            "The JAM trinity (Jan Dhan, Aadhaar and Mobile) are DBT enablers that provide a unique opportunity to implement DBT in all welfare schemes across the country, bringing efficiency, transparency, and accountability.",
+            "Aadhaar is not mandatory in DBT schemes. However, since Aadhaar provides unique identity and is useful in targeting the intended beneficiaries, beneficiaries are encouraged to have Aadhaar to avail benefits."
+        ],
+        orgChartTitle: "DBT Mission Organizational Structure"
+      },
+      ourTeam: {
+          title: "Our Team",
+          subtitle: "The students behind DBT Sahayak for SIH 2025."
+      }
     },
     printKit: {
       title: "Printable Awareness Kit",
@@ -526,16 +533,23 @@ export const pageContent: Record<Language, LanguageContent> = {
         { name: "ऐक्सिस बैंक", description: "ऐक्सिस बैंक ग्राहकों के लिए आधार सीडING आवेदन पत्र।", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
       ]
     },
-     aboutDbt: {
-      title: "डीबीटी मिशन के बारे में",
-      subtitle: "भारत में प्रत्यक्ष लाभ हस्तांतरण का आधिकारिक जनादेश और इतिहास।",
-      aboutText: [
-        "सरकारी वितरण प्रणाली में सुधार के उद्देश्य से, कल्याणकारी योजनाओं में मौजूदा प्रक्रिया को सरल और तेज सूचना/धन प्रवाह के लिए फिर से डिजाइन करके और लाभार्थियों के सटीक लक्ष्यीकरण, डी-डुप्लीकेशन और धोखाधड़ी में कमी सुनिश्चित करने के लिए प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) 1 जनवरी 2013 को शुरू किया गया था।",
-        "डीबीटी मिशन को योजना आयोग में डीबीटी कार्यक्रमों के कार्यान्वयन के लिए नोडल बिंदु के रूप में बनाया गया था। मिशन को जुलाई, 2013 में व्यय विभाग में स्थानांतरित कर दिया गया था। अधिक प्रोत्साहन देने के लिए, डीबीटी मिशन को 14.9.2015 से कैबिनेट सचिवालय में रखा गया है।",
-        "डीबीटी का पहला चरण 43 जिलों में शुरू किया गया था और बाद में 78 और जिलों में इसका विस्तार किया गया। जेएएम ट्रिनिटी (जन धन, आधार और मोबाइल) डीबीटी के प्रवर्तक हैं जो देश भर में सभी कल्याणकारी योजनाओं में डीबीटी को लागू करने, दक्षता, पारदर्शिता और जवाबदेही लाने का एक अनूठा अवसर प्रदान करते हैं।",
-        "डीबीटी योजनाओं में आधार अनिवार्य नहीं है। हालांकि, चूंकि आधार अद्वितीय पहचान प्रदान करता है और इच्छित लाभार्थियों को लक्षित करने में उपयोगी है, इसलिए लाभार्थियों को लाभ प्राप्त करने के लिए आधार रखने के लिए प्रोत्साहित किया जाता है।"
-      ],
-      orgChartTitle: "डीबीटी मिशन संगठनात्मक संरचना"
+    about: {
+      title: "हमारे बारे में",
+      mandate: {
+        title: "डीबीटी मिशन का जनादेश",
+        subtitle: "भारत में प्रत्यक्ष लाभ हस्तांतरण का आधिकारिक जनादेश और इतिहास।",
+        aboutText: [
+            "सरकारी वितरण प्रणाली में सुधार के उद्देश्य से, कल्याणकारी योजनाओं में मौजूदा प्रक्रिया को सरल और तेज सूचना/धन प्रवाह के लिए फिर से डिजाइन करके और लाभार्थियों के सटीक लक्ष्यीकरण, डी-डुप्लीकेशन और धोखाधड़ी में कमी सुनिश्चित करने के लिए प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) 1 जनवरी 2013 को शुरू किया गया था।",
+            "डीबीटी मिशन को योजना आयोग में डीबीटी कार्यक्रमों के कार्यान्वयन के लिए नोडल बिंदु के रूप में बनाया गया था। मिशन को जुलाई, 2013 में व्यय विभाग में स्थानांतरित कर दिया गया था। अधिक प्रोत्साहन देने के लिए, डीबीटी मिशन को 14.9.2015 से कैबिनेट सचिवालय में रखा गया है।",
+            "जेएएम ट्रिनિટી (जन धन, आधार और मोबाइल) डीबीटी के प्रवर्तक हैं जो देश भर में सभी कल्याणकारी योजनाओं में डीबीटी को लागू करने, दक्षता, पारदर्शिता और जवाबदेही लाने का एक अनूठा अवसर प्रदान करते हैं।",
+            "डीबीटी योजनाओं में आधार अनिवार्य नहीं है। हालांकि, चूंकि आधार अद्वितीय पहचान प्रदान करता है और इच्छित लाभार्थियों को लक्षित करने में उपयोगी है, इसलिए लाभार्थियों को लाभ प्राप्त करने के लिए आधार रखने के लिए प्रोत्साहित किया जाता है।"
+        ],
+        orgChartTitle: "डीबीटी मिशन संगठनात्मक संरचना"
+      },
+      ourTeam: {
+          title: "हमारी टीम",
+          subtitle: "SIH 2025 के लिए डीबीटी सहायक के पीछे के छात्र।"
+      }
     },
     printKit: {
       title: "प्रिंट करने योग्य जागरूकता किट",
@@ -819,16 +833,23 @@ export const pageContent: Record<Language, LanguageContent> = {
         { name: "Axis બેંક", description: "Axis ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
       ]
     },
-    aboutDbt: {
-      title: "ડીબીટી મિશન વિશે",
-      subtitle: "ભારતમાં ડાયરેક્ટ બેનિફિટ ટ્રાન્સફરનો સત્તાવાર આદેશ અને ઇતિહાસ.",
-      aboutText: [
-        "સરકારી વિતરણ પ્રણાલીમાં સુધારો કરવાના ઉદ્દેશ્ય સાથે, કલ્યાણકારી યોજનાઓમાં હાલની પ્રક્રિયાને સરળ અને ઝડપી માહિતી/ભંડોળના પ્રવાહ માટે પુનઃ-રચના કરીને અને લાભાર્થીઓના સચોટ લક્ષ્યીકરણ, ડુપ્લિકેશનની નાબૂદી અને છેતરપિંડીમાં ઘટાડો સુનિશ્ચિત કરવા માટે ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર (ડીબીટી) 1 જાન્યુઆરી, 2013 ના રોજ શરૂ કરવામાં આવી હતી.",
-        "ડીબીટી કાર્યક્રમોના અમલીકરણ માટે નોડલ પોઈન્ટ તરીકે કાર્ય કરવા માટે આયોજન પંચમાં ડીબીટી મિશનની રચના કરવામાં આવી હતી. આ મિશનને જુલાઈ, 2013 માં ખર્ચ વિભાગમાં સ્થાનાંતરિત કરવામાં આવ્યું હતું. વધુ ગતિ આપવા માટે, ડીબીટી મિશનને 14.9.2015 થી કેબિનેટ સચિવાલયમાં મૂકવામાં આવ્યું છે.",
-        "ડીબીટીનો પ્રથમ તબક્કો 43 જિલ્લાઓમાં શરૂ કરવામાં આવ્યો હતો અને પાછળથી 78 વધુ જિલ્લાઓમાં વિસ્તરણ કરવામાં આવ્યું હતું. જેએએમ ટ્રિનિટી (જન ધન, આધાર અને મોબાઇલ) ડીબીટી સક્ષમકર્તાઓ છે જે દેશભરમાં તમામ કલ્યાણકારી યોજનાઓમાં ડીબીટી અમલમાં મૂકવાની, કાર્યક્ષમતા, પારદર્શિતા અને જવાબદારી લાવવાની અનન્ય તક પૂરી પાડે છે.",
-        "ડીબીટી યોજનાઓમાં આધાર ફરજિયાત નથી. જો કે, આધાર અનન્ય ઓળખ પૂરી પાડે છે અને ઉદ્દેશિત લાભાર્થીઓને લક્ષ્ય બનાવવામાં ઉપયોગી છે, તેથી લાભાર્થીઓને લાભો મેળવવા માટે આધાર રાખવા પ્રોત્સાહિત કરવામાં આવે છે."
-      ],
-      orgChartTitle: "ડીબીટી મિશન સંસ્થાકીય માળખું"
+    about: {
+      title: "અમારા વિશે",
+      mandate: {
+        title: "ડીબીટી મિશનનો આદેશ",
+        subtitle: "ભારતમાં ડાયરેક્ટ બેનિફિટ ટ્રાન્સફરનો સત્તાવાર આદેશ અને ઇતિહાસ.",
+        aboutText: [
+            "સરકારી વિતરણ પ્રણાલીમાં સુધારો કરવાના ઉદ્દેશ્ય સાથે, કલ્યાણકારી યોજનાઓમાં હાલની પ્રક્રિયાને સરળ અને ઝડપી માહિતી/ભંડોળના પ્રવાહ માટે પુનઃ-રચના કરીને અને લાભાર્થીઓના સચોટ લક્ષ્યીકરણ, ડુપ્લિકેશનની નાબૂદી અને છેતરપિંડીમાં ઘટાડો સુનિશ્ચિત કરવા માટે ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર (ડીબીટી) 1 જાન્યુઆરી, 2013 ના રોજ શરૂ કરવામાં આવી હતી.",
+            "ડીબીટી કાર્યક્રમોના અમલીકરણ માટે નોડલ પોઈન્ટ તરીકે કાર્ય કરવા માટે આયોજન પંચમાં ડીબીટી મિશનની રચના કરવામાં આવી હતી. આ મિશનને જુલાઈ, 2013 માં ખર્ચ વિભાગમાં સ્થાનાંતરિત કરવામાં આવ્યું હતું. વધુ ગતિ આપવા માટે, ડીબીટી મિશનને 14.9.2015 થી કેબિનેટ સચિવાલયમાં મૂકવામાં આવ્યું છે.",
+            "જેએએમ ટ્રિનિટી (જન ધન, આધાર અને મોબાઇલ) ડીબીટી સક્ષમકર્તાઓ છે જે દેશભરમાં તમામ કલ્યાણકારી યોજનાઓમાં ડીબીટી અમલમાં મૂકવાની, કાર્યક્ષમતા, પારદર્શિતા અને જવાબદારી લાવવાની અનન્ય તક પૂરી પાડે છે.",
+            "ડીબીટી યોજનાઓમાં આધાર ફરજિયાત નથી. જો કે, આધાર અનન્ય ઓળખ પૂરી પાડે છે અને ઉદ્દેશિત લાભાર્થીઓને લક્ષ્ય બનાવવામાં ઉપયોગી છે, તેથી લાભાર્થીઓને લાભો મેળવવા માટે આધાર રાખવા પ્રોત્સાહિત કરવામાં આવે છે."
+        ],
+        orgChartTitle: "ડીબીટી મિશન સંસ્થાકીય માળખું"
+      },
+      ourTeam: {
+          title: "અમારી ટીમ",
+          subtitle: "SIH 2025 માટે ડીબીટી સહાયક પાછળના વિદ્યાર્થીઓ."
+      }
     },
     printKit: {
       title: "છાપવા યોગ્ય જાગૃતિ કિટ",
@@ -882,5 +903,3 @@ export const pageContent: Record<Language, LanguageContent> = {
     }
   },
 };
-
-    

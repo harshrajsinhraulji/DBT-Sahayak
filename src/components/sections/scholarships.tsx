@@ -34,7 +34,7 @@ export function ScholarshipSection() {
         </div>
         <div className="mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl py-12">
           {visibleScholarships.map((scholarship, index) => (
-            <Card key={index} className="flex flex-col">
+            <Card key={index} className="flex flex-col shadow-md hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-start justify-between">
                     <CardTitle className="font-headline text-xl">{scholarship.title}</CardTitle>
