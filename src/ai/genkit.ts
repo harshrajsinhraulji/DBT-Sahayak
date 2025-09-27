@@ -1,14 +1,21 @@
 'use server';
-import {genkit} from 'genkit';
-import {googleAI} from '@genkit-ai/googleai';
-import 'dotenv/config';
+/**
+ * @fileOverview This file contains the server-side Next.js functions
+ * that can be called from client components. It should only export
+ * async functions.
+ */
+import {ai} from './genkitClient';
+import {generate} from 'genkit';
 
-export let ai = genkit({
-  plugins: [
-    googleAI({
-      apiKey: process.env.GEMINI_API_KEY,
-    }),
-  ],
-  logLevel: 'debug',
-  enableTracingAndMetrics: true,
-});
+/**
+ * A simple example of a server action that runs a text-only prompt.
+ * @param input The user's text input.
+ * @returns The generated text from the model.
+ */
+export async function runChatbot(input: string): Promise<string> {
+  const {output} = await generate({
+    model: 'googleai/gemini-1.5-pro',
+    prompt: input,
+  });
+  return output || 'No response';
+}

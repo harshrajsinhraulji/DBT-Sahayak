@@ -1,5 +1,7 @@
+'use server';
+
 import {z} from 'genkit';
-import {ai} from '../genkit';
+import {ai} from '../genkitClient';
 import {pageContent} from '@/lib/data';
 import {
   AadhaarDostChatbotInputSchema,
