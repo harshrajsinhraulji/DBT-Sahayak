@@ -13,6 +13,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         myths: "Myth Busters",
         faq: "FAQ",
         contact: "Contact",
+        about: "About Us",
       },
       login: "Login/Register"
     },
@@ -313,6 +314,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         myths: "मिथक तोड़ें",
         faq: "अक्सर पूछे जाने वाले प्रश्न",
         contact: "संपर्क",
+        about: "हमारे बारे में",
       },
       login: "लॉगિન/રજીસ્ટર કરો"
     },
@@ -613,6 +615,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         myths: "માન્યતા તોડો",
         faq: "વારંવાર પૂછાતા પ્રશ્નો",
         contact: "સંપર્ક",
+        about: "અમારા વિશે",
       },
       login: "લોગિન/રજીસ્ટર કરો"
     },

@@ -1,3 +1,4 @@
+
 export type Scholarship = {
   title: string;
   description: string;
@@ -43,6 +44,7 @@ export type LanguageContent = {
       myths: string;
       faq: string;
       contact: string;
+      about: string;
     };
     login: string;
   };

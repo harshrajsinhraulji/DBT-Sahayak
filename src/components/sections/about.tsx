@@ -15,7 +15,8 @@ export function AboutSection() {
         "Vraj Rana",
         "Krishay Shah",
         "Khushi Dholakiya",
-        "Malhar Patel"
+        "Malhar Patel",
+        "Om Jangit"
     ];
     
     return (
