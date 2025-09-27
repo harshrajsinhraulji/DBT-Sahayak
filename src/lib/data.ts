@@ -1,3 +1,4 @@
+
 import type { Language, LanguageContent, Myth } from './types';
 
 export const pageContent: Record<Language, LanguageContent> = {
@@ -60,8 +61,8 @@ export const pageContent: Record<Language, LanguageContent> = {
       subtitle: "Explore scholarship opportunities for which a DBT-enabled account is essential.",
       scholarships: [
         {
-          title: "Post-Matric Scholarship for SC Students",
-          description: "For SC students studying in post-matriculation or post-secondary stage.",
+          title: "Post-Matric Scholarship for SC Students (National)",
+          description: "For SC students studying in post-matriculation or post-secondary stage across India.",
           eligibility: "Parental income should not exceed Rs. 2.5 lakh per annum.",
           link: "https://scholarships.gov.in/",
         },
@@ -72,27 +73,27 @@ export const pageContent: Record<Language, LanguageContent> = {
           link: "https://scholarships.gov.in/",
         },
         {
-          title: "Central Sector Scheme for College Students",
+          title: "Central Sector Scheme for College Students (CSSS)",
           description: "For meritorious students from low-income families to meet day-to-day expenses while pursuing higher studies.",
           eligibility: "Must be in the top 20th percentile of successful candidates in Class XII.",
           link: "https://scholarships.gov.in/",
         },
         {
-          title: "Pre-Matric Scholarship for SC Students",
-          description: "For SC students studying in classes 9th and 10th to support their pre-matric education.",
-          eligibility: "Parental income should not exceed Rs. 2.5 lakh per annum.",
-          link: "https://scholarships.gov.in/",
+          title: "Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
+          description: "State-level scheme for meritorious students of Gujarat to pursue higher education.",
+          eligibility: "Varies by course. Requires specific percentile in 10th/12th and income criteria.",
+          link: "https://mysy.guj.nic.in/",
         },
         {
-          title: "PM Scholarship for RPF/RPSF Personnel",
-          description: "Professional education scholarship for wards and widows of RPF/RPSF personnel.",
-          eligibility: "For technical and professional courses. Minimum 60% marks in 12th/Diploma/Graduation.",
-          link: "https://scholarships.gov.in/",
+          title: "Food Bill Assistance for Hostellers (Gujarat)",
+          description: "Assistance for students staying in hostels attached to educational institutions in Gujarat.",
+          eligibility: "For SC/ST/OBC/EBC students residing in approved hostels.",
+          link: "https://samajkalyan.gujarat.gov.in/en",
         },
         {
-          title: "Post-Matric Scholarship for Disabilities",
-          description: "For students with disabilities pursuing post-matric education to support their study.",
-          eligibility: "More than 40% disability and parental income not exceeding Rs. 2.5 lakh.",
+          title: "Post-Matric Scholarship for OBC Students",
+          description: "Financial assistance to students of Other Backward Classes (OBC) for post-matric studies.",
+          eligibility: "Parental income should not exceed Rs. 1.5 lakh per annum.",
           link: "https://scholarships.gov.in/",
         },
       ],
@@ -291,7 +292,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       subtitle: "उन छात्रवृत्ति अवसरों का अन्वेષણ करें जिनके लिए डीबीटी-सक्षम खाता आवश्यक है।",
       scholarships: [
         {
-          title: "अनुसूचित जाति के छात्रों के लिए पोस्ट-मैट્રિક छात्रवृत्ति",
+          title: "अनुसूचित जाति के छात्रों के लिए पोस्ट-मैट્રિક छात्रवृत्ति (राष्ट्रीय)",
           description: "मैट्रिकोत्तर या माध्यमिकोत्तर चरण में पढ़ने वाले अनुसूचित जाति के छात्रों के लिए।",
           eligibility: "माता-पिता की आय 2.5 लाख रुपये प्रति वर्ष से अधिक नहीं होनी चाहिए।",
           link: "https://scholarships.gov.in/",
@@ -303,27 +304,27 @@ export const pageContent: Record<Language, LanguageContent> = {
           link: "https://scholarships.gov.in/",
         },
         {
-          title: "कॉलेज और विश्वविद्यालय के छात्रों के लिए केंद्रीय क्षेत्र की छात्रवृत्ति योजना",
+          title: "कॉलेज छात्रों के लिए केंद्रीय क्षेत्र योजना (CSSS)",
           description: "कम आय वाले परिवारों के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करते समय दिन-प्रतिदिन के खर्चों को पूरा करने के लिए।",
           eligibility: "कक्षा बारहवीं में सफल उम्मीदवारों के शीर्ष 20 प्रतिशत में होना चाहिए।",
           link: "https://scholarships.gov.in/",
         },
         {
-          title: "अनुसूचित जाति के छात्रों के लिए प्री-मैट्रिक छात्रवृत्ति",
-          description: "कक्षा 9वीं और 10वीं में पढ़ने वाले अनुसूचित जाति के छात्रों के लिए उनकी प्री-मैट्रिक शिक्षा का समर्थन करने के लिए।",
-          eligibility: "माता-पिता की आय 2.5 लाख रुपये प्रति वर्ष से अधिक नहीं होनी चाहिए।",
-          link: "https://scholarships.gov.in/",
+          title: "मुख्यमंत्री युवा स्वावलंबन योजना (MYSY)",
+          description: "गुजरात के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करने हेतु राज्य स्तरीय योजना।",
+          eligibility: "पाठ्यक्रम के अनुसार बदलता है। 10वीं/12वीं में विशिष्ट प्रतिशत और आय मानदंड की आवश्यकता है।",
+          link: "https://mysy.guj.nic.in/",
         },
         {
-          title: "आरपीएफ/आरपीएसएफ कर्मियों के लिए पीएम छात्रवृत्ति",
-          description: "आरपीएफ/आरपीएसएफ कर्मियों के बच्चों और विधवाओं के लिए व्यावसायिक शिक्षा छात्रवृत्ति।",
-          eligibility: "तकनीकी और व्यावसायिक पाठ्यक्रमों के लिए। 12वीं/डिप्लोमा/स्नातक में न्यूनतम 60% अंक।",
-          link: "https://scholarships.gov.in/",
+          title: "हॉस्टलर्स के लिए भोजन बिल सहायता (गुजरात)",
+          description: "गुजरात में शैक्षणिक संस्थानों से जुड़े हॉस्टल में रहने वाले छात्रों के लिए सहायता।",
+          eligibility: "स्वीकृत हॉस्टल में रहने वाले एससी/एसटी/ओबीसी/ईबीसी छात्रों के लिए।",
+          link: "https://samajkalyan.gujarat.gov.in/en",
         },
         {
-          title: "विकलांगों के लिए पोस्ट-मैट्रिक छात्रवृत्ति",
-          description: "विकलांग छात्रों के लिए जो अपनी पढ़ाई का समर्थन करने के लिए पोस्ट-मैट्रिक शिक्षा प्राप्त कर रहे हैं।",
-          eligibility: "40% से अधिक विकलांगता और माता-पिता की आय 2.5 लाख रुपये से अधिक नहीं।",
+          title: "ओबीसी छात्रों के लिए पोस्ट-मैट्रिक छात्रवृत्ति",
+          description: "अन्य पिछड़ा वर्ग (ओबीसी) के छात्रों को पोस्ट-मैट्रिक अध्ययन के लिए वित्तीय सहायता।",
+          eligibility: "माता-पिता की आय 1.5 लाख रुपये प्रति वर्ष से अधिक नहीं होनी चाहिए।",
           link: "https://scholarships.gov.in/",
         },
       ],
@@ -522,7 +523,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       subtitle: "શિષ્યવૃત્તિની તકોનું અન્વેષણ કરો જેના માટે ડીબીટી-સક્ષમ ખાતું જરૂરી છે.",
       scholarships: [
         {
-          title: "એસસી વિદ્યાર્થીઓ માટે પોસ્ટ-મેટ્રિક શિષ્યવૃત્તિ",
+          title: "એસસી વિદ્યાર્થીઓ માટે પોસ્ટ-મેટ્રિક શિષ્યવૃત્તિ (રાષ્ટ્રીય)",
           description: "પોસ્ટ-મેટ્રિક્યુલેશન અથવા પોસ્ટ-સેકન્ડરી તબક્કામાં અભ્યાસ કરતા એસસી વિદ્યાર્થીઓ માટે.",
           eligibility: "વાલીની આવક વાર્ષિક રૂ. 2.5 લાખથી વધુ ન હોવી જોઈએ.",
           link: "https://scholarships.gov.in/",
@@ -534,27 +535,27 @@ export const pageContent: Record<Language, LanguageContent> = {
           link: "https://scholarships.gov.in/",
         },
         {
-          title: "કોલેજ અને યુનિવર્સિટીના વિદ્યાર્થીઓ માટે કેન્દ્રીય ક્ષેત્રની શિષ્યવૃત્તિ યોજના",
+          title: "કોલેજના વિદ્યાર્થીઓ માટે કેન્દ્રીય ક્ષેત્રની યોજના (CSSS)",
           description: "ઓછી આવક ધરાવતા પરિવારોના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ અભ્યાસ દરમિયાન રોજીંદા ખર્ચાઓને પહોંચી વળવા માટે.",
           eligibility: "ધોરણ 12 માં સફળ ઉમેદવારોના ટોચના 20મા પર્સેન્ટાઇલમાં હોવા જોઈએ.",
           link: "https://scholarships.gov.in/",
         },
-         {
-          title: "એસસી વિદ્યાર્થીઓ માટે પ્રી-મેટ્રિક શિષ્યવૃત્તિ",
-          description: "ધોરણ 9 અને 10 માં અભ્યાસ કરતા એસસી વિદ્યાર્થીઓને તેમના પ્રી-મેટ્રિક શિક્ષણ માટે ટેકો આપવા.",
-          eligibility: "વાલીની આવક વાર્ષિક રૂ. 2.5 લાખથી વધુ ન હોવી જોઈએ.",
-          link: "https://scholarships.gov.in/",
+        {
+          title: "મુખ્યમંત્રી યુવા સ્વાવલંબન યોજના (MYSY)",
+          description: "ગુજરાતના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ શિક્ષણ મેળવવા માટે રાજ્ય સ્તરની યોજના.",
+          eligibility: "અભ્યાસક્રમ મુજબ બદલાય છે. ૧૦મા/૧૨મા ધોરણમાં ચોક્કસ પર્સેન્ટાઇલ અને આવકના માપદંડની જરૂર છે.",
+          link: "https://mysy.guj.nic.in/",
         },
         {
-          title: "આરપીએફ/આરપીએસએફ કર્મચારીઓ માટે પીએમ શિષ્યવૃત્તિ",
-          description: "આરપીએફ/આરપીએસએફ કર્મચારીઓના બાળકો અને વિધવાઓ માટે વ્યાવસાયિક શિક્ષણ શિષ્યવૃત્તિ.",
-          eligibility: "તકનીકી અને વ્યાવસાયિક અભ્યાસક્રમો માટે. 12મા/ડિપ્લોમા/ગ્રેજ્યુએશનમાં ન્યૂનતમ 60% ગુણ.",
-          link: "https://scholarships.gov.in/",
+          title: "હોસ્ટેલના વિદ્યાર્થીઓ માટે ફૂડ બિલ સહાય (ગુજરાત)",
+          description: "ગુજરાતમાં શૈક્ષણિક સંસ્થાઓ સાથે જોડાયેલ છાત્રાલયોમાં રહેતા વિદ્યાર્થીઓ માટે સહાય.",
+          eligibility: "માન્ય છાત્રાલયોમાં રહેતા SC/ST/OBC/EBC વિદ્યાર્થીઓ માટે.",
+          link: "https://samajkalyan.gujarat.gov.in/en",
         },
         {
-          title: "વિકલાંગો માટે પોસ્ટ-મેટ્રિક શિષ્યવૃત્તિ",
-          description: "પોસ્ટ-મેટ્રિક શિક્ષણ મેળવતા વિકલાંગ વિદ્યાર્થીઓને તેમના અભ્યાસ માટે ટેકો આપવા.",
-          eligibility: "40% થી વધુ વિકલાંગતા અને વાલીની આવક રૂ. 2.5 લાખથી વધુ નહીં.",
+          title: "OBC વિદ્યાર્થીઓ માટે પોસ્ટ-મેટ્રિક શિષ્યવૃત્તિ",
+          description: "અન્ય પછાત વર્ગ (OBC) ના વિદ્યાર્થીઓને પોસ્ટ-મેટ્રિક અભ્યાસ માટે આર્થિક સહાય.",
+          eligibility: "વાલીની આવક વાર્ષિક રૂ. 1.5 લાખથી વધુ ન હોવી જોઈએ.",
           link: "https://scholarships.gov.in/",
         },
       ],
@@ -695,3 +696,5 @@ export const pageContent: Record<Language, LanguageContent> = {
     }
   },
 };
+
+    
