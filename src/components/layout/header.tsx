@@ -27,7 +27,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "../ui/avatar";
-import { ThemeSwitcher } from "../theme-switcher";
 
 export function Header() {
   const { content } = useLanguage();
@@ -102,7 +101,6 @@ export function Header() {
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
-          <ThemeSwitcher />
           <LanguageSwitcher />
            {user ? (
             <DropdownMenu>

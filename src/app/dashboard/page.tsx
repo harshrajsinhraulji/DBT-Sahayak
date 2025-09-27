@@ -33,7 +33,7 @@ const journeySteps = [
 ];
 
 export default function DashboardPage() {
-  const { user, loading } = useAuth();
+  const { user, loading }__ = useAuth();
   const router = useRouter();
   const [completedSteps, setCompletedSteps] = useState<string[]>([]);
   
@@ -95,8 +95,8 @@ export default function DashboardPage() {
             </div>
 
             {allStepsCompleted && (
-                 <Alert className="border-green-500 bg-green-50 text-green-800 dark:bg-green-900/50 dark:text-green-300 [&>svg]:text-green-500">
-                    <PartyPopper className="h-5 w-5" />
+                 <Alert className="border-green-500 bg-green-50 text-green-800">
+                    <PartyPopper className="h-5 w-5 text-green-500" />
                     <AlertTitle className="font-bold">Congratulations!</AlertTitle>
                     <AlertDescription>
                         You have completed all the steps. Your account should now be active for DBT.
@@ -138,5 +138,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
-    
