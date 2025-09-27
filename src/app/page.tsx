@@ -1,3 +1,4 @@
+import { AboutDbtSection } from "@/components/sections/about-dbt";
 import { AwarenessSection } from "@/components/sections/awareness";
 import { ContactSection } from "@/components/sections/contact";
 import { EducationSection } from "@/components/sections/education";
@@ -17,6 +18,7 @@ export default function Home() {
       <MythBustersSection />
       <VideoSection />
       <ScholarshipSection />
+      <AboutDbtSection />
       <FaqSection />
       <AwarenessSection />
       <ContactSection />

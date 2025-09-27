@@ -78,9 +78,9 @@ export function MythBustersSection() {
   };
   
   const shareScore = () => {
-    const text = `I scored ${score}/${totalQuestions} on the DBT Myth & Fact Challenge! Test your knowledge on DBT Sahayak.`;
+    const text = `I scored ${score}/${totalQuestions} on the DBT Myth Busters Challenge! Test your knowledge on DBT Sahayak.`;
     if (navigator.share) {
-      navigator.share({ title: 'DBT Myth & Fact Challenge', text: text, url: window.location.href });
+      navigator.share({ title: 'DBT Myth Busters Challenge', text: text, url: window.location.href });
     }
   }
   

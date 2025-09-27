@@ -8,6 +8,7 @@ import { Phone, Download, ChevronDown, Link as LinkIcon, ExternalLink } from "lu
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+import { Separator } from "../ui/separator";
 
 const INITIAL_VISIBLE_FORMS = 3;
 
@@ -24,19 +25,21 @@ export function ContactSection() {
         title: "National Scholarship Portal (NSP)",
         description: "Official portal for all central government scholarships.",
         link: "https://scholarships.gov.in/",
-        icon: <ExternalLink />
     },
     {
         title: "UIDAI Website (Aadhaar)",
         description: "Check status and manage your Aadhaar details.",
         link: "https://myaadhaar.uidai.gov.in/",
-        icon: <ExternalLink />
     },
      {
         title: "NPCI Website",
         description: "Learn about the National Payments Corporation of India.",
         link: "https://www.npci.org.in/",
-        icon: <ExternalLink />
+    },
+    {
+        title: "DBT Bharat Portal",
+        description: "The official Direct Benefit Transfer mission website.",
+        link: "https://dbtbharat.gov.in/",
     }
   ]
 
@@ -55,61 +58,61 @@ export function ContactSection() {
         </div>
         <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-1 md:grid-cols-2">
           
-          <div className="grid gap-8">
-            <Card>
+          <div className="grid gap-6">
+            <Card className="shadow-md hover:shadow-lg transition-shadow">
                 <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                    <Phone /> Official Helpline
+                <CardTitle className="flex items-center gap-3">
+                    <Phone className="h-6 w-6 text-accent" /> Official Helpline
                 </CardTitle>
                 </CardHeader>
                 <CardContent>
-                <p className="text-lg font-semibold">{content.contact.helpline}</p>
-                <p className="text-sm text-muted-foreground">For any queries related to national scholarships.</p>
+                <p className="text-2xl font-bold font-headline">{content.contact.helpline}</p>
+                <p className="text-sm text-muted-foreground mt-1">For any queries related to national scholarships.</p>
                 </CardContent>
             </Card>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
              {officialLinks.map((item, index) => (
-                <Card key={index}>
+                <Card key={index} className="flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow">
                     <CardHeader>
-                        <CardTitle className="flex items-center justify-between">
-                            <span className="flex items-center gap-2">
-                             {item.icon} {item.title}
-                            </span>
-                            <Button asChild variant="ghost" size="icon">
-                                <Link href={item.link} target="_blank" rel="noopener noreferrer">
-                                <LinkIcon className="h-4 w-4" />
-                                </Link>
-                            </Button>
-                        </CardTitle>
+                        <CardTitle className="text-lg font-semibold">{item.title}</CardTitle>
+                        <CardDescription className="text-xs">{item.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                         <Button asChild variant="outline" size="sm" className="w-full">
+                            <Link href={item.link} target="_blank" rel="noopener noreferrer">
+                                Visit Site <ExternalLink className="ml-2 h-4 w-4" />
+                            </Link>
+                        </Button>
                     </CardContent>
                 </Card>
              ))}
+            </div>
           </div>
 
-          <Card>
+          <Card className="shadow-md hover:shadow-lg transition-shadow">
             <CardHeader>
               <CardTitle>{content.contact.resources}</CardTitle>
+              <CardDescription>Download Aadhaar seeding forms for major banks.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               {visibleForms.map((form, index) => (
-                <div key={index} className="flex items-center justify-between rounded-md border p-4">
+                <div key={index} className="flex items-center justify-between rounded-md border p-3 hover:bg-muted/50 transition-colors">
                   <div>
                     <h4 className="font-semibold">{form.name}</h4>
-                    <p className="text-sm text-muted-foreground">{form.description}</p>
                   </div>
-                  <Button asChild variant="outline" size="icon">
+                  <Button asChild variant="ghost" size="icon">
                     <Link href={form.link} target="_blank" rel="noopener noreferrer">
-                      <Download className="h-4 w-4" />
+                      <Download className="h-5 w-5 text-primary" />
                       <span className="sr-only">Download form</span>
                     </Link>
                   </Button>
                 </div>
               ))}
                {content.contact.bankForms.length > INITIAL_VISIBLE_FORMS && (
-                <div className="pt-4 text-center">
-                  <Button onClick={toggleExpansion} variant="secondary" className="w-full">
+                <div className="pt-4">
+                  <Separator />
+                  <Button onClick={toggleExpansion} variant="secondary" className="w-full mt-4">
                      {isExpanded ? "Show Less" : "Show More"}
                     <ChevronDown className={cn("ml-2 h-4 w-4 transition-transform", isExpanded && "rotate-180")} />
                   </Button>

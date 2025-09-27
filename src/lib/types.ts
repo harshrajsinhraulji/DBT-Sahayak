@@ -110,6 +110,12 @@ subtitle: string;
     resources: string;
     bankForms: Resource[];
   },
+  aboutDbt: {
+    title: string;
+    subtitle: string;
+    aboutText: string[];
+    orgChartTitle: string;
+  },
   printKit: {
     title: string;
     subtitle: string;
