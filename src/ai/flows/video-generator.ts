@@ -11,18 +11,47 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
-import { MediaPart, model } from 'genkit/model';
+import { MediaPart } from 'genkit/model';
 
-// Define the schema for the flow's input.
-const VideoRequestSchema = z.string().describe('A text prompt to generate a video from.');
+// Define the schema for the flow's input, now including context.
+const VideoRequestSchema = z.object({
+  title: z.string().describe('The title of the video.'),
+  language: z.string().describe('The language for the narration (e.g., "English", "Hindi").'),
+  context: z.string().describe('Additional context for the video, like related FAQs or myths.'),
+});
+export type VideoRequest = z.infer<typeof VideoRequestSchema>;
+
 
 // Define the schema for the flow's output.
 const VideoResponseSchema = z.string().describe('The generated video as a data:video/mp4;base64 URI.');
 
 // The main exported function that clients will call.
-export async function generateVideo(prompt: string): Promise<string> {
-  return videoGeneratorFlow(prompt);
+export async function generateVideo(request: VideoRequest): Promise<string> {
+  return videoGeneratorFlow(request);
 }
+
+// Define the Genkit prompt with a more sophisticated structure
+const videoPrompt = ai.definePrompt({
+  name: 'videoGeneratorPrompt',
+  input: { schema: VideoRequestSchema },
+  prompt: `
+    You are an expert video creator specializing in educational content for students.
+    Your task is to generate a script and visual cues for a short, engaging video.
+
+    **Video Topic:** {{{title}}}
+    **Narration Language:** {{{language}}}
+    **Key Information to Include:** {{{context}}}
+
+    **Video Structure:**
+    1.  **Intro:** Start with a catchy title screen and a friendly welcome.
+    2.  **Content:** Explain the topic clearly. Use the "Key Information" to address a common question or debunk a myth. Use a Q&A or Myth/Fact format.
+    3.  **Visuals:** The video should feature simple, clear graphics, text overlays for key points, and an optimistic, encouraging tone.
+    4.  **Outro:** End with a summary and a call to action to visit the DBT Sahayak website.
+
+    Generate the video based on this structure.
+  `,
+});
+
 
 // Define the Genkit flow for video generation.
 const videoGeneratorFlow = ai.defineFlow(
@@ -31,15 +60,17 @@ const videoGeneratorFlow = ai.defineFlow(
     inputSchema: VideoRequestSchema,
     outputSchema: VideoResponseSchema,
   },
-  async (prompt) => {
-    console.log(`Generating video for prompt: ${prompt}`);
+  async (request) => {
+    console.log(`Generating video for prompt: ${request.title}`);
+
+    const prompt = await videoPrompt(request);
 
     // Start the video generation process with the Veo model.
     let { operation } = await ai.generate({
       model: 'googleai/veo-2.0-generate-001',
-      prompt: prompt,
+      prompt: prompt.content[0].text!,
       config: {
-        durationSeconds: 5,
+        durationSeconds: 8,
         aspectRatio: '16:9',
       },
     });

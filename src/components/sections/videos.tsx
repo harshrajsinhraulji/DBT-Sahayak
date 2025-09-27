@@ -33,14 +33,29 @@ export function VideoSection() {
     if (videoToGenerate.videoUrl || videoToGenerate.isLoading) return;
 
     setVideos((prev) =>
-      prev.map((v, i) => (i === index ? { ...v, isLoading: true } : v))
+      prev.map((v, i) => (i === index ? { ...v, isLoading: true, error: undefined } : v))
     );
 
     try {
-      const languageMap = { en: "English", hi: "Hindi", gu: "Gujarati" };
-      const prompt = `Create a short, informative video about '${videoToGenerate.title}'. The narration should be in ${languageMap[content.language]}. The video should be visually engaging for students, using simple graphics and text overlays.`;
+      const languageMap: Record<string, string> = { en: "English", hi: "Hindi", gu: "Gujarati" };
+      const language = languageMap[content.language] || "English";
+
+      // Find a relevant FAQ or Myth to provide context
+      const faqContext = content.faq.faqs.find(f => f.question.toLowerCase().includes(videoToGenerate.title.toLowerCase()));
+      const mythContext = content.mythBusters.myths.find(m => m.myth.toLowerCase().includes(videoToGenerate.title.toLowerCase()));
       
-      const result = await generateVideo(prompt);
+      let context = `Explain the concept of ${videoToGenerate.title}.`;
+      if (faqContext) {
+        context = `Answer this question: ${faqContext.question}. The answer is: ${faqContext.answer}`;
+      } else if (mythContext) {
+        context = `Debunk this myth: "${mythContext.myth}". The truth is: "${mythContext.fact}"`;
+      }
+      
+      const result = await generateVideo({
+        title: videoToGenerate.title,
+        language: language,
+        context: context,
+      });
 
       setVideos((prev) =>
         prev.map((v, i) =>
@@ -49,13 +64,15 @@ export function VideoSection() {
             : v
         )
       );
+      // Automatically play the video after generation
+      setActiveVideoUrl(result);
 
     } catch (error) {
        console.error("Video generation failed:", error);
        toast({
         variant: 'destructive',
         title: 'Video Generation Failed',
-        description: 'Sorry, we couldn\'t generate the video right now. Please try again later.',
+        description: 'Sorry, we couldn\'t generate the video right now. This can happen during periods of high demand. Please try again later.',
       });
       setVideos((prev) =>
         prev.map((v, i) =>
@@ -71,7 +88,7 @@ export function VideoSection() {
     const video = videos[index];
     if (video.videoUrl) {
       setActiveVideoUrl(video.videoUrl);
-    } else {
+    } else if (!video.isLoading) {
       handleGenerateVideo(index);
     }
   }
@@ -106,13 +123,15 @@ export function VideoSection() {
                   {video.videoUrl ? (
                      <video src={video.videoUrl} className="w-full h-full object-cover" />
                   ) : (
-                    <div className="w-full h-full bg-muted" />
+                    <div className="w-full h-full bg-muted flex items-center justify-center">
+                       <p className="text-xs text-muted-foreground p-2">{video.description}</p>
+                    </div>
                   )}
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     {video.isLoading ? (
                       <LoaderCircle className="h-12 w-12 text-white/80 animate-spin" />
                     ) : (
-                      <PlayCircle className="h-12 w-12 text-white/80 group-hover:text-white transition-colors" />
+                      <PlayCircle className="h-12 w-12 text-white/80 transition-colors" />
                     )}
                   </div>
                 </div>
@@ -135,14 +154,14 @@ export function VideoSection() {
 
       {activeVideoUrl && (
         <div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
             onClick={() => setActiveVideoUrl(null)}
         >
           <video
             src={activeVideoUrl}
             controls
             autoPlay
-            className="max-w-[90vw] max-h-[90vh] rounded-lg"
+            className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
         </div>
