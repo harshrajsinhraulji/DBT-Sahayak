@@ -21,6 +21,11 @@ export type Myth = {
   fact: string;
 }
 
+export type Fact = {
+    fact: string;
+    explanation: string;
+}
+
 export const enum Language {
   en = 'en',
   hi = 'hi',
@@ -81,7 +86,9 @@ subtitle: string;
   mythBusters: {
     title: string;
     subtitle: string;
+    resultText: string;
     myths: Myth[];
+    facts: Fact[];
   };
   awareness: {
     title: string;

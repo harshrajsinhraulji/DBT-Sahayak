@@ -12,13 +12,13 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroSection />
-      <EducationSection />
-      <VideoSection />
       <StatusCheckerSection />
-      <ScholarshipSection />
+      <EducationSection />
       <MythBustersSection />
-      <AwarenessSection />
+      <VideoSection />
+      <ScholarshipSection />
       <FaqSection />
+      <AwarenessSection />
       <ContactSection />
     </div>
   );

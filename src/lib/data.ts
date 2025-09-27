@@ -1,5 +1,5 @@
 
-import type { Language, LanguageContent, Myth } from './types';
+import type { Language, LanguageContent, Myth, Fact } from './types';
 
 export const pageContent: Record<Language, LanguageContent> = {
   en: {
@@ -48,7 +48,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       title: "Check Your Aadhaar & Bank Account Seeding Status",
       description: "It's crucial to verify that your bank account is properly seeded with Aadhaar to receive DBT payments. Follow these simple steps on the official UIDAI portal.",
       steps: [
-        "Visit the official UIDAI website or the NPCI website to check your status.",
+        "Visit the official UIDAI website (myaadhaar.uidai.gov.in) or the NPCI website.",
         "On UIDAI: Go to 'My Aadhaar' > 'Aadhaar Services' > 'Check Aadhaar/Bank Linking Status'.",
         "Enter your Aadhaar number and the security code.",
         "An OTP will be sent to your registered mobile number. Enter it to see your active seeding status.",
@@ -67,15 +67,15 @@ export const pageContent: Record<Language, LanguageContent> = {
           link: "https://mysy.guj.nic.in/",
         },
         {
-          title: "Central Sector Scheme for College Students (CSSS)",
-          description: "For meritorious students from low-income families to meet day-to-day expenses while pursuing higher studies.",
-          eligibility: "Must be in the top 20th percentile of successful candidates in Class XII.",
-          link: "https://scholarships.gov.in/",
-        },
-        {
           title: "Post-Matric Scholarship for OBC Students",
           description: "Financial assistance to students of Other Backward Classes (OBC) for post-matric studies.",
           eligibility: "Parental income should not exceed Rs. 1.5 lakh per annum.",
+          link: "https://scholarships.gov.in/",
+        },
+        {
+          title: "Central Sector Scheme for College Students (CSSS)",
+          description: "For meritorious students from low-income families to meet day-to-day expenses while pursuing higher studies.",
+          eligibility: "Must be in the top 20th percentile of successful candidates in Class XII.",
           link: "https://scholarships.gov.in/",
         },
          {
@@ -99,32 +99,55 @@ export const pageContent: Record<Language, LanguageContent> = {
       ],
     },
     mythBusters: {
-      title: "Myth Busters",
-      subtitle: "Don't let misinformation stop you from getting your scholarship. Let's bust some common myths!",
+      title: "Myth & Fact Challenge",
+      subtitle: "Test your knowledge! Can you tell the difference between a DBT myth and a fact?",
+      resultText: "You're now a certified Myth & Fact expert!",
       myths: [
         {
           myth: "If my bank account is linked to Aadhaar, I will automatically get my scholarship.",
-          fact: "Not true! Your account must be specifically 'seeded' with Aadhaar for DBT on the NPCI mapper, not just linked. This is a separate process."
-        },
-        {
-          myth: "My bank app shows my Aadhaar is 'active', so I'm ready for DBT.",
-          fact: "This is a common point of confusion. A bank's internal system (CBS) showing 'active' does not guarantee your account is updated on the NPCI mapper for DBT. The only way to be sure is by checking on the UIDAI or NPCI websites."
+          fact: "This is a myth. Your account must be specifically 'seeded' with Aadhaar for DBT on the NPCI mapper, not just linked. It is a separate process."
         },
         {
           myth: "I can receive my scholarship in any of my Aadhaar-linked bank accounts.",
-          fact: "You can only receive DBT payments in the one bank account that is currently seeded with your Aadhaar. This is your designated DBT-enabled account."
+          fact: "This is a myth. You can only receive DBT payments in the one bank account that is currently seeded with your Aadhaar. This is your designated DBT-enabled account."
         },
         {
-          myth: "My bank has my Aadhaar card photocopy, so I am seeded.",
-          fact: "Submitting a photocopy is not enough. You must fill out and submit the specific 'Aadhaar Seeding Consent Form' and explicitly request the bank to seed your account for DBT with the NPCI mapper."
-        },
-        {
-          myth: "Aadhaar seeding is a one-time process and never needs to be checked.",
-          fact: "It's a good practice to periodically check your Aadhaar seeding status on the UIDAI portal, especially before the scholarship season, to ensure it's active."
+          myth: "My bank has my Aadhaar card photocopy, so my account is seeded.",
+          fact: "This is a myth. Submitting a photocopy is not enough. You must fill out and submit the specific 'Aadhaar Seeding Consent Form' and explicitly request the bank to seed your account."
         },
         {
           myth: "If my seeding fails, it's an issue with NPCI or UIDAI.",
-          fact: "The responsibility of updating the NPCI mapper rests solely with the banks. If your seeding fails or is pending, you must follow up with your bank branch's customer service."
+          fact: "This is a myth. The responsibility of updating the NPCI mapper rests solely with the banks. If your seeding fails, you must follow up with your bank branch."
+        },
+        {
+          myth: "My bank app shows my Aadhaar is 'active', so I'm ready for DBT.",
+          fact: "This is a myth. A bank's internal system (CBS) showing 'active' does not guarantee your account is on the NPCI mapper. The only way to be sure is by checking on the UIDAI or NPCI websites."
+        }
+      ],
+      facts: [
+        {
+          fact: "You must submit a specific 'Aadhaar Seeding Consent Form' to your bank to enable DBT.",
+          explanation: "This is a fact. Simply having a linked account is not enough; you must give explicit consent for seeding."
+        },
+        {
+          fact: "Only one bank account can be Aadhaar-seeded for DBT at any given time.",
+          explanation: "This is a fact. If you seed a new account, it automatically de-links the previous one from the NPCI mapper."
+        },
+        {
+          fact: "The responsibility to handle authentication failures (like fingerprint issues) lies with the implementing agencies.",
+          explanation: "This is a fact. Government notifications include an 'exception handling mechanism' to ensure you still get benefits if biometric authentication fails."
+        },
+        {
+          fact: "You can receive DBT funds at your doorstep through a Bank Mitra/Correspondent.",
+          explanation: "This is a fact. Services like cash withdrawal and balance enquiry are available through micro-ATMs in many areas."
+        },
+        {
+          fact: "If your name on Aadhaar and bank account don't match, seeding will fail.",
+          explanation: "This is a fact. Your name must be identical in both records for the seeding process to be successful. You must get it corrected in one of the documents."
+        },
+        {
+          fact: "You can check your Aadhaar seeding status on both the UIDAI and NPCI websites.",
+          explanation: "This is a fact. Both official portals provide a facility to check which bank account is currently seeded for DBT."
         }
       ]
     },
@@ -173,6 +196,10 @@ export const pageContent: Record<Language, LanguageContent> = {
         {
           question: "My name is different in my Aadhaar card versus my bank account. What should I do?",
           answer: "You must get your name corrected in one of the documents so they match exactly. You can visit an Aadhaar Enrolment Centre to update your Aadhaar details, or your bank branch to update your bank records.",
+        },
+        {
+            question: "What happens if my biometric (fingerprint) authentication fails?",
+            answer: "Don't worry. Government guidelines have an exception handling process. Agencies are required to provide alternate ways for you to prove your identity, such as through an OTP to your registered mobile number or other physical verification."
         },
         {
           question: "I don't have an Aadhaar card. Can I still get scheme benefits?",
@@ -291,7 +318,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       title: "अपने आधार और बैंक खाता सीडिंग स्थिति की जाँच करें",
       description: "डीबीटी भुगतान प्राप्त करने के लिए यह सत्यापित करना महत्वपूर्ण है कि आपका बैंक खाता आधार के साथ ठीक से सीड किया गया है। आधिकारिक यूआईडीएआई पोर्टल पर इन सरल चरणों का पालन करें।",
       steps: [
-        "अपनी स्थिति की जांच के लिए आधिकारिक यूआईडीएआई वेबसाइट या एनपीसीआई वेबसाइट पर जाएं।",
+        "अपनी स्थिति की जांच के लिए आधिकारिक यूआईडीएआई वेबसाइट (myaadhaar.uidai.gov.in) या एनपीसीआई वेबसाइट पर जाएं।",
         "यूआईडीएआई पर: 'माई आधार' > 'आधार सेवाएं' > 'आधार/बैंक लिंकिंग स्थिति जांचें' पर जाएं।",
         "अपना आधार नंबर और सुरक्षा कोड दर्ज करें।",
         "आपके पंजीकृत मोबाइल नंबर पर एक ओटीपी भेजा जाएगा। अपनी सक्रिय सीडिंग स्थिति देखने के लिए इसे दर्ज करें।",
@@ -310,15 +337,15 @@ export const pageContent: Record<Language, LanguageContent> = {
           link: "https://mysy.guj.nic.in/",
         },
         {
-          title: "कॉलेज छात्रों के लिए केंद्रीय क्षेत्र योजना (CSSS)",
-          description: "कम आय वाले परिवारों के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करते समय दिन-प्रतिदिन के खर्चों को पूरा करने के लिए।",
-          eligibility: "कक्षा बारहवीं में सफल उम्मीदवारों के शीर्ष 20 प्रतिशत में होना चाहिए।",
-          link: "https://scholarships.gov.in/",
-        },
-        {
           title: "ओबीसी छात्रों के लिए पोस्ट-मैट्रिक छात्रवृत्ति",
           description: "अन्य पिछड़ा वर्ग (ओबीसी) के छात्रों को पोस्ट-मैट्रिक अध्ययन के लिए वित्तीय सहायता।",
           eligibility: "माता-पिता की आय 1.5 लाख रुपये प्रति वर्ष से अधिक नहीं होनी चाहिए।",
+          link: "https://scholarships.gov.in/",
+        },
+        {
+          title: "कॉलेज छात्रों के लिए केंद्रीय क्षेत्र योजना (CSSS)",
+          description: "कम आय वाले परिवारों के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करते समय दिन-प्रतिदिन के खर्चों को पूरा करने के लिए।",
+          eligibility: "कक्षा बारहवीं में सफल उम्मीदवारों के शीर्ष 20 प्रतिशत में होना चाहिए।",
           link: "https://scholarships.gov.in/",
         },
         {
@@ -341,33 +368,56 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
       ],
     },
-    mythBusters: {
-      title: "मिथक तोड़ें",
-      subtitle: "गलत सूचना को आपको अपनी छात्रवृत्ति प्राप्त करने से रोकने न दें। आइए कुछ आम मिथकों को तोड़ें!",
+     mythBusters: {
+      title: "मिथक और तथ्य चुनौती",
+      subtitle: "अपने ज्ञान का परीक्षण करें! क्या आप डीबीटी मिथक और तथ्य के बीच अंतर बता सकते हैं?",
+      resultText: "अब आप एक प्रमाणित मिथक और तथ्य विशेषज्ञ हैं!",
       myths: [
         {
           myth: "यदि मेरा बैंक खाता आधार से जुड़ा हुआ है, तो मुझे स्वतः ही मेरी छात्रवृत्ति मिल जाएगी।",
-          fact: "यह सच नहीं है! आपके खाते को केवल लिंक ही नहीं, बल्कि एनपीसीआई मैपर पर डीबीटी के लिए आधार के साथ विशेष रूप से 'सीड' किया जाना चाहिए। यह एक अलग प्रक्रिया है।"
-        },
-        {
-          myth: "मेरा बैंक ऐप दिखाता है कि मेरा आधार 'सक्रिय' है, इसलिए मैं डीबीटी के लिए तैयार हूं।",
-          fact: "यह एक आम भ्रम है। किसी बैंक की आंतरिक प्रणाली (सीबीएस) में 'सक्रिय' दिखाना इस बात की गारंटी नहीं देता है कि आपका खाता डीबीटी के लिए एनपीसीआई मैपर पर अपडेट किया गया है। सुनिश्चित होने का एकमात्र तरीका यूआईडीएआई या एनपीसीआई वेबसाइटों पर जांच करना है।"
+          fact: "यह एक मिथक है। आपके खाते को केवल लिंक ही नहीं, बल्कि एनपीसीआई मैपर पर डीबीटी के लिए आधार के साथ विशेष रूप से 'सीड' किया जाना चाहिए। यह एक अलग प्रक्रिया है।"
         },
         {
           myth: "मैं अपने किसी भी आधार-लिंक्ड बैंक खाते में अपनी छात्रवृत्ति प्राप्त कर सकता हूँ।",
-          fact: "आप केवल उसी एक बैंक खाते में डीबीटी भुगतान प्राप्त कर सकते हैं जो वर्तमान में आपके आधार के साथ सीड किया गया है। यह आपका निर्दिष्ट डीबीटी-सक्षम खाता है।"
+          fact: "यह एक मिथक है। आप केवल उसी एक बैंक खाते में डीबीटी भुगतान प्राप्त कर सकते हैं जो वर्तमान में आपके आधार के साथ सीड किया गया है। यह आपका निर्दिष्ट डीबीटी-सक्षम खाता है।"
         },
         {
-          myth: "मेरे बैंक के पास मेरे आधार कार्ड की फोटोकॉपी है, इसलिए मैं सीडेड हूँ।",
-          fact: "फोटोकॉपी जमा करना पर्याप्त नहीं है। आपको विशिष्ट 'आधार सीडिंग सहमति फॉर्म' भरना और जमा करना होगा और बैंक से डीबीटी के लिए एनपीसीआई मैपर के साथ अपने खाते को सीड करने का स्पष्ट रूप से अनुरोध करना होगा।"
-        },
-        {
-          myth: "आधार सीडिंग एक बार की प्रक्रिया है और इसे कभी जांचने की आवश्यकता नहीं है।",
-          fact: "यह सुनिश्चित करने के लिए कि यह सक्रिय है, समय-समय पर यूआईडीएआई पोर्टल पर अपनी आधार सीडिंग स्थिति की जांच करना एक अच्छा अभ्यास है, खासकर छात्रवृत्ति के मौसम से पहले।"
+          myth: "मेरे बैंक के पास मेरे आधार कार्ड की फोटोकॉपी है, इसलिए मेरा खाता सीडेड है।",
+          fact: "यह एक मिथक है। फोटोकॉपी जमा करना पर्याप्त नहीं है। आपको विशिष्ट 'आधार सीडिंग सहमति फॉर्म' भरना और जमा करना होगा और बैंक से अपने खाते को सीड करने का स्पष्ट रूप से अनुरोध करना होगा।"
         },
         {
           myth: "यदि मेरी सीडिंग विफल हो जाती है, तो यह एनपीसीआई या यूआईडीएआई के साथ एक समस्या है।",
-          fact: "एनपीसीआई मैपर को अपडेट करने की जिम्मेदारी पूरी तरह से बैंकों की है। यदि आपकी सीडिंग विफल हो जाती है या लंबित है, तो आपको अपनी बैंक शाखा की ग्राहक सेवा से संपर्क करना होगा।"
+          fact: "यह एक मिथक है। एनपीसीआई मैपर को अपडेट करने की जिम्मेदारी पूरी तरह से बैंकों की है। यदि आपकी सीडिंग विफल हो जाती है, तो आपको अपनी बैंक शाखा से संपर्क करना होगा।"
+        },
+        {
+          myth: "मेरा बैंक ऐप दिखाता है कि मेरा आधार 'सक्रिय' है, इसलिए मैं डीबीटी के लिए तैयार हूं।",
+          fact: "यह एक मिथक है। किसी बैंक की आंतरिक प्रणाली (सीबीएस) में 'सक्रिय' दिखाना इस बात की गारंटी नहीं देता है कि आपका खाता एनपीसीआई मैपर पर है। सुनिश्चित होने का एकमात्र तरीका यूआईडीएआई या एनपीसीआई वेबसाइटों पर जांच करना है।"
+        }
+      ],
+      facts: [
+        {
+          fact: "डीबीटी को सक्षम करने के लिए आपको अपने बैंक में एक विशिष्ट 'आधार सीडिंग सहमति फॉर्म' जमा करना होगा।",
+          explanation: "यह एक तथ्य है। केवल एक लिंक किया हुआ खाता होना पर्याप्त नहीं है; आपको सीडिंग के लिए स्पष्ट सहमति देनी होगी।"
+        },
+        {
+          fact: "किसी भी समय डीबीटी के लिए केवल एक बैंक खाता आधार-सीड किया जा सकता है।",
+          explanation: "यह एक तथ्य है। यदि आप कोई नया खाता सीड करते हैं, तो यह स्वचालित रूप से पिछले खाते को एनपीसीआई मैपर से डी-लिंक कर देता है।"
+        },
+        {
+          fact: "प्रमाणीकरण विफलताओं (जैसे फिंगरप्रिंट समस्याएं) को संभालने की जिम्मेदारी कार्यान्वयन एजेंसियों की है।",
+          explanation: "यह एक तथ्य है। सरकारी अधिसूचनाओं में एक 'अपवाद हैंडलिंग तंत्र' शामिल है ताकि यह सुनिश्चित हो सके कि यदि बॉयोमीट्रिक प्रमाणीकरण विफल हो जाता है तो भी आपको लाभ मिले।"
+        },
+        {
+          fact: "आप बैंक मित्र/संवाददाता के माध्यम से अपने दरवाजे पर डीबीटी फंड प्राप्त कर सकते हैं।",
+          explanation: "यह एक तथ्य है। कई क्षेत्रों में माइक्रो-एटीएम के माध्यम से नकद निकासी और शेष राशि पूछताछ जैसी सेवाएं उपलब्ध हैं।"
+        },
+        {
+          fact: "यदि आधार और बैंक खाते पर आपका नाम मेल नहीं खाता है, तो सीडिंग विफल हो जाएगी।",
+          explanation: "यह एक तथ्य है। सीडिंग प्रक्रिया के सफल होने के लिए आपका नाम दोनों रिकॉर्ड में समान होना चाहिए। आपको इसे किसी एक दस्तावेज़ में ठीक करवाना होगा।"
+        },
+        {
+          fact: "आप यूआईडीएआई और एनपीसीआई दोनों वेबसाइटों पर अपनी आधार सीडिंग स्थिति की जांच कर सकते हैं।",
+          explanation: "यह एक तथ्य है। दोनों आधिकारिक पोर्टल यह जांचने की सुविधा प्रदान करते हैं कि वर्तमान में कौन सा बैंक खाता डीबीटी के लिए सीड किया गया है।"
         }
       ]
     },
@@ -418,8 +468,12 @@ export const pageContent: Record<Language, LanguageContent> = {
             answer: "आपको अपने नाम को किसी एक दस्तावेज़ में ठीक करवाना होगा ताकि वे बिल्कुल मेल खाएं। आप अपने आधार विवरण को अपडेट करने के लिए किसी आधार नामांकन केंद्र पर जा सकते हैं, या अपने बैंक रिकॉर्ड को अपडेट करने के लिए अपनी बैंक शाखा में जा सकते हैं।",
         },
         {
-            question: "मेरे पास आधार कार्ड नहीं है। क्या मुझे अभी भी योजना का लाभ मिल सकता है?",
-            answer: "यदि आप अभी तक नामांकित नहीं हैं, तो आपको एक आधार नामांकन केंद्र पर जाना होगा। जब तक आपका आधार आवंटित नहीं हो जाता, तब तक आप आमतौर पर अपनी आधार नामांकन आईडी (ईआईडी) पर्ची का उपयोग अन्य वैकल्पिक आईडी (जैसे बैंक पासबुक) के साथ कर सकते हैं जैसा कि छात्रवृत्ति योजना द्वारा निर्दिष्ट है।",
+            question: "यदि मेरा बॉयोमीट्रिक (फिंगरप्रिंट) प्रमाणीकरण विफल हो जाता है तो क्या होगा?",
+            answer: "चिंता न करें। सरकारी दिशानिर्देशों में एक अपवाद हैंडलिंग प्रक्रिया है। एजेंसियों को आपको अपनी पहचान साबित करने के वैकल्पिक तरीके प्रदान करने की आवश्यकता होती है, जैसे कि आपके पंजीकृत मोबाइल नंबर पर ओटीपी के माध्यम से या अन्य भौतिक सत्यापन।"
+        },
+        {
+          question: "मेरे पास आधार कार्ड नहीं है। क्या मुझे अभी भी योजना का लाभ मिल सकता है?",
+          answer: "यदि आप अभी तक नामांकित नहीं हैं, तो आपको एक आधार नामांकन केंद्र पर जाना होगा। जब तक आपका आधार आवंटित नहीं हो जाता, तब तक आप आमतौर पर अपनी आधार नामांकन आईडी (ईआईडी) पर्ची का उपयोग अन्य वैकल्पिक आईडी (जैसे बैंक पासबुक) के साथ कर सकते हैं जैसा कि छात्रवृत्ति योजना द्वारा निर्दिष्ट है।",
         },
       ],
     },
@@ -534,7 +588,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       title: "તમારા આધાર અને બેંક એકાઉન્ટ સીડિંગની સ્થિતિ તપાસો",
       description: "ડીબીટી ચુકવણીઓ મેળવવા માટે તમારું બેંક ખાતું આધાર સાથે યોગ્ય રીતે સીડ થયેલ છે તેની ખાતરી કરવી મહત્વપૂર્ણ છે. અધિકૃત યુઆઈડીએઆઈ પોર્ટલ પર આ સરળ પગલાં અનુસરો.",
       steps: [
-        "તમારી સ્થિતિ તપાસવા માટે સત્તાવાર UIDAI વેબસાઇટ અથવા NPCI વેબસાઇટની મુલાકાત લો.",
+        "તમારી સ્થિતિ તપાસવા માટે સત્તાવાર UIDAI વેબસાઇટ (myaadhaar.uidai.gov.in) અથવા NPCI વેબસાઇટની મુલાકાત લો.",
         "UIDAI પર: 'માય આધાર' > 'આધાર સેવાઓ' > 'આધાર/બેંક લિંકિંગ સ્થિતિ તપાસો' પર જાઓ.",
         "તમારો આધાર નંબર અને સુરક્ષા કોડ દાખલ કરો.",
         "તમારા નોંધાયેલા મોબાઇલ નંબર પર એક OTP મોકલવામાં આવશે. તમારી સક્રિય સીડિંગ સ્થિતિ જોવા માટે તેને દાખલ કરો.",
@@ -553,15 +607,15 @@ export const pageContent: Record<Language, LanguageContent> = {
           link: "https://mysy.guj.nic.in/",
         },
         {
-          title: "કોલેજના વિદ્યાર્થીઓ માટે કેન્દ્રીય ક્ષેત્રની યોજના (CSSS)",
-          description: "ઓછી આવક ધરાવતા પરિવારોના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ અભ્યાસ દરમિયાન રોજીંદા ખર્ચાઓને પહોંચી વળવા માટે.",
-          eligibility: "ધોરણ 12 માં સફળ ઉમેદવારોના ટોચના 20મા પર્સેન્ટાઇલમાં હોવા જોઈએ.",
-          link: "https://scholarships.gov.in/",
-        },
-        {
           title: "OBC વિદ્યાર્થીઓ માટે પોસ્ટ-મેટ્રિક શિષ્યવૃત્તિ",
           description: "અન્ય પછાત વર્ગ (OBC) ના વિદ્યાર્થીઓને પોસ્ટ-મેટ્રિક અભ્યાસ માટે આર્થિક સહાય.",
           eligibility: "વાલીની આવક વાર્ષિક રૂ. 1.5 લાખથી વધુ ન હોવી જોઈએ.",
+          link: "https://scholarships.gov.in/",
+        },
+        {
+          title: "કોલેજના વિદ્યાર્થીઓ માટે કેન્દ્રીય ક્ષેત્રની યોજના (CSSS)",
+          description: "ઓછી આવક ધરાવતા પરિવારોના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ અભ્યાસ દરમિયાન રોજીંદા ખર્ચાઓને પહોંચી વળવા માટે.",
+          eligibility: "ધોરણ 12 માં સફળ ઉમેદવારોના ટોચના 20મા પર્સેન્ટાઇલમાં હોવા જોઈએ.",
           link: "https://scholarships.gov.in/",
         },
         {
@@ -585,32 +639,55 @@ export const pageContent: Record<Language, LanguageContent> = {
       ],
     },
     mythBusters: {
-      title: "માન્યતા તોડો",
-      subtitle: "ખોટી માહિતીને તમને તમારી શિષ્યવૃત્તિ મેળવવાથી રોકવા ન દો. ચાલો કેટલીક સામાન્ય માન્યતાઓને તોડીએ!",
+      title: "માન્યતા અને હકીકત પડકાર",
+      subtitle: "તમારા જ્ઞાનનું પરીક્ષણ કરો! શું તમે ડીબીટીની માન્યતા અને હકીકત વચ્ચેનો તફાવત કહી શકો છો?",
+      resultText: "તમે હવે પ્રમાણિત માન્યતા અને હકીકત નિષ્ણાત છો!",
       myths: [
         {
           myth: "જો મારું બેંક ખાતું આધાર સાથે જોડાયેલું હોય, તો મને આપમેળે મારી શિષ્યવૃત્તિ મળી જશે.",
-          fact: "સાચું નથી! તમારું ખાતું ફક્ત લિંક જ નહીં, પણ એનપીસીઆઈ મેપર પર ડીબીટી માટે આધાર સાથે ખાસ 'સીડ' થયેલું હોવું જોઈએ. આ એક અલગ પ્રક્રિયા છે."
-        },
-        {
-          myth: "મારી બેંક એપ બતાવે છે કે મારું આધાર 'સક્રિય' છે, તેથી હું ડીબીટી માટે તૈયાર છું.",
-          fact: "આ એક સામાન્ય મૂંઝવણ છે. બેંકની આંતરિક સિસ્ટમ (CBS) માં 'સક્રિય' બતાવવું એ ખાતરી આપતું નથી કે તમારું ખાતું ડીબીટી માટે એનપીસીઆઈ મેપર પર અપડેટ થયેલ છે. ખાતરી કરવાનો એકમાત્ર રસ્તો UIDAI અથવા NPCI વેબસાઇટ્સ પર તપાસ કરવાનો છે."
+          fact: "આ એક માન્યતા છે। તમારું ખાતું ફક્ત લિંક જ નહીં, પણ એનપીસીઆઈ મેપર પર ડીબીટી માટે આધાર સાથે ખાસ 'સીડ' થયેલું હોવું જોઈએ. આ એક અલગ પ્રક્રિયા છે."
         },
         {
           myth: "હું મારા કોઈપણ આધાર-લિંક્ડ બેંક ખાતામાં મારી શિષ્યવૃત્તિ મેળવી શકું છું.",
-          fact: "તમે ફક્ત તે જ એક બેંક ખાતામાં ડીબીટી ચુકવણીઓ મેળવી શકો છો જે હાલમાં તમારા આધાર સાથે સીડ થયેલ છે. આ તમારું નિયુક્ત ડીબીટી-સક્ષમ ખાતું છે."
+          fact: "આ એક માન્યતા છે। તમે ફક્ત તે જ એક બેંક ખાતામાં ડીબીટી ચુકવણીઓ મેળવી શકો છો જે હાલમાં તમારા આધાર સાથે સીડ થયેલ છે. આ તમારું નિયુક્ત ડીબીટી-સક્ષમ ખાતું છે."
         },
         {
-          myth: "મારી બેંક પાસે મારા આધાર કાર્ડની ફોટોકોપી છે, તેથી હું સીડ થયેલો છું.",
-          fact: "ફોટોકોપી સબમિટ કરવી પૂરતી નથી. તમારે ચોક્કસ 'આધાર સીડિંગ સંમતિ ફોર્મ' ભરીને સબમિટ કરવું પડશે અને બેંકને ડીબીટી માટે એનપીસીઆઈ મેપર સાથે તમારું એકાઉન્ટ સીડ કરવા માટે સ્પષ્ટપણે વિનંતી કરવી પડશે."
+          myth: "મારી બેંક પાસે મારા આધાર કાર્ડની ફોટોકોપી છે, તેથી મારું ખાતું સીડ થયેલું છે.",
+          fact: "આ એક માન્યતા છે। ફોટોકોપી સબમિટ કરવી પૂરતી નથી. તમારે ચોક્કસ 'આધાર સીડિંગ સંમતિ ફોર્મ' ભરીને સબમિટ કરવું પડશે અને બેંકને તમારું એકાઉન્ટ સીડ કરવા માટે સ્પષ્ટપણે વિનંતી કરવી પડશે."
         },
         {
-          myth: "આધાર સીડિંગ એક-વખતની પ્રક્રિયા છે અને તેને ક્યારેય તપાસવાની જરૂર નથી.",
-          fact: "તે સક્રિય છે તેની ખાતરી કરવા માટે, સમયાંતરે યુઆઈડીએઆઈ પોર્ટલ પર તમારી આધાર સીડિંગની સ્થિતિ તપાસવી એ એક સારી પ્રથા છે, ખાસ કરીને શિષ્યવૃત્તિની મોસમ પહેલાં."
+          myth: "જો મારી સીડિંગ નિષ્ફળ જાય, તો તે એનપીસીઆઈ અથવા યુઆઈડીએઆઈ સાથેની સમસ્યા છે.",
+          fact: "આ એક માન્યતા છે। એનપીસીઆઈ મેપરને અપડેટ કરવાની જવાબદારી સંપૂર્ણપણે બેંકોની છે. જો તમારી સીડિંગ નિષ્ફળ જાય, તો તમારે તમારી બેંક શાખાનો સંપર્ક કરવો આવશ્યક છે."
         },
         {
-            myth: "જો મારી સીડિંગ નિષ્ફળ જાય, તો તે એનપીસીઆઈ અથવા યુઆઈડીએઆઈ સાથેની સમસ્યા છે.",
-            fact: "એનપીસીઆઈ મેપરને અપડેટ કરવાની જવાબદારી સંપૂર્ણપણે બેંકોની છે. જો તમારી સીડિંગ નિષ્ફળ જાય અથવા બાકી હોય, તો તમારે તમારી બેંક શાખાની ગ્રાહક સેવાનો સંપર્ક કરવો આવશ્યક છે."
+          myth: "મારી બેંક એપ બતાવે છે કે મારું આધાર 'સક્રિય' છે, તેથી હું ડીબીટી માટે તૈયાર છું.",
+          fact: "આ એક માન્યતા છે। બેંકની આંતરિક સિસ્ટમ (CBS) માં 'સક્રિય' બતાવવું એ ખાતરી આપતું નથી કે તમારું ખાતું એનપીસીઆઈ મેપર પર છે. ખાતરી કરવાનો એકમાત્ર રસ્તો UIDAI અથવા NPCI વેબસાઇટ્સ પર તપાસ કરવાનો છે."
+        }
+      ],
+      facts: [
+        {
+          fact: "ડીબીટીને સક્ષમ કરવા માટે તમારે તમારી બેંકમાં એક વિશિષ્ટ 'આધાર સીડિંગ સંમતિ ફોર્મ' સબમિટ કરવું આવશ્યક છે.",
+          explanation: "આ એક હકીકત છે. ફક્ત લિંક કરેલું એકાઉન્ટ હોવું પૂરતું નથી; તમારે સીડિંગ માટે સ્પષ્ટ સંમતિ આપવી આવશ્યક છે."
+        },
+        {
+          fact: "કોઈપણ સમયે ડીબીટી માટે ફક્ત એક જ બેંક ખાતું આધાર-સીડ કરી શકાય છે.",
+          explanation: "આ એક હકીકત છે. જો તમે નવું ખાતું સીડ કરો છો, તો તે આપમેળે પાછલા ખાતાને એનપીસીઆઈ મેપરથી ડિ-લિંક કરે છે."
+        },
+        {
+          fact: "પ્રમાણીકરણ નિષ્ફળતાઓ (જેમ કે ફિંગરપ્રિન્ટ સમસ્યાઓ) ને સંભાળવાની જવાબદારી અમલીકરણ એજન્સીઓની છે.",
+          explanation: "આ એક હકીકત છે. સરકારી સૂચનાઓમાં 'અપવાદ સંભાળવાની પદ્ધતિ' શામેલ છે જેથી જો બાયોમેટ્રિક પ્રમાણીકરણ નિષ્ફળ જાય તો પણ તમને લાભ મળે તેની ખાતરી કરી શકાય."
+        },
+        {
+          fact: "તમે બેંક મિત્ર/સંવાદદાતા દ્વારા તમારા ઘરઆંગણે ડીબીટી ભંડોળ મેળવી શકો છો.",
+          explanation: "આ એક હકીકત છે. ઘણા વિસ્તારોમાં માઇક્રો-એટીએમ દ્વારા રોકડ ઉપાડ અને બેલેન્સ પૂછપરછ જેવી સેવાઓ ઉપલબ્ધ છે."
+        },
+        {
+          fact: "જો આધાર અને બેંક ખાતા પર તમારું નામ મેળ ખાતું નથી, તો સીડિંગ નિષ્ફળ જશે.",
+          explanation: "આ એક હકીકત છે. સીડિંગ પ્રક્રિયા સફળ થવા માટે તમારું નામ બંને રેકોર્ડમાં સરખું હોવું આવશ્યક છે. તમારે તેને દસ્તાવેજોમાંથી એકમાં સુધારવું પડશે."
+        },
+        {
+          fact: "તમે યુઆઈડીએઆઈ અને એનપીસીઆઈ બંને વેબસાઇટ્સ પર તમારી આધાર સીડિંગની સ્થિતિ ચકાસી શકો છો.",
+          explanation: "આ એક હકીકત છે. બંને અધિકૃત પોર્ટલ હાલમાં કયું બેંક ખાતું ડીબીટી માટે સીડ થયેલ છે તે તપાસવાની સુવિધા પૂરી પાડે છે."
         }
       ]
     },
@@ -659,6 +736,10 @@ export const pageContent: Record<Language, LanguageContent> = {
         {
             question: "મારું નામ મારા આધાર કાર્ડ વિરુદ્ધ મારા બેંક ખાતામાં અલગ છે. મારે શું કરવું જોઈએ?",
             answer: "તમારે તમારા નામને દસ્તાવેજોમાંથી એકમાં સુધારવું પડશે જેથી તે બરાબર મેળ ખાય. તમે તમારા આધારની વિગતો અપડેટ કરવા માટે આધાર નોંધણી કેન્દ્રની મુલાકાત લઈ શકો છો, અથવા તમારા બેંક રેકોર્ડને અપડેટ કરવા માટે તમારી બેંક શાખાની મુલાકાત લઈ શકો છો.",
+        },
+        {
+            question: "જો મારું બાયોમેટ્રિક (ફિંગરપ્રિન્ટ) પ્રમાણીકરણ નિષ્ફળ જાય તો શું થશે?",
+            answer: "ચિંતા કરશો નહીં. સરકારી માર્ગદર્શિકાઓમાં એક અપવાદ સંભાળવાની પ્રક્રિયા છે. એજન્સીઓને તમને તમારી ઓળખ સાબિત કરવાના વૈકલ્પિક માર્ગો પ્રદાન કરવાની જરૂર છે, જેમ કે તમારા નોંધાયેલા મોબાઇલ નંબર પર OTP દ્વારા અથવા અન્ય ભૌતિક ચકાસણી."
         },
         {
             question: "મારી પાસે આધાર કાર્ડ નથી. શું હું હજી પણ યોજનાનો લાભ મેળવી શકું?",
