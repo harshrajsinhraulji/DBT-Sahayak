@@ -116,6 +116,14 @@ subtitle: string;
         aboutText: string[];
         orgChartTitle: string;
     },
+    institutionalFramework: {
+        title: string;
+        subtitle: string;
+        points: {
+            title: string;
+            description: string;
+        }[];
+    },
     ourTeam: {
         title: string;
         subtitle: string;
@@ -163,5 +171,3 @@ subtitle: string;
     gu: string;
   }
 };
-
-    
