@@ -17,7 +17,7 @@ export function Footer() {
             <span className="font-headline font-semibold text-foreground">DBT Sahayak</span>
           </div>
           <div className="text-center">
-            <p>{content.footer.tagline}</p>
+            <p>An initiative by Team Code Technicians for Smart India Hackathon 2025.</p>
             <p>{content.footer.credits}</p>
             <Link href="/print-kit" className="text-primary hover:underline flex items-center justify-center gap-2 mt-2">
                 <Printer className="h-4 w-4" /> {content.printKit.instructions.printButton}
@@ -34,5 +34,3 @@ export function Footer() {
     </footer>
   );
 }
-
-    
