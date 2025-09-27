@@ -1,17 +1,29 @@
+'use server';
 import {z} from 'genkit';
 import {ai} from '../genkit';
 import {pageContent} from '@/lib/data';
 import {Language} from '@/lib/types';
-import type {AadhaarDostChatbotInput, AadhaarDostChatbotOutput} from './flow-types';
-import {AadhaarDostChatbotInputSchema, AadhaarDostChatbotOutputSchema} from './flow-types';
+import type {
+  AadhaarDostChatbotInput,
+  AadhaarDostChatbotOutput,
+} from './flow-types';
+import {
+  AadhaarDostChatbotInputSchema,
+  AadhaarDostChatbotOutputSchema,
+} from './flow-types';
 
 export function defineAadhaarDostChatbot() {
   const getBankInfo = ai.defineTool(
     {
       name: 'getBankInfo',
-      description: 'Get information about a specific bank, including a link to their Aadhaar seeding form.',
+      description:
+        'Get information about a specific bank, including a link to their Aadhaar seeding form.',
       inputSchema: z.object({
-        bankName: z.string().describe("The name of the bank, e.g., 'State Bank of India', 'SBI', 'PNB'."),
+        bankName: z
+          .string()
+          .describe(
+            "The name of the bank, e.g., 'State Bank of India', 'SBI', 'PNB'."
+          ),
       }),
       outputSchema: z
         .object({
@@ -29,9 +41,12 @@ export function defineAadhaarDostChatbot() {
       const bank = banks.find(
         b =>
           b.name.toLowerCase().includes(lowerCaseBankName) ||
-          (b.name.includes('State Bank of India') && lowerCaseBankName.includes('sbi')) ||
-          (b.name.includes('Punjab National Bank') && lowerCaseBankName.includes('pnb')) ||
-          (b.name.includes('Bank of Baroda') && lowerCaseBankName.includes('bob'))
+          (b.name.includes('State Bank of India') &&
+            lowerCaseBankName.includes('sbi')) ||
+          (b.name.includes('Punjab National Bank') &&
+            lowerCaseBankName.includes('pnb')) ||
+          (b.name.includes('Bank of Baroda') &&
+            lowerCaseBankName.includes('bob'))
       );
 
       return bank || null;
@@ -40,7 +55,7 @@ export function defineAadhaarDostChatbot() {
 
   const prompt = ai.definePrompt({
     name: 'aadhaarDostChatbotPrompt',
-    model: 'gemini-pro',
+    model: 'googleai/gemini-2.5-flash-preview',
     input: {schema: AadhaarDostChatbotInputSchema},
     output: {schema: AadhaarDostChatbotOutputSchema},
     tools: [getBankInfo],
