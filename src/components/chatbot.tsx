@@ -27,7 +27,7 @@ export function Chatbot() {
 
   const scrollToBottom = () => {
     setTimeout(() => {
-      const scrollableViewport = document.getElementById('scrollArea_viewport');
+      const scrollableViewport = scrollAreaRef.current?.querySelector('[data-radix-scroll-area-viewport]');
       if (scrollableViewport) {
         scrollableViewport.scrollTo({ top: scrollableViewport.scrollHeight, behavior: 'smooth' });
       }
@@ -45,20 +45,19 @@ export function Chatbot() {
       },
     ]);
     setIsCompleted(false);
-    scrollToBottom();
   };
 
   useEffect(() => {
-    if (isOpen && messages.length === 0) {
+    if (isOpen) {
       resetChat();
     }
   }, [isOpen, language]);
 
   useEffect(() => {
-     if (isOpen) {
-      resetChat();
-     }
-  }, [language]);
+    if (messages.length > 0) {
+      scrollToBottom();
+    }
+  }, [messages]);
 
 
   const handleOptionClick = (optionText: string, nextNodeId: string) => {
@@ -80,7 +79,6 @@ export function Chatbot() {
         setIsCompleted(true);
       }
     }
-    scrollToBottom();
   };
 
   const handleFeedback = (wasHelpful: boolean) => {
@@ -93,7 +91,6 @@ export function Chatbot() {
     }
      setMessages((prev) => [...prev, feedbackMessage]);
      setIsCompleted(true);
-     scrollToBottom();
   }
 
   return (
@@ -116,7 +113,7 @@ export function Chatbot() {
             </CardHeader>
             <CardContent className="flex-1 p-0">
               <ScrollArea className="h-full" ref={scrollAreaRef}>
-                <div id="scrollArea_viewport" className="space-y-4 p-4">
+                <div className="space-y-4 p-4">
                   {messages.map((message, index) => (
                     <div key={index}>
                       <div className={`flex items-start gap-2 ${message.role === 'user' ? 'justify-end' : ''}`}>
@@ -132,7 +129,7 @@ export function Chatbot() {
                          {message.role === 'user' && <User className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-1" />}
                       </div>
                       
-                      {message.role === 'bot' && message.options && (
+                      {index === messages.length - 1 && message.role === 'bot' && message.options && (
                         <div className="mt-2 flex flex-wrap gap-2 justify-start">
                           {message.options.map((opt, i) => (
                             <Button
@@ -147,7 +144,7 @@ export function Chatbot() {
                         </div>
                       )}
                       
-                      {message.role === 'bot' && message.isEnd && !isCompleted &&(
+                      {index === messages.length - 1 && message.role === 'bot' && message.isEnd && (
                         <div className="mt-3 text-center border-t pt-3">
                            <p className="text-sm font-semibold mb-2">Was this helpful?</p>
                            <div className="flex justify-center gap-2">
@@ -157,7 +154,7 @@ export function Chatbot() {
                         </div>
                       )}
                       
-                       {message.role === 'bot' && message.isContact && (
+                       {index === messages.length - 1 && message.role === 'bot' && message.isContact && (
                          <div className="mt-2 text-center">
                             <a href="#contact" onClick={() => setIsOpen(false)}>
                                 <Button variant="secondary" size="sm">
