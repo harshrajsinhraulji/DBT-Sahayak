@@ -73,7 +73,7 @@ export function ContactSection() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
              {officialLinks.map((item, index) => (
-                <Card key={index} className="flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow">
+                <Card key={index} className="flex flex-col justify-between shadow-md hover:shadow-xl transition-shadow duration-300">
                     <CardHeader>
                         <CardTitle className="text-lg font-semibold">{item.title}</CardTitle>
                         <CardDescription className="text-xs">{item.description}</CardDescription>
@@ -90,7 +90,7 @@ export function ContactSection() {
             </div>
           </div>
 
-          <Card className="shadow-md hover:shadow-lg transition-shadow">
+          <Card className="shadow-md hover:shadow-xl transition-shadow duration-300">
             <CardHeader>
               <CardTitle>{content.contact.resources}</CardTitle>
               <CardDescription>Download Aadhaar seeding forms for major banks.</CardDescription>

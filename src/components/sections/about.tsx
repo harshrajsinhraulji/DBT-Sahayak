@@ -3,7 +3,7 @@
 
 import { useLanguage } from "@/hooks/use-language";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Info, Building, UserCircle } from "lucide-react";
+import { Users, Building, UserCircle } from "lucide-react";
 import { OrgChart } from "../org-chart";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 
@@ -16,7 +16,7 @@ export function AboutSection() {
         "Krishay Shah",
         "Khushi Dholakiya",
         "Malhar Patel",
-        "Om Jangit"
+        "Om Jangid"
     ];
     
     return (
@@ -31,7 +31,7 @@ export function AboutSection() {
                 </div>
                 <div className="mx-auto grid max-w-6xl items-start gap-8 py-12 lg:grid-cols-5">
                     {/* Mandate Section */}
-                    <Card className="lg:col-span-3 h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
+                    <Card className="lg:col-span-3 h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2 font-headline"><Building /> {mandate.title}</CardTitle>
                             <CardDescription>{mandate.subtitle}</CardDescription>
@@ -41,14 +41,14 @@ export function AboutSection() {
                         </CardContent>
                     </Card>
                     {/* Team Section */}
-                    <Card className="lg:col-span-2 h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
+                    <Card className="lg:col-span-2 h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <CardHeader>
                              <CardTitle className="flex items-center gap-2 font-headline"><Users /> {ourTeam.title}</CardTitle>
                              <CardDescription>{ourTeam.subtitle}</CardDescription>
                         </CardHeader>
-                        <CardContent className="flex-1 flex flex-col items-center justify-center gap-4">
+                        <CardContent className="flex-1 flex flex-col items-center justify-center gap-4 pt-6">
                            {teamMembers.map((name, i) => (
-                               <div key={i} className="flex items-center gap-4 w-full p-2 rounded-md transition-colors hover:bg-muted/50">
+                               <div key={i} className="flex items-center gap-4 w-full p-2 rounded-md transition-all duration-300 hover:bg-muted/50 hover:scale-105">
                                    <Avatar className="h-12 w-12 border-2 border-primary">
                                         <AvatarFallback>{name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                    </Avatar>
@@ -61,12 +61,12 @@ export function AboutSection() {
                     </Card>
                 </div>
                  <div className="pt-12">
-                    <Card className="shadow-lg hover:shadow-xl transition-shadow">
+                    <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <CardHeader>
                              <CardTitle className="flex items-center gap-2 font-headline"><UserCircle /> {mandate.orgChartTitle}</CardTitle>
                              <CardDescription>An overview of the DBT Mission's team structure.</CardDescription>
                         </CardHeader>
-                        <CardContent className="flex-1 flex items-center justify-center">
+                        <CardContent className="flex-1 flex items-center justify-center p-6">
                             <OrgChart />
                         </CardContent>
                     </Card>
