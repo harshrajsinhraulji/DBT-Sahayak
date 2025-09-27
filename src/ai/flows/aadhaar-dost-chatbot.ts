@@ -2,7 +2,6 @@
 import {z} from 'genkit';
 import {ai} from '../genkit';
 import {pageContent} from '@/lib/data';
-import {Language} from '@/lib/types';
 import {
   AadhaarDostChatbotInputSchema,
   AadhaarDostChatbotOutputSchema,
