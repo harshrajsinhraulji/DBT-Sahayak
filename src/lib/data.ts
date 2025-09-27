@@ -18,7 +18,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       login: "Login/Register"
     },
     hero: {
-      tagline: "Empowering Students, Ensuring Scholarships",
+      tagline: "Direct Benefit Transfers made transparent and accessible.",
       title: "Unlock Your Scholarship with a DBT-Enabled Account",
       subtitle: "Understand the key difference between an Aadhaar-linked account and a DBT-enabled Aadhaar-seeded account to ensure you receive your scholarship funds without delay.",
       cta: "Learn More",
@@ -62,16 +62,16 @@ export const pageContent: Record<Language, LanguageContent> = {
       subtitle: "Explore scholarship opportunities for which a DBT-enabled account is essential.",
       scholarships: [
         {
-          title: "Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
-          description: "State-level scheme for meritorious students of Gujarat to pursue higher education.",
-          eligibility: "Varies by course. Requires specific percentile in 10th/12th and income criteria.",
-          link: "https://mysy.guj.nic.in/",
-        },
-        {
           title: "Post-Matric Scholarship for OBC Students",
           description: "Financial assistance to students of Other Backward Classes (OBC) for post-matric studies.",
           eligibility: "Parental income should not exceed Rs. 1.5 lakh per annum.",
           link: "https://scholarships.gov.in/",
+        },
+        {
+          title: "Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
+          description: "State-level scheme for meritorious students of Gujarat to pursue higher education.",
+          eligibility: "Varies by course. Requires specific percentile in 10th/12th and income criteria.",
+          link: "https://mysy.guj.nic.in/",
         },
         {
           title: "Central Sector Scheme for College Students (CSSS)",
@@ -319,7 +319,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       login: "लॉगિન/રજીસ્ટર કરો"
     },
     hero: {
-      tagline: "छात्रों को सशक्त बनाना, छात्रवृत्ति सुनिश्चित करना",
+      tagline: "प्रत्यक्ष लाभ हस्तांतरण को पारदर्शी और सुलभ बनाया गया।",
       title: "डीबीटी-सक्षम खाते के साथ अपनी छात्रवृत्ति अनलॉक करें",
       subtitle: "यह सुनिश्चित करने के लिए कि आपको अपनी छात्रवृत्ति राशि बिना किसी देरी के मिले, आधार-लिंक्ड खाते और डीबीटी-सक्षम आधार-सीडेड खाते के बीच मुख्य अंतर को समझें।",
       cta: "और जानें",
@@ -363,16 +363,16 @@ export const pageContent: Record<Language, LanguageContent> = {
       subtitle: "उन छात्रवृत्ति अवसरों का अन्वेષણ करें जिनके लिए डीबीटी-सक्षम खाता आवश्यक है।",
       scholarships: [
         {
-          title: "मुख्यमंत्री युवा स्वावलंबन योजना (MYSY)",
-          description: "गुजरात के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करने हेतु राज्य स्तरीय योजना।",
-          eligibility: "पाठ्यक्रम के अनुसार बदलता है। 10वीं/12वीं में विशिष्ट प्रतिशत और आय मानदंड की आवश्यकता है।",
-          link: "https://mysy.guj.nic.in/",
-        },
-        {
           title: "ओबीसी छात्रों के लिए पोस्ट-मैट्रिक छात्रवृत्ति",
           description: "अन्य पिछड़ा वर्ग (ओबीसी) के छात्रों को पोस्ट-मैट्रिक अध्ययन के लिए वित्तीय सहायता।",
           eligibility: "माता-पिता की आय 1.5 लाख रुपये प्रति वर्ष से अधिक नहीं होनी चाहिए।",
           link: "https://scholarships.gov.in/",
+        },
+        {
+          title: "मुख्यमंत्री युवा स्वावलंबन योजना (MYSY)",
+          description: "गुजरात के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करने हेतु राज्य स्तरीय योजना।",
+          eligibility: "पाठ्यक्रम के अनुसार बदलता है। 10वीं/12वीं में विशिष्ट प्रतिशत और आय मानदंड की आवश्यकता है।",
+          link: "https://mysy.guj.nic.in/",
         },
         {
           title: "कॉलेज छात्रों के लिए केंद्रीय क्षेत्र योजना (CSSS)",
@@ -620,7 +620,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       login: "લોગિન/રજીસ્ટર કરો"
     },
     hero: {
-      tagline: "વિદ્યાર્થીઓને સશક્ત બનાવવા, શિષ્યવૃત્તિ સુનિશ્ચિત કરવી",
+      tagline: "ડાયરેક્ટ બેનિફિટ ટ્રાન્સફરને પારદર્શક અને સુલભ બનાવ્યું.",
       title: "ડીબીટી-સક્ષમ ખાતા સાથે તમારી શિષ્યવૃત્તિ અનલૉક કરો",
       subtitle: "તમને તમારી શિષ્યવૃત્તિની રકમ વિલંબ વિના મળે તેની ખાતરી કરવા માટે આધાર-લિંક્ડ ખાતા અને ડીબીટી-સક્ષમ આધાર-સીડેડ ખાતા વચ્ચેનો મુખ્ય તફાવત સમજો.",
       cta: "વધુ શીખો",
@@ -664,16 +664,16 @@ export const pageContent: Record<Language, LanguageContent> = {
       subtitle: "શિષ્યવૃત્તિની તકોનું અન્વેષણ કરો જેના માટે ડીબીટી-સક્ષમ ખાતું જરૂરી છે.",
       scholarships: [
         {
-          title: "મુખ્યમંત્રી યુવા સ્વાવલંબન યોજના (MYSY)",
-          description: "ગુજરાતના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ શિક્ષણ મેળવવા માટે રાજ્ય સ્તરની યોજના.",
-          eligibility: "અભ્યાસક્રમ મુજબ બદલાય છે. ૧૦મા/૧૨મા ધોરણમાં ચોક્કસ પર્સેન્ટાઇલ અને આવકના માપદંડની જરૂર છે.",
-          link: "https://mysy.guj.nic.in/",
-        },
-        {
           title: "OBC વિદ્યાર્થીઓ માટે પોસ્ટ-મેટ્રિક શિષ્યવૃત્તિ",
           description: "અન્ય પછાત વર્ગ (OBC) ના વિદ્યાર્થીઓને પોસ્ટ-મેટ્રિક અભ્યાસ માટે આર્થિક સહાય.",
           eligibility: "વાલીની આવક વાર્ષિક રૂ. 1.5 લાખથી વધુ ન હોવી જોઈએ.",
           link: "https://scholarships.gov.in/",
+        },
+        {
+          title: "મુખ્યમંત્રી યુવા સ્વાવલંબન યોજના (MYSY)",
+          description: "ગુજરાતના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ શિક્ષણ મેળવવા માટે રાજ્ય સ્તરની યોજના.",
+          eligibility: "અભ્યાસક્રમ મુજબ બદલાય છે. ૧૦મા/૧૨મા ધોરણમાં ચોક્કસ પર્સેન્ટાઇલ અને આવકના માપદંડની જરૂર છે.",
+          link: "https://mysy.guj.nic.in/",
         },
         {
           title: "કોલેજના વિદ્યાર્થીઓ માટે કેન્દ્રીય ક્ષેત્રની યોજના (CSSS)",
@@ -906,3 +906,5 @@ export const pageContent: Record<Language, LanguageContent> = {
     }
   },
 };
+
+    

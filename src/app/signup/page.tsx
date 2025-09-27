@@ -22,7 +22,7 @@ import { useAuth } from "@/hooks/use-auth";
 export default function SignupPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirectUrl = searchParams.get('redirect') || '/';
+  const redirectUrl = searchParams.get('redirect') || '/dashboard';
   const { signup } = useAuth();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -133,3 +133,5 @@ export default function SignupPage() {
     </div>
   );
 }
+
+    

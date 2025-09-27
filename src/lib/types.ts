@@ -27,11 +27,7 @@ export type Fact = {
     explanation: string;
 }
 
-export const enum Language {
-  en = 'en',
-  hi = 'hi',
-  gu = 'gu'
-};
+export type Language = 'en' | 'hi' | 'gu';
 
 export type LanguageContent = {
   header: {
@@ -167,3 +163,5 @@ subtitle: string;
     gu: string;
   }
 };
+
+    
