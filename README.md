@@ -1,6 +1,4 @@
-# Firebase Studio
-
-This is a NextJS starter in Firebase Studio.
+# Next.js Project
 
 This project appears to be a web application focused on providing information and resources related to education and awareness. It includes the following features:
 
