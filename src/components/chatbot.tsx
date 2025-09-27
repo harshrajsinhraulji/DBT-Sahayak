@@ -1,80 +1,100 @@
+
 "use client";
 
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Bot, LoaderCircle, Send, X, MessageSquare, User } from "lucide-react";
-import { aadhaarDostChatbot } from "@/ai";
+import { Bot, X, MessageSquare, User, HelpCircle, Phone } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
 import type { Language } from "@/lib/types";
+import { chatbotData, type ChatNode } from "@/lib/chatbot-data";
 
 interface Message {
   role: "user" | "bot";
   text: string;
+  options?: { text: string; nextNodeId: string }[];
+  isEnd?: boolean;
+  isContact?: boolean;
 }
 
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const { language } = useLanguage();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const [isCompleted, setIsCompleted] = useState(false);
 
-  const initialMessage: Record<Language, string> = {
-    en: "Hello! I am Aadhaar Dost, your AI assistant. How can I help you today with DBT, Aadhaar seeding, or scholarships?",
-    hi: "नमस्ते! मैं आधार दोस्त हूँ, आपका एआई सहायक। मैं आज डीबीटी, आधार सीडिंग, या छात्रवृत्ति के साथ आपकी कैसे मदद कर सकता हूँ?",
-    gu: "નમસ્તે! હું આધાર દોસ્ત છું, તમારો એઆઈ સહાયક। હું આજે ડીબીટી, આધાર સીડીંગ, અથવા શિષ્યવૃત્તિ સાથે તમારી કેવી રીતે મદદ કરી શકું?",
+  const scrollToBottom = () => {
+    setTimeout(() => {
+      const scrollableViewport = document.getElementById('scrollArea_viewport');
+      if (scrollableViewport) {
+        scrollableViewport.scrollTo({ top: scrollableViewport.scrollHeight, behavior: 'smooth' });
+      }
+    }, 100);
+  };
+  
+  const resetChat = () => {
+    const tree = chatbotData[language];
+    const startNode = tree.start;
+    setMessages([
+      {
+        role: "bot",
+        text: startNode.text,
+        options: startNode.options,
+      },
+    ]);
+    setIsCompleted(false);
+    scrollToBottom();
   };
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      setMessages([{ role: "bot", text: initialMessage[language] }]);
+      resetChat();
     }
-  }, [isOpen, messages.length, language, initialMessage]);
+  }, [isOpen, language]);
 
   useEffect(() => {
-    if (scrollAreaRef.current) {
-      scrollArea_viewport.scrollTo({ top: scrollAreaRef.current.scrollHeight, behavior: 'smooth' });
-    }
-  }, [messages]);
+     if (isOpen) {
+      resetChat();
+     }
+  }, [language]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
 
-    const userMessage: Message = { role: "user", text: input };
-    setMessages((prev) => [...prev, userMessage]);
-    setInput("");
-    setIsLoading(true);
+  const handleOptionClick = (optionText: string, nextNodeId: string) => {
+    const userMessage: Message = { role: "user", text: optionText };
+    
+    const tree = chatbotData[language];
+    const nextNode = tree[nextNodeId];
 
-    try {
-      const history = messages.map(m => ({
-          role: m.role,
-          parts: [{ text: m.text }],
-        }));
-
-      const response = await aadhaarDostChatbot({
-        history,
-        query: input,
-        language: language,
-      });
-
-      const botMessage: Message = { role: "bot", text: response.answer };
-      setMessages((prev) => [...prev, botMessage]);
-    } catch (error) {
-      console.error("Chatbot error:", error);
-      const errorMessage: Message = {
+    if (nextNode) {
+      const botMessage: Message = {
         role: "bot",
-        text: "I'm sorry, I'm having trouble connecting right now. Please try again later.",
+        text: nextNode.text,
+        options: nextNode.options,
+        isEnd: nextNode.isEnd,
+        isContact: nextNode.isContact,
       };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
+      setMessages((prev) => [...prev, userMessage, botMessage]);
+      if(nextNode.isEnd || nextNode.isContact) {
+        setIsCompleted(true);
+      }
     }
+    scrollToBottom();
   };
+
+  const handleFeedback = (wasHelpful: boolean) => {
+    let feedbackMessage: Message;
+    if (wasHelpful) {
+      feedbackMessage = { role: 'bot', text: 'Great! Glad I could help.' };
+    } else {
+      const contactNode = chatbotData[language].end_contact;
+      feedbackMessage = { role: 'bot', text: contactNode.text, isContact: true };
+    }
+     setMessages((prev) => [...prev, feedbackMessage]);
+     setIsCompleted(true);
+     scrollToBottom();
+  }
 
   return (
     <>
@@ -95,47 +115,68 @@ export function Chatbot() {
               </div>
             </CardHeader>
             <CardContent className="flex-1 p-0">
-              <ScrollArea className="h-full p-4" ref={scrollAreaRef}>
-                <div className="space-y-4">
+              <ScrollArea className="h-full" ref={scrollAreaRef}>
+                <div id="scrollArea_viewport" className="space-y-4 p-4">
                   {messages.map((message, index) => (
-                    <div key={index} className={`flex items-start gap-2 ${message.role === 'user' ? 'justify-end' : ''}`}>
-                       {message.role === 'bot' && <Bot className="h-5 w-5 text-primary flex-shrink-0 mt-1" />}
-                      <div className={`rounded-lg px-3 py-2 text-sm ${
-                          message.role === 'user'
-                            ? 'bg-primary text-primary-foreground'
-                            : 'bg-muted'
-                        }`}
-                      >
-                        {message.text}
+                    <div key={index}>
+                      <div className={`flex items-start gap-2 ${message.role === 'user' ? 'justify-end' : ''}`}>
+                         {message.role === 'bot' && <Bot className="h-5 w-5 text-primary flex-shrink-0 mt-1" />}
+                        <div className={`rounded-lg px-3 py-2 text-sm ${
+                            message.role === 'user'
+                              ? 'bg-primary text-primary-foreground'
+                              : 'bg-muted'
+                          }`}
+                        >
+                          {message.text}
+                        </div>
+                         {message.role === 'user' && <User className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-1" />}
                       </div>
-                       {message.role === 'user' && <User className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-1" />}
+                      
+                      {message.role === 'bot' && message.options && (
+                        <div className="mt-2 flex flex-wrap gap-2 justify-start">
+                          {message.options.map((opt, i) => (
+                            <Button
+                              key={i}
+                              variant="outline"
+                              size="sm"
+                              onClick={() => handleOptionClick(opt.text, opt.nextNodeId)}
+                            >
+                              {opt.text}
+                            </Button>
+                          ))}
+                        </div>
+                      )}
+                      
+                      {message.role === 'bot' && message.isEnd && !isCompleted &&(
+                        <div className="mt-3 text-center border-t pt-3">
+                           <p className="text-sm font-semibold mb-2">Was this helpful?</p>
+                           <div className="flex justify-center gap-2">
+                             <Button size="sm" variant="outline" onClick={() => handleFeedback(true)}>Yes</Button>
+                             <Button size="sm" variant="outline" onClick={() => handleFeedback(false)}>No</Button>
+                           </div>
+                        </div>
+                      )}
+                      
+                       {message.role === 'bot' && message.isContact && (
+                         <div className="mt-2 text-center">
+                            <a href="#contact" onClick={() => setIsOpen(false)}>
+                                <Button variant="secondary" size="sm">
+                                    <Phone className="mr-2 h-4 w-4" /> Go to Contact Section
+                                </Button>
+                            </a>
+                         </div>
+                      )}
+
                     </div>
                   ))}
-                   {isLoading && (
-                    <div className="flex items-start gap-2">
-                      <Bot className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                      <div className="rounded-lg px-3 py-2 text-sm bg-muted">
-                        <LoaderCircle className="h-4 w-4 animate-spin" />
-                      </div>
-                    </div>
-                  )}
                 </div>
               </ScrollArea>
             </CardContent>
-            <CardFooter className="border-t pt-4">
-              <form onSubmit={handleSubmit} className="flex w-full items-center gap-2">
-                <Input
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask a question..."
-                  disabled={isLoading}
-                  autoComplete="off"
-                />
-                <Button type="submit" size="icon" disabled={isLoading}>
-                  <Send className="h-4 w-4" />
+             <CardFooter className="border-t pt-4">
+                <Button variant="ghost" size="sm" className="w-full" onClick={resetChat}>
+                  <HelpCircle className="mr-2 h-4 w-4" /> Start Over
                 </Button>
-              </form>
-            </CardFooter>
+              </CardFooter>
           </Card>
         </div>
       )}
