@@ -3,7 +3,7 @@
 
 import { useLanguage } from "@/hooks/use-language";
 import { Logo } from "@/components/logo";
-import { Github, Linkedin, Twitter, Send, Printer } from "lucide-react";
+import { Github, Linkedin, Twitter, Send, Printer, Megaphone } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -19,9 +19,14 @@ export function Footer() {
           <div className="text-center">
             <p>An initiative by Team Code Technicians for Smart India Hackathon 2025.</p>
             <p>{content.footer.credits}</p>
-            <Link href="/print-kit" className="text-primary hover:underline flex items-center justify-center gap-2 mt-2">
-                <Printer className="h-4 w-4" /> {content.printKit.instructions.printButton}
-            </Link>
+            <div className="flex justify-center gap-4 mt-2">
+              <Link href="/print-kit" className="text-primary hover:underline flex items-center justify-center gap-2">
+                  <Printer className="h-4 w-4" /> {content.printKit.instructions.printButton}
+              </Link>
+              <Link href="/request-drive" className="text-primary hover:underline flex items-center justify-center gap-2">
+                  <Megaphone className="h-4 w-4" /> Request a Drive
+              </Link>
+            </div>
           </div>
           <div className="flex items-center gap-4">
             <a href="https://t.me/your-telegram-bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="hover:text-primary transition-colors"><Send /></a>

@@ -6,9 +6,13 @@ import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndP
 import { auth } from '@/lib/firebase';
 import { LoaderCircle } from 'lucide-react';
 
+// Define the admin email address
+const ADMIN_EMAIL = "admin@dbtsahayak.com";
+
 interface AuthContextType {
   user: User | null;
   loading: boolean;
+  isAdmin: boolean;
   login: (email: string, pass: string) => Promise<any>;
   signup: (email: string, pass: string, name: string) => Promise<any>;
   logout: () => Promise<any>;
@@ -19,10 +23,12 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
+      setIsAdmin(user?.email === ADMIN_EMAIL);
       setLoading(false);
     });
 
@@ -39,6 +45,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         await updateProfile(userCredential.user, { displayName: name });
         // Manually update the user state as onAuthStateChanged might not be immediate
         setUser({ ...userCredential.user, displayName: name });
+        setIsAdmin(userCredential.user.email === ADMIN_EMAIL);
     }
     return userCredential;
   };
@@ -51,10 +58,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const value = useMemo(() => ({
     user,
     loading,
+    isAdmin,
     login,
     signup,
     logout,
-  }), [user, loading]);
+  }), [user, loading, isAdmin]);
 
   if (loading) {
     return (
@@ -78,5 +86,3 @@ export function useAuth() {
   }
   return context;
 }
-
-    

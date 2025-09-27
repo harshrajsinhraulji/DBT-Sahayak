@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, User, LogOut, LayoutDashboard } from "lucide-react";
+import { Menu, User, LogOut, LayoutDashboard, Megaphone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -33,7 +33,7 @@ export function Header() {
   const { content } = useLanguage();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
-  const { user, logout } = useAuth();
+  const { user, logout, isAdmin } = useAuth();
 
   const navItems = [
     { href: "#education", label: content.header.nav.education },
@@ -56,10 +56,12 @@ export function Header() {
       elem?.scrollIntoView({
         behavior: "smooth",
       });
+      setMobileMenuOpen(false);
     } else {
+       // If on a different page, navigate to home and then scroll
       router.push(`/${href.slice(href.lastIndexOf('#'))}`);
+      setMobileMenuOpen(false);
     }
-    setMobileMenuOpen(false);
   };
   
   const handleLoginClick = () => {
@@ -100,6 +102,12 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+           <Link
+              href="/request-drive"
+              className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+            >
+              Request a Drive
+            </Link>
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
           <LanguageSwitcher />
@@ -127,6 +135,12 @@ export function Header() {
                   <LayoutDashboard className="mr-2 h-4 w-4" />
                   <span>Dashboard</span>
                 </DropdownMenuItem>
+                 {isAdmin && (
+                  <DropdownMenuItem onClick={() => router.push('/admin')}>
+                    <LayoutDashboard className="mr-2 h-4 w-4" />
+                    <span>Admin Panel</span>
+                  </DropdownMenuItem>
+                )}
                 <DropdownMenuItem onClick={handleLogoutClick}>
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Log out</span>
@@ -164,6 +178,14 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
+                <Link
+                  href="/request-drive"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center rounded-md p-2 text-lg font-medium hover:bg-muted"
+                >
+                  <Megaphone className="mr-2 h-5 w-5" />
+                  Request a Drive
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
