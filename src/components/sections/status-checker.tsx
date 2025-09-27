@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -49,8 +50,7 @@ export function StatusCheckerSection() {
     setShowStatusPrompt(false);
     if (!isSeeded) {
       if (user) {
-        setShowGuidance(true);
-        // Here you would typically save the user's status to your database
+        router.push('/dashboard');
       } else {
         // If not logged in, prompt them to log in to get guidance
         setShowLoginPrompt(true);
@@ -60,12 +60,16 @@ export function StatusCheckerSection() {
 
   const handleLoginForGuidance = () => {
     setShowLoginPrompt(false);
-    router.push("/login");
+    router.push("/login?redirect=/dashboard");
   };
   
   const handleStartJourney = () => {
     setShowStatusPrompt(false);
-    setShowGuidance(true);
+    if (user) {
+        router.push('/dashboard');
+    } else {
+        setShowLoginPrompt(true);
+    }
   };
 
   return (
@@ -120,7 +124,7 @@ export function StatusCheckerSection() {
           <AlertDialogHeader>
             <AlertDialogTitle>Login for Personalized Guidance</AlertDialogTitle>
             <AlertDialogDescription>
-              It looks like your account isn't DBT-enabled. Please log in or create an account to get personalized steps on how to fix it and track your progress.
+              It looks like your account isn't DBT-enabled. Please log in or create an account to get a personalized dashboard to track your progress.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -138,49 +142,19 @@ export function StatusCheckerSection() {
           <AlertDialogHeader>
             <AlertDialogTitle>Is Your Account DBT Enabled?</AlertDialogTitle>
             <AlertDialogDescription>
-              After checking the UIDAI portal, please confirm if your bank account is active and seeded for DBT. This helps us provide better guidance.
+              After checking the UIDAI portal, what was your status? This helps us provide better guidance.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
              <AlertDialogAction onClick={() => handleStatusResponse(false)}>
-              No, it's not enabled
+              No, it's NOT enabled
             </AlertDialogAction>
             <AlertDialogAction onClick={() => handleStatusResponse(true)}>
-              Yes, it's enabled!
+              Yes, it IS enabled!
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-
-      {/* Guidance Dialog / Journey Tracker */}
-      <Dialog open={showGuidance} onOpenChange={setShowGuidance}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="flex items-center gap-2 font-headline text-primary">
-              <Info className="text-primary" /> My DBT Journey
-            </DialogTitle>
-            <DialogDescription>
-              Don&apos;t worry! Follow these steps to get your account DBT-enabled. Track your progress here.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="py-4 text-sm text-muted-foreground space-y-4">
-              <p>
-                To receive scholarships, your bank account must be 'seeded' with your Aadhaar in the NPCI database.
-              </p>
-              <ol className="list-decimal list-inside space-y-3 font-medium text-foreground">
-                  <li>Download the "Aadhaar Seeding and NPCI Mapping Application Form" for your bank from our <a href="#contact" onClick={() => setShowGuidance(false)} className="text-primary underline">Contact section</a>.</li>
-                  <li>Fill out the form completely. Use our <a href="#form-checker" onClick={() => setShowGuidance(false)} className="text-primary underline">AI Form Assistant</a> to double-check it for errors!</li>
-                  <li>Visit your nearest bank branch with the completed form and a self-attested copy of your Aadhaar card.</li>
-                  <li>Submit the documents to the bank official and ask for an acknowledgement slip.</li>
-                  <li>The bank will process your request. This may take 3-5 business days.</li>
-                  <li>After a week, check your status again on the UIDAI portal to confirm it's active.</li>
-              </ol>
-               <Button onClick={() => setShowGuidance(false)} className="w-full mt-4">
-                Got it, I'm on my way!
-              </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
     </>
   );
 }

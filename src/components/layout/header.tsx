@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Languages, Menu, User, X, LogOut } from "lucide-react";
+import { Languages, Menu, User, X, LogOut, LayoutDashboard } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -64,6 +64,10 @@ export function Header() {
     router.push('/login');
   }
 
+  const handleDashboardClick = () => {
+    router.push('/dashboard');
+  }
+
   const handleLogoutClick = async () => {
     await logout();
     router.push('/');
@@ -116,6 +120,10 @@ export function Header() {
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={handleDashboardClick}>
+                  <LayoutDashboard className="mr-2 h-4 w-4" />
+                  <span>Dashboard</span>
+                </DropdownMenuItem>
                 <DropdownMenuItem onClick={handleLogoutClick}>
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Log out</span>

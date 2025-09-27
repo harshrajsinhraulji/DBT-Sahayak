@@ -1,6 +1,4 @@
 
-// This file is machine-generated - edit with care!
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -17,12 +15,14 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, LoaderCircle } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useAuth } from "@/hooks/use-auth";
 
 export default function SignupPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectUrl = searchParams.get('redirect') || '/';
   const { signup } = useAuth();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -47,7 +47,7 @@ export default function SignupPage() {
         title: "Signup Successful",
         description: "Your account has been created.",
       });
-      router.push("/");
+      router.push(redirectUrl);
     } catch (error: any) {
       console.error(error);
       toast({
