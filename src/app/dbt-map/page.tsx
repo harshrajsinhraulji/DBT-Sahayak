@@ -5,11 +5,11 @@ import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 
-// Dynamically import the DBTMap component and disable server-side rendering
-const DBTMap = dynamic(() => import('@/components/india-map'), {
+// Dynamically import the GoogleGeoChart component and disable server-side rendering
+const GoogleGeoChart = dynamic(() => import('@/components/google-geo-chart'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-[75vh] flex items-center justify-center">
+    <div className="w-full h-[500px] flex items-center justify-center">
       <Skeleton className="w-full h-full" />
     </div>
   ),
@@ -31,12 +31,12 @@ export default function DbtMapPage() {
         </div>
         <Card className="shadow-lg">
           <CardHeader>
-            <CardTitle>India DBT Performance Choropleth Map</CardTitle>
-            <CardDescription>Hover over a state to see its rank and score. Use your mouse wheel or trackpad to zoom and pan.</CardDescription>
+            <CardTitle>India DBT Performance Geo Chart</CardTitle>
+            <CardDescription>Hover over a state to see its performance score. The color indicates performance level.</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="flex items-center justify-center">
             {/* The dynamically imported map will render here */}
-            <DBTMap />
+            <GoogleGeoChart />
           </CardContent>
         </Card>
       </div>
