@@ -2536,51 +2536,37 @@ const Logo = ({ className })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$
         viewBox: "0 0 24 24",
         fill: "none",
         stroke: "currentColor",
-        strokeWidth: "2",
+        strokeWidth: "2.5",
         strokeLinecap: "round",
         strokeLinejoin: "round",
         className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("w-6 h-6", className),
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M6 3h8"
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
+                children: "DBT Sahayak Logo"
             }, void 0, false, {
                 fileName: "[project]/src/components/logo.tsx",
-                lineNumber: 15,
+                lineNumber: 14,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M6 8h8"
+                d: "M12 2a10 10 0 0 0-10 10v0a10 10 0 0 0 10 10h1"
             }, void 0, false, {
                 fileName: "[project]/src/components/logo.tsx",
                 lineNumber: 16,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M7 3v13"
+                d: "M6 10h10"
             }, void 0, false, {
                 fileName: "[project]/src/components/logo.tsx",
                 lineNumber: 17,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M9.5 8c3.5 0 5.5 2 5.5 5.5S13 19 9.5 19h-2"
+                d: "M6 14h10"
             }, void 0, false, {
                 fileName: "[project]/src/components/logo.tsx",
                 lineNumber: 18,
-                columnNumber: 5
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M7 16.5c-1.7 0-3 1.3-3 3v0c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v0c0-1.7-1.3-3-3-3"
-            }, void 0, false, {
-                fileName: "[project]/src/components/logo.tsx",
-                lineNumber: 21,
-                columnNumber: 5
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M5.5 16.5c.3-2.2 2.3-4 4.5-4s4.2 1.8 4.5 4"
-            }, void 0, false, {
-                fileName: "[project]/src/components/logo.tsx",
-                lineNumber: 22,
                 columnNumber: 5
             }, this)
         ]
