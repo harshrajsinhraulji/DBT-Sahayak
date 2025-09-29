@@ -13,6 +13,7 @@ var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_
 __turbopack_context__.s({
     "default": (()=>GoogleGeoChart)
 });
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/script.js [app-client] (ecmascript)");
@@ -70,19 +71,20 @@ function GoogleGeoChart() {
     _s();
     const [isScriptLoaded, setIsScriptLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isChartDrawn, setIsChartDrawn] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const apiKey = ("TURBOPACK compile-time value", "");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "GoogleGeoChart.useEffect": ()=>{
             if (isScriptLoaded && typeof google !== 'undefined' && google.load) {
-                google.charts.load('current', {
-                    'packages': [
-                        'geochart'
-                    ]
-                });
-                google.charts.setOnLoadCallback(drawVisualization);
+                if ("TURBOPACK compile-time truthy", 1) {
+                    console.error("Google Maps API Key is missing. Please add it to your .env file.");
+                    return;
+                }
+                "TURBOPACK unreachable";
             }
         }
     }["GoogleGeoChart.useEffect"], [
-        isScriptLoaded
+        isScriptLoaded,
+        apiKey
     ]);
     function drawVisualization() {
         const dataArray = [
@@ -112,7 +114,7 @@ function GoogleGeoChart() {
                 ]
             },
             resolution: 'provinces',
-            backgroundColor: 'black',
+            backgroundColor: 'hsl(var(--background))',
             datalessRegionColor: '#333333',
             defaultColor: '#e5e7eb',
             width: '100%',
@@ -137,8 +139,25 @@ function GoogleGeoChart() {
                 onLoad: ()=>setIsScriptLoaded(true)
             }, void 0, false, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 94,
+                lineNumber: 102,
                 columnNumber: 7
+            }, this),
+            !apiKey && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-destructive text-center p-4 border border-destructive rounded-md",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                        children: "Warning:"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/google-geo-chart.tsx",
+                        lineNumber: 109,
+                        columnNumber: 13
+                    }, this),
+                    " `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is not set. The map may not render correctly."
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/google-geo-chart.tsx",
+                lineNumber: 108,
+                columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 id: "visualization",
@@ -154,7 +173,7 @@ function GoogleGeoChart() {
                             className: "h-12 w-12 animate-spin text-primary"
                         }, void 0, false, {
                             fileName: "[project]/src/components/google-geo-chart.tsx",
-                            lineNumber: 102,
+                            lineNumber: 115,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -162,18 +181,18 @@ function GoogleGeoChart() {
                             children: "Loading Map..."
                         }, void 0, false, {
                             fileName: "[project]/src/components/google-geo-chart.tsx",
-                            lineNumber: 103,
+                            lineNumber: 116,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/google-geo-chart.tsx",
-                    lineNumber: 101,
+                    lineNumber: 114,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 99,
+                lineNumber: 112,
                 columnNumber: 7
             }, this)
         ]
