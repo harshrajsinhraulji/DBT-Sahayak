@@ -1,1 +1,3 @@
-{}
+{
+  "/dbt-map/page": "app/dbt-map/page.js"
+}

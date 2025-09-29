@@ -10,165 +10,168 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
-import dbtData from '@/lib/dbt-performance-data.json';
-import { cn } from '@/lib/utils';
+import dbtPerformanceData from '@/lib/dbt-performance-data.json';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 
-interface PerformanceData {
+interface StateData {
   Rank: number;
   State: string;
   Score: number;
 }
 
-const DBTMap = () => {
-  const [pointedLocation, setPointedLocation] = useState<string | null>(null);
-  const [tooltipText, setTooltipText] = useState<string>('');
-  const [selectedState, setSelectedState] = useState<{ name: string; data: PerformanceData | null } | null>(null);
-
-  const dataMap: Map<string, PerformanceData> = useMemo(() => {
-    const map = new Map<string, PerformanceData>();
-    dbtData.forEach((r) => {
-      map.set(normalizeName(r.State), r as PerformanceData);
-    });
-    return map;
-  }, []);
-
-  function normalizeName(name: string) {
-    return name
-      .trim()
-      .toUpperCase()
-      .replace(/&/g, 'AND')
-      .replace(/\s+/g, ' ');
-  }
-
-  function getLocationClassName(location: any) {
-    const normName = normalizeName(location.name);
-    const stateData = dataMap.get(normName);
-    const score = stateData?.Score;
-
-    let fillColorClass = 'fill-muted/40'; // Default for no data
-    if (score !== undefined) {
-      if (score > 80) {
-        fillColorClass = 'fill-green-600';
-      } else if (score > 50) {
-        fillColorClass = 'fill-yellow-500';
-      } else {
-        fillColorClass = 'fill-red-600';
-      }
-    }
-    
-    return cn(
-        'transition-all duration-200 outline-none',
-        fillColorClass,
-        'hover:fill-accent focus:fill-accent stroke-background stroke-1 hover:stroke-foreground/50 focus:stroke-foreground/50',
-         pointedLocation === location.name && 'fill-accent'
-    );
-  }
-
-  function handleLocationMouseOver(event: React.MouseEvent<SVGPathElement>) {
-    const locationName = event.currentTarget.getAttribute('name');
-    if (locationName) {
-      setPointedLocation(locationName);
-      const stateData = dataMap.get(normalizeName(locationName));
-      if (stateData) {
-        setTooltipText(
-          `${locationName} | Rank: ${stateData.Rank} | Score: ${stateData.Score}%`
-        );
-      } else {
-        setTooltipText(`${locationName} | No data`);
-      }
-    }
-  }
-
-  function handleLocationMouseOut() {
-    setPointedLocation(null);
-    setTooltipText('');
-  }
-
-  function handleLocationClick(event: React.MouseEvent<SVGPathElement>) {
-    const locationName = event.currentTarget.getAttribute('name');
-    if (locationName) {
-        const normName = normalizeName(locationName);
-        const stateData = dataMap.get(normName);
-        setSelectedState({ name: locationName, data: stateData || null });
-    }
-  }
-
-  const Legend = () => (
-    <div className="bg-background/80 backdrop-blur-sm p-4 rounded-lg shadow-md border">
-      <h3 className="font-bold mb-2 text-foreground">Score Legend</h3>
-      <div className="space-y-1 text-sm text-muted-foreground">
-        <div className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-sm bg-green-600" />
-          <span>&gt; 80 (High)</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-sm bg-yellow-500" />
-          <span>51 - 80 (Medium)</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-sm bg-red-600" />
-          <span>&lt;= 50 (Low)</span>
-        </div>
-         <div className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-sm bg-muted/40 border" />
-          <span>No Data</span>
-        </div>
-      </div>
-    </div>
-  );
-
-  return (
-    <div className="relative w-full h-full">
-      <TooltipProvider>
-        <Tooltip open={!!pointedLocation}>
-          <TooltipTrigger asChild>
-            <SVGMap
-              map={India}
-              locationClassName={getLocationClassName}
-              onLocationMouseOver={handleLocationMouseOver}
-              onLocationMouseOut={handleLocationMouseOut}
-              onLocationClick={handleLocationClick}
-              className="w-full h-full"
-            />
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>{tooltipText}</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-
-      <div className="absolute bottom-4 right-4 z-10">
-        <Legend />
-      </div>
-
-       <Dialog open={!!selectedState} onOpenChange={(isOpen) => !isOpen && setSelectedState(null)}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle className="font-headline text-2xl">{selectedState?.name}</DialogTitle>
-            <DialogDescription>
-              DBT Performance Details
-            </DialogDescription>
-          </DialogHeader>
-          <div className="py-4">
-             <div className="text-sm text-muted-foreground">Rank</div>
-             <div className="text-3xl font-bold text-primary">{selectedState?.data ? selectedState.data.Rank : "N/A"}</div>
-             <div className="text-sm text-muted-foreground mt-4">Score</div>
-             <div className="text-3xl font-bold text-primary">{selectedState?.data ? selectedState.data.Score + "%" : "No data"}</div>
-             <div className="mt-6 text-muted-foreground text-sm">
-                <p><strong className="text-foreground">Why it matters:</strong> States with higher Aadhaar seeding and DBT efficiency reach beneficiaries faster and reduce leakages.</p>
-             </div>
-          </div>
-        </DialogContent>
-      </Dialog>
-    </div>
-  );
+// Create a mapping from state names in the map data to names in our JSON data
+const stateNameMapping: Record<string, string> = {
+  "Andaman & Nicobar Islands": "ANDAMAN AND NICOBAR ISLANDS",
+  "Andhra Pradesh": "ANDHRA PRADESH",
+  "Arunachal Pradesh": "ARUNACHAL PRADESH",
+  "Assam": "ASSAM",
+  "Bihar": "BIHAR",
+  "Chandigarh": "CHANDIGARH",
+  "Chhattisgarh": "CHHATTISGARH",
+  "Dadra & Nagar Haveli": "DADRA AND NAGAR HAVELI",
+  "Daman & Diu": "DAMAN AND DIU",
+  "Goa": "GOA",
+  "Gujarat": "GUJARAT",
+  "Haryana": "HARYANA",
+  "Himachal Pradesh": "HIMACHAL PRADESH",
+  "Jammu & Kashmir": "JAMMU AND KASHMIR",
+  "Jharkhand": "JHARKHAND",
+  "Karnataka": "KARNATAKA",
+  "Kerala": "KERALA",
+  "Lakshadweep": "LAKSHADWEEP",
+  "Madhya Pradesh": "MADHYA PRADESH",
+  "Maharashtra": "MAHARASHTRA",
+  "Manipur": "MANIPUR",
+  "Meghalaya": "MEGHALAYA",
+  "Mizoram": "MIZORAM",
+  "Nagaland": "NAGALAND",
+  "NCT of Delhi": "DELHI",
+  "Odisha": "ODISHA",
+  "Puducherry": "PUDUCHERRY",
+  "Punjab": "PUNJAB",
+  "Rajasthan": "RAJASTHAN",
+  "Sikkim": "SIKKIM",
+  "Tamil Nadu": "TAMIL NADU",
+  "Telangana": "TELANGANA",
+  "Tripura": "TRIPURA",
+  "Uttar Pradesh": "UTTAR PRADESH",
+  "Uttarakhand": "UTTARAKHAND",
+  "West Bengal": "WEST BENGAL",
 };
 
-export default DBTMap;
+
+export default function IndiaMap() {
+    const [tooltipContent, setTooltipContent] = useState('');
+    const [stateData, setStateData] = useState<StateData | null>(null);
+
+    const performanceDataMap: Map<string, StateData> = useMemo(() => {
+        const map = new Map<string, StateData>();
+        dbtPerformanceData.forEach(item => {
+            map.set(item.State.toUpperCase(), item);
+        });
+        return map;
+    }, []);
+
+    const getLocationClassName = (location: any): string => {
+        const mapStateName = location.name;
+        const dataStateName = stateNameMapping[mapStateName];
+        const stateInfo = performanceDataMap.get(dataStateName?.toUpperCase());
+        
+        if (stateInfo) {
+            if (stateInfo.Score >= 75) return 'fill-green-500 stroke-green-700';
+            if (stateInfo.Score >= 50) return 'fill-yellow-400 stroke-yellow-600';
+            return 'fill-red-500 stroke-red-700';
+        }
+
+        return 'fill-muted stroke-border'; // Default color for states with no data
+    };
+
+    const handleLocationMouseOver = (event: React.MouseEvent<SVGPathElement>) => {
+        const mapStateName = event.currentTarget.attributes.name.value;
+        const dataStateName = stateNameMapping[mapStateName];
+        const stateInfo = performanceDataMap.get(dataStateName?.toUpperCase());
+        
+        if (stateInfo) {
+            setTooltipContent(`${mapStateName} | Rank: ${stateInfo.Rank} | Score: ${stateInfo.Score}`);
+        } else {
+            setTooltipContent(`${mapStateName} (No data available)`);
+        }
+    };
+
+    const handleLocationMouseOut = () => {
+        setTooltipContent('');
+    };
+    
+    const handleLocationClick = (event: React.MouseEvent<SVGPathElement>) => {
+        const mapStateName = event.currentTarget.attributes.name.value;
+        const dataStateName = stateNameMapping[mapStateName];
+        const stateInfo = performanceDataMap.get(dataStateName?.toUpperCase());
+        setStateData(stateInfo || null);
+    }
+
+
+  return (
+    <div className="w-full flex flex-col lg:flex-row gap-8 items-start">
+        <div className="w-full lg:w-2/3 relative">
+             <TooltipProvider>
+                <Tooltip open={!!tooltipContent}>
+                    <TooltipTrigger asChild>
+                        <div>
+                            <SVGMap
+                                map={India}
+                                className="w-full h-auto stroke-background stroke-2"
+                                locationClassName={getLocationClassName}
+                                onLocationMouseOver={handleLocationMouseOver}
+                                onLocationMouseOut={handleLocationMouseOut}
+                                onLocationClick={handleLocationClick}
+                            />
+                        </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p>{tooltipContent}</p>
+                    </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
+        </div>
+        <div className="w-full lg:w-1/3">
+            <Card>
+                <CardHeader>
+                    <CardTitle>State Information</CardTitle>
+                    <CardDescription>Click on a state in the map to see details.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    {stateData ? (
+                        <div className="space-y-2">
+                            <h3 className="text-xl font-bold font-headline text-primary">{stateData.State}</h3>
+                            <p><span className="font-semibold">Rank:</span> {stateData.Rank}</p>
+                            <p><span className="font-semibold">Score:</span> {stateData.Score}</p>
+                        </div>
+                    ) : (
+                        <p className="text-muted-foreground">No state selected.</p>
+                    )}
+
+                    <div className="mt-6 space-y-4">
+                        <h4 className="font-semibold">Legend</h4>
+                        <div className="flex items-center gap-2">
+                            <div className="w-5 h-5 rounded-sm bg-green-500 border border-green-700" />
+                            <span>High Performance (Score ≥ 75)</span>
+                        </div>
+                         <div className="flex items-center gap-2">
+                            <div className="w-5 h-5 rounded-sm bg-yellow-400 border border-yellow-600" />
+                            <span>Medium Performance (50-74)</span>
+                        </div>
+                         <div className="flex items-center gap-2">
+                            <div className="w-5 h-5 rounded-sm bg-red-500 border border-red-700" />
+                            <span>Low Performance (&lt; 50)</span>
+                        </div>
+                          <div className="flex items-center gap-2">
+                            <div className="w-5 h-5 rounded-sm bg-muted border border-border" />
+                            <span>No Data</span>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+        </div>
+    </div>
+  );
+}

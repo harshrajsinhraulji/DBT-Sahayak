@@ -54,14 +54,16 @@ __turbopack_context__.v(JSON.parse("[{\"Rank\":1,\"State\":\"HARYANA\",\"Score\"
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "IndiaMap": (()=>IndiaMap)
+    "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-simple-maps/dist/index.umd.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$d3$2d$scale$2f$src$2f$quantile$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__scaleQuantile$3e$__ = __turbopack_context__.i("[project]/node_modules/d3-scale/src/quantile.js [app-client] (ecmascript) <export default as scaleQuantile>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$svg$2d$map$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-svg-map/lib/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$svg$2d$maps$2f$india$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@svg-maps/india/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/tooltip.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/dialog.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$dbt$2d$performance$2d$data$2e$json__$28$json$29$__ = __turbopack_context__.i("[project]/src/lib/dbt-performance-data.json (json)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/utils.ts [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -70,212 +72,366 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const INDIA_TOPO_JSON = 'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json';
-const COLOR_RANGE = [
-    '#ff4d4d',
-    '#ffdb4d',
-    '#4dff4d'
-];
-const dataMap = new Map();
-__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$dbt$2d$performance$2d$data$2e$json__$28$json$29$__["default"].forEach((d)=>dataMap.set(d.State.toUpperCase(), d));
-const MapChart = ({ setTooltipContent })=>{
-    const colorScale = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$d3$2d$scale$2f$src$2f$quantile$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__scaleQuantile$3e$__["scaleQuantile"])().domain(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$dbt$2d$performance$2d$data$2e$json__$28$json$29$__["default"].map((d)=>d.Score)).range(COLOR_RANGE);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ComposableMap"], {
-        projection: "geoMercator",
-        projectionConfig: {
-            scale: 900,
-            center: [
-                82,
-                22
-            ]
-        },
-        style: {
-            width: '100%',
-            height: 'auto'
-        },
-        "data-tip": "",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ZoomableGroup"], {
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Geographies"], {
-                geography: INDIA_TOPO_JSON,
-                children: ({ geographies })=>geographies.filter((geo)=>geo.properties.NAME_LONG === 'India').map((indiaGeo)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Geographies"], {
-                            geography: `https://raw.githubusercontent.com/deldersveld/topojson/master/countries/india/india-states.json`,
-                            children: ({ geographies: stateGeographies })=>stateGeographies.map((geo)=>{
-                                    const stateName = geo.properties.ST_NM.toUpperCase();
-                                    const d = dataMap.get(stateName);
-                                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Geography"], {
-                                        geography: geo,
-                                        onMouseEnter: ()=>{
-                                            const { ST_NM } = geo.properties;
-                                            const performance = dataMap.get(ST_NM.toUpperCase());
-                                            setTooltipContent(performance ? `${ST_NM}: Rank ${performance.Rank} (Score: ${performance.Score})` : `${ST_NM}: No data`);
-                                        },
-                                        onMouseLeave: ()=>{
-                                            setTooltipContent('');
-                                        },
-                                        style: {
-                                            default: {
-                                                fill: d ? colorScale(d.Score) : '#EEE',
-                                                outline: 'none',
-                                                stroke: '#FFF',
-                                                strokeWidth: 0.5
-                                            },
-                                            hover: {
-                                                fill: d ? colorScale(d.Score) : '#EEE',
-                                                outline: 'none',
-                                                stroke: '#333',
-                                                strokeWidth: 2
-                                            },
-                                            pressed: {
-                                                fill: '#333',
-                                                outline: 'none'
-                                            }
-                                        }
-                                    }, geo.rsmKey, false, {
-                                        fileName: "[project]/src/components/india-map.tsx",
-                                        lineNumber: 56,
-                                        columnNumber: 25
-                                    }, this);
-                                })
-                        }, indiaGeo.rsmKey, false, {
-                            fileName: "[project]/src/components/india-map.tsx",
-                            lineNumber: 50,
-                            columnNumber: 17
-                        }, this))
-            }, void 0, false, {
-                fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 45,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
-            fileName: "[project]/src/components/india-map.tsx",
-            lineNumber: 44,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "[project]/src/components/india-map.tsx",
-        lineNumber: 35,
-        columnNumber: 5
-    }, this);
-};
-_c = MapChart;
-const MemoizedMapChart = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["memo"])(MapChart);
-_c1 = MemoizedMapChart;
-const ColorLegend = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex items-center justify-center p-4",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "font-semibold text-sm mr-2",
-                children: "Low (0)"
-            }, void 0, false, {
-                fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 106,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex h-6 w-64 rounded-md overflow-hidden border",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    style: {
-                        flex: 1,
-                        background: 'linear-gradient(to right, #ff4d4d, #ffdb4d, #4dff4d)'
-                    }
+;
+;
+const DBTMap = ()=>{
+    _s();
+    const [pointedLocation, setPointedLocation] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [tooltipText, setTooltipText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [selectedState, setSelectedState] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const dataMap = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "DBTMap.useMemo[dataMap]": ()=>{
+            const map = new Map();
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$dbt$2d$performance$2d$data$2e$json__$28$json$29$__["default"].forEach({
+                "DBTMap.useMemo[dataMap]": (r)=>{
+                    map.set(normalizeName(r.State), r);
+                }
+            }["DBTMap.useMemo[dataMap]"]);
+            return map;
+        }
+    }["DBTMap.useMemo[dataMap]"], []);
+    function normalizeName(name) {
+        return name.trim().toUpperCase().replace(/&/g, 'AND').replace(/\s+/g, ' ');
+    }
+    function getLocationClassName(location) {
+        const normName = normalizeName(location.name);
+        const stateData = dataMap.get(normName);
+        const score = stateData?.Score;
+        let fillColorClass = 'fill-muted/40'; // Default for no data
+        if (score !== undefined) {
+            if (score > 80) {
+                fillColorClass = 'fill-green-600';
+            } else if (score > 50) {
+                fillColorClass = 'fill-yellow-500';
+            } else {
+                fillColorClass = 'fill-red-600';
+            }
+        }
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('transition-all duration-200 outline-none', fillColorClass, 'hover:fill-accent focus:fill-accent stroke-background stroke-1 hover:stroke-foreground/50 focus:stroke-foreground/50', pointedLocation === location.name && 'fill-accent');
+    }
+    function handleLocationMouseOver(event) {
+        const locationName = event.currentTarget.getAttribute('name');
+        if (locationName) {
+            setPointedLocation(locationName);
+            const stateData = dataMap.get(normalizeName(locationName));
+            if (stateData) {
+                setTooltipText(`${locationName} | Rank: ${stateData.Rank} | Score: ${stateData.Score}%`);
+            } else {
+                setTooltipText(`${locationName} | No data`);
+            }
+        }
+    }
+    function handleLocationMouseOut() {
+        setPointedLocation(null);
+        setTooltipText('');
+    }
+    function handleLocationClick(event) {
+        const locationName = event.currentTarget.getAttribute('name');
+        if (locationName) {
+            const normName = normalizeName(locationName);
+            const stateData = dataMap.get(normName);
+            setSelectedState({
+                name: locationName,
+                data: stateData || null
+            });
+        }
+    }
+    const Legend = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "bg-background/80 backdrop-blur-sm p-4 rounded-lg shadow-md border",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                    className: "font-bold mb-2 text-foreground",
+                    children: "Score Legend"
                 }, void 0, false, {
                     fileName: "[project]/src/components/india-map.tsx",
-                    lineNumber: 108,
-                    columnNumber: 11
+                    lineNumber: 105,
+                    columnNumber: 7
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "space-y-1 text-sm text-muted-foreground",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-2",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "w-4 h-4 rounded-sm bg-green-600"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 108,
+                                    columnNumber: 11
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "> 80 (High)"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 109,
+                                    columnNumber: 11
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/india-map.tsx",
+                            lineNumber: 107,
+                            columnNumber: 9
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-2",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "w-4 h-4 rounded-sm bg-yellow-500"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 112,
+                                    columnNumber: 11
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "51 - 80 (Medium)"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 113,
+                                    columnNumber: 11
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/india-map.tsx",
+                            lineNumber: 111,
+                            columnNumber: 9
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-2",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "w-4 h-4 rounded-sm bg-red-600"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 116,
+                                    columnNumber: 11
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "<= 50 (Low)"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 117,
+                                    columnNumber: 11
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/india-map.tsx",
+                            lineNumber: 115,
+                            columnNumber: 9
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-2",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "w-4 h-4 rounded-sm bg-muted/40 border"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 120,
+                                    columnNumber: 11
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "No Data"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 121,
+                                    columnNumber: 11
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/india-map.tsx",
+                            lineNumber: 119,
+                            columnNumber: 10
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/india-map.tsx",
+                    lineNumber: 106,
+                    columnNumber: 7
                 }, this)
-            }, void 0, false, {
-                fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 107,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "font-semibold text-sm ml-2",
-                children: "High (100)"
-            }, void 0, false, {
-                fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 110,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "[project]/src/components/india-map.tsx",
-        lineNumber: 105,
-        columnNumber: 3
-    }, this);
-_c2 = ColorLegend;
-function IndiaMap() {
-    _s();
-    const [content, setContent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/india-map.tsx",
+            lineNumber: 104,
+            columnNumber: 5
+        }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative w-full border rounded-lg p-2 bg-card",
+        className: "relative w-full h-full",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipProvider"], {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tooltip"], {
-                    open: !!content,
+                    open: !!pointedLocation,
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipTrigger"], {
                             asChild: true,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(MemoizedMapChart, {
-                                    setTooltipContent: setContent
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/india-map.tsx",
-                                    lineNumber: 122,
-                                    columnNumber: 15
-                                }, this)
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$svg$2d$map$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SVGMap"], {
+                                map: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$svg$2d$maps$2f$india$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["India"],
+                                locationClassName: getLocationClassName,
+                                onLocationMouseOver: handleLocationMouseOver,
+                                onLocationMouseOut: handleLocationMouseOut,
+                                onLocationClick: handleLocationClick,
+                                className: "w-full h-full"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/india-map.tsx",
-                                lineNumber: 121,
+                                lineNumber: 132,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/india-map.tsx",
-                            lineNumber: 120,
+                            lineNumber: 131,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipContent"], {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                children: content
+                                children: tooltipText
                             }, void 0, false, {
                                 fileName: "[project]/src/components/india-map.tsx",
-                                lineNumber: 126,
+                                lineNumber: 142,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/india-map.tsx",
-                            lineNumber: 125,
+                            lineNumber: 141,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/india-map.tsx",
-                    lineNumber: 119,
+                    lineNumber: 130,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 118,
+                lineNumber: 129,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ColorLegend, {}, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute bottom-4 right-4 z-10",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Legend, {}, void 0, false, {
+                    fileName: "[project]/src/components/india-map.tsx",
+                    lineNumber: 148,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
                 fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 130,
+                lineNumber: 147,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
+                open: !!selectedState,
+                onOpenChange: (isOpen)=>!isOpen && setSelectedState(null),
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogContent"], {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogHeader"], {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogTitle"], {
+                                    className: "font-headline text-2xl",
+                                    children: selectedState?.name
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 154,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
+                                    children: "DBT Performance Details"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 155,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/india-map.tsx",
+                            lineNumber: 153,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "py-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-sm text-muted-foreground",
+                                    children: "Rank"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 160,
+                                    columnNumber: 14
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-3xl font-bold text-primary",
+                                    children: selectedState?.data ? selectedState.data.Rank : "N/A"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 161,
+                                    columnNumber: 14
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-sm text-muted-foreground mt-4",
+                                    children: "Score"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 162,
+                                    columnNumber: 14
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-3xl font-bold text-primary",
+                                    children: selectedState?.data ? selectedState.data.Score + "%" : "No data"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 163,
+                                    columnNumber: 14
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "mt-6 text-muted-foreground text-sm",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                className: "text-foreground",
+                                                children: "Why it matters:"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/india-map.tsx",
+                                                lineNumber: 165,
+                                                columnNumber: 20
+                                            }, this),
+                                            " States with higher Aadhaar seeding and DBT efficiency reach beneficiaries faster and reduce leakages."
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/india-map.tsx",
+                                        lineNumber: 165,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/india-map.tsx",
+                                    lineNumber: 164,
+                                    columnNumber: 14
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/india-map.tsx",
+                            lineNumber: 159,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/india-map.tsx",
+                    lineNumber: 152,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/india-map.tsx",
+                lineNumber: 151,
                 columnNumber: 8
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/india-map.tsx",
-        lineNumber: 117,
+        lineNumber: 128,
         columnNumber: 5
     }, this);
-}
-_s(IndiaMap, "7qMZGOaOfwYbu+hEA/2Jy8mHHnE=");
-_c3 = IndiaMap;
-var _c, _c1, _c2, _c3;
-__turbopack_context__.k.register(_c, "MapChart");
-__turbopack_context__.k.register(_c1, "MemoizedMapChart");
-__turbopack_context__.k.register(_c2, "ColorLegend");
-__turbopack_context__.k.register(_c3, "IndiaMap");
+};
+_s(DBTMap, "xg6vfPZEslkN+oy+NNAp+qP+Z2g=");
+_c = DBTMap;
+const __TURBOPACK__default__export__ = DBTMap;
+var _c;
+__turbopack_context__.k.register(_c, "DBTMap");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
