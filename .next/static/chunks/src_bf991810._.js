@@ -511,7 +511,8 @@ const pageContent = {
                 requestDrive: "Request a Drive",
                 formChecker: "AI Form Check",
                 eligibilityChecker: "Eligibility Checker",
-                awareness: "DBT Schemes"
+                awareness: "DBT Schemes",
+                dbtMap: "Performance Map"
             },
             login: "Login/Register"
         },
@@ -1088,7 +1089,8 @@ const pageContent = {
                 requestDrive: "ड्राइव का अनुरोध करें",
                 formChecker: "एआई फॉर्म जांच",
                 eligibilityChecker: "पात्रता जांचकर्ता",
-                awareness: "डीबीटी योजनाएं"
+                awareness: "डीबीटी योजनाएं",
+                dbtMap: "प्रदर्शन मानचित्र"
             },
             login: "लॉगिन/रजिस्टर करें"
         },
@@ -1665,7 +1667,8 @@ const pageContent = {
                 requestDrive: "ડ્રાઇવની વિનંતી કરો",
                 formChecker: "એઆઈ ફોર્મ તપાસ",
                 eligibilityChecker: "પાત્રતા તપાસનાર",
-                awareness: "ડીબીટી યોજનાઓ"
+                awareness: "ડીબીટી યોજનાઓ",
+                dbtMap: "પ્રદર્શન નકશો"
             },
             login: "લોગિન/રજીસ્ટર કરો"
         },
@@ -2851,6 +2854,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/file-check.js [app-client] (ecmascript) <export default as FileCheck>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2d$round$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users-round.js [app-client] (ecmascript) <export default as Users2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__UserCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/user-check.js [app-client] (ecmascript) <export default as UserCheck>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map.js [app-client] (ecmascript) <export default as Map>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/sheet.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$language$2d$switcher$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/language-switcher.tsx [app-client] (ecmascript)");
@@ -2951,11 +2955,20 @@ function Header() {
             }, this)
         },
         {
+            href: "/dbt-map",
+            label: content.header.nav.dbtMap,
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__["Map"], {}, void 0, false, {
+                fileName: "[project]/src/components/layout/header.tsx",
+                lineNumber: 49,
+                columnNumber: 67
+            }, this)
+        },
+        {
             href: "/governance",
             label: content.header.nav.governance,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$chart$2d$gantt$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__GanttChartSquare$3e$__["GanttChartSquare"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 74
             }, this)
         },
@@ -2964,7 +2977,7 @@ function Header() {
             label: content.header.nav.resources,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2d$circuit$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BrainCircuit$3e$__["BrainCircuit"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 50,
+                lineNumber: 51,
                 columnNumber: 72
             }, this)
         },
@@ -2973,7 +2986,7 @@ function Header() {
             label: content.header.nav.aboutTeam,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2d$round$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users2$3e$__["Users2"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 51,
+                lineNumber: 52,
                 columnNumber: 73
             }, this)
         },
@@ -2982,7 +2995,7 @@ function Header() {
             label: content.header.nav.requestDrive,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 79
             }, this)
         },
@@ -2991,7 +3004,7 @@ function Header() {
             label: content.header.nav.printKit,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$printer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Printer$3e$__["Printer"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 53,
+                lineNumber: 54,
                 columnNumber: 71
             }, this)
         }
@@ -3036,7 +3049,7 @@ function Header() {
                             className: "h-8 w-8 text-primary"
                         }, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 91,
+                            lineNumber: 92,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3044,13 +3057,13 @@ function Header() {
                             children: content.header.title
                         }, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 92,
+                            lineNumber: 93,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/layout/header.tsx",
-                    lineNumber: 90,
+                    lineNumber: 91,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -3062,12 +3075,12 @@ function Header() {
                             children: item.label
                         }, item.href, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 98,
+                            lineNumber: 99,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/layout/header.tsx",
-                    lineNumber: 96,
+                    lineNumber: 97,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3083,12 +3096,12 @@ function Header() {
                                         children: "More"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/layout/header.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 112,
                                         columnNumber: 18
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 110,
+                                    lineNumber: 111,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -3105,39 +3118,39 @@ function Header() {
                                                         children: item.label
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 123,
+                                                        lineNumber: 124,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 122,
                                                 columnNumber: 23
                                             }, this)
                                         }, item.href, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 120,
+                                            lineNumber: 121,
                                             columnNumber: 21
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 118,
+                                    lineNumber: 119,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 109,
+                            lineNumber: 110,
                             columnNumber: 12
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$language$2d$switcher$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["LanguageSwitcher"], {}, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 130,
+                            lineNumber: 131,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$theme$2d$switcher$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ThemeSwitcher"], {}, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 131,
+                            lineNumber: 132,
                             columnNumber: 11
                         }, this),
                         user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenu"], {
@@ -3153,22 +3166,22 @@ function Header() {
                                                 children: getInitials(user.displayName)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 137,
+                                                lineNumber: 138,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 136,
+                                            lineNumber: 137,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/layout/header.tsx",
-                                        lineNumber: 135,
+                                        lineNumber: 136,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 135,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -3186,7 +3199,7 @@ function Header() {
                                                         children: user.displayName
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 144,
+                                                        lineNumber: 145,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3194,23 +3207,23 @@ function Header() {
                                                         children: user.email
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 145,
+                                                        lineNumber: 146,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 143,
+                                                lineNumber: 144,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 143,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 150,
+                                            lineNumber: 151,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -3220,20 +3233,20 @@ function Header() {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 152,
+                                                    lineNumber: 153,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Dashboard"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 153,
+                                                    lineNumber: 154,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 151,
+                                            lineNumber: 152,
                                             columnNumber: 17
                                         }, this),
                                         isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -3243,20 +3256,20 @@ function Header() {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 157,
+                                                    lineNumber: 158,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Admin Panel"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 158,
+                                                    lineNumber: 159,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 156,
+                                            lineNumber: 157,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -3266,32 +3279,32 @@ function Header() {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 162,
+                                                    lineNumber: 163,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Log out"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 164,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 161,
+                                            lineNumber: 162,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 142,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 133,
+                            lineNumber: 134,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                             onClick: handleLoginClick,
@@ -3300,7 +3313,7 @@ function Header() {
                             children: content.header.login
                         }, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 168,
+                            lineNumber: 169,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Sheet"], {
@@ -3318,7 +3331,7 @@ function Header() {
                                                 className: "h-5 w-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 175,
+                                                lineNumber: 176,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3326,18 +3339,18 @@ function Header() {
                                                 children: "Open menu"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 176,
+                                                lineNumber: 177,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/header.tsx",
-                                        lineNumber: 174,
+                                        lineNumber: 175,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 173,
+                                    lineNumber: 174,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetContent"], {
@@ -3351,7 +3364,7 @@ function Header() {
                                                         className: "h-6 w-6 text-primary"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 182,
+                                                        lineNumber: 183,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3359,18 +3372,18 @@ function Header() {
                                                         children: content.header.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 183,
+                                                        lineNumber: 184,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 181,
+                                                lineNumber: 182,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 180,
+                                            lineNumber: 181,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3391,19 +3404,19 @@ function Header() {
                                                                     className: "mr-2 h-4 w-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                                    lineNumber: 189,
+                                                                    lineNumber: 190,
                                                                     columnNumber: 161
                                                                 }, this),
                                                                 content.header.login
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/layout/header.tsx",
-                                                            lineNumber: 189,
+                                                            lineNumber: 190,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                                             fileName: "[project]/src/components/layout/header.tsx",
-                                                            lineNumber: 190,
+                                                            lineNumber: 191,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
@@ -3416,7 +3429,7 @@ function Header() {
                                                             children: "Homepage Sections"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/layout/header.tsx",
-                                                            lineNumber: 194,
+                                                            lineNumber: 195,
                                                             columnNumber: 19
                                                         }, this),
                                                         navItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -3429,25 +3442,25 @@ function Header() {
                                                                         children: item.icon
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                                        lineNumber: 202,
+                                                                        lineNumber: 203,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     item.label
                                                                 ]
                                                             }, item.href, true, {
                                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                                lineNumber: 196,
+                                                                lineNumber: 197,
                                                                 columnNumber: 21
                                                             }, this))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 193,
+                                                    lineNumber: 194,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 207,
+                                                    lineNumber: 208,
                                                     columnNumber: 18
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3458,7 +3471,7 @@ function Header() {
                                                             children: "Tools & Resources"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/layout/header.tsx",
-                                                            lineNumber: 209,
+                                                            lineNumber: 210,
                                                             columnNumber: 19
                                                         }, this),
                                                         actionItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -3471,55 +3484,55 @@ function Header() {
                                                                         children: item.icon
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                                        lineNumber: 217,
+                                                                        lineNumber: 218,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     item.label
                                                                 ]
                                                             }, item.href, true, {
                                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                                lineNumber: 211,
+                                                                lineNumber: 212,
                                                                 columnNumber: 21
                                                             }, this))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 208,
+                                                    lineNumber: 209,
                                                     columnNumber: 18
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 186,
+                                            lineNumber: 187,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 179,
+                                    lineNumber: 180,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 172,
+                            lineNumber: 173,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/layout/header.tsx",
-                    lineNumber: 108,
+                    lineNumber: 109,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/layout/header.tsx",
-            lineNumber: 89,
+            lineNumber: 90,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/layout/header.tsx",
-        lineNumber: 88,
+        lineNumber: 89,
         columnNumber: 5
     }, this);
 }
@@ -3881,6 +3894,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/search.js [app-client] (ecmascript) <export default as Search>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/phone.js [app-client] (ecmascript) <export default as Phone>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$info$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Info$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/info.js [app-client] (ecmascript) <export default as Info>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map.js [app-client] (ecmascript) <export default as Map>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$national$2d$emblem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/national-emblem.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/dialog.tsx [app-client] (ecmascript)");
@@ -4080,6 +4094,24 @@ function Footer() {
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "/dbt-map",
+                                        className: "text-muted-foreground hover:text-primary text-sm flex items-center gap-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__["Map"], {
+                                                className: "h-4 w-4"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/layout/footer.tsx",
+                                                lineNumber: 54,
+                                                columnNumber: 123
+                                            }, this),
+                                            content.header.nav.dbtMap
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/layout/footer.tsx",
+                                        lineNumber: 54,
+                                        columnNumber: 16
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/governance",
                                         className: "text-muted-foreground hover:text-primary text-sm flex items-center gap-2",
                                         children: [
@@ -4087,14 +4119,14 @@ function Footer() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                lineNumber: 54,
+                                                lineNumber: 55,
                                                 columnNumber: 126
                                             }, this),
                                             content.header.nav.governance
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 55,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4105,14 +4137,14 @@ function Footer() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                lineNumber: 55,
+                                                lineNumber: 56,
                                                 columnNumber: 125
                                             }, this),
                                             content.header.nav.resources
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                        lineNumber: 55,
+                                        lineNumber: 56,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4123,14 +4155,14 @@ function Footer() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                lineNumber: 56,
+                                                lineNumber: 57,
                                                 columnNumber: 125
                                             }, this),
                                             content.header.nav.printKit
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                        lineNumber: 56,
+                                        lineNumber: 57,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4141,14 +4173,14 @@ function Footer() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                lineNumber: 57,
+                                                lineNumber: 58,
                                                 columnNumber: 129
                                             }, this),
                                             content.header.nav.requestDrive
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                        lineNumber: 57,
+                                        lineNumber: 58,
                                         columnNumber: 16
                                     }, this)
                                 ]
@@ -4165,7 +4197,7 @@ function Footer() {
                                         children: content.footer.about
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 61,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4176,14 +4208,14 @@ function Footer() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                lineNumber: 61,
+                                                lineNumber: 62,
                                                 columnNumber: 126
                                             }, this),
                                             content.header.nav.aboutTeam
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                        lineNumber: 61,
+                                        lineNumber: 62,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -4198,19 +4230,19 @@ function Footer() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                            lineNumber: 65,
+                                                            lineNumber: 66,
                                                             columnNumber: 157
                                                         }, this),
                                                         content.footer.learnMore
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                    lineNumber: 65,
+                                                    lineNumber: 66,
                                                     columnNumber: 24
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                lineNumber: 64,
+                                                lineNumber: 65,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -4223,20 +4255,20 @@ function Footer() {
                                                                 children: "Direct Benefit Transfer (DBT) in India"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                                lineNumber: 69,
+                                                                lineNumber: 70,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                                                                 children: "An overview of India’s landmark governance reform for welfare delivery."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                                lineNumber: 70,
+                                                                lineNumber: 71,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                                        lineNumber: 68,
+                                                        lineNumber: 69,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollArea"], {
@@ -4251,25 +4283,25 @@ function Footer() {
                                                                             children: "Overview"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 77,
+                                                                            lineNumber: 78,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "India’s Direct Benefit Transfer (DBT) is a landmark governance reform launched in January 2013 to overhaul welfare delivery. Under DBT, subsidies and welfare benefits are credited directly into beneficiaries’ bank or post office accounts (preferably Aadhaar-linked), bypassing intermediaries. The scheme aims to improve targeting, reduce leakage and fraud, and ensure timely payments to intended recipients. DBT has grown rapidly: by FY2025‑26 it covers hundreds of schemes and hundreds of crore transactions, with an official portal reporting ₹2.89 lakh crore transferred in 278 crore transactions (FY2025‑26) and estimated cumulative gains of ₹4.31 lakh crore from plugging leakages."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 78,
+                                                                            lineNumber: 79,
                                                                             columnNumber: 37
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 76,
+                                                                    lineNumber: 77,
                                                                     columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 80,
+                                                                    lineNumber: 81,
                                                                     columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4279,7 +4311,7 @@ function Footer() {
                                                                             children: "1. Definition and Historical Context"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 82,
+                                                                            lineNumber: 83,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4290,14 +4322,14 @@ function Footer() {
                                                                                     children: "Definition (DBT):"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                    lineNumber: 83,
+                                                                                    lineNumber: 84,
                                                                                     columnNumber: 57
                                                                                 }, this),
                                                                                 " The Direct Benefit Transfer scheme was introduced on 1 January 2013 as a “major reform initiative” of the Government of India. It leverages modern ICT to re-engineer welfare delivery: benefits (cash or kind) are disbursed directly into beneficiaries’ bank or post office accounts, which are preferably linked to their Aadhaar unique ID."
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 83,
+                                                                            lineNumber: 84,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4307,25 +4339,25 @@ function Footer() {
                                                                                     children: "Origins:"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                    lineNumber: 84,
+                                                                                    lineNumber: 85,
                                                                                     columnNumber: 40
                                                                                 }, this),
                                                                                 " DBT was conceived to address chronic inefficiencies and “cumbersome delivery processes” in India’s welfare system. Its pilot began in January 2013 in select districts covering schemes like scholarships and women’s welfare. Early success led to nationwide rollout: by December 2014 DBT was expanded countrywide, and by 2015 the Government mandated use of a unified electronic payment platform (PFMS) for all central disbursements. In this way, DBT was one of the first major initiatives under the later “Digital India” umbrella (launched 2015) and in tandem with financial inclusion drives (e.g. JAM trinity: Jan Dhan, Aadhaar, Mobile)."
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 84,
+                                                                            lineNumber: 85,
                                                                             columnNumber: 37
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 81,
+                                                                    lineNumber: 82,
                                                                     columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 86,
+                                                                    lineNumber: 87,
                                                                     columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4335,14 +4367,14 @@ function Footer() {
                                                                             children: "2. Objectives and Policy Rationale"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 88,
+                                                                            lineNumber: 89,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "The government’s primary objectives in implementing DBT are to enhance efficiency, transparency and targeting in welfare delivery. Key stated goals include:"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 89,
+                                                                            lineNumber: 90,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -4355,27 +4387,10 @@ function Footer() {
                                                                                             children: "Curb Leakages and Ghosts:"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                            lineNumber: 91,
-                                                                                            columnNumber: 45
-                                                                                        }, this),
-                                                                                        " Eliminate duplicate, fake or ghost beneficiaries and cut out intermediaries, thereby stopping leakage and subsidy diversion."
-                                                                                    ]
-                                                                                }, void 0, true, {
-                                                                                    fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                    lineNumber: 91,
-                                                                                    columnNumber: 41
-                                                                                }, this),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                                                    children: [
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                                                            className: "text-foreground",
-                                                                                            children: "Accurate Targeting:"
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/src/components/layout/footer.tsx",
                                                                                             lineNumber: 92,
                                                                                             columnNumber: 45
                                                                                         }, this),
-                                                                                        " Ensure that benefits reach only the intended, identified recipients."
+                                                                                        " Eliminate duplicate, fake or ghost beneficiaries and cut out intermediaries, thereby stopping leakage and subsidy diversion."
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
@@ -4386,13 +4401,13 @@ function Footer() {
                                                                                     children: [
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                                                             className: "text-foreground",
-                                                                                            children: "Timely Payments:"
+                                                                                            children: "Accurate Targeting:"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/layout/footer.tsx",
                                                                                             lineNumber: 93,
                                                                                             columnNumber: 45
                                                                                         }, this),
-                                                                                        " Reduce bureaucratic delay by automating transfer."
+                                                                                        " Ensure that benefits reach only the intended, identified recipients."
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
@@ -4403,34 +4418,51 @@ function Footer() {
                                                                                     children: [
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                                                             className: "text-foreground",
-                                                                                            children: "Minimal Layers:"
+                                                                                            children: "Timely Payments:"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/layout/footer.tsx",
                                                                                             lineNumber: 94,
+                                                                                            columnNumber: 45
+                                                                                        }, this),
+                                                                                        " Reduce bureaucratic delay by automating transfer."
+                                                                                    ]
+                                                                                }, void 0, true, {
+                                                                                    fileName: "[project]/src/components/layout/footer.tsx",
+                                                                                    lineNumber: 94,
+                                                                                    columnNumber: 41
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                                                    children: [
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                                                            className: "text-foreground",
+                                                                                            children: "Minimal Layers:"
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/src/components/layout/footer.tsx",
+                                                                                            lineNumber: 95,
                                                                                             columnNumber: 45
                                                                                         }, this),
                                                                                         " Use electronic, cashless payments to minimize manual layers in the disbursement chain."
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                    lineNumber: 94,
+                                                                                    lineNumber: 95,
                                                                                     columnNumber: 41
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 90,
+                                                                            lineNumber: 91,
                                                                             columnNumber: 37
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 87,
+                                                                    lineNumber: 88,
                                                                     columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 97,
+                                                                    lineNumber: 98,
                                                                     columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4440,14 +4472,14 @@ function Footer() {
                                                                             children: "3. Governance and Institutional Framework"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 99,
+                                                                            lineNumber: 100,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "Implementing DBT involves multiple institutions across levels of government:"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 100,
+                                                                            lineNumber: 101,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -4460,27 +4492,10 @@ function Footer() {
                                                                                             children: "National DBT Mission (Cabinet Secretariat):"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                            lineNumber: 102,
-                                                                                            columnNumber: 45
-                                                                                        }, this),
-                                                                                        " The nodal body for policy, guidelines and coordination."
-                                                                                    ]
-                                                                                }, void 0, true, {
-                                                                                    fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                    lineNumber: 102,
-                                                                                    columnNumber: 41
-                                                                                }, this),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                                                    children: [
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                                                            className: "text-foreground",
-                                                                                            children: "Finance Ministry – Controller General of Accounts (CGA):"
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/src/components/layout/footer.tsx",
                                                                                             lineNumber: 103,
                                                                                             columnNumber: 45
                                                                                         }, this),
-                                                                                        " The Public Financial Management System (PFMS), run by the CGA, is the central payments/reconciliation platform for DBT."
+                                                                                        " The nodal body for policy, guidelines and coordination."
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
@@ -4491,13 +4506,13 @@ function Footer() {
                                                                                     children: [
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                                                             className: "text-foreground",
-                                                                                            children: "State DBT Cells:"
+                                                                                            children: "Finance Ministry – Controller General of Accounts (CGA):"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/layout/footer.tsx",
                                                                                             lineNumber: 104,
                                                                                             columnNumber: 45
                                                                                         }, this),
-                                                                                        " States/UTs have set up DBT cells to customize and monitor implementation on the ground."
+                                                                                        " The Public Financial Management System (PFMS), run by the CGA, is the central payments/reconciliation platform for DBT."
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
@@ -4508,13 +4523,13 @@ function Footer() {
                                                                                     children: [
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                                                             className: "text-foreground",
-                                                                                            children: "National Informatics Centre (NIC):"
+                                                                                            children: "State DBT Cells:"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/layout/footer.tsx",
                                                                                             lineNumber: 105,
                                                                                             columnNumber: 45
                                                                                         }, this),
-                                                                                        " The DBT Bharat portal (dbtbharat.gov.in) – built by NIC – aggregates scheme-wise data and manages technical integration."
+                                                                                        " States/UTs have set up DBT cells to customize and monitor implementation on the ground."
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
@@ -4525,13 +4540,13 @@ function Footer() {
                                                                                     children: [
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                                                             className: "text-foreground",
-                                                                                            children: "NPCI – Aadhaar Payment Bridge (APB):"
+                                                                                            children: "National Informatics Centre (NIC):"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/layout/footer.tsx",
                                                                                             lineNumber: 106,
                                                                                             columnNumber: 45
                                                                                         }, this),
-                                                                                        " The National Payments Corporation of India (NPCI) operates the APB system, which uses the Aadhaar number to route benefits to the correct bank account."
+                                                                                        " The DBT Bharat portal (dbtbharat.gov.in) – built by NIC – aggregates scheme-wise data and manages technical integration."
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
@@ -4542,34 +4557,51 @@ function Footer() {
                                                                                     children: [
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                                                             className: "text-foreground",
-                                                                                            children: "Sectoral Ministries and Implementing Agencies:"
+                                                                                            children: "NPCI – Aadhaar Payment Bridge (APB):"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/layout/footer.tsx",
                                                                                             lineNumber: 107,
+                                                                                            columnNumber: 45
+                                                                                        }, this),
+                                                                                        " The National Payments Corporation of India (NPCI) operates the APB system, which uses the Aadhaar number to route benefits to the correct bank account."
+                                                                                    ]
+                                                                                }, void 0, true, {
+                                                                                    fileName: "[project]/src/components/layout/footer.tsx",
+                                                                                    lineNumber: 107,
+                                                                                    columnNumber: 41
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                                                    children: [
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                                                            className: "text-foreground",
+                                                                                            children: "Sectoral Ministries and Implementing Agencies:"
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/src/components/layout/footer.tsx",
+                                                                                            lineNumber: 108,
                                                                                             columnNumber: 45
                                                                                         }, this),
                                                                                         " Each ministry/department running welfare schemes creates its own IT system to generate lists of beneficiaries."
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                    lineNumber: 107,
+                                                                                    lineNumber: 108,
                                                                                     columnNumber: 41
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 101,
+                                                                            lineNumber: 102,
                                                                             columnNumber: 37
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 98,
+                                                                    lineNumber: 99,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 110,
+                                                                    lineNumber: 111,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4579,7 +4611,7 @@ function Footer() {
                                                                             children: "4. Technical Infrastructure"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 112,
+                                                                            lineNumber: 113,
                                                                             columnNumber: 37
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4590,14 +4622,14 @@ function Footer() {
                                                                                     children: "Aadhaar and Aadhaar Seeding:"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                    lineNumber: 113,
+                                                                                    lineNumber: 114,
                                                                                     columnNumber: 58
                                                                                 }, this),
                                                                                 " Aadhaar is the critical enabler of DBT. Seeding (linking an Aadhaar number to a bank account) allows the Aadhaar Payment Bridge (APB) to route funds to the correct account without needing the account number."
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 113,
+                                                                            lineNumber: 114,
                                                                             columnNumber: 38
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4608,14 +4640,14 @@ function Footer() {
                                                                                     children: "Banking System Integration:"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                    lineNumber: 114,
+                                                                                    lineNumber: 115,
                                                                                     columnNumber: 58
                                                                                 }, this),
                                                                                 " DBT payments flow through India’s banking infrastructure, primarily using the Public Financial Management System (PFMS) as the central payment gateway."
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 114,
+                                                                            lineNumber: 115,
                                                                             columnNumber: 38
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4625,25 +4657,25 @@ function Footer() {
                                                                                     children: "Data Flows and APIs:"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                                    lineNumber: 115,
+                                                                                    lineNumber: 116,
                                                                                     columnNumber: 41
                                                                                 }, this),
                                                                                 " Data flows in DBT follow digital pipelines. Scheme MIS generate Fund Transfer Files, which are validated by PFMS/APB using APIs from UIDAI and RBI before payment is processed."
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 115,
+                                                                            lineNumber: 116,
                                                                             columnNumber: 38
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 111,
+                                                                    lineNumber: 112,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 117,
+                                                                    lineNumber: 118,
                                                                     columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4653,25 +4685,25 @@ function Footer() {
                                                                             children: "5. Aadhaar Seeding – Process, Challenges, and Impact"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 119,
+                                                                            lineNumber: 120,
                                                                             columnNumber: 38
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "The process involves enrolling for Aadhaar, having the bank seed it into its Core Banking System (CBS), and the bank uploading this to NPCI’s APB mapper. Challenges include exclusion errors due to biometric failures or lack of access, and privacy concerns. However, the impact has been the elimination of fake beneficiaries and ease of updating bank accounts for receiving benefits."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 120,
+                                                                            lineNumber: 121,
                                                                             columnNumber: 38
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 118,
+                                                                    lineNumber: 119,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 122,
+                                                                    lineNumber: 123,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4681,25 +4713,25 @@ function Footer() {
                                                                             children: "6. Major DBT-Linked Schemes"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 124,
+                                                                            lineNumber: 125,
                                                                             columnNumber: 38
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "Key examples include PAHAL (LPG Subsidy), MGNREGA Wages, PM-KISAN, National Social Assistance Programme (NSAP) Pensions, and various scholarships through the National Scholarship Portal (NSP)."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 125,
+                                                                            lineNumber: 126,
                                                                             columnNumber: 38
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 123,
+                                                                    lineNumber: 124,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 127,
+                                                                    lineNumber: 128,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4709,25 +4741,25 @@ function Footer() {
                                                                             children: "7. Benefits and Achievements of DBT"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 129,
+                                                                            lineNumber: 130,
                                                                             columnNumber: 38
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "DBT has plugged leakages (saving ₹4.31 lakh crore), improved efficiency and transparency, driven financial inclusion (over 45 crore Jan Dhan accounts), and empowered citizens. It was also critical for delivering relief during the COVID-19 pandemic."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 130,
+                                                                            lineNumber: 131,
                                                                             columnNumber: 38
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 128,
+                                                                    lineNumber: 129,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 132,
+                                                                    lineNumber: 133,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4737,25 +4769,25 @@ function Footer() {
                                                                             children: "8. Common Misconceptions and Criticisms"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 134,
+                                                                            lineNumber: 135,
                                                                             columnNumber: 38
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: 'A major misconception is that Aadhaar is mandatory; it is preferred but not compulsory. Criticisms focus on "last-mile" exclusion issues due to infrastructure gaps or technical barriers, and data privacy concerns, although these are being addressed through legal and technical safeguards.'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 135,
+                                                                            lineNumber: 136,
                                                                             columnNumber: 38
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 133,
+                                                                    lineNumber: 134,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 137,
+                                                                    lineNumber: 138,
                                                                     columnNumber: 35
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4765,25 +4797,25 @@ function Footer() {
                                                                             children: "9. Statistical Data and Impact Evaluation"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 139,
+                                                                            lineNumber: 140,
                                                                             columnNumber: 38
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "As of September 2023, over 104 crore citizens are registered as DBT beneficiaries. Total transfers have exceeded ₹44 lakh crore. Official estimates cite cumulative gains of ₹4.31 lakh crore from eliminating fake beneficiaries. Studies confirm reduced subsidy diversion and high beneficiary satisfaction."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 140,
+                                                                            lineNumber: 141,
                                                                             columnNumber: 38
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 138,
+                                                                    lineNumber: 139,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 142,
+                                                                    lineNumber: 143,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4793,25 +4825,25 @@ function Footer() {
                                                                             children: "10. Legal Framework and Court Rulings"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 144,
+                                                                            lineNumber: 145,
                                                                             columnNumber: 38
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "The Aadhaar Act, 2016 (Section 7) provides the legal basis for using Aadhaar for subsidies. The Supreme Court (Puttaswamy vs. UoI, 2018) upheld this for welfare schemes but struck down mandatory linking for private services. The court also established privacy as a fundamental right, shaping the ongoing legal landscape for DBT."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 145,
+                                                                            lineNumber: 146,
                                                                             columnNumber: 38
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 143,
+                                                                    lineNumber: 144,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 147,
+                                                                    lineNumber: 148,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4821,25 +4853,25 @@ function Footer() {
                                                                             children: "11. Challenges and Ongoing Issues"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 149,
+                                                                            lineNumber: 150,
                                                                             columnNumber: 38
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: 'Persistent challenges include infrastructure gaps in remote areas, data quality issues in beneficiary databases, "last-mile" exclusion hurdles for marginalized groups, and the need for better integration between different scheme portals.'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 150,
+                                                                            lineNumber: 151,
                                                                             columnNumber: 38
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 148,
+                                                                    lineNumber: 149,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 152,
+                                                                    lineNumber: 153,
                                                                     columnNumber: 34
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4849,43 +4881,43 @@ function Footer() {
                                                                             children: "12. Recommendations and Future Roadmap"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 154,
+                                                                            lineNumber: 155,
                                                                             columnNumber: 38
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: 'The future roadmap, often called "DBT 2.0," focuses on real-time digital eligibility verification, consolidating multiple subsidies into single cash transfers, strengthening last-mile delivery with more robust technology and grievance redressal, and expanding DBT principles to new sectors like health and climate resilience.'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                                            lineNumber: 155,
+                                                                            lineNumber: 156,
                                                                             columnNumber: 38
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/layout/footer.tsx",
-                                                                    lineNumber: 153,
+                                                                    lineNumber: 154,
                                                                     columnNumber: 34
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/layout/footer.tsx",
-                                                            lineNumber: 75,
+                                                            lineNumber: 76,
                                                             columnNumber: 29
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                                        lineNumber: 74,
+                                                        lineNumber: 75,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                lineNumber: 67,
+                                                lineNumber: 68,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                        lineNumber: 63,
+                                        lineNumber: 64,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -4898,14 +4930,14 @@ function Footer() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                lineNumber: 162,
+                                                lineNumber: 163,
                                                 columnNumber: 205
                                             }, this),
                                             content.footer.github
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 163,
                                         columnNumber: 18
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -4918,20 +4950,20 @@ function Footer() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                                lineNumber: 163,
+                                                lineNumber: 164,
                                                 columnNumber: 182
                                             }, this),
                                             content.footer.telegram
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/footer.tsx",
-                                        lineNumber: 163,
+                                        lineNumber: 164,
                                         columnNumber: 18
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/layout/footer.tsx",
-                                lineNumber: 59,
+                                lineNumber: 60,
                                 columnNumber: 14
                             }, this)
                         ]

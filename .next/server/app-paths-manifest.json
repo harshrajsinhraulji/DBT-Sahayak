@@ -1,8 +1,5 @@
 {
-  "/about-team/page": "app/about-team/page.js",
-  "/eligibility-checker/page": "app/eligibility-checker/page.js",
+  "/dbt-map/page": "app/dbt-map/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/governance/page": "app/governance/page.js",
-  "/page": "app/page.js",
-  "/resources/page": "app/resources/page.js"
+  "/page": "app/page.js"
 }
