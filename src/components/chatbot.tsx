@@ -5,12 +5,11 @@ import { useState, useRef, useEffect, Fragment } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { X, User, Send, Sparkles } from "lucide-react";
+import { X, User, Sparkles, BrainCircuit } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
 import { Logo } from "./logo";
 import { chatbotData, type ChatNode } from "@/lib/chatbot-data";
 import Link from "next/link";
-import { Separator } from "./ui/separator";
 
 interface Message {
   role: "user" | "model";
@@ -88,7 +87,7 @@ export function Chatbot() {
     <>
       <div className="fixed bottom-6 right-6 z-50">
         <Button onClick={() => setIsOpen(!isOpen)} size="lg" className="rounded-full w-16 h-16 shadow-lg">
-          {isOpen ? <X className="h-6 w-6" /> : <Logo className="h-8 w-8" />}
+          {isOpen ? <X className="h-6 w-6" /> : <BrainCircuit className="h-8 w-8" />}
           <span className="sr-only">Toggle Chatbot</span>
         </Button>
       </div>
