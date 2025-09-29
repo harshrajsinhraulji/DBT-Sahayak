@@ -42,17 +42,19 @@ export function WeatherWidget() {
 
   const fetchWeather = async (lat: number, lon: number) => {
     if (!API_KEY) {
-      setError('Weather API key is not configured.');
+      setError('Weather API key (NEXT_PUBLIC_OPENWEATHER_API_KEY) is not configured.');
       setLoading(false);
       return;
     }
     setLoading(true);
     try {
       const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
-      if (!res.ok) {
-        throw new Error('Failed to fetch weather data.');
-      }
       const data = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(data.message || 'Failed to fetch weather data.');
+      }
+
       setWeather({
         temp: Math.round(data.main.temp),
         humidity: data.main.humidity,
@@ -60,8 +62,8 @@ export function WeatherWidget() {
         name: data.name
       });
       setError(null);
-    } catch (err) {
-      setError('Could not retrieve weather information.');
+    } catch (err: any) {
+      setError(`Could not retrieve weather: ${err.message}`);
       console.error(err);
     } finally {
       setLoading(false);
@@ -76,6 +78,7 @@ export function WeatherWidget() {
           return;
       }
 
+      setLoading(true);
       navigator.geolocation.getCurrentPosition(
         (position) => {
             setPermissionGranted(true);
@@ -111,8 +114,11 @@ export function WeatherWidget() {
            <div className="flex flex-col items-center justify-center h-24 text-center">
             <AlertTriangle className="h-8 w-8 text-destructive mb-2" />
             <p className="text-sm text-destructive">{error}</p>
-             {permissionGranted === false && (
+             {permissionGranted === false && !API_KEY && (
                 <Button variant="link" onClick={requestLocation} className="mt-2">Try Again</Button>
+            )}
+            {!API_KEY && (
+                <p className="text-xs text-muted-foreground mt-2">Please add NEXT_PUBLIC_OPENWEATHER_API_KEY to your .env file.</p>
             )}
           </div>
         ) : weather ? (

@@ -3501,10 +3501,10 @@ function WeatherWidget() {
         setLoading(true);
         try {
             const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
-            if (!res.ok) {
-                throw new Error('Failed to fetch weather data.');
-            }
             const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.message || 'Failed to fetch weather data.');
+            }
             setWeather({
                 temp: Math.round(data.main.temp),
                 humidity: data.main.humidity,
@@ -3513,7 +3513,7 @@ function WeatherWidget() {
             });
             setError(null);
         } catch (err) {
-            setError('Could not retrieve weather information.');
+            setError(`Could not retrieve weather: ${err.message}`);
             console.error(err);
         } finally{
             setLoading(false);
@@ -3526,6 +3526,7 @@ function WeatherWidget() {
             setPermissionGranted(false);
             return;
         }
+        setLoading(true);
         navigator.geolocation.getCurrentPosition((position)=>{
             setPermissionGranted(true);
             fetchWeather(position.coords.latitude, position.coords.longitude);
@@ -3550,27 +3551,27 @@ function WeatherWidget() {
                                 className: "text-primary"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/weather-widget.tsx",
-                                lineNumber: 100,
+                                lineNumber: 103,
                                 columnNumber: 11
                             }, this),
                             " Local Weather & Scheme Advisory"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/weather-widget.tsx",
-                        lineNumber: 99,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
                         children: "Get weather-based recommendations for relevant DBT schemes."
                     }, void 0, false, {
                         fileName: "[project]/src/components/weather-widget.tsx",
-                        lineNumber: 102,
+                        lineNumber: 105,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/weather-widget.tsx",
-                lineNumber: 98,
+                lineNumber: 101,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3581,7 +3582,7 @@ function WeatherWidget() {
                             className: "h-8 w-8 animate-spin text-primary"
                         }, void 0, false, {
                             fileName: "[project]/src/components/weather-widget.tsx",
-                            lineNumber: 107,
+                            lineNumber: 110,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3589,13 +3590,13 @@ function WeatherWidget() {
                             children: "Fetching local weather..."
                         }, void 0, false, {
                             fileName: "[project]/src/components/weather-widget.tsx",
-                            lineNumber: 108,
+                            lineNumber: 111,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/weather-widget.tsx",
-                    lineNumber: 106,
+                    lineNumber: 109,
                     columnNumber: 11
                 }, this) : error ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex flex-col items-center justify-center h-24 text-center",
@@ -3604,7 +3605,7 @@ function WeatherWidget() {
                             className: "h-8 w-8 text-destructive mb-2"
                         }, void 0, false, {
                             fileName: "[project]/src/components/weather-widget.tsx",
-                            lineNumber: 112,
+                            lineNumber: 115,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3612,23 +3613,31 @@ function WeatherWidget() {
                             children: error
                         }, void 0, false, {
                             fileName: "[project]/src/components/weather-widget.tsx",
-                            lineNumber: 113,
+                            lineNumber: 116,
                             columnNumber: 13
                         }, this),
-                        permissionGranted === false && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                        permissionGranted === false && !API_KEY && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                             variant: "link",
                             onClick: requestLocation,
                             className: "mt-2",
                             children: "Try Again"
                         }, void 0, false, {
                             fileName: "[project]/src/components/weather-widget.tsx",
-                            lineNumber: 115,
+                            lineNumber: 118,
+                            columnNumber: 17
+                        }, this),
+                        !API_KEY && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-xs text-muted-foreground mt-2",
+                            children: "Please add NEXT_PUBLIC_OPENWEATHER_API_KEY to your .env file."
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/weather-widget.tsx",
+                            lineNumber: 121,
                             columnNumber: 17
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/weather-widget.tsx",
-                    lineNumber: 111,
+                    lineNumber: 114,
                     columnNumber: 12
                 }, this) : weather ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex items-center justify-between",
@@ -3640,7 +3649,7 @@ function WeatherWidget() {
                                     iconCode: weather.weather.icon
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/weather-widget.tsx",
-                                    lineNumber: 121,
+                                    lineNumber: 127,
                                     columnNumber: 16
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3653,7 +3662,7 @@ function WeatherWidget() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/weather-widget.tsx",
-                                            lineNumber: 123,
+                                            lineNumber: 129,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3661,19 +3670,19 @@ function WeatherWidget() {
                                             children: weather.weather.description
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/weather-widget.tsx",
-                                            lineNumber: 124,
+                                            lineNumber: 130,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/weather-widget.tsx",
-                                    lineNumber: 122,
+                                    lineNumber: 128,
                                     columnNumber: 16
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/weather-widget.tsx",
-                            lineNumber: 120,
+                            lineNumber: 126,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3684,7 +3693,7 @@ function WeatherWidget() {
                                     children: weather.name
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/weather-widget.tsx",
-                                    lineNumber: 128,
+                                    lineNumber: 134,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3696,30 +3705,30 @@ function WeatherWidget() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/weather-widget.tsx",
-                                    lineNumber: 129,
+                                    lineNumber: 135,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/weather-widget.tsx",
-                            lineNumber: 127,
+                            lineNumber: 133,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/weather-widget.tsx",
-                    lineNumber: 119,
+                    lineNumber: 125,
                     columnNumber: 11
                 }, this) : null
             }, void 0, false, {
                 fileName: "[project]/src/components/weather-widget.tsx",
-                lineNumber: 104,
+                lineNumber: 107,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/weather-widget.tsx",
-        lineNumber: 97,
+        lineNumber: 100,
         columnNumber: 5
     }, this);
 }
