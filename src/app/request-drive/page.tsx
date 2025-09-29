@@ -84,7 +84,7 @@ export default function RequestDrivePage() {
 
   return (
     <div className="container mx-auto max-w-3xl py-12 px-4">
-      <Card>
+      <Card className="shadow-lg">
         <CardHeader>
           <CardTitle className="text-3xl font-headline text-primary">Request an Awareness Drive</CardTitle>
           <CardDescription>
@@ -197,7 +197,7 @@ export default function RequestDrivePage() {
                           <Button
                             variant={'outline'}
                             className={cn(
-                              'w-[240px] pl-3 text-left font-normal',
+                              'w-full md:w-[280px] pl-3 text-left font-normal',
                               !field.value && 'text-muted-foreground'
                             )}
                           >

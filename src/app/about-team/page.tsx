@@ -41,7 +41,7 @@ const teamMembers = [
     },
     {
         name: "Om Jangid",
-        github: null,
+        github: "https://github.com/omjangid16",
         linkedin: "https://www.linkedin.com/in/om-jangid-4568b827a",
         gender: "male"
     }
@@ -69,8 +69,8 @@ export default function AboutTeamPage() {
                            <Tooltip>
                                <TooltipTrigger asChild>
                                    <Card className={cn(
-                                       "group text-center p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:shadow-xl hover:border-primary",
-                                       "hover:border-blue-500", // Default hover
+                                       "group text-center p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:shadow-xl",
+                                       "border-border hover:border-primary",
                                        member.gender === 'male' && "hover:border-blue-500",
                                        member.gender === 'female' && "hover:border-pink-500"
                                    )}>

@@ -115,7 +115,7 @@ export default function FormCheckerPage() {
                 accept="image/png, image/jpeg, image/webp"
               />
               <div
-                className="w-full aspect-video rounded-md border-2 border-dashed border-muted-foreground/50 flex items-center justify-center bg-muted/20 cursor-pointer hover:bg-muted/40 transition-colors"
+                className="w-full aspect-[4/3] rounded-md border-2 border-dashed border-muted-foreground/50 flex items-center justify-center bg-muted/20 cursor-pointer hover:bg-muted/40 transition-colors"
                 onClick={handleUploadClick}
               >
                 {previewUrl ? (
@@ -142,10 +142,10 @@ export default function FormCheckerPage() {
                 )}
               </Button>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 min-h-[300px]">
                 <h3 className="text-xl font-semibold font-headline">Analysis Results</h3>
                 {isSubmitting ? (
-                     <div className="flex flex-col items-center justify-center text-center p-8 bg-muted/50 rounded-lg">
+                     <div className="flex flex-col items-center justify-center text-center p-8 bg-muted/50 rounded-lg h-full">
                          <LoaderCircle className="h-12 w-12 animate-spin text-primary" />
                          <p className="mt-4 text-muted-foreground">Our AI is reviewing your document...</p>
                      </div>
@@ -156,16 +156,8 @@ export default function FormCheckerPage() {
                                 {getResultIcon()}
                                 <h4 className="text-2xl font-bold mt-2 font-headline">{getResultTitle()}</h4>
                             </div>
-                            <ul className="space-y-3">
-                                {analysisResult.issues.map((issue, index) => (
-                                    <li key={index} className="flex items-start gap-3">
-                                        <XCircle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                                        <p className="text-sm">{issue}</p>
-                                    </li>
-
-                                ))}
-                            </ul>
-                             {analysisResult.isCorrect && (
+                            
+                             {analysisResult.isCorrect ? (
                                 <Alert variant="default" className="border-green-500 bg-green-50 text-green-800 dark:bg-green-900/50 dark:text-green-300">
                                     <CheckCircle className="h-5 w-5 text-green-500" />
                                     <AlertTitle>No Issues Found</AlertTitle>
@@ -173,12 +165,21 @@ export default function FormCheckerPage() {
                                        Our AI didn't find any common errors. Please double-check all details yourself before submitting.
                                     </AlertDescription>
                                 </Alert>
+                            ) : (
+                               <ul className="space-y-3">
+                                    {analysisResult.issues.map((issue, index) => (
+                                        <li key={index} className="flex items-start gap-3">
+                                            <XCircle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                                            <p className="text-sm">{issue}</p>
+                                        </li>
+                                    ))}
+                                </ul>
                             )}
-                             <p className="text-xs text-muted-foreground mt-6 italic">*Disclaimer: This AI analysis is for guidance only and does not guarantee approval. Always verify details with your bank.</p>
+                             <p className="text-xs text-muted-foreground mt-6 italic text-center">*Disclaimer: This AI analysis is for guidance only and does not guarantee approval. Always verify details with your bank.</p>
                         </CardContent>
                     </Card>
                 ) : (
-                    <div className="flex flex-col items-center justify-center text-center p-8 bg-muted/50 rounded-lg">
+                    <div className="flex flex-col items-center justify-center text-center p-8 bg-muted/50 rounded-lg h-full">
                         <p className="text-muted-foreground">Upload an image and click "Analyze Form" to see the results here.</p>
                     </div>
                 )}

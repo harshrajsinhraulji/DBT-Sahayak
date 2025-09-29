@@ -72,15 +72,15 @@ export default function DashboardPage() {
 
   if (loading || !user) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
+      <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center">
         <LoaderCircle className="h-12 w-12 animate-spin text-primary" />
       </div>
     );
   }
   
   return (
-    <div className="container mx-auto max-w-4xl py-12 px-4">
-      <Card>
+    <div className="container mx-auto max-w-4xl py-12 px-4 flex items-center justify-center min-h-[calc(100vh-8rem)]">
+      <Card className="w-full shadow-lg">
         <CardHeader>
           <CardTitle className="text-3xl font-headline text-primary">My DBT Journey</CardTitle>
           <CardDescription>
@@ -95,7 +95,7 @@ export default function DashboardPage() {
             </div>
 
             {allStepsCompleted && (
-                 <Alert className="border-green-500 bg-green-50 text-green-800">
+                 <Alert className="border-green-500 bg-green-50 text-green-800 dark:bg-green-900/20 dark:text-green-300">
                     <PartyPopper className="h-5 w-5 text-green-500" />
                     <AlertTitle className="font-bold">Congratulations!</AlertTitle>
                     <AlertDescription>
@@ -115,7 +115,7 @@ export default function DashboardPage() {
                   />
                   <Label
                     htmlFor={step.id}
-                    className={`flex-1 text-base ${completedSteps.includes(step.id) ? 'text-muted-foreground line-through' : 'text-foreground'}`}
+                    className={`flex-1 text-base cursor-pointer ${completedSteps.includes(step.id) ? 'text-muted-foreground line-through' : 'text-foreground'}`}
                   >
                     {step.label}
                   </Label>
