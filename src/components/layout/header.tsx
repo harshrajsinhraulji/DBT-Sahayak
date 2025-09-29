@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, User, LogOut, LayoutDashboard, Info, BookOpen, Search, GraduationCap, Users, HelpCircle, Phone, GanttChartSquare, Printer, BrainCircuit, FileCheck, Users2, Video } from "lucide-react";
+import { Menu, User, LogOut, LayoutDashboard, Info, BookOpen, Search, GraduationCap, Users, HelpCircle, Phone, GanttChartSquare, Printer, BrainCircuit, FileCheck, Users2, Video, Megaphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -39,16 +39,17 @@ export function Header() {
     { href: "/#education", label: content.header.nav.education, icon: <BookOpen /> },
     { href: "/#videos", label: content.header.nav.videos, icon: <Video /> },
     { href: "/#status", label: content.header.nav.status, icon: <Search /> },
+    { href: "/#take-action", label: content.header.nav.takeAction, icon: <Megaphone /> },
     { href: "/#scholarships", label: content.header.nav.scholarships, icon: <GraduationCap /> },
     { href: "/#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
     { href: "/#contact", label: content.header.nav.contact, icon: <Phone /> },
   ];
   
   const actionItems = [
-      { href: "/form-checker", label: 'AI Form Check', icon: <FileCheck /> },
-      { href: "/governance", label: 'Governance', icon: <GanttChartSquare /> },
-      { href: "/resources", label: 'Resources', icon: <BrainCircuit /> },
-      { href: "/about-team", label: 'About Team', icon: <Users2 /> },
+      { href: "/form-checker", label: content.header.nav.formChecker, icon: <FileCheck /> },
+      { href: "/governance", label: content.header.nav.governance, icon: <GanttChartSquare /> },
+      { href: "/resources", label: content.header.nav.resources, icon: <BrainCircuit /> },
+      { href: "/about-team", label: content.header.nav.aboutTeam, icon: <Users2 /> },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -184,7 +185,7 @@ export function Header() {
                   className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
                 >
                   <Users />
-                  Request a Drive
+                  {content.header.nav.requestDrive}
                 </Link>
                  <Link
                   href="/print-kit"
@@ -192,7 +193,7 @@ export function Header() {
                   className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
                 >
                   <Printer />
-                  Print Kit
+                  {content.header.nav.printKit}
                 </Link>
               </div>
             </SheetContent>

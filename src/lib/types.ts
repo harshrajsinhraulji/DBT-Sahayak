@@ -36,6 +36,7 @@ export type LanguageContent = {
       education: string;
       videos: string;
       status: string;
+      takeAction: string;
       scholarships: string;
       myths: string;
       faq: string;
@@ -46,6 +47,7 @@ export type LanguageContent = {
       aboutTeam: string;
       printKit: string;
       requestDrive: string;
+      formChecker: string;
     };
     login: string;
   };
@@ -208,4 +210,3 @@ subtitle: string;
     gu: string;
   }
 };
-

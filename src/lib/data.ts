@@ -9,6 +9,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         education: "Learn",
         videos: "Videos",
         status: "Check Status",
+        takeAction: "Take Action",
         scholarships: "Scholarships",
         myths: "Myth Busters",
         faq: "FAQ",
@@ -18,7 +19,8 @@ export const pageContent: Record<Language, LanguageContent> = {
         governance: "Governance",
         aboutTeam: "About Team",
         printKit: "Print Kit",
-        requestDrive: "Request a Drive"
+        requestDrive: "Request a Drive",
+        formChecker: "AI Form Check"
       },
       login: "Login/Register"
     },
@@ -362,6 +364,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         education: "जानें",
         videos: "वीडियो",
         status: "स्थिति जांचें",
+        takeAction: "कार्रवाई करें",
         scholarships: "छात्रवृत्तियाँ",
         myths: "मिथक तोड़ें",
         faq: "अक्सर पूछे जाने वाले प्रश्न",
@@ -371,7 +374,8 @@ export const pageContent: Record<Language, LanguageContent> = {
         governance: "शासन",
         aboutTeam: "टीम के बारे में",
         printKit: "प्रिंट किट",
-        requestDrive: "ड्राइव का अनुरोध करें"
+        requestDrive: "ड्राइव का अनुरोध करें",
+        formChecker: "एआई फॉर्म जांच"
       },
       login: "लॉगिन/रजिस्टर करें"
     },
@@ -715,6 +719,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         education: "જાણો",
         videos: "વીડિયો",
         status: "સ્થિતિ તપાસો",
+        takeAction: "પગલાં લો",
         scholarships: "શિષ્યવૃત્તિ",
         myths: "માન્યતા તોડો",
         faq: "વારંવાર પૂછાતા પ્રશ્નો",
@@ -724,7 +729,8 @@ export const pageContent: Record<Language, LanguageContent> = {
         governance: "શાસન",
         aboutTeam: "ટીમ વિશે",
         printKit: "પ્રિન્ટ કીટ",
-        requestDrive: "ડ્રાઇવની વિનંતી કરો"
+        requestDrive: "ડ્રાઇવની વિનંતી કરો",
+        formChecker: "એઆઈ ફોર્મ તપાસ"
       },
       login: "લોગિન/રજીસ્ટર કરો"
     },
