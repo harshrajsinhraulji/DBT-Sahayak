@@ -4,7 +4,7 @@
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.v(JSON.parse("[{\"Rank\":1,\"State\":\"HARYANA\",\"Score\":88.8},{\"Rank\":2,\"State\":\"UTTAR PRADESH\",\"Score\":85.2},{\"Rank\":3,\"State\":\"TRIPURA\",\"Score\":80.2},{\"Rank\":4,\"State\":\"GUJARAT\",\"Score\":77.8},{\"Rank\":5,\"State\":\"UTTARAKHAND\",\"Score\":74.3},{\"Rank\":6,\"State\":\"JHARKHAND\",\"Score\":73.1},{\"Rank\":7,\"State\":\"GOA\",\"Score\":69.4},{\"Rank\":8,\"State\":\"LADAKH\",\"Score\":68.3},{\"Rank\":8,\"State\":\"JAMMU AND KASHMIR\",\"Score\":68.3},{\"Rank\":9,\"State\":\"BIHAR\",\"Score\":67.6},{\"Rank\":10,\"State\":\"MADHYA PRADESH\",\"Score\":66.9},{\"Rank\":11,\"State\":\"PUDUCHERRY\",\"Score\":65.3},{\"Rank\":12,\"State\":\"ODISHA\",\"Score\":63.3},{\"Rank\":13,\"State\":\"MIZORAM\",\"Score\":62.0},{\"Rank\":14,\"State\":\"HIMACHAL PRADESH\",\"Score\":60.7},{\"Rank\":15,\"State\":\"PUNJAB\",\"Score\":59.9},{\"Rank\":16,\"State\":\"TAMIL NADU\",\"Score\":59.3},{\"Rank\":17,\"State\":\"DELHI\",\"Score\":58.5},{\"Rank\":18,\"State\":\"RAJASTHAN\",\"Score\":57.5},{\"Rank\":19,\"State\":\"ANDHRA PRADESH\",\"Score\":54.9},{\"Rank\":20,\"State\":\"MANIPUR\",\"Score\":54.8},{\"Rank\":21,\"State\":\"KERALA\",\"Score\":53.8},{\"Rank\":22,\"State\":\"CHHATTISGARH\",\"Score\":52.9},{\"Rank\":23,\"State\":\"NAGALAND\",\"Score\":51.1},{\"Rank\":24,\"State\":\"SIKKIM\",\"Score\":50.5},{\"Rank\":25,\"State\":\"KARNATAKA\",\"Score\":49.1},{\"Rank\":26,\"State\":\"MAHARASHTRA\",\"Score\":48.4},{\"Rank\":27,\"State\":\"MEGHALAYA\",\"Score\":46.6},{\"Rank\":28,\"State\":\"ANDAMAN AND NICOBAR ISLANDS\",\"Score\":45.3},{\"Rank\":29,\"State\":\"CHANDIGARH\",\"Score\":44.3},{\"Rank\":30,\"State\":\"DADRA AND NAGAR HAVELI\",\"Score\":43.7},{\"Rank\":31,\"State\":\"ARUNACHAL PRADESH\",\"Score\":39.9},{\"Rank\":32,\"State\":\"DAMAN AND DIU\",\"Score\":38.9},{\"Rank\":32,\"State\":\"THE DADRA AND NAGAR HAVELI AND DAMAN AND DIU\",\"Score\":38.9},{\"Rank\":33,\"State\":\"LAKSHADWEEP\",\"Score\":38.1},{\"Rank\":34,\"State\":\"TELANGANA\",\"Score\":29.6},{\"Rank\":35,\"State\":\"ASSAM\",\"Score\":26.4},{\"Rank\":36,\"State\":\"WEST BENGAL\",\"Score\":13.2}]"));}}),
+__turbopack_context__.v(JSON.parse("[{\"Rank\":1,\"State\":\"HARYANA\",\"Score\":88.8},{\"Rank\":2,\"State\":\"UTTAR PRADESH\",\"Score\":85.2},{\"Rank\":3,\"State\":\"TRIPURA\",\"Score\":80.2},{\"Rank\":4,\"State\":\"GUJARAT\",\"Score\":77.8},{\"Rank\":5,\"State\":\"UTTARAKHAND\",\"Score\":74.3},{\"Rank\":6,\"State\":\"JHARKHAND\",\"Score\":73.1},{\"Rank\":7,\"State\":\"GOA\",\"Score\":69.4},{\"Rank\":8,\"State\":\"LADAKH\",\"Score\":68.3},{\"Rank\":8,\"State\":\"JAMMU AND KASHMIR\",\"Score\":68.3},{\"Rank\":9,\"State\":\"BIHAR\",\"Score\":67.6},{\"Rank\":10,\"State\":\"MADHYA PRADESH\",\"Score\":66.9},{\"Rank\":11,\"State\":\"PUDUCHERRY\",\"Score\":65.3},{\"Rank\":12,\"State\":\"ODISHA\",\"Score\":63.3},{\"Rank\":13,\"State\":\"MIZORAM\",\"Score\":62.0},{\"Rank\":14,\"State\":\"HIMACHAL PRADESH\",\"Score\":60.7},{\"Rank\":15,\"State\":\"PUNJAB\",\"Score\":59.9},{\"Rank\":16,\"State\":\"TAMIL NADU\",\"Score\":59.3},{\"Rank\":17,\"State\":\"DELHI\",\"Score\":58.5},{\"Rank\":18,\"State\":\"RAJASTHAN\",\"Score\":57.5},{\"Rank\":19,\"State\":\"ANDHRA PRADESH\",\"Score\":54.9},{\"Rank\":20,\"State\":\"MANIPUR\",\"Score\":54.8},{\"Rank\":21,\"State\":\"KERALA\",\"Score\":53.8},{\"Rank\":22,\"State\":\"CHHATTISGARH\",\"Score\":52.9},{\"Rank\":23,\"State\":\"NAGALAND\",\"Score\":51.1},{\"Rank\":24,\"State\":\"SIKKIM\",\"Score\":50.5},{\"Rank\":25,\"State\":\"KARNATAKA\",\"Score\":49.1},{\"Rank\":26,\"State\":\"MAHARASHTRA\",\"Score\":48.4},{\"Rank\":27,\"State\":\"MEGHALAYA\",\"Score\":46.6},{\"Rank\":28,\"State\":\"ANDAMAN AND NICOBAR ISLANDS\",\"Score\":45.3},{\"Rank\":29,\"State\":\"CHANDIGARH\",\"Score\":44.3},{\"Rank\":30,\"State\":\"DADRA AND NAGAR HAVELI AND DAMAN AND DIU\",\"Score\":43.7},{\"Rank\":31,\"State\":\"ARUNACHAL PRADESH\",\"Score\":39.9},{\"Rank\":33,\"State\":\"LAKSHADWEEP\",\"Score\":38.1},{\"Rank\":34,\"State\":\"TELANGANA\",\"Score\":29.6},{\"Rank\":35,\"State\":\"ASSAM\",\"Score\":26.4},{\"Rank\":36,\"State\":\"WEST BENGAL\",\"Score\":13.2}]"));}}),
 "[project]/src/components/google-geo-chart.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -58,7 +58,7 @@ function GoogleGeoChart() {
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$dbt$2d$performance$2d$data$2e$json__$28$json$29$__["default"].forEach((item)=>{
             const category = getCategory(item.Score);
             const tooltipContent = `
-            <div style="padding:10px; font-family: sans-serif;">
+            <div style="padding:10px; font-family: sans-serif; color: #333;">
                 <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${item.State}</div>
                 <div><strong>Rank:</strong> ${item.Rank}</div>
                 <div><strong>Score:</strong> ${item.Score}</div>
@@ -78,14 +78,14 @@ function GoogleGeoChart() {
             colorAxis: {
                 colors: [
                     '#ef4444',
-                    '#facc15',
                     '#fde047',
+                    '#a3e635',
                     '#22c55e'
                 ]
             },
             resolution: 'provinces',
-            backgroundColor: resolvedTheme === 'dark' ? '#0f172a' : '#f8fafc',
-            datalessRegionColor: resolvedTheme === 'dark' ? '#334155' : '#e2e8f0',
+            backgroundColor: resolvedTheme === 'dark' ? '#020817' : '#ffffff',
+            datalessRegionColor: resolvedTheme === 'dark' ? '#1e293b' : '#f1f5f9',
             defaultColor: '#f5f5f5',
             width: '100%',
             height: 500,
@@ -107,6 +107,7 @@ function GoogleGeoChart() {
             if (isScriptLoaded && typeof google !== 'undefined' && google.load) {
                 if ("TURBOPACK compile-time falsy", 0) {
                     "TURBOPACK unreachable";
+                // Don't return, allow it to try and render without the key to show the error.
                 }
                 google.charts.load('current', {
                     'packages': [
@@ -133,7 +134,6 @@ function GoogleGeoChart() {
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "GoogleGeoChart.useEffect": ()=>{
-            // Redraw chart on window resize
             const handleResize = {
                 "GoogleGeoChart.useEffect.handleResize": ()=>{
                     if (isChartDrawn) drawChart();
@@ -155,7 +155,7 @@ function GoogleGeoChart() {
                 onLoad: ()=>setIsScriptLoaded(true)
             }, void 0, false, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 93,
+                lineNumber: 92,
                 columnNumber: 7
             }, this),
             !apiKey && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -165,14 +165,14 @@ function GoogleGeoChart() {
                         children: "Warning:"
                     }, void 0, false, {
                         fileName: "[project]/src/components/google-geo-chart.tsx",
-                        lineNumber: 100,
+                        lineNumber: 99,
                         columnNumber: 13
                     }, this),
-                    " `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is not set. The map may not render correctly."
+                    " `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is not set. The map will likely fail to load."
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 99,
+                lineNumber: 98,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -189,26 +189,26 @@ function GoogleGeoChart() {
                             className: "h-12 w-12 animate-spin text-primary"
                         }, void 0, false, {
                             fileName: "[project]/src/components/google-geo-chart.tsx",
-                            lineNumber: 106,
+                            lineNumber: 105,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "ml-4",
-                            children: "Loading Map..."
+                            children: "Loading Map Data..."
                         }, void 0, false, {
                             fileName: "[project]/src/components/google-geo-chart.tsx",
-                            lineNumber: 107,
+                            lineNumber: 106,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/google-geo-chart.tsx",
-                    lineNumber: 105,
+                    lineNumber: 104,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 103,
+                lineNumber: 102,
                 columnNumber: 7
             }, this)
         ]

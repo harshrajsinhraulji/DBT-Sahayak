@@ -14,6 +14,15 @@ const getCategory = (score: number) => {
     return 'Needs Improvement';
 };
 
+// Function to convert state names to title case
+const toTitleCase = (str: string) => {
+    return str.replace(
+        /\w\S*/g,
+        (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    );
+};
+
+
 export default function GoogleGeoChart() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const [isChartDrawn, setIsChartDrawn] = useState(false);
@@ -28,13 +37,14 @@ export default function GoogleGeoChart() {
         const category = getCategory(item.Score);
         const tooltipContent = `
             <div style="padding:10px; font-family: sans-serif; color: #333;">
-                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${item.State}</div>
+                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${toTitleCase(item.State)}</div>
                 <div><strong>Rank:</strong> ${item.Rank}</div>
                 <div><strong>Score:</strong> ${item.Score}</div>
                 <div><strong>Category:</strong> ${category}</div>
             </div>
         `;
-        dataArray.push([item.State, item.Score, tooltipContent]);
+        // Correctly format the state name for Google Charts
+        dataArray.push([toTitleCase(item.State), item.Score, tooltipContent]);
     });
 
     const data = google.visualization.arrayToDataTable(dataArray);
@@ -62,7 +72,6 @@ export default function GoogleGeoChart() {
     if (isScriptLoaded && typeof google !== 'undefined' && google.load) {
       if (!apiKey) {
         console.error("Google Maps API Key is missing. The map may not render correctly.");
-        // Don't return, allow it to try and render without the key to show the error.
       }
       google.charts.load('current', {
         'packages': ['geochart'],
