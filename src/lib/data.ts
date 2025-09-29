@@ -463,8 +463,8 @@ export const pageContent: Record<Language, LanguageContent> = {
       },
     },
     footer: {
-      tagline: "An initiative by Team Code Technicians for Smart India Hackathon 2025.",
-      credits: "Under the guidance of the Ministry of Social Justice & Empowerment.",
+      tagline: "Bridging the gap between citizens and government welfare through technology.",
+      credits: "An initiative for Smart India Hackathon 2025.",
       navigation: "Navigation",
       resources: "Resources",
       about: "About",
@@ -719,7 +719,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
         {
           fact: "यदि आधार और बैंक खाते पर आपका नाम बिल्कुल मेल नहीं खाता है, तो सीडिंग विफल हो जाएगी।",
-          explanation: "यह एक तथ्य है। सीडिंग प्रक्रिया के सफल होने के लिए आपका नाम दोनों रिकॉर्ड में समान होना चाहिए।"
+          explanation: "यह एक तथ्य है। सीडिंग પ્રક્રિયા के सफल होने के लिए आपका नाम दोनों रिकॉर्ड में समान होना चाहिए।"
         },
         {
           fact: "आप यूआईडीएआई और एनपीसीआई दोनों वेबसाइटों पर अपनी आधार सीडिंग स्थिति की जांच कर सकते हैं।",
@@ -939,10 +939,10 @@ export const pageContent: Record<Language, LanguageContent> = {
       },
     },
     footer: {
-      tagline: "स्मार्ट इंडिया हैकथॉन २०२५ के लिए टीम कोड टेक्नीशियन की एक पहल।",
-      credits: "सामाजिक न्याय और अधिकारिता मंत्रालय के मार्गदर्शन में।",
+      tagline: "प्रौद्योगिकी के माध्यम से नागरिकों और सरकारी कल्याण के बीच की खाई को पाटना।",
+      credits: "स्मार्ट इंडिया हैकथॉन २०२५ के लिए एक पहल।",
       navigation: "नेविगेशन",
-      resources: "संसाधन",
+      resources: "संसाધન",
       about: "हमारे बारे में",
       learnMore: "और जानें",
       github: "गिटहब",
@@ -1295,7 +1295,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
         {
           question: "ડીબીટી ફંડ મેળવવા માટે હું મારું બેંક ખાતું કેવી રીતે બદલી શકું?",
-          answer: "તમારું ડીબીટી-સક્ષમ ખાતું બદલવા માટે, તમારે તે *નવી* બેંકની શાખાની મુલાકાત લેવી આવશ्यક છે જ્યાં તમે ભંડોળ મેળવવા માંગો છો. ત્યાં આધાર સીડિંગ સંમતિ ફોર્મ સબમિટ કરો. તેઓ NPCI મેપરને અપડેટ કરશે, જે જૂના ખાતાને આપમેળે ઓવરરાઇડ કરશે.",
+          answer: "તમારું ડીબીટી-સક્ષમ ખાતું બદલવા માટે, તમારે તે *નવી* બેંકની શાખાની મુલાકાત લેવી આવશ્યક છે જ્યાં તમે ભંડોળ મેળવવા માંગો છો. ત્યાં આધાર સીડિંગ સંમતિ ફોર્મ સબમિટ કરો. તેઓ NPCI મેપરને અપડેટ કરશે, જે જૂના ખાતાને આપમેળે ઓવરરાઇડ કરશે.",
         },
         {
             question: "મારું નામ મારા આધાર કાર્ડ વિરુદ્ધ મારા બેંક ખાતામાં અલગ છે. મારે શું કરવું જોઈએ?",
@@ -1323,7 +1323,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       bankForms: [
         { name: "સ્ટેટ બેંક ઓફ ઈન્ડિયા (SBI)", description: "SBI ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://sbi.co.in/documents/16012/25194947/Aadhaar+Seeding+Process+for+Customers+of+Other+Banks+having+SBI+account.pdf" },
         { name: "પંજાબ નેશનલ બેંક (PNB)", description: "PNB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.pnbindia.in/downloadprocess.aspx?fid=3532E743-4C98-43B0-A227-22F091054C35" },
-        { name: "બેંક ઓફ బరోડા (BOB)", description: "BOB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.bankofbaroda.in/-/media/project/bob/countrysites/india/personal-banking/accounts/documents/application-for-linking-aadhaar-number.pdf" },
+        { name: "બેંક ઓફ બરોડા (BOB)", description: "BOB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.bankofbaroda.in/-/media/project/bob/countrysites/india/personal-banking/accounts/documents/application-for-linking-aadhaar-number.pdf" },
         { name: "HDFC બેંક", description: "HDFC ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c86c" },
         { name: "ICICI બેંક", description: "ICICI ગ્રાહકો માટે આધાર સીડિંગ સૂચનાઓ.", link: "https://www.icicibank.com/personal-banking/insta-banking/internet-banking/link-aadhaar-card" },
         { name: "Axis બેંક", description: "Axis ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.", link: "https://www.axisbank.com/docs/default-source/default-document-library/accounts-and-deposits/application-form-to-link-aadhaar-card-to-savings-account.pdf" }
@@ -1364,7 +1364,7 @@ export const pageContent: Record<Language, LanguageContent> = {
             },
              {
                 title: "અમલીકરણ મંત્રાલયો અને રાજ્યો",
-                description: "વ્યક્તિગત મંત્રાલયો (દા.ત., મનરેગા માટે ગ્રામੀણ વિકાસ) અને રાજ્ય સરકારો તેમની પોતાની યોજનાઓ અને લાભાર્થી યાદીઓનું સંચાલન કરે છે, જે કેન્દ્રીય ડીબીટી પ્લેટફોર્મ સાથે સંકલિત થાય છે."
+                description: "વ્યક્તિગત મંત્રાલયો (દા.ત., મનરેગા માટે ગ્રામીણ વિકાસ) અને રાજ્ય સરકારો તેમની પોતાની યોજનાઓ અને લાભાર્થી યાદીઓનું સંચાલન કરે છે, જે કેન્દ્રીય ડીબીટી પ્લેટફોર્મ સાથે સંકલિત થાય છે."
             }
         ]
       },
@@ -1375,7 +1375,7 @@ export const pageContent: Record<Language, LanguageContent> = {
     },
     printKit: {
       title: "છાપવા યોગ્ય જાગૃતિ કિટ",
-      subtitle: "શાળાઓ અને સમુદાયોમાં ઑફલાઇન ઝુંબેશ માટે આ સામગ્રી ડਾઉનલોડ અને છાપો.",
+      subtitle: "શાળાઓ અને સમુદાયોમાં ઑફલાઇન ઝુંબેશ માટે આ સામગ્રી ડાઉનલોડ અને છાપો.",
       poster: {
         title: "શું તમારું બેંક ખાતું તમારી શિષ્યવૃત્તિ માટે તૈયાર છે?",
         subtitle: "એક સામાન્ય ભૂલને તમારા ભંડોળને રોકવા ન દો! ખાતરી કરો કે તમારું ખાતું ડીબીટી-સક્ષમ છે.",
@@ -1415,8 +1415,8 @@ export const pageContent: Record<Language, LanguageContent> = {
       },
     },
     footer: {
-      tagline: "સ્માર્ટ ઇન્ડિયા હેકાથોન ૨૦૨૫ માટે ટીમ કોડ ટેકનિશિયન દ્વારા એક પહેલ.",
-      credits: "સામાજિક ન્યાય અને સશક્તિકરણ મંત્રાલયના માર્ગદર્શન હેઠળ।",
+      tagline: "ટેકનોલોજી દ્વારા નાગરિકો અને સરકારી કલ્યાણ વચ્ચેનું અંતર પૂરવું.",
+      credits: "સ્માર્ટ ઇન્ડિયા હેકાથોન ૨૦૨૫ માટે એક પહેલ।",
       navigation: "નેવિગેશન",
       resources: "સંસાધનો",
       about: "અમારા વિશે",

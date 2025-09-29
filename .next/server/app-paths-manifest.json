@@ -1,4 +1,5 @@
 {
+  "/about-team/page": "app/about-team/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/dbt-map/page": "app/dbt-map/page.js",
   "/eligibility-checker/page": "app/eligibility-checker/page.js",

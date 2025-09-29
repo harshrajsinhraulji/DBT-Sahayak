@@ -30,13 +30,12 @@ export function Footer() {
             <p className="text-sm text-muted-foreground max-w-sm">
               {content.footer.tagline}
             </p>
-             <div className="flex items-center gap-4">
-                <NationalEmblemOfIndia className="h-10 w-10 text-muted-foreground" />
+             <div className="flex items-center gap-4 pt-2">
+                <NationalEmblemOfIndia className="h-12 w-12 text-muted-foreground" />
                 <div>
-                  <p className="text-xs font-semibold text-muted-foreground">{content.footer.credits}</p>
-                  <a href="https://socialjustice.gov.in" target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline font-semibold">
-                    Ministry of Social Justice & Empowerment
-                  </a>
+                  <p className="text-xs font-semibold text-muted-foreground">An initiative for Smart India Hackathon 2025</p>
+                  <p className="text-sm font-bold text-foreground">Ministry of Social Justice & Empowerment</p>
+                  <p className="text-xs font-semibold text-muted-foreground">Government of India</p>
                 </div>
             </div>
           </div>
