@@ -5,7 +5,11 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/hooks/use-language";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight, FileCheck, GraduationCap, Search } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import Link from "next/link";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export function HeroSection() {
   const { content } = useLanguage();
@@ -18,9 +22,36 @@ export function HeroSection() {
       behavior: "smooth",
     });
   };
+  
+  const heroCards = [
+    {
+        title: "Check your DBT Status",
+        description: "Verify if your account is ready to receive funds.",
+        icon: <Search className="h-8 w-8 text-white" />,
+        href: "#status",
+        bgColor: "bg-blue-500/30",
+        borderColor: "border-blue-400"
+    },
+    {
+        title: "Explore Scholarships",
+        description: "Find scholarship opportunities waiting for you.",
+        icon: <GraduationCap className="h-8 w-8 text-white" />,
+        href: "#scholarships",
+        bgColor: "bg-purple-500/30",
+        borderColor: "border-purple-400"
+    },
+    {
+        title: "AI Form Checker",
+        description: "Let our AI check your seeding form for errors before you submit.",
+        icon: <FileCheck className="h-8 w-8 text-white" />,
+        href: "/form-checker",
+        bgColor: "bg-green-500/30",
+        borderColor: "border-green-400"
+    }
+  ]
 
   return (
-    <section className="relative w-full h-[80vh] flex items-center justify-center text-center text-white overflow-hidden">
+    <section className="relative w-full h-[90vh] flex items-center justify-center text-center text-white overflow-hidden">
       {heroBg && (
         <Image
           src={heroBg.imageUrl}
@@ -33,7 +64,7 @@ export function HeroSection() {
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-primary/60 to-accent/60" />
 
-      <div className="relative z-10 container px-4 md:px-6">
+      <div className="relative z-10 container px-4 md:px-6 mt-16">
         <div className="flex flex-col items-center space-y-6">
           <div className="space-y-4">
             <p className="text-lg md:text-xl font-semibold bg-white/10 backdrop-blur-sm rounded-full px-4 py-1 inline-block">
@@ -46,14 +77,34 @@ export function HeroSection() {
               {content.hero.subtitle}
             </p>
           </div>
-          <div className="space-x-4">
-            <a href="#education" onClick={handleScroll}>
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg transition-transform hover:scale-105">
-                {content.hero.cta}
-                <ArrowDown className="ml-2 h-5 w-5 animate-bounce" />
-              </Button>
-            </a>
-          </div>
+        </div>
+        
+        <div className="mt-12">
+            <Carousel 
+                opts={{ align: "start", loop: true }}
+                plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
+                className="w-full max-w-4xl mx-auto"
+            >
+                <CarouselContent>
+                    {heroCards.map((card, index) => (
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                             <Link href={card.href}>
+                                <Card className={`h-full group text-left backdrop-blur-lg transition-all duration-300 hover:scale-105 ${card.bgColor} ${card.borderColor} border`}>
+                                    <CardHeader className="flex flex-row items-center gap-4">
+                                        <div className="p-3 rounded-full bg-white/10">
+                                           {card.icon}
+                                        </div>
+                                        <CardTitle className="font-headline text-xl text-white">{card.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className="text-gray-300">{card.description}</p>
+                                    </CardContent>
+                                </Card>
+                            </Link>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+            </Carousel>
         </div>
       </div>
     </section>

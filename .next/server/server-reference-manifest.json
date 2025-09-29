@@ -22,10 +22,6 @@
           "moduleId": "[project]/.next-internal/server/app/request-drive/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/chat-flow.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/firebase-service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
-        "app/resources/page": {
-          "moduleId": "[project]/.next-internal/server/app/resources/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/chat-flow.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
         "app/signup/page": {
           "moduleId": "[project]/.next-internal/server/app/signup/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/chat-flow.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
@@ -37,7 +33,6 @@
         "app/governance/page": "action-browser",
         "app/login/page": "action-browser",
         "app/request-drive/page": "action-browser",
-        "app/resources/page": "action-browser",
         "app/signup/page": "action-browser"
       }
     },
