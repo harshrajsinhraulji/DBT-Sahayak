@@ -16,10 +16,7 @@ const getCategory = (score: number) => {
 
 const toTitleCase = (str: string) => {
     if (!str) return '';
-    return str.replace(
-        /\w\S*/g,
-        (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
-    );
+    return str.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
 };
 
 export default function GoogleGeoChart() {
@@ -31,7 +28,7 @@ export default function GoogleGeoChart() {
   const drawChart = () => {
     if (typeof google === 'undefined' || !google.visualization) return;
 
-    const dataArray: (string | number | { v: number; f: string } | { role: string; type: string; p: { html: boolean } })[][] = [
+    const dataArray: (string | number | { v: number; f: string } | { role: string; type: 'string'; p: { html: boolean } })[][] = [
         ['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }]
     ];
     

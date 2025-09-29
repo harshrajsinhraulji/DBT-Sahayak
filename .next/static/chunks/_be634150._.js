@@ -43,7 +43,7 @@ function GoogleGeoChart() {
     const [isScriptLoaded, setIsScriptLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isChartDrawn, setIsChartDrawn] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const { resolvedTheme } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$themes$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"])();
-    const apiKey = ("TURBOPACK compile-time value", "your_google_maps_api_key");
+    const apiKey = ("TURBOPACK compile-time value", "AIzaSyCUS8VinV2EYszMJObC4Hy2htmHV6SY8_w");
     const drawChart = ()=>{
         if (typeof google === 'undefined' || !google.visualization) return;
         const dataArray = [

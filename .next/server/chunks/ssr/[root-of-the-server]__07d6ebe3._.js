@@ -2555,13 +2555,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2
 ;
 // Your web app's Firebase configuration is read from environment variables
 const firebaseConfig = {
-    apiKey: ("TURBOPACK compile-time value", "your_api_key"),
-    authDomain: ("TURBOPACK compile-time value", "your_auth_domain"),
-    projectId: ("TURBOPACK compile-time value", "your_project_id"),
-    storageBucket: ("TURBOPACK compile-time value", "your_storage_bucket"),
-    messagingSenderId: ("TURBOPACK compile-time value", "your_sender_id"),
-    appId: ("TURBOPACK compile-time value", "your_app_id"),
-    measurementId: ("TURBOPACK compile-time value", "your_measurement_id")
+    apiKey: ("TURBOPACK compile-time value", "AIzaSyBUjfBxveru9rBX_6wyOQvGY5dNeZ3Vx4c"),
+    authDomain: ("TURBOPACK compile-time value", "dbt-sahayak-database.firebaseapp.com"),
+    projectId: ("TURBOPACK compile-time value", "dbt-sahayak-database"),
+    storageBucket: ("TURBOPACK compile-time value", "dbt-sahayak-database.firebasestorage.app"),
+    messagingSenderId: ("TURBOPACK compile-time value", "36334179231"),
+    appId: ("TURBOPACK compile-time value", "1:36334179231:web:5fd14a0515801ec918a3aa"),
+    measurementId: ("TURBOPACK compile-time value", "G-QMET9YF77M")
 };
 // Initialize Firebase only if it hasn't been initialized yet
 const app = !(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$app$2f$dist$2f$esm$2f$index$2e$esm2017$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getApps"])().length ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$app$2f$dist$2f$esm$2f$index$2e$esm2017$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["initializeApp"])(firebaseConfig) : (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$app$2f$dist$2f$esm$2f$index$2e$esm2017$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getApp"])();
@@ -2595,7 +2595,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 // Define the admin email address from environment variables
-const ADMIN_EMAIL = ("TURBOPACK compile-time value", "admin@example.com");
+const ADMIN_EMAIL = ("TURBOPACK compile-time value", "h.raulji2005@gmail.com");
 const AuthContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createContext"])(undefined);
 function AuthProvider({ children }) {
     const [user, setUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
