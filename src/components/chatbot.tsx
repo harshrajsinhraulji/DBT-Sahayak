@@ -87,7 +87,7 @@ export function Chatbot() {
     <>
       <div className="fixed bottom-6 right-6 z-50">
         <Button onClick={() => setIsOpen(!isOpen)} size="lg" className="rounded-full w-16 h-16 shadow-lg">
-          {isOpen ? <X className="h-8 w-8" /> : <BrainCircuit className="h-8 w-8" />}
+          {isOpen ? <X className="h-8 w-8 text-white" /> : <BrainCircuit className="h-8 w-8 text-white" />}
           <span className="sr-only">Toggle Chatbot</span>
         </Button>
       </div>
