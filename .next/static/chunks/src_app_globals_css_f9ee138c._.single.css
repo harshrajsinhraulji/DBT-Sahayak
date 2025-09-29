@@ -1057,6 +1057,10 @@ body {
   resize: none;
 }
 
+.resize {
+  resize: both;
+}
+
 .list-inside {
   list-style-position: inside;
 }

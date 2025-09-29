@@ -5,53 +5,58 @@ import { useState, useEffect } from 'react';
 import Script from 'next/script';
 import { LoaderCircle } from 'lucide-react';
 import dbtPerformanceData from '@/lib/dbt-performance-data.json';
+import { useTheme } from 'next-themes';
 
-// State name mapping to Google GeoChart's expected format
-const stateNameMapping: { [key: string]: string } = {
-  "ANDAMAN AND NICOBAR ISLANDS": "Andaman and Nicobar Islands",
-  "ANDHRA PRADESH": "Andhra Pradesh",
-  "ARUNACHAL PRADESH": "Arunachal Pradesh",
-  "ASSAM": "Assam",
-  "BIHAR": "Bihar",
-  "CHANDIGARH": "Chandigarh",
-  "CHHATTISGARH": "Chhattisgarh",
-  "DADRA AND NAGAR HAVELI": "Dadra and Nagar Haveli",
-  "DAMAN AND DIU": "Daman and Diu",
-  "DELHI": "Delhi",
-  "GOA": "Goa",
-  "GUJARAT": "Gujarat",
-  "HARYANA": "Haryana",
-  "HIMACHAL PRADESH": "Himachal Pradesh",
-  "JAMMU AND KASHMIR": "Jammu and Kashmir",
-  "JHARKHAND": "Jharkhand",
-  "KARNATAKA": "Karnataka",
-  "KERALA": "Kerala",
-  "LADAKH": "Ladakh",
-  "LAKSHADWEEP": "Lakshadweep",
-  "MADHYA PRADESH": "Madhya Pradesh",
-  "MAHARASHTRA": "Maharashtra",
-  "MANIPUR": "Manipur",
-  "MEGHALAYA": "Meghalaya",
-  "MIZORAM": "Mizoram",
-  "NAGALAND": "Nagaland",
-  "ODISHA": "Odisha",
-  "PUDUCHERRY": "Puducherry",
-  "PUNJAB": "Punjab",
-  "RAJASTHAN": "Rajasthan",
-  "SIKKIM": "Sikkim",
-  "TAMIL NADU": "Tamil Nadu",
-  "TELANGANA": "Telangana",
-  "THE DADRA AND NAGAR HAVELI AND DAMAN AND DIU": "Dadra and Nagar Haveli and Daman and Diu",
-  "TRIPURA": "Tripura",
-  "UTTAR PRADESH": "Uttar Pradesh",
-  "UTTARAKHAND": "Uttarakhand",
-  "WEST BENGAL": "West Bengal",
+const getCategory = (score: number) => {
+    if (score >= 80) return 'Excellent';
+    if (score >= 60) return 'Good';
+    if (score >= 40) return 'Moderate';
+    return 'Needs Improvement';
 };
 
 export default function GoogleGeoChart() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const [isChartDrawn, setIsChartDrawn] = useState(false);
+  const { resolvedTheme } = useTheme();
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
+  const drawChart = () => {
+    if (typeof google === 'undefined' || !google.visualization) return;
+
+    const dataArray = [['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }]];
+    dbtPerformanceData.forEach(item => {
+        const category = getCategory(item.Score);
+        const tooltipContent = `
+            <div style="padding:10px; font-family: sans-serif;">
+                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${item.State}</div>
+                <div><strong>Rank:</strong> ${item.Rank}</div>
+                <div><strong>Score:</strong> ${item.Score}</div>
+                <div><strong>Category:</strong> ${category}</div>
+            </div>
+        `;
+        dataArray.push([item.State, item.Score, tooltipContent]);
+    });
+
+    const data = google.visualization.arrayToDataTable(dataArray);
+
+    const opts = {
+      region: 'IN',
+      displayMode: 'regions',
+      colorAxis: { colors: ['#ef4444', '#facc15', '#fde047', '#22c55e'] },
+      resolution: 'provinces',
+      backgroundColor: resolvedTheme === 'dark' ? '#0f172a' : '#f8fafc',
+      datalessRegionColor: resolvedTheme === 'dark' ? '#334155' : '#e2e8f0',
+      defaultColor: '#f5f5f5',
+      width: '100%',
+      height: 500,
+      tooltip: { isHtml: true, textStyle: { fontName: 'sans-serif', fontSize: 14 } },
+      legend: 'none',
+    };
+
+    const geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
+    geochart.draw(data, opts);
+    setIsChartDrawn(true);
+  }
 
   useEffect(() => {
     if (isScriptLoaded && typeof google !== 'undefined' && google.load) {
@@ -63,39 +68,25 @@ export default function GoogleGeoChart() {
         'packages': ['geochart'],
         'mapsApiKey': apiKey
       });
-      google.charts.setOnLoadCallback(drawVisualization);
+      google.charts.setOnLoadCallback(drawChart);
     }
   }, [isScriptLoaded, apiKey]);
 
-  function drawVisualization() {
-    const dataArray = [['State', 'DBT Score']];
-    dbtPerformanceData.forEach(item => {
-        const stateName = stateNameMapping[item.State.toUpperCase()];
-        if (stateName) {
-            dataArray.push([stateName, item.Score]);
-        }
-    });
+  useEffect(() => {
+    if (isChartDrawn) {
+        drawChart();
+    }
+  }, [resolvedTheme, isChartDrawn]);
 
-    const data = google.visualization.arrayToDataTable(dataArray);
-
-    const opts = {
-      region: 'IN',
-      displayMode: 'regions',
-      colorAxis: { colors: ['#ef4444', '#facc15', '#22c55e'] }, // Red -> Yellow -> Green
-      resolution: 'provinces',
-      backgroundColor: 'hsl(var(--background))',
-      datalessRegionColor: '#333333',
-      defaultColor: '#e5e7eb',
-      width: '100%',
-      height: 500,
-      tooltip: { textStyle: { fontName: 'sans-serif', fontSize: 14 } },
-      legend: 'none', // We can hide the default legend
+  useEffect(() => {
+    // Redraw chart on window resize
+    const handleResize = () => {
+        if(isChartDrawn) drawChart();
     };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isChartDrawn]);
 
-    const geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
-    geochart.draw(data, opts);
-    setIsChartDrawn(true);
-  }
 
   return (
     <>
