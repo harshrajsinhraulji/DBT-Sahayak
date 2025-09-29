@@ -23,21 +23,33 @@ export function Legend() {
                         </div>
                     </div>
                     <div className="space-y-2 text-sm">
-                         <div className="flex justify-between">
-                            <span className="font-semibold text-green-600">Excellent</span>
-                            <span className="font-mono text-muted-foreground">80 - 100</span>
+                         <div className="flex items-center gap-2">
+                            <div className="h-4 w-4 rounded-full bg-green-500 border"></div>
+                            <div className="flex justify-between w-full">
+                                <span className="font-semibold">Excellent</span>
+                                <span className="font-mono text-muted-foreground">80 - 100</span>
+                            </div>
                         </div>
-                        <div className="flex justify-between">
-                            <span className="font-semibold text-lime-600">Good</span>
-                            <span className="font-mono text-muted-foreground">60 - 79.9</span>
+                        <div className="flex items-center gap-2">
+                            <div className="h-4 w-4 rounded-full bg-lime-400 border"></div>
+                             <div className="flex justify-between w-full">
+                                <span className="font-semibold">Good</span>
+                                <span className="font-mono text-muted-foreground">60 - 79.9</span>
+                            </div>
                         </div>
-                        <div className="flex justify-between">
-                            <span className="font-semibold text-yellow-600">Moderate</span>
-                            <span className="font-mono text-muted-foreground">40 - 59.9</span>
+                        <div className="flex items-center gap-2">
+                           <div className="h-4 w-4 rounded-full bg-yellow-400 border"></div>
+                             <div className="flex justify-between w-full">
+                                <span className="font-semibold">Moderate</span>
+                                <span className="font-mono text-muted-foreground">40 - 59.9</span>
+                            </div>
                         </div>
-                         <div className="flex justify-between">
-                            <span className="font-semibold text-red-600">Needs Improvement</span>
-                            <span className="font-mono text-muted-foreground">0 - 39.9</span>
+                         <div className="flex items-center gap-2">
+                            <div className="h-4 w-4 rounded-full bg-red-500 border"></div>
+                             <div className="flex justify-between w-full">
+                                <span className="font-semibold">Needs Improvement</span>
+                                <span className="font-mono text-muted-foreground">0 - 39.9</span>
+                            </div>
                         </div>
                     </div>
                 </div>

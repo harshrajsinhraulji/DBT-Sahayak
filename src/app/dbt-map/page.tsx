@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Legend } from '@/components/legend';
-import { useLanguage } from '@/hooks/use-language';
 import Link from 'next/link';
 
 const GoogleGeoChart = dynamic(() => import('@/components/google-geo-chart'), {
@@ -18,8 +17,6 @@ const GoogleGeoChart = dynamic(() => import('@/components/google-geo-chart'), {
 });
 
 export default function DbtMapPage() {
-    const { content } = useLanguage();
-
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
       <div className="container px-4 md:px-6">

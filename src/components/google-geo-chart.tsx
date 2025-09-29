@@ -15,6 +15,7 @@ const getCategory = (score: number) => {
 };
 
 const toTitleCase = (str: string) => {
+    if (!str) return '';
     return str.replace(
         /\w\S*/g,
         (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
@@ -30,7 +31,10 @@ export default function GoogleGeoChart() {
   const drawChart = () => {
     if (typeof google === 'undefined' || !google.visualization) return;
 
-    const dataArray: (string | number | { role: string; type: string; p: { html: boolean } })[][] = [['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }]];
+    const dataArray: (string | number | { v: number; f: string } | { role: string; type: string; p: { html: boolean } })[][] = [
+        ['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }]
+    ];
+    
     dbtPerformanceData.forEach(item => {
         const category = getCategory(item.Score);
         const titleCaseState = toTitleCase(item.State);
@@ -42,7 +46,7 @@ export default function GoogleGeoChart() {
                 <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Category:</strong> <span>${category}</span></div>
             </div>
         `;
-        dataArray.push([item.StateCode, item.Score, tooltipContent]);
+        dataArray.push([item.State, item.Score, tooltipContent]);
     });
 
     const data = google.visualization.arrayToDataTable(dataArray);
@@ -99,7 +103,6 @@ export default function GoogleGeoChart() {
       <Script
         type="text/javascript"
         src="https://www.gstatic.com/charts/loader.js"
-        strategy="afterInteractive"
         onLoad={() => setIsScriptLoaded(true)}
       />
       {!apiKey && (
