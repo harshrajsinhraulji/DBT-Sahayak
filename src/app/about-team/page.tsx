@@ -11,36 +11,48 @@ import { cn } from "@/lib/utils";
 const teamMembers = [
     {
         name: "Harshrajsinh Raulji",
+        role: "Backend & AI Development",
+        year: "3rd Year Computer Engineering",
         github: "https://github.com/harshrajsinhraulji",
         linkedin: "https://www.linkedin.com/in/harshrajsinhraulji",
         gender: "male"
     },
     {
         name: "Vraj Rana",
+        role: "Team Lead & Research",
+        year: "3rd Year Computer Engineering",
         github: "https://github.com/Vraj3654",
         linkedin: "https://www.linkedin.com/in/vraj-rana-765b8329a",
         gender: "male"
     },
     {
         name: "Krishay Shah",
-        github: null,
+        role: "Telegram Bot Developer",
+        year: "3rd Year Computer Engineering",
+        github: "https://github.com/Krishay-shah",
         linkedin: "https://www.linkedin.com/in/krishay-shah-73991a280",
         gender: "male"
     },
     {
         name: "Khushi Dholakiya",
+        role: "Video Creation & Data Gathering",
+        year: "2nd Year Computer Engineering",
         github: null,
         linkedin: null,
         gender: "female"
     },
     {
         name: "Malhar Patel",
+        role: "Treasurer & Research",
+        year: "3rd Year Computer Engineering",
         github: null,
         linkedin: "https://www.linkedin.com/in/malhar-patel-660441297",
         gender: "male"
     },
     {
         name: "Om Jangid",
+        role: "Frontend & UI/UX",
+        year: "3rd Year Computer Science and Design",
         github: "https://github.com/omjangid16",
         linkedin: "https://www.linkedin.com/in/om-jangid-4568b827a",
         gender: "male"
@@ -79,7 +91,8 @@ export default function AboutTeamPage() {
                                        </Avatar>
                                        <div className="flex-1">
                                            <h3 className="font-bold text-lg text-foreground">{member.name}</h3>
-                                           <p className="text-sm text-muted-foreground">{COLLEGE_NAME}</p>
+                                           <p className="font-semibold text-sm text-primary">{member.role}</p>
+                                           <p className="text-xs text-muted-foreground">{member.year}</p>
                                        </div>
                                        <div className="flex items-center gap-4 mt-auto">
                                             {member.linkedin && <Link href={member.linkedin} target="_blank"><Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" /></Link>}

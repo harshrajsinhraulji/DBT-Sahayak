@@ -6,7 +6,6 @@ import { Logo } from "@/components/logo";
 import { Github, Send, Printer, Users, GanttChartSquare, BrainCircuit, Users2, BookOpen, Search, GraduationCap, HelpCircle, Phone, Info } from "lucide-react";
 import Link from "next/link";
 import { NationalEmblemOfIndia } from "../national-emblem";
-import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
@@ -38,7 +37,7 @@ export function Footer() {
              <div className="flex items-center gap-4 pt-4 border-t border-dashed">
                 <NationalEmblemOfIndia className="h-10 w-10 text-muted-foreground" />
                 <div>
-                  <p className="text-xs font-semibold">Problem Statement By:</p>
+                  <p className="text-xs font-semibold">Under the guidance of:</p>
                   <a href="https://socialjustice.gov.in" target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline font-semibold">
                     Ministry of Social Justice & Empowerment
                   </a>
