@@ -3,16 +3,21 @@
 
 import { useLanguage } from "@/hooks/use-language";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { PlayCircle, VideoOff } from "lucide-react";
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { PlayCircle, Info, GitCompareArrows, FileText, BadgeHelp } from "lucide-react";
+import { useState, useEffect, ReactNode } from "react";
 
 interface Video {
   id: string;
   title: string;
   description: string;
 }
+
+const iconMap: Record<string, ReactNode> = {
+    'dbt': <Info className="h-12 w-12 text-primary/80" />,
+    'linking-vs-seeding': <GitCompareArrows className="h-12 w-12 text-primary/80" />,
+    'how-to-seed': <FileText className="h-12 w-12 text-primary/80" />,
+    'common-myths': <BadgeHelp className="h-12 w-12 text-primary/80" />
+};
 
 export function VideoSection() {
   const { content, language } = useLanguage();
@@ -22,13 +27,6 @@ export function VideoSection() {
       ...v,
       id: ['dbt', 'linking-vs-seeding', 'how-to-seed', 'common-myths'][i]
   }));
-
-  const videoPlaceholders = [
-    PlaceHolderImages.find(p => p.id === "video-placeholder-1"),
-    PlaceHolderImages.find(p => p.id === "video-placeholder-2"),
-    PlaceHolderImages.find(p => p.id === "video-placeholder-3"),
-    PlaceHolderImages.find(p => p.id === "video-placeholder-4"),
-  ];
 
   const playVideo = (videoId: string) => {
     // Construct the video URL based on ID and current language
@@ -64,31 +62,23 @@ export function VideoSection() {
           </div>
           <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-12">
             {videos.map((video, index) => (
-              <Card key={index} className="overflow-hidden group flex flex-col shadow-md hover:shadow-lg transition-all duration-300">
+              <Card 
+                key={index} 
+                className="overflow-hidden group flex flex-col shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+                onClick={() => playVideo(video.id)}
+              >
                 <div
-                  className="relative aspect-video w-full bg-secondary cursor-pointer"
-                  onClick={() => playVideo(video.id)}
+                  className="relative aspect-video w-full bg-primary/5 flex flex-col items-center justify-center p-4 text-center"
                 >
-                  {videoPlaceholders[index] ? (
-                    <Image
-                      src={videoPlaceholders[index]!.imageUrl}
-                      alt={videoPlaceholders[index]!.description}
-                      data-ai-hint={videoPlaceholders[index]!.imageHint}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-muted flex items-center justify-center">
-                       <VideoOff className="h-12 w-12 text-muted-foreground" />
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  {iconMap[video.id]}
+                   <h3 className="mt-4 font-bold text-lg text-primary">{video.title}</h3>
+
+                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <PlayCircle className="h-16 w-16 text-white/80 transition-transform duration-300 group-hover:scale-110" />
                   </div>
                 </div>
                 <CardHeader className="flex-1">
-                  <CardTitle className="text-lg font-semibold">{video.title}</CardTitle>
+                  <CardTitle className="text-base font-semibold leading-normal">{video.description}</CardTitle>
                 </CardHeader>
               </Card>
             ))}

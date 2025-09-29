@@ -13,30 +13,6 @@
       "imageHint": "data abstract"
     },
     {
-      "id": "video-placeholder-1",
-      "description": "Thumbnail for 'What is DBT?' video showing a diagram of money flow",
-      "imageUrl": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmluYW5jZSUyMGRpYWdyYW18ZW58MHx8fHwxNzE5MjY1ODg4fDA%3D",
-      "imageHint": "finance diagram"
-    },
-    {
-      "id": "video-placeholder-2",
-      "description": "Thumbnail for 'Linking vs Seeding' video showing two connected nodes",
-      "imageUrl": "https://images.unsplash.com/photo-1614036728368-070801557164?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbm5lY3Rpb258ZW58MHx8fHwxNzE5MjY1OTM4fDA%3D",
-      "imageHint": "connection nodes"
-    },
-    {
-      "id": "video-placeholder-3",
-      "description": "Thumbnail for 'How to Seed' video showing a person filling out a form",
-      "imageUrl": "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZvcm0lMjBmaWxsaW5nfGVufDB8fHx8MTcxOTI2NTk5MXww",
-      "imageHint": "form filling"
-    },
-    {
-      "id": "video-placeholder-4",
-      "description": "Thumbnail for 'Common Myths' video showing a question mark",
-      "imageUrl": "https://images.unsplash.com/photo-1584307834033-7227d5663773?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cXVlc3Rpb24lMjBtYXJrfGVufDB8fHx8MTcxOTI2NjA0MXww",
-      "imageHint": "question mark"
-    },
-    {
       "id": "success-story-1",
       "description": "Happy student who received scholarship",
       "imageUrl": "https://images.unsplash.com/photo-1543269664-56d93c1b41a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxoYXBweSUyMHN0dWRlbnR8ZW58MHx8fHwxNzU5MTIwNTMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
