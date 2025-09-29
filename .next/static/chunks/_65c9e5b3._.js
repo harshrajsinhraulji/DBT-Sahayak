@@ -72,36 +72,48 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$
 const teamMembers = [
     {
         name: "Harshrajsinh Raulji",
+        role: "Backend & AI Development",
+        year: "3rd Year Computer Engineering",
         github: "https://github.com/harshrajsinhraulji",
         linkedin: "https://www.linkedin.com/in/harshrajsinhraulji",
         gender: "male"
     },
     {
         name: "Vraj Rana",
+        role: "Team Lead & Research",
+        year: "3rd Year Computer Engineering",
         github: "https://github.com/Vraj3654",
         linkedin: "https://www.linkedin.com/in/vraj-rana-765b8329a",
         gender: "male"
     },
     {
         name: "Krishay Shah",
-        github: null,
+        role: "Telegram Bot Developer",
+        year: "3rd Year Computer Engineering",
+        github: "https://github.com/Krishay-shah",
         linkedin: "https://www.linkedin.com/in/krishay-shah-73991a280",
         gender: "male"
     },
     {
         name: "Khushi Dholakiya",
+        role: "Video Creation & Data Gathering",
+        year: "2nd Year Computer Engineering",
         github: null,
         linkedin: null,
         gender: "female"
     },
     {
         name: "Malhar Patel",
+        role: "Treasurer & Research",
+        year: "3rd Year Computer Engineering",
         github: null,
         linkedin: "https://www.linkedin.com/in/malhar-patel-660441297",
         gender: "male"
     },
     {
         name: "Om Jangid",
+        role: "Frontend & UI/UX",
+        year: "3rd Year Computer Science and Design",
         github: "https://github.com/omjangid16",
         linkedin: "https://www.linkedin.com/in/om-jangid-4568b827a",
         gender: "male"
@@ -125,7 +137,7 @@ function AboutTeamPage() {
                                 children: "About The Team"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/about-team/page.tsx",
-                                lineNumber: 58,
+                                lineNumber: 70,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -133,18 +145,18 @@ function AboutTeamPage() {
                                 children: "The students behind DBT Sahayak for SIH 2025."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/about-team/page.tsx",
-                                lineNumber: 61,
+                                lineNumber: 73,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/about-team/page.tsx",
-                        lineNumber: 57,
+                        lineNumber: 69,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/about-team/page.tsx",
-                    lineNumber: 56,
+                    lineNumber: 68,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -163,12 +175,12 @@ function AboutTeamPage() {
                                                         children: member.name.split(' ').map((n)=>n[0]).join('')
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about-team/page.tsx",
-                                                        lineNumber: 78,
+                                                        lineNumber: 90,
                                                         columnNumber: 45
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/about-team/page.tsx",
-                                                    lineNumber: 77,
+                                                    lineNumber: 89,
                                                     columnNumber: 40
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -179,21 +191,29 @@ function AboutTeamPage() {
                                                             children: member.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/about-team/page.tsx",
-                                                            lineNumber: 81,
+                                                            lineNumber: 93,
                                                             columnNumber: 44
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-sm text-muted-foreground",
-                                                            children: COLLEGE_NAME
+                                                            className: "font-semibold text-sm text-primary",
+                                                            children: member.role
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/about-team/page.tsx",
-                                                            lineNumber: 82,
+                                                            lineNumber: 94,
+                                                            columnNumber: 44
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-xs text-muted-foreground",
+                                                            children: member.year
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/about-team/page.tsx",
+                                                            lineNumber: 95,
                                                             columnNumber: 44
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/about-team/page.tsx",
-                                                    lineNumber: 80,
+                                                    lineNumber: 92,
                                                     columnNumber: 40
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -206,12 +226,12 @@ function AboutTeamPage() {
                                                                 className: "h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/about-team/page.tsx",
-                                                                lineNumber: 85,
+                                                                lineNumber: 98,
                                                                 columnNumber: 110
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/about-team/page.tsx",
-                                                            lineNumber: 85,
+                                                            lineNumber: 98,
                                                             columnNumber: 65
                                                         }, this),
                                                         member.github && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -221,29 +241,29 @@ function AboutTeamPage() {
                                                                 className: "h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/about-team/page.tsx",
-                                                                lineNumber: 86,
+                                                                lineNumber: 99,
                                                                 columnNumber: 106
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/about-team/page.tsx",
-                                                            lineNumber: 86,
+                                                            lineNumber: 99,
                                                             columnNumber: 63
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/about-team/page.tsx",
-                                                    lineNumber: 84,
+                                                    lineNumber: 97,
                                                     columnNumber: 40
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/about-team/page.tsx",
-                                            lineNumber: 71,
+                                            lineNumber: 83,
                                             columnNumber: 36
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about-team/page.tsx",
-                                        lineNumber: 70,
+                                        lineNumber: 82,
                                         columnNumber: 32
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipContent"], {
@@ -254,66 +274,66 @@ function AboutTeamPage() {
                                                     className: "h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/about-team/page.tsx",
-                                                    lineNumber: 92,
+                                                    lineNumber: 105,
                                                     columnNumber: 40
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: COLLEGE_NAME
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/about-team/page.tsx",
-                                                    lineNumber: 93,
+                                                    lineNumber: 106,
                                                     columnNumber: 40
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
                                                     className: "h-4 w-4 ml-2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/about-team/page.tsx",
-                                                    lineNumber: 94,
+                                                    lineNumber: 107,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: member.gender === 'male' ? 'M' : 'F'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/about-team/page.tsx",
-                                                    lineNumber: 95,
+                                                    lineNumber: 108,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/about-team/page.tsx",
-                                            lineNumber: 91,
+                                            lineNumber: 104,
                                             columnNumber: 36
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about-team/page.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 103,
                                         columnNumber: 32
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/about-team/page.tsx",
-                                lineNumber: 69,
+                                lineNumber: 81,
                                 columnNumber: 28
                             }, this)
                         }, i, false, {
                             fileName: "[project]/src/app/about-team/page.tsx",
-                            lineNumber: 68,
+                            lineNumber: 80,
                             columnNumber: 24
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/app/about-team/page.tsx",
-                    lineNumber: 66,
+                    lineNumber: 78,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/about-team/page.tsx",
-            lineNumber: 55,
+            lineNumber: 67,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/about-team/page.tsx",
-        lineNumber: 54,
+        lineNumber: 66,
         columnNumber: 9
     }, this);
 }

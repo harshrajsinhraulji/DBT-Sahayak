@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 const teamMembers = [
     {
         name: "Harshrajsinh Raulji",
-        role: "Backend & AI Development",
+        role: "Backend, AI & UI/UX Design",
         year: "3rd Year Computer Engineering",
         github: "https://github.com/harshrajsinhraulji",
         linkedin: "https://www.linkedin.com/in/harshrajsinhraulji",
@@ -19,7 +19,7 @@ const teamMembers = [
     },
     {
         name: "Vraj Rana",
-        role: "Team Lead & Research",
+        role: "Team Lead, Research, QA & Strategy",
         year: "3rd Year Computer Engineering",
         github: "https://github.com/Vraj3654",
         linkedin: "https://www.linkedin.com/in/vraj-rana-765b8329a",
@@ -27,7 +27,7 @@ const teamMembers = [
     },
     {
         name: "Krishay Shah",
-        role: "Telegram Bot Developer",
+        role: "Telegram Bot & Presentation Lead",
         year: "3rd Year Computer Engineering",
         github: "https://github.com/Krishay-shah",
         linkedin: "https://www.linkedin.com/in/krishay-shah-73991a280",
