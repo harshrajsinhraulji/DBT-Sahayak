@@ -51,7 +51,7 @@ export function HeroSection() {
   ]
 
   return (
-    <section className="relative w-full h-[90vh] flex items-center justify-center text-center text-white overflow-hidden">
+    <section className="relative w-full min-h-[90vh] py-20 flex items-center justify-center text-center text-white overflow-hidden">
       {heroBg && (
         <Image
           src={heroBg.imageUrl}
@@ -64,7 +64,7 @@ export function HeroSection() {
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-primary/60 to-accent/60" />
 
-      <div className="relative z-10 container px-4 md:px-6 mt-16">
+      <div className="relative z-10 container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-6">
           <div className="space-y-4">
             <p className="text-lg md:text-xl font-semibold bg-white/10 backdrop-blur-sm rounded-full px-4 py-1 inline-block">

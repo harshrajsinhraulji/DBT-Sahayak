@@ -1,4 +1,5 @@
 
+import { AwarenessSection } from "@/components/sections/awareness";
 import { ContactSection } from "@/components/sections/contact";
 import { EducationSection } from "@/components/sections/education";
 import { FaqSection } from "@/components/sections/faq";
@@ -9,7 +10,6 @@ import { ScholarshipSection } from "@/components/sections/scholarships";
 import { StatusCheckerSection } from "@/components/sections/status-checker";
 import { TakeActionSection } from "@/components/sections/take-action";
 import { VideoSection } from "@/components/sections/videos";
-import { AwarenessSection } from "@/components/sections/awareness";
 
 export default function Home() {
   return (

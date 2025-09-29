@@ -38,7 +38,11 @@ export function Header() {
   const navItems = [
     { href: "/#education", label: content.header.nav.education, icon: <BookOpen /> },
     { href: "/#status", label: content.header.nav.status, icon: <Search /> },
-    { href: "/#take-action", label: content.header.nav.takeAction, icon: <Megaphone /> },
+    { href: "/#awareness", label: content.header.nav.awareness, icon: <Info /> },
+    { href: "/#scholarships", label: content.header.nav.scholarships, icon: <GraduationCap /> },
+    { href: "/#myths", label: content.header.nav.myths, icon: <Lightbulb /> },
+    { href: "/#videos", label: content.header.nav.videos, icon: <Video /> },
+    { href: "/#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
     { href: "/#contact", label: content.header.nav.contact, icon: <Phone /> },
   ];
   
@@ -92,7 +96,7 @@ export function Header() {
           </span>
         </Link>
         <nav className="hidden items-center gap-4 text-sm lg:flex">
-          {[...navItems, ...actionItems].map((item) => (
+          {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -104,6 +108,25 @@ export function Header() {
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
+           <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                 <Button
+                    variant="ghost"
+                    className="hidden lg:inline-flex font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+                  >
+                    More
+                  </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" align="end" forceMount>
+                 {actionItems.map((item) => (
+                    <DropdownMenuItem key={item.href} onClick={() => router.push(item.href)}>
+                      {item.icon}
+                      <span className="ml-2">{item.label}</span>
+                    </DropdownMenuItem>
+                  ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
           <LanguageSwitcher />
           <ThemeSwitcher />
            {user ? (
