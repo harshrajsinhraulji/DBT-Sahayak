@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, User, LogOut, LayoutDashboard, Info, BookOpen, Search, GraduationCap, Users, HelpCircle, Phone, GanttChartSquare, Printer } from "lucide-react";
+import { Menu, User, LogOut, LayoutDashboard, Info, BookOpen, Search, GraduationCap, Users, HelpCircle, Phone, GanttChartSquare, Printer, BrainCircuit, FileCheck, Users2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -36,29 +36,31 @@ export function Header() {
   const { user, logout, isAdmin } = useAuth();
 
   const navItems = [
-    { href: "#education", label: content.header.nav.education, icon: <BookOpen /> },
-    { href: "#status", label: content.header.nav.status, icon: <Search /> },
-    { href: "#scholarships", label: content.header.nav.scholarships, icon: <GraduationCap /> },
-    { href: "#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
-    { href: "#about", label: content.header.nav.about, icon: <Info /> },
-    { href: "#contact", label: content.header.nav.contact, icon: <Phone /> },
+    { href: "/#education", label: content.header.nav.education, icon: <BookOpen /> },
+    { href: "/#status", label: content.header.nav.status, icon: <Search /> },
+    { href: "/form-checker", label: 'AI Form Check', icon: <FileCheck /> },
+    { href: "/#scholarships", label: content.header.nav.scholarships, icon: <GraduationCap /> },
+    { href: "/resources", label: 'Resources', icon: <BrainCircuit /> },
+    { href: "/governance", label: 'Governance', icon: <GanttChartSquare /> },
+    { href: "/about-team", label: 'About Team', icon: <Users2 /> },
+    { href: "/#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
+    { href: "/#contact", label: content.header.nav.contact, icon: <Phone /> },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
 
-    if (href.startsWith('/')) {
+    if (href.startsWith('/') && !href.includes('#')) {
         router.push(href);
-        return;
-    }
-    
-    if (pathname !== '/') {
-        router.push('/' + href);
     } else {
-        const targetId = href.replace(/.*\\#/, "");
-        const elem = document.getElementById(targetId);
-        elem?.scrollIntoView({ behavior: "smooth" });
+        if (pathname !== '/') {
+            router.push(href);
+        } else {
+            const targetId = href.substring(href.indexOf('#') + 1);
+            const elem = document.getElementById(targetId);
+            elem?.scrollIntoView({ behavior: "smooth" });
+        }
     }
   };
   
@@ -100,13 +102,6 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-           <Link
-              href="/governance"
-              onClick={(e) => handleNavClick(e, '/governance')}
-              className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
-            >
-              Governance
-            </Link>
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
           <LanguageSwitcher />
@@ -183,14 +178,6 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
-                 <Link
-                    href="/governance"
-                    onClick={(e) => handleNavClick(e, '/governance')}
-                    className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
-                  >
-                    <GanttChartSquare />
-                    Governance
-                  </Link>
                 <Link
                   href="/request-drive"
                   onClick={(e) => handleNavClick(e, '/request-drive')}

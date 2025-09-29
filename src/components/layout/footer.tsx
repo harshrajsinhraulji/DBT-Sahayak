@@ -3,7 +3,7 @@
 
 import { useLanguage } from "@/hooks/use-language";
 import { Logo } from "@/components/logo";
-import { Github, Send, Printer, Users, GanttChartSquare } from "lucide-react";
+import { Github, Send, Printer, Users, GanttChartSquare, BrainCircuit, Users2 } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -29,21 +29,22 @@ export function Footer() {
           </div>
           <div className="grid gap-1">
              <h3 className="font-semibold text-foreground">Navigation</h3>
-             <Link href="#education" className="text-muted-foreground hover:text-primary text-sm">Learn</Link>
-             <Link href="#status" className="text-muted-foreground hover:text-primary text-sm">Check Status</Link>
-             <Link href="#scholarships" className="text-muted-foreground hover:text-primary text-sm">Scholarships</Link>
-             <Link href="#faq" className="text-muted-foreground hover:text-primary text-sm">FAQ</Link>
+             <Link href="/#education" className="text-muted-foreground hover:text-primary text-sm">Learn</Link>
+             <Link href="/#status" className="text-muted-foreground hover:text-primary text-sm">Check Status</Link>
+             <Link href="/#scholarships" className="text-muted-foreground hover:text-primary text-sm">Scholarships</Link>
+             <Link href="/#faq" className="text-muted-foreground hover:text-primary text-sm">FAQ</Link>
           </div>
            <div className="grid gap-1">
              <h3 className="font-semibold text-foreground">Resources</h3>
-             <Link href="/governance" className="text-muted-foreground hover:text-primary text-sm">Governance</Link>
-             <Link href="/print-kit" className="text-muted-foreground hover:text-primary text-sm">Printable Kit</Link>
-             <Link href="/request-drive" className="text-muted-foreground hover:text-primary text-sm">Request a Drive</Link>
+             <Link href="/governance" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><GanttChartSquare />Governance</Link>
+             <Link href="/resources" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><BrainCircuit />Resources</Link>
+             <Link href="/print-kit" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Printer />Printable Kit</Link>
+             <Link href="/request-drive" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Users />Request a Drive</Link>
           </div>
            <div className="grid gap-1">
              <h3 className="font-semibold text-foreground">About</h3>
-             <Link href="#about" className="text-muted-foreground hover:text-primary text-sm">About the Team</Link>
-             <Link href="#contact" className="text-muted-foreground hover:text-primary text-sm">Contact Us</Link>
+             <Link href="/about-team" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Users2 />About the Team</Link>
+             <Link href="/#contact" className="text-muted-foreground hover:text-primary text-sm">Contact Us</Link>
           </div>
         </div>
          <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">

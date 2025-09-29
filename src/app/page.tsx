@@ -8,6 +8,7 @@ import { ScholarshipSection } from "@/components/sections/scholarships";
 import { StatusCheckerSection } from "@/components/sections/status-checker";
 import { TakeActionSection } from "@/components/sections/take-action";
 
+
 export default function Home() {
   return (
     <div className="flex flex-col">
@@ -17,7 +18,6 @@ export default function Home() {
       <TakeActionSection />
       <ScholarshipSection />
       <FaqSection />
-      <AboutSection />
       <ContactSection />
     </div>
   );
