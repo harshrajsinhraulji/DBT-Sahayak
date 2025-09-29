@@ -14,14 +14,12 @@ const getCategory = (score: number) => {
     return 'Needs Improvement';
 };
 
-// Function to convert state names to title case
 const toTitleCase = (str: string) => {
     return str.replace(
         /\w\S*/g,
         (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
     );
 };
-
 
 export default function GoogleGeoChart() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
@@ -37,14 +35,15 @@ export default function GoogleGeoChart() {
         const category = getCategory(item.Score);
         const titleCaseState = toTitleCase(item.State);
         const tooltipContent = `
-            <div style="padding:10px; font-family: sans-serif; color: #333;">
+            <div style="padding:10px; font-family: sans-serif; color: #333; min-width: 150px;">
                 <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${titleCaseState}</div>
                 <div><strong>Rank:</strong> ${item.Rank}</div>
                 <div><strong>Score:</strong> ${item.Score}</div>
                 <div><strong>Category:</strong> ${category}</div>
             </div>
         `;
-        dataArray.push([titleCaseState, item.Score, tooltipContent]);
+        // Use the unambiguous StateCode for mapping, and the full name for the tooltip
+        dataArray.push([item.StateCode, item.Score, tooltipContent]);
     });
 
     const data = google.visualization.arrayToDataTable(dataArray);
@@ -52,7 +51,7 @@ export default function GoogleGeoChart() {
     const opts = {
       region: 'IN',
       displayMode: 'regions',
-      colorAxis: {colors: ['#ef4444', '#fde047', '#a3e635', '#22c55e']}, // Red -> Yellow -> Light Green -> Dark Green
+      colorAxis: {colors: ['#ef4444', '#fde047', '#22c55e']}, // Red -> Yellow -> Green
       resolution: 'provinces',
       backgroundColor: resolvedTheme === 'dark' ? '#020817' : '#ffffff',
       datalessRegionColor: resolvedTheme === 'dark' ? '#1e293b' : '#f1f5f9',
