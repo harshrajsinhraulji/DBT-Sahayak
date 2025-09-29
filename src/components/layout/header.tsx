@@ -51,6 +51,7 @@ export function Header() {
       { href: "/governance", label: content.header.nav.governance, icon: <GanttChartSquare /> },
       { href: "/resources", label: content.header.nav.resources, icon: <BrainCircuit /> },
       { href: "/about-team", label: content.header.nav.aboutTeam, icon: <Users2 /> },
+      { href: "/print-kit", label: content.header.nav.printKit, icon: <Printer /> },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
