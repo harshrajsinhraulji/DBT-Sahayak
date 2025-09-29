@@ -6,8 +6,8 @@ import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndP
 import { auth } from '@/lib/firebase';
 import { LoaderCircle } from 'lucide-react';
 
-// Define the admin email address
-const ADMIN_EMAIL = "admin@dbtsahayak.com";
+// Define the admin email address from environment variables
+const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
 
 interface AuthContextType {
   user: User | null;
@@ -26,9 +26,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
+    if (!ADMIN_EMAIL) {
+        console.warn("NEXT_PUBLIC_ADMIN_EMAIL environment variable is not set.");
+    }
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
-      setIsAdmin(user?.email === ADMIN_EMAIL);
+      setIsAdmin(!!ADMIN_EMAIL && user?.email === ADMIN_EMAIL);
       setLoading(false);
     });
 
@@ -45,7 +48,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         await updateProfile(userCredential.user, { displayName: name });
         // Manually update the user state as onAuthStateChanged might not be immediate
         setUser({ ...userCredential.user, displayName: name });
-        setIsAdmin(userCredential.user.email === ADMIN_EMAIL);
+        setIsAdmin(!!ADMIN_EMAIL && userCredential.user.email === ADMIN_EMAIL);
     }
     return userCredential;
   };

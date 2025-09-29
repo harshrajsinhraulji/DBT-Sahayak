@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Lightbulb, LightbulbOff, CheckCircle, XCircle, RotateCw, Share2 } from "lucide-react";
 import { Progress } from "../ui/progress";
+import { cn } from "@/lib/utils";
 
 type QuestionType = 'myth' | 'fact';
 
@@ -70,7 +71,9 @@ export function MythBustersSection() {
   };
 
   const resetQuiz = () => {
-    setQuizQuestions(shuffleArray(allQuestions).slice(0, QUIZ_LENGTH));
+    const totalAvailableQuestions = allQuestions.length;
+    const questionsToTake = Math.min(QUIZ_LENGTH, totalAvailableQuestions);
+    setQuizQuestions(shuffleArray(allQuestions).slice(0, questionsToTake));
     setCurrentQuestionIndex(0);
     setScore(0);
     setAnswerStatus('unanswered');
@@ -109,7 +112,7 @@ export function MythBustersSection() {
             </CardHeader>
             <CardContent className="flex-1 flex flex-col items-center justify-center text-center p-6">
               {showResult ? (
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center gap-4 animate-in fade-in duration-500">
                   <h3 className="text-2xl font-bold font-headline">Quiz Complete!</h3>
                   <p className="text-lg text-muted-foreground">You Scored</p>
                   <p className="text-5xl font-bold text-primary font-headline">{score} / {totalQuestions}</p>
@@ -123,7 +126,10 @@ export function MythBustersSection() {
                   {answerStatus === 'unanswered' ? (
                      <p className="text-muted-foreground font-semibold">Is this a Myth or a Fact?</p>
                   ) : (
-                    <Card className={`w-full ${answerStatus === 'correct' ? 'bg-green-100 dark:bg-green-900 border-green-500' : 'bg-red-100 dark:bg-red-900 border-red-500'}`}>
+                    <Card className={cn(
+                      "w-full animate-in fade-in duration-500",
+                      answerStatus === 'correct' ? 'bg-green-100 dark:bg-green-900 border-green-500' : 'bg-red-100 dark:bg-red-900 border-red-500'
+                    )}>
                       <CardHeader className="flex-row items-center gap-4 p-4">
                         {answerStatus === 'correct' ? 
                           <CheckCircle className="h-8 w-8 text-green-500 flex-shrink-0" /> : 
