@@ -71,15 +71,20 @@ function GoogleGeoChart() {
     _s();
     const [isScriptLoaded, setIsScriptLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isChartDrawn, setIsChartDrawn] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const apiKey = ("TURBOPACK compile-time value", "");
+    const apiKey = ("TURBOPACK compile-time value", "AIzaSyCUS8VinV2EYszMJObC4Hy2htmHV6SY8_w");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "GoogleGeoChart.useEffect": ()=>{
             if (isScriptLoaded && typeof google !== 'undefined' && google.load) {
-                if ("TURBOPACK compile-time truthy", 1) {
-                    console.error("Google Maps API Key is missing. Please add it to your .env file.");
-                    return;
+                if ("TURBOPACK compile-time falsy", 0) {
+                    "TURBOPACK unreachable";
                 }
-                "TURBOPACK unreachable";
+                google.charts.load('current', {
+                    'packages': [
+                        'geochart'
+                    ],
+                    'mapsApiKey': apiKey
+                });
+                google.charts.setOnLoadCallback(drawVisualization);
             }
         }
     }["GoogleGeoChart.useEffect"], [
