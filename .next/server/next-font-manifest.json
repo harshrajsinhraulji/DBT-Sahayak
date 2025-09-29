@@ -1,11 +1,21 @@
 {
   "app": {
+    "[project]/src/app/dashboard/page": [
+      "static/media/jizfRExUiTo99u79B_mh0O6tLR8a8zI-s.p.e13adb20.woff2",
+      "static/media/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU-s.p.db698206.woff2",
+      "static/media/jizaRExUiTo99u79D0KExcOPIDU-s.p.937000da.woff2"
+    ],
     "[project]/src/app/dbt-map/page": [
       "static/media/jizfRExUiTo99u79B_mh0O6tLR8a8zI-s.p.e13adb20.woff2",
       "static/media/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU-s.p.db698206.woff2",
       "static/media/jizaRExUiTo99u79D0KExcOPIDU-s.p.937000da.woff2"
     ],
     "[project]/src/app/eligibility-checker/page": [
+      "static/media/jizfRExUiTo99u79B_mh0O6tLR8a8zI-s.p.e13adb20.woff2",
+      "static/media/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU-s.p.db698206.woff2",
+      "static/media/jizaRExUiTo99u79D0KExcOPIDU-s.p.937000da.woff2"
+    ],
+    "[project]/src/app/login/page": [
       "static/media/jizfRExUiTo99u79B_mh0O6tLR8a8zI-s.p.e13adb20.woff2",
       "static/media/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU-s.p.db698206.woff2",
       "static/media/jizaRExUiTo99u79D0KExcOPIDU-s.p.937000da.woff2"
