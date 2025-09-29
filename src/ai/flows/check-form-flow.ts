@@ -11,7 +11,6 @@
 
 import { ai } from '@/lib/genkit';
 import { z } from 'zod';
-import { defineFlow, definePrompt } from 'genkit';
 
 const CheckFormInputSchema = z.object({
   imageDataUri: z
@@ -28,8 +27,9 @@ const CheckFormOutputSchema = z.object({
 });
 export type CheckFormOutput = z.infer<typeof CheckFormOutputSchema>;
 
-const formCheckerPrompt = definePrompt({
+const formCheckerPrompt = ai.definePrompt({
   name: 'aadhaarFormCheckerPrompt',
+  model: 'gemini-1.5-flash-latest',
   input: { schema: CheckFormInputSchema },
   output: { schema: CheckFormOutputSchema },
   prompt: `You are an expert verifier for bank documents in India, specializing in the "Aadhaar Seeding Consent Form" used for DBT (Direct Benefit Transfer).
@@ -53,7 +53,7 @@ Image of the form to analyze:
 `,
 });
 
-const checkFormFlow = defineFlow(
+const checkFormFlow = ai.defineFlow(
   {
     name: 'checkFormFlow',
     inputSchema: CheckFormInputSchema,

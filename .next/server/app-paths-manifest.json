@@ -1,6 +1,7 @@
 {
   "/about-team/page": "app/about-team/page.js",
   "/dashboard/page": "app/dashboard/page.js",
+  "/form-checker/page": "app/form-checker/page.js",
   "/page": "app/page.js",
   "/request-drive/page": "app/request-drive/page.js"
 }

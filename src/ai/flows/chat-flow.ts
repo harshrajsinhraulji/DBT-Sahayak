@@ -11,7 +11,6 @@
 
 import { ai } from '@/lib/genkit';
 import { z } from 'zod';
-import { defineFlow } from 'genkit';
 import { pageContent } from '@/lib/data';
 
 const ChatInputSchema = z.object({
@@ -37,7 +36,7 @@ ${JSON.stringify(pageContent)}
 ---
 `;
 
-const chatFlow = defineFlow(
+const chatFlow = ai.defineFlow(
   {
     name: 'chatFlow',
     inputSchema: ChatInputSchema,
@@ -82,5 +81,7 @@ const chatFlow = defineFlow(
 
 
 export async function chat(input: ChatInput): Promise<ReadableStream<string>> {
-  return chatFlow(input);
+  const stream = await chatFlow(input);
+  // Type assertion because Genkit stream() and ReadableStream are slightly different
+  return stream as ReadableStream<string>;
 }
