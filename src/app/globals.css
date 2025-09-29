@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -60,6 +61,9 @@
 }
  
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   * {
     @apply border-border;
   }
@@ -89,3 +93,4 @@
     margin: 1cm;
   }
 }
+

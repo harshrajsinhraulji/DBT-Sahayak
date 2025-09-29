@@ -1,0 +1,16 @@
+{
+  "node": {
+    "40b8aa850d65c49c5409b696c93774d2f1f3d47ffb": {
+      "workers": {
+        "app/request-drive/page": {
+          "moduleId": "[project]/.next-internal/server/app/request-drive/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/firebase-service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/request-drive/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}
