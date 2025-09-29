@@ -2,9 +2,7 @@
   "[project]/src/components/india-map.tsx [app-client] (ecmascript, next/dynamic entry)": {
     "id": "[project]/src/components/india-map.tsx [app-client] (ecmascript, next/dynamic entry)",
     "files": [
-      "static/chunks/node_modules_leaflet_dist_leaflet-src_e7e140e9.js",
-      "static/chunks/src_abe501dd._.js",
-      "static/chunks/node_modules_leaflet_dist_leaflet_88e19fd3.css",
+      "static/chunks/_0d515ba8._.js",
       "static/chunks/src_components_india-map_tsx_93104f8e._.js"
     ]
   }

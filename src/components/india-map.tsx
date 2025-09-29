@@ -1,14 +1,24 @@
 
 'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
-import { Button } from "./ui/button";
-
-// Dataset is now imported from the JSON file
-import dbtData from "@/lib/dbt-performance-data.json";
+import React, { useState, useMemo } from 'react';
+import { SVGMap } from 'react-svg-map';
+import { India } from '@svg-maps/india';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import dbtData from '@/lib/dbt-performance-data.json';
+import { cn } from '@/lib/utils';
 
 interface PerformanceData {
   Rank: number;
@@ -17,150 +27,128 @@ interface PerformanceData {
 }
 
 const DBTMap = () => {
-  const mapRef = useRef<L.Map | null>(null);
-  const geojsonLayerRef = useRef<L.GeoJSON | null>(null);
+  const [pointedLocation, setPointedLocation] = useState<string | null>(null);
+  const [tooltipText, setTooltipText] = useState<string>('');
   const [selectedState, setSelectedState] = useState<{ name: string; data: PerformanceData | null } | null>(null);
 
-  // build lookup map
-  const dataMap: { [key: string]: PerformanceData } = {};
-  dbtData.forEach((r) => {
-    dataMap[normalizeName(r.State)] = r as PerformanceData;
-  });
-
-  function normalizeName(s: string | null | undefined) {
-    if (!s && s !== 0) return "";
-    return String(s)
-      .trim()
-      .toUpperCase()
-      .replace(/\s+/g, " ")
-      .replace(/&/g, " AND ")
-      .replace(/^THE\s+/, "")
-      .replace(/[,\.]/g, "")
-      .replace(/\sAND\sTHE\s/, " AND THE ")
-      .normalize("NFD")
-      .replace(/\p{Diacritic}/gu, "");
-  }
-
-  function getColor(score: number | null | undefined) {
-    if (score === null || score === undefined || isNaN(score)) return "#e6e6e6"; // grey for no data
-    if (score > 80) return "#16a34a"; // green
-    if (score > 50) return "#f59e0b"; // yellow/orange
-    return "#ef4444"; // red
-  }
-
-  function styleFeature(feature: any) {
-    const name = normalizeName(feature.properties.st_nm);
-    const row = dataMap[name];
-    const score = row ? row.Score : null;
-    return {
-      fillColor: getColor(score),
-      weight: 1,
-      opacity: 1,
-      color: "hsl(var(--background))",
-      fillOpacity: 0.85,
-    };
-  }
-
-  useEffect(() => {
-    if (mapRef.current) return; // already initialized
-
-    mapRef.current = L.map("dbt-map", { zoomControl: true, minZoom: 4, maxZoom: 7 }).setView([22.5, 82], 4.5);
-
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      maxZoom: 12,
-    }).addTo(mapRef.current);
-
-    const info = L.control({ position: "topright" });
-    info.onAdd = function () {
-      this._div = L.DomUtil.create("div", "dbt-info");
-      this.update();
-      return this._div;
-    };
-    info.update = function (props?: { displayName: string }) {
-      if (!props) {
-        this._div.innerHTML = `<div class="font-bold">DBT Performance</div><div class="text-xs mt-1.5">Hover a state to see Rank & Score</div>`;
-      } else {
-        const name = props.displayName;
-        const row = dataMap[normalizeName(name)];
-        this._div.innerHTML = `<div class="font-bold">${name}</div><div class="text-xs mt-1.5">Rank: <strong>${row ? row.Rank : "N/A"}</strong></div><div class="text-xs">Score: <strong>${row ? row.Score + "%" : "No data"}</strong></div>`;
-      }
-    };
-    info.addTo(mapRef.current);
-
-    const legend = L.control({ position: "bottomright" });
-    legend.onAdd = function () {
-      const div = L.DomUtil.create("div", "dbt-legend");
-      div.innerHTML = `
-        <div class="font-bold mb-1.5">Score Legend</div>
-        <div class="flex gap-2 items-center"><span class="bg-green-600 w-4 h-3 inline-block rounded-sm"></span><span>> 80</span></div>
-        <div class="flex gap-2 items-center mt-1.5"><span class="bg-yellow-500 w-4 h-3 inline-block rounded-sm"></span><span>51 - 80</span></div>
-        <div class="flex gap-2 items-center mt-1.5"><span class="bg-red-600 w-4 h-3 inline-block rounded-sm"></span><span><= 50</span></div>
-      `;
-      return div;
-    };
-    legend.addTo(mapRef.current);
-
-    fetch("/india_states.geojson")
-      .then((r) => {
-        if (!r.ok) throw new Error("Cannot load geojson");
-        return r.json();
-      })
-      .then((geo) => {
-        geojsonLayerRef.current = L.geoJson(geo, {
-          style: styleFeature,
-          onEachFeature: function (feature, layer) {
-            const displayName = feature.properties.st_nm || "Unknown";
-            const norm = normalizeName(displayName);
-            const row = dataMap[norm];
-            const rank = row ? row.Rank : "N/A";
-            const score = row ? row.Score + "%" : "No data";
-            layer.bindTooltip(`<strong>${displayName}</strong><br/>Rank: ${rank}<br/>Score: ${score}`, { sticky: true, className: 'info-tooltip' });
-
-            layer.on({
-              mouseover: (e) => {
-                const targetLayer = e.target;
-                targetLayer.setStyle({ weight: 2.5, color: "#111827", fillOpacity: 0.95 });
-                if (!L.Browser.ie) targetLayer.bringToFront();
-                info.update({ displayName });
-              },
-              mouseout: (e) => {
-                geojsonLayerRef.current?.resetStyle(e.target);
-                info.update();
-              },
-              click: () => {
-                const rowData = dataMap[norm];
-                setSelectedState({ name: displayName, data: rowData || null });
-              },
-            });
-          },
-        }).addTo(mapRef.current!);
-
-        if(mapRef.current) {
-            mapRef.current.fitBounds(geojsonLayerRef.current.getBounds(), { padding: [20, 20] });
-        }
-      })
-      .catch((err) => {
-        console.error("GeoJSON loading error:", err);
-        if(mapRef.current) {
-            const marker = L.marker([22.5, 82]).addTo(mapRef.current);
-            marker.bindPopup("Error: Could not load map data. Please check the console.").openPopup();
-        }
-      });
-
-    return () => {
-      if (mapRef.current) {
-        mapRef.current.remove();
-        mapRef.current = null;
-      }
-    };
+  const dataMap: Map<string, PerformanceData> = useMemo(() => {
+    const map = new Map<string, PerformanceData>();
+    dbtData.forEach((r) => {
+      map.set(normalizeName(r.State), r as PerformanceData);
+    });
+    return map;
   }, []);
 
-  return (
-    <div>
-      <div id="dbt-map" className="h-[75vh] w-full rounded-lg shadow-md z-0" aria-label="DBT performance map" />
+  function normalizeName(name: string) {
+    return name
+      .trim()
+      .toUpperCase()
+      .replace(/&/g, 'AND')
+      .replace(/\s+/g, ' ');
+  }
 
-      <Dialog open={!!selectedState} onOpenChange={(isOpen) => !isOpen && setSelectedState(null)}>
+  function getLocationClassName(location: any) {
+    const normName = normalizeName(location.name);
+    const stateData = dataMap.get(normName);
+    const score = stateData?.Score;
+
+    let fillColorClass = 'fill-muted/40'; // Default for no data
+    if (score !== undefined) {
+      if (score > 80) {
+        fillColorClass = 'fill-green-600';
+      } else if (score > 50) {
+        fillColorClass = 'fill-yellow-500';
+      } else {
+        fillColorClass = 'fill-red-600';
+      }
+    }
+    
+    return cn(
+        'transition-all duration-200 outline-none',
+        fillColorClass,
+        'hover:fill-accent focus:fill-accent stroke-background stroke-1 hover:stroke-foreground/50 focus:stroke-foreground/50',
+         pointedLocation === location.name && 'fill-accent'
+    );
+  }
+
+  function handleLocationMouseOver(event: React.MouseEvent<SVGPathElement>) {
+    const locationName = event.currentTarget.getAttribute('name');
+    if (locationName) {
+      setPointedLocation(locationName);
+      const stateData = dataMap.get(normalizeName(locationName));
+      if (stateData) {
+        setTooltipText(
+          `${locationName} | Rank: ${stateData.Rank} | Score: ${stateData.Score}%`
+        );
+      } else {
+        setTooltipText(`${locationName} | No data`);
+      }
+    }
+  }
+
+  function handleLocationMouseOut() {
+    setPointedLocation(null);
+    setTooltipText('');
+  }
+
+  function handleLocationClick(event: React.MouseEvent<SVGPathElement>) {
+    const locationName = event.currentTarget.getAttribute('name');
+    if (locationName) {
+        const normName = normalizeName(locationName);
+        const stateData = dataMap.get(normName);
+        setSelectedState({ name: locationName, data: stateData || null });
+    }
+  }
+
+  const Legend = () => (
+    <div className="bg-background/80 backdrop-blur-sm p-4 rounded-lg shadow-md border">
+      <h3 className="font-bold mb-2 text-foreground">Score Legend</h3>
+      <div className="space-y-1 text-sm text-muted-foreground">
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded-sm bg-green-600" />
+          <span>&gt; 80 (High)</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded-sm bg-yellow-500" />
+          <span>51 - 80 (Medium)</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded-sm bg-red-600" />
+          <span>&lt;= 50 (Low)</span>
+        </div>
+         <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded-sm bg-muted/40 border" />
+          <span>No Data</span>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="relative w-full h-full">
+      <TooltipProvider>
+        <Tooltip open={!!pointedLocation}>
+          <TooltipTrigger asChild>
+            <SVGMap
+              map={India}
+              locationClassName={getLocationClassName}
+              onLocationMouseOver={handleLocationMouseOver}
+              onLocationMouseOut={handleLocationMouseOut}
+              onLocationClick={handleLocationClick}
+              className="w-full h-full"
+            />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{tooltipText}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+
+      <div className="absolute bottom-4 right-4 z-10">
+        <Legend />
+      </div>
+
+       <Dialog open={!!selectedState} onOpenChange={(isOpen) => !isOpen && setSelectedState(null)}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle className="font-headline text-2xl">{selectedState?.name}</DialogTitle>

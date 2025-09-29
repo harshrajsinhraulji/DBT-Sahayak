@@ -406,6 +406,10 @@ body {
   bottom: 6rem;
 }
 
+.bottom-4 {
+  bottom: 1rem;
+}
+
 .bottom-6 {
   bottom: 1.5rem;
 }
@@ -482,10 +486,6 @@ body {
   top: 50%;
 }
 
-.z-0 {
-  z-index: 0;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -534,10 +534,6 @@ body {
   margin-bottom: .25rem;
 }
 
-.mb-1\.5 {
-  margin-bottom: .375rem;
-}
-
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -584,10 +580,6 @@ body {
 
 .mt-1 {
   margin-top: .25rem;
-}
-
-.mt-1\.5 {
-  margin-top: .375rem;
 }
 
 .mt-12 {
@@ -684,10 +676,6 @@ body {
 
 .h-24 {
   height: 6rem;
-}
-
-.h-3 {
-  height: .75rem;
 }
 
 .h-3\.5 {
@@ -1420,6 +1408,10 @@ body {
   background-color: hsl(var(--background));
 }
 
+.bg-background\/80 {
+  background-color: hsl(var(--background) / .8);
+}
+
 .bg-background\/95 {
   background-color: hsl(var(--background) / .95);
 }
@@ -1553,8 +1545,36 @@ body {
   --tw-gradient-to: hsl(var(--accent) / .6) var(--tw-gradient-to-position);
 }
 
+.fill-accent {
+  fill: hsl(var(--accent));
+}
+
 .fill-current {
   fill: currentColor;
+}
+
+.fill-green-600 {
+  fill: #16a34a;
+}
+
+.fill-muted\/40 {
+  fill: hsl(var(--muted) / .4);
+}
+
+.fill-red-600 {
+  fill: #dc2626;
+}
+
+.fill-yellow-500 {
+  fill: #eab308;
+}
+
+.stroke-background {
+  stroke: hsl(var(--background));
+}
+
+.stroke-1 {
+  stroke-width: 1px;
 }
 
 .object-contain {
@@ -2172,67 +2192,6 @@ body {
   animation-play-state: running;
 }
 
-.dbt-info {
-  border-radius: var(--radius);
-  background-color: hsl(var(--background) / .9);
-  color: hsl(var(--foreground));
-  --tw-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  padding: .5rem;
-  font-size: .875rem;
-  line-height: 1.25rem;
-}
-
-.dark .dbt-info {
-  background-color: hsl(var(--card) / .9);
-  color: hsl(var(--card-foreground));
-}
-
-.dbt-legend {
-  border-radius: var(--radius);
-  background-color: hsl(var(--background) / .9);
-  color: hsl(var(--foreground));
-  --tw-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  padding: .625rem;
-  font-size: .875rem;
-  line-height: 1.25rem;
-}
-
-.dark .dbt-legend {
-  background-color: hsl(var(--card) / .9);
-  color: hsl(var(--card-foreground));
-}
-
-.leaflet-tooltip.info-tooltip {
-  border-radius: calc(var(--radius)  - 2px);
-  background-color: hsl(var(--foreground) / .9);
-  color: hsl(var(--background));
-  --tw-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  border: none;
-  padding: .5rem;
-}
-
-.dark .leaflet-tooltip.info-tooltip {
-  background-color: hsl(var(--background) / .9);
-  color: hsl(var(--foreground));
-}
-
-.leaflet-control-container .leaflet-control-zoom a {
-  border-color: hsl(var(--border));
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
-}
-
-.dark .leaflet-control-container .leaflet-control-zoom a {
-  background-color: hsl(var(--card));
-  color: hsl(var(--card-foreground));
-}
-
 @media print {
   body {
     color: #000 !important;
@@ -2442,6 +2401,14 @@ body {
   background-color: hsl(var(--secondary) / .8);
 }
 
+.hover\:fill-accent:hover {
+  fill: hsl(var(--accent));
+}
+
+.hover\:stroke-foreground\/50:hover {
+  stroke: hsl(var(--foreground) / .5);
+}
+
 .hover\:text-accent-foreground:hover {
   color: hsl(var(--accent-foreground));
 }
@@ -2492,6 +2459,14 @@ body {
 
 .focus\:bg-primary:focus {
   background-color: hsl(var(--primary));
+}
+
+.focus\:fill-accent:focus {
+  fill: hsl(var(--accent));
+}
+
+.focus\:stroke-foreground\/50:focus {
+  stroke: hsl(var(--foreground) / .5);
 }
 
 .focus\:text-accent-foreground:focus {
