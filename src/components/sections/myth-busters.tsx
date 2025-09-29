@@ -102,10 +102,15 @@ export function MythBustersSection() {
     }
   };
   
-  const shareScore = () => {
+  const shareScore = async () => {
     const text = `I scored ${score}/${totalQuestions} on the DBT Myth Busters Challenge! Test your knowledge on DBT Sahayak.`;
     if (navigator.share) {
-      navigator.share({ title: 'DBT Myth Busters Challenge', text: text, url: window.location.href });
+      try {
+        await navigator.share({ title: 'DBT Myth Busters Challenge', text: text, url: window.location.href });
+      } catch (error) {
+        console.error('Sharing failed:', error);
+        // This catch block prevents the app from crashing if the user cancels the share or if the API is blocked.
+      }
     }
   }
   
@@ -224,4 +229,3 @@ export function MythBustersSection() {
   );
 }
 
-    
