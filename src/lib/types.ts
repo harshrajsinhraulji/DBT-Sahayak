@@ -66,6 +66,18 @@ subtitle: string;
       title: string;
       description: string;
     };
+    comparison: {
+        title: string;
+        subtitle: string;
+        feature: string;
+        linked: string;
+        seeded: string;
+        features: {
+            feature: string;
+            linked: string;
+            seeded: string;
+        }[];
+    }
   };
   videos: {
     title: string;
@@ -80,6 +92,20 @@ subtitle: string;
     description: string;
     steps: string[];
     cta: string;
+  };
+   takeAction: {
+    title: string;
+    subtitle: string;
+    card1: {
+      title: string;
+      description: string;
+      cta: string;
+    };
+    card2: {
+      title: string;
+      description: string;
+      cta: string;
+    };
   };
   scholarships: {
     title: string;
@@ -182,3 +208,4 @@ subtitle: string;
     gu: string;
   }
 };
+

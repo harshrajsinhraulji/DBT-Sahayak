@@ -39,6 +39,19 @@ export const pageContent: Record<Language, LanguageContent> = {
         title: "DBT-Enabled Aadhaar Seeded Account",
         description: "Your Aadhaar is mapped to a specific bank account on the National Payments Corporation of India (NPCI) server. This is MANDATORY to receive Direct Benefit Transfers (DBT) like scholarships.",
       },
+      comparison: {
+        title: "Side-by-Side Comparison",
+        subtitle: "Key differences at a glance.",
+        feature: "Feature",
+        linked: "Aadhaar Linked",
+        seeded: "DBT-Enabled (Seeded)",
+        features: [
+            { feature: "Purpose", linked: "Identity verification (KYC)", seeded: "Receiving government benefits (DBT)" },
+            { feature: "Mechanism", linked: "Connected to bank's internal system.", seeded: "Mapped via national NPCI server." },
+            { feature: "Scholarship Funds", linked: "Does NOT guarantee receipt.", seeded: "GUARANTEES receipt of DBT funds." },
+            { feature: "Requirement", linked: "Good practice for banking.", seeded: "MANDATORY for all scholarships." },
+        ]
+      }
     },
     videos: {
       title: "Watch & Learn",
@@ -61,6 +74,20 @@ export const pageContent: Record<Language, LanguageContent> = {
         "This will show you which bank account is currently seeded to receive DBT funds."
       ],
       cta: "Check Status on UIDAI Portal",
+    },
+     takeAction: {
+      title: "Take Action Now",
+      subtitle: "You've learned the importance of a DBT-enabled account. Here's how you can move forward.",
+      card1: {
+        title: "Track Your Journey",
+        description: "If your account is not DBT-enabled, our personalized dashboard will guide you through every step, from downloading the form to checking your final status.",
+        cta: "Go to Dashboard"
+      },
+      card2: {
+        title: "Request a Drive",
+        description: "We conduct free awareness seminars at schools, colleges, and local communities. Fill out a simple form to request a drive in your area.",
+        cta: "Request an Awareness Drive"
+      }
     },
     scholarships: {
       title: "Available Scholarships",
@@ -343,7 +370,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         resources: "संसाधन",
         governance: "शासन",
         aboutTeam: "टीम के बारे में",
-        printKit: "प्रिंट करने योग्य किट",
+        printKit: "प्रिंट किट",
         requestDrive: "ड्राइव का अनुरोध करें"
       },
       login: "लॉगिन/रजिस्टर करें"
@@ -365,6 +392,19 @@ export const pageContent: Record<Language, LanguageContent> = {
         title: "डीबीटी-सक्षम आधार सीडेड खाता",
         description: "छात्रवृत्ति जैसे प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) प्राप्त करने के लिए आपका आधार भारतीय राष्ट्रीय भुगतान निगम (एनपीसीआई) सर्वर पर एक विशिष्ट बैंक खाते से मैप किया गया है। यह अनिवार्य है।",
       },
+       comparison: {
+        title: "आमने-सामने तुलना",
+        subtitle: "एक नज़र में મુખ્ય अंतर।",
+        feature: "विशेषता",
+        linked: "आधार लिंक्ड",
+        seeded: "डीबीटी-सक्षम (सीडेड)",
+        features: [
+            { feature: "उद्देश्य", linked: "पहचान सत्यापन (केवाईसी)", seeded: "सरकारी लाभ प्राप्त करना (डीबीटी)" },
+            { feature: "तंत्र", linked: "बैंक की आंतरिक प्रणाली से जुड़ा।", seeded: "राष्ट्रीय एनपीसीआई सर्वर के माध्यम से मैप किया गया।" },
+            { feature: "छात्रवृत्ति निधि", linked: "प्राप्ति की गारंटी नहीं।", seeded: "डीबीटी फंड की प्राप्ति की गारंटी देता है।" },
+            { feature: "आवश्यकता", linked: "बैंकिंग के लिए अच्छी आदत।", seeded: "सभी छात्रवृत्तियों के लिए अनिवार्य।" },
+        ]
+      }
     },
     videos: {
       title: "देखें और जानें",
@@ -387,6 +427,20 @@ export const pageContent: Record<Language, LanguageContent> = {
         "इससे पता चलेगा कि कौन सा बैंक खाता वर्तमान में डीबीटी फंड प्राप्त करने के लिए सीड किया गया है।"
       ],
       cta: "यूआईडीएआई पोर्टल पर स्थिति जांचें",
+    },
+     takeAction: {
+      title: "अभी कार्रवाई करें",
+      subtitle: "आपने डीबीटी-सक्षम खाते के महत्व को जान लिया है। यहां बताया गया है कि आप आगे कैसे बढ़ सकते हैं।",
+      card1: {
+        title: "अपनी यात्रा को ट्रैक करें",
+        description: "यदि आपका खाता डीबीटी-सक्षम नहीं है, तो हमारा व्यक्तिगत डैशबोर्ड आपको हर कदम पर मार्गदर्शन करेगा, फॉर्म डाउनलोड करने से लेकर आपकी अंतिम स्थिति की जाँच करने तक।",
+        cta: "डैशबोर्ड पर जाएं"
+      },
+      card2: {
+        title: "एक ड्राइव का अनुरोध करें",
+        description: "हम स्कूलों, कॉलेजों और स्थानीय समुदायों में मुफ्त जागरूकता सेमिनार आयोजित करते हैं। अपने क्षेत्र में ड्राइव का अनुरोध करने के लिए एक साधारण फॉर्म भरें।",
+        cta: "जागरूकता ड्राइव का अनुरोध करें"
+      }
     },
     scholarships: {
       title: "उपलब्ध छात्रवृत्तियाँ",
@@ -412,14 +466,14 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
         {
           title: "मुख्यमंत्री युवा स्वावलंबन योजना (MYSY, गुजरात)",
-          description: "गुजरात के मेधाવી छात्रों के लिए उच्च शिक्षा प्राप्त करने हेतु राज्य स्तरीय योजना।",
+          description: "गुजरात के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करने हेतु राज्य स्तरीय योजना।",
           eligibility: "पाठ्यक्रम के अनुसार बदलता है। 10वीं/12वीं में विशिष्ट प्रतिशत और आय मानदंड की आवश्यकता है।",
           link: "https://mysy.guj.nic.in/",
         },
         {
           title: "विकलांग छात्रों के लिए छात्रवृत्ति",
           description: "उत्कृष्टता के निर्दिष्ट संस्थानों में स्नातक और स्नातकोत्तर डिग्री प्राप्त करने वाले विकलांग छात्रों के लिए।",
-          eligibility: "40% से अधिक विकलांगता और वैध प्रमाण पत्र वाले छात्र। प्रति वर्ष ₹6 लाख की माता-पिता की आय सीमा।",
+          eligibility: "40% से अधिक विकलांगતા और वैध प्रमाण पत्र वाले छात्र। प्रति वर्ष ₹6 लाख की माता-पिता की आय सीमा।",
           link: "https://scholarships.gov.in/"
         },
         {
@@ -562,7 +616,7 @@ export const pageContent: Record<Language, LanguageContent> = {
             "प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) योजना 1 जनवरी 2013 को भारत में कल्याणकारी वितरण प्रणाली में सुधार के लिए एक बड़े सरकारी सुधार के तौर पर शुरू की गई थी।",
             "इसका प्राथमिक लक्ष्य सरल, तेज और अधिक सटीक वितरण के लिए मौजूदा प्रक्रियाओं को फिर से डिजाइन करके सरकारी सब्सिडी और लाभों के प्रवाह को बेहतर बनाना है, जबकि धोखाधड़ी और नकल को कम करना है।",
             "डीबीटी मिशन, कार्यान्वयन के लिए नोडल बॉडी, शुरू में योजना आयोग में था, 2013 में व्यय विभाग में स्थानांतरित हुआ, और 2015 से, इसके काम को और गति देने के लिए कैबिनेट सचिवालय के तहत काम कर रहा है।",
-            "डीबीटी जेएएम ट्रिनिटी (जन धन बैंक खाते, आधार विशिष्ट आईडी, और मोबाइल फोन) का लाभ उठाता है ताकि लाभार्थियों के खातों में सीधे लाभ हस्तांतरित करने के लिए एक पारदर्शी और कुशल मंच प्रदान किया जा सके।"
+            "डीबीटी जेएएम ट्रिनिटी (જન ધન બેંક खाते, આધાર विशिष्ट आईडी, और मोबाइल फोन) का लाभ उठाता है ताकि लाभार्थियों के खातों में सीधे लाभ हस्तांतरित करने के लिए एक पारदर्शी और कुशल मंच प्रदान किया जा सके।"
         ],
         orgChartTitle: "डीबीटी मिशन संगठनात्मक संरचना"
       },
@@ -572,7 +626,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         points: [
             {
                 title: "डीबीटी मिशन (कैबिनेट सचिवालय)",
-                description: "नीति, समन्वय और देश भर में डीबीटी के कार्यान्वयन की निगरानी के लिए जिम्मेदार नोडल एजेंसी।"
+                description: "नीति, समन्वय और देश भर में डीबीटी के कार्यान्वयन की निगरानी के लिए जिम्मेदार नोડલ एजेंसी।"
             },
             {
                 title: "वित्त मंत्रालय (सीजीए और पीएफएमएस)",
@@ -691,6 +745,19 @@ export const pageContent: Record<Language, LanguageContent> = {
         title: "ડીબીટી-સક્ષમ આધાર સીડેડ એકાઉન્ટ",
         description: "શિષ્યવૃત્તિ જેવા ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર (ડીબીટી) મેળવવા માટે તમારું આધાર નેશનલ પેમેન્ટ્સ કોર્પોરેશન ઓફ ઈન્ડિયા (NPCI) સર્વર પર ચોક્કસ બેંક ખાતા સાથે મેપ થયેલું છે. આ ફરજિયાત છે.",
       },
+       comparison: {
+        title: "આમને-સામને તુલના",
+        subtitle: "એક નજરમાં મુખ્ય તફાવતો.",
+        feature: "વિશેષતા",
+        linked: "આધાર લિંક્ડ",
+        seeded: "ડીબીટી-સક્ષમ (સીડેડ)",
+        features: [
+            { feature: "હેતુ", linked: "ઓળખ ચકાસણી (કેવાયસી)", seeded: "સરકારી લાભો મેળવવા (ડીબીટી)" },
+            { feature: "પ્રણાલી", linked: "બેંકની આંતરિક સિસ્ટમ સાથે જોડાયેલ.", seeded: "રાષ્ટ્રીય એનપીસીઆઈ સર્વર દ્વારા મેપ થયેલ." },
+            { feature: "શિષ્યવૃત્તિ ભંડોળ", linked: "પ્રાપ્તિની ગેરંટી નથી.", seeded: "ડીબીટી ભંડોળની પ્રાપ્તિની ગેરંટી આપે છે." },
+            { feature: "જરૂરિયાત", linked: "બેંકિંગ માટે સારી પ્રથા.", seeded: "બધી શિષ્યવૃત્તિઓ માટે ફરજિયાત." },
+        ]
+      }
     },
     videos: {
       title: "જુઓ અને શીખો",
@@ -713,6 +780,20 @@ export const pageContent: Record<Language, LanguageContent> = {
         "આ બતાવશે કે કયું બેંક ખાતું હાલમાં DBT ભંડોળ મેળવવા માટે સીડ થયેલ છે."
       ],
       cta: "યુઆઈડીએઆઈ પોર્ટલ પર સ્થિતિ તપાસો",
+    },
+     takeAction: {
+      title: "હવે પગલાં લો",
+      subtitle: "તમે ડીબીટી-સક્ષમ ખાતાનું મહત્વ જાણ્યું છે. હવે તમે આગળ કેવી રીતે વધી શકો છો તે અહીં છે.",
+      card1: {
+        title: "તમારી યાત્રાને ટ્રેક કરો",
+        description: "જો તમારું એકાઉન્ટ ડીબીટી-સક્ષમ નથી, તો અમારું વ્યક્તિગત ડેશબોર્ડ તમને દરેક પગલામાં માર્ગદર્શન આપશે, ફોર્મ ડાઉનલોડ કરવાથી માંડીને તમારી અંતિમ સ્થિતિ તપાસવા સુધી.",
+        cta: "ડેશબોર્ડ પર જાઓ"
+      },
+      card2: {
+        title: "ડ્રાઇવની વિનંતી કરો",
+        description: "અમે શાળાઓ, કોલેજો અને સ્થાનિક સમુદાયોમાં મફત જાગૃતિ સેમિનાર યોજીએ છીએ. તમારા વિસ્તારમાં ડ્રાઇવની વિનંતી કરવા માટે એક સરળ ફોર્મ ભરો.",
+        cta: "જાગૃતિ ડ્રાઇવની વિનંતી કરો"
+      }
     },
     scholarships: {
       title: "ઉપલબ્ધ શિષ્યવૃત્તિઓ",
@@ -801,7 +882,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
         {
           fact: "સબસિડી મેળવવા માટે આધાર કાયદેસર રીતે ફરજિયાત નથી.",
-          explanation: "આ એક હકીકત છે. સુપ્રીમ કોર્ટે ચુકાદો આપ્યો છે કે જયારે આધાર તેની કાર્યક્ષમતા માટે પસંદગીનો છે, ત્યારે ફક્ત આધાર નંબર ન હોવાને કારણે લાભો નકારી શકાય નહીં. ID ના અન્ય સ્વરૂપો સ્વીકારવા આવશ્યક છે."
+          explanation: "આ એક હકીકત છે. સુપ્રીમ કોર્ટે ચુકાદો આપ્યો છે કે જયારે આધાર તેની કાર્યક્ષમતા માટે પસંદગીનો છે, ત્યારે ફક્ત આધાર નંબર ન હોવાના કારણે લાભો નકારી શકાય નહીં. ID ના અન્ય સ્વરૂપો સ્વીકારવા આવશ્યક છે."
         },
         {
           fact: "તમે યુઆઈડીએઆઈ અને એનપીસીઆઈ બંને વેબસાઇટ્સ પર તમારી આધાર સીડિંગની સ્થિતિ ચકાસી શકો છો.",
@@ -966,7 +1047,7 @@ export const pageContent: Record<Language, LanguageContent> = {
     },
     footer: {
       tagline: "સ્માર્ટ ઇન્ડિયા હેકાથોન ૨૦૨૫ માટે ટીમ કોડ ટેકનિશિયન દ્વારા એક પહેલ.",
-      credits: "સામાજિક ન્યાય અને સશક્તિકરણ મંત્રાલયના માર્ગદર્શન હેઠળ.",
+      credits: "સામાજિક ન્યાય અને સશક્તિકરણ મંત્રાલયના માર્ગદર્શન હેઠળ।",
       navigation: "નેવિગેશન",
       resources: "સંસાધનો",
       about: "અમારા વિશે",
