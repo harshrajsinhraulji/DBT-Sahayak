@@ -2478,7 +2478,7 @@ const Logo = ({ className })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$
         viewBox: "0 0 24 24",
         fill: "none",
         stroke: "currentColor",
-        strokeWidth: "2.5",
+        strokeWidth: "2",
         strokeLinecap: "round",
         strokeLinejoin: "round",
         className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("w-6 h-6", className),
@@ -2491,21 +2491,21 @@ const Logo = ({ className })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M12 2a10 10 0 0 0-10 10v0a10 10 0 0 0 10 10h1"
+                d: "M15 6H8a4 4 0 0 0-4 4v4a4 4 0 0 0 4 4h7"
             }, void 0, false, {
                 fileName: "[project]/src/components/logo.tsx",
                 lineNumber: 16,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M6 10h10"
+                d: "M8 10h8"
             }, void 0, false, {
                 fileName: "[project]/src/components/logo.tsx",
                 lineNumber: 17,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M6 14h10"
+                d: "M8 14h8"
             }, void 0, false, {
                 fileName: "[project]/src/components/logo.tsx",
                 lineNumber: 18,
