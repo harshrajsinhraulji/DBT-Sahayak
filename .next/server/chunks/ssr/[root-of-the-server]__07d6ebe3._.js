@@ -626,7 +626,7 @@ const pageContent = {
                     }
                 },
                 {
-                    title: "CSSS for College/University Students",
+                    title: "Central Sector Scheme of Scholarship (CSSS)",
                     description: "For meritorious students from low-income families to meet expenses while pursuing higher studies.",
                     eligibility: "Top 20th percentile in Class XII, parental income < ₹4.5 lakh.",
                     link: "https://scholarships.gov.in/",
@@ -679,14 +679,16 @@ const pageContent = {
                     }
                 },
                 {
-                    title: "Scholarships for Students with Disabilities",
-                    description: "For differently-abled students pursuing graduate and postgraduate degrees in specified institutions of excellence.",
-                    eligibility: "40%+ disability. Parental income ceiling of ₹6 lakh per annum.",
+                    title: "Top Class Education for SC Students",
+                    description: "Provides full financial support for SC students in premier institutions like IITs, IIMs, and NITs.",
+                    eligibility: "SC students admitted to notified institutions. Parental income < ₹8 lakh.",
                     link: "https://scholarships.gov.in/",
                     category: "scholarship",
                     eligibilityCriteria: {
-                        maxIncome: 600000,
-                        requiresDisability: true,
+                        maxIncome: 800000,
+                        categories: [
+                            'SC'
+                        ],
                         occupations: [
                             'Student'
                         ]
@@ -703,6 +705,41 @@ const pageContent = {
                             'Student'
                         ]
                     }
+                },
+                {
+                    title: "Pre-Matric Scholarships for Minorities",
+                    description: "To support minority community students for education from Class I to X.",
+                    eligibility: "Students from Muslim, Christian, Sikh, Buddhist, Jain, Parsi communities. Parental income < ₹1 lakh.",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 100000,
+                        categories: [
+                            'Minority'
+                        ],
+                        occupations: [
+                            'Student'
+                        ]
+                    }
+                },
+                {
+                    title: "Atal Pension Yojana (APY)",
+                    description: "A government-backed pension scheme targeted at the unorganised sector.",
+                    eligibility: "Any citizen of India between 18-40 years of age.",
+                    link: "https://www.npscra.nsdl.co.in/scheme-details.php",
+                    category: "pension",
+                    eligibilityCriteria: {
+                        minAge: 18,
+                        maxAge: 40
+                    }
+                },
+                {
+                    title: "Pradhan Mantri Ujjwala Yojana (PMUY)",
+                    description: "Provides deposit-free LPG connections to women from adult BPL households.",
+                    eligibility: "Woman from a BPL household without an LPG connection in her name.",
+                    link: "https://www.pmuy.gov.in/",
+                    category: "subsidy",
+                    eligibilityCriteria: {}
                 }
             ]
         },
@@ -1257,14 +1294,16 @@ const pageContent = {
                     }
                 },
                 {
-                    title: "विकलांग छात्रों के लिए छात्रवृत्ति",
-                    description: "उत्कृष्टता के निर्दिष्ट संस्थानों में स्नातक और स्नातकोत्तर डिग्री प्राप्त करने वाले विकलांग छात्रों के लिए।",
-                    eligibility: "40%+ विकलांगता। ₹6 लाख प्रति वर्ष की माता-पिता की आय सीमा।",
+                    title: "SC छात्रों के लिए टॉप क्लास शिक्षा",
+                    description: "आईआईटी, आईआईएम और एनआईटी जैसे प्रमुख संस्थानों में एससी छात्रों के लिए पूर्ण वित्तीय सहायता प्रदान करता है।",
+                    eligibility: "अधिसूचित संस्थानों में प्रवेश पाने वाले एससी छात्र। माता-पिता की आय < ₹8 लाख।",
                     link: "https://scholarships.gov.in/",
                     category: "scholarship",
                     eligibilityCriteria: {
-                        maxIncome: 600000,
-                        requiresDisability: true,
+                        maxIncome: 800000,
+                        categories: [
+                            'SC'
+                        ],
                         occupations: [
                             'Student'
                         ]
@@ -1281,6 +1320,41 @@ const pageContent = {
                             'Student'
                         ]
                     }
+                },
+                {
+                    title: "अल्पसंख्यकों के लिए प्री-मैट्रिक छात्रवृत्ति",
+                    description: "अल्पसंख्यक समुदाय के छात्रों को कक्षा I से X तक की शिक्षा के लिए समर्थन देना।",
+                    eligibility: "मुस्लिम, ईसाई, सिख, बौद्ध, जैन, पारसी समुदायों के छात्र। माता-पिता की आय < ₹1 लाख।",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 100000,
+                        categories: [
+                            'Minority'
+                        ],
+                        occupations: [
+                            'Student'
+                        ]
+                    }
+                },
+                {
+                    title: "अटल पेंशन योजना (APY)",
+                    description: "असंगठित क्षेत्र को लक्षित करने वाली एक सरकार समर्थित पेंशन योजना।",
+                    eligibility: "18-40 वर्ष की आयु के बीच भारत का कोई भी नागरिक।",
+                    link: "https://www.npscra.nsdl.co.in/scheme-details.php",
+                    category: "pension",
+                    eligibilityCriteria: {
+                        minAge: 18,
+                        maxAge: 40
+                    }
+                },
+                {
+                    title: "प्रधानमंत्री उज्ज्वला योजना (PMUY)",
+                    description: "वयस्क बीपीएल परिवारों की महिलाओं को जमा-मुक्त एलपीजी कनेक्शन प्रदान करता है।",
+                    eligibility: "एक बीपीएल परिवार की महिला जिसके नाम पर कोई एलपीजी कनेक्शन नहीं है।",
+                    link: "https://www.pmuy.gov.in/",
+                    category: "subsidy",
+                    eligibilityCriteria: {}
                 }
             ]
         },
@@ -1303,7 +1377,7 @@ const pageContent = {
                 },
                 {
                     myth: "यदि मेरी सीडिंग विफल हो जाती है, तो यह एनपीसीआई या यूआईडीएआई के साथ एक समस्या है।",
-                    fact: "यह एक मिथक है। एनपीसीआई मैपर को अपडेट करने की जिम्मेदारी पूरी तरह से बैंकों की है। आपको अपनी बैंक शाखा से संपर्क करना होगा।"
+                    fact: "यह एक मिथક है। एनपीसीआई मैपर को अपडेट करने की जिम्मेदारी पूरी तरह से बैंकों की है। आपको अपनी बैंक शाखा से संपर्क करना होगा।"
                 },
                 {
                     myth: "डीबीटी केवल छात्रवृत्ति के लिए है।",
@@ -1538,7 +1612,7 @@ const pageContent = {
                 points: [
                     {
                         title: "डीबीटी मिशन (कैबिनेट सचिवालय)",
-                        description: "नीति, समन्वय और देश भर में डीबीटी के कार्यान्वयन की निगरानी के लिए जिम्मेदार नोડલ एजेंसी।"
+                        description: "नीति, સંકલન અને દેશભરમાં ડીબીટીના અમલીકરણની દેખરેખ માટે જવાબદાર નોડલ એજન્સી."
                     },
                     {
                         title: "वित्त मंत्रालय (सीजीए और पीएफएमएस)",
@@ -1575,7 +1649,7 @@ const pageContent = {
             },
             flyer1: {
                 title: "डीबीटी-तैयार कैसे बनें",
-                text: "यह सुनिश्चित करने के लिए इन चरणों का पालन करें कि आपका बैंक खाता आधार के साथ सीड किया गया है और प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) के लिए तैयार है।",
+                text: "यह सुनिश्चित करने के लिए इन चरणों का पालन करें कि आपका बैंक खाता आधार के साथ सीड किया गया है और प्रत्यक्ष लाभ हस्तांतरણ (डीबीटी) के लिए तैयार है।",
                 stepsTitle: "4 सरल चरण:",
                 steps: [
                     "अपने बैंक की वेबसाइट या हमारे पोर्टल से 'आधार सीडिंग फॉर्म' डाउनलोड करें।",
@@ -1835,14 +1909,16 @@ const pageContent = {
                     }
                 },
                 {
-                    title: "વિકલાંગ વિદ્યાર્થીઓ માટે શિષ્યવૃત્તિ",
-                    description: "ઉત્કૃષ્ટતાની નિર્દિષ્ટ સંસ્થાઓમાં સ્નાતક અને અનુસ્નાતક ડિગ્રી મેળવતા વિકલાંગ વિદ્યાર્થીઓ માટે.",
-                    eligibility: "40%+ વિકલાંગતા. વાલીની વાર્ષિક આવક મર્યાદા ₹6 લાખ.",
+                    title: "SC વિદ્યાર્થીઓ માટે ટોચના વર્ગનું શિક્ષણ",
+                    description: "આઈઆઈટી, આઈઆઈએમ અને એનઆઈટી જેવી પ્રીમિયર સંસ્થાઓમાં એસસી વિદ્યાર્થીઓ માટે સંપૂર્ણ નાણાકીય સહાય પૂરી પાડે છે.",
+                    eligibility: "સૂચિત સંસ્થાઓમાં પ્રવેશ મેળવનાર SC વિદ્યાર્થીઓ. વાલીની આવક < ₹8 લાખ.",
                     link: "https://scholarships.gov.in/",
                     category: "scholarship",
                     eligibilityCriteria: {
-                        maxIncome: 600000,
-                        requiresDisability: true,
+                        maxIncome: 800000,
+                        categories: [
+                            'SC'
+                        ],
                         occupations: [
                             'Student'
                         ]
@@ -1859,6 +1935,41 @@ const pageContent = {
                             'Student'
                         ]
                     }
+                },
+                {
+                    title: "લઘુમતીઓ માટે પ્રી-મેટ્રિક શિષ્યવૃત્તિ",
+                    description: "લઘુમતી સમુદાયના વિદ્યાર્થીઓને ધોરણ I થી X સુધીના શિક્ષણ માટે ટેકો આપવા.",
+                    eligibility: "મુસ્લિમ, ખ્રિસ્તી, શીખ, બૌદ્ધ, જૈન, પારસી સમુદાયના વિદ્યાર્થીઓ. વાલીની આવક < ₹1 લાખ.",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 100000,
+                        categories: [
+                            'Minority'
+                        ],
+                        occupations: [
+                            'Student'
+                        ]
+                    }
+                },
+                {
+                    title: "અટલ પેન્શન યોજના (APY)",
+                    description: "અસંગઠિત ક્ષેત્રને લક્ષ્યાંકિત કરતી સરકાર સમર્થિત પેન્શન યોજના.",
+                    eligibility: "18-40 વર્ષની વયના કોઈપણ ભારતીય નાગરિક.",
+                    link: "https://www.npscra.nsdl.co.in/scheme-details.php",
+                    category: "pension",
+                    eligibilityCriteria: {
+                        minAge: 18,
+                        maxAge: 40
+                    }
+                },
+                {
+                    title: "પ્રધાનમંત્રી ઉજ્જવલા યોજના (PMUY)",
+                    description: "પુખ્ત BPL પરિવારોની મહિલાઓને ડિપોઝિટ-મુક્ત LPG કનેક્શન પૂરા પાડે છે.",
+                    eligibility: "BPL પરિવારની મહિલા જેના નામે LPG કનેક્શન નથી.",
+                    link: "https://www.pmuy.gov.in/",
+                    category: "subsidy",
+                    eligibilityCriteria: {}
                 }
             ]
         },
@@ -1947,7 +2058,7 @@ const pageContent = {
                     description: "જાહેર બાંધકામ કાર્યક્રમો માટે વેતનની સીધી ચુકવણી.",
                     schemes: [
                         {
-                            name: "મહાત્મા ગાંધી રાષ્ટ્રીય ગ્રામીણ રોજગાર ગેરંટી અધિનિયમ (MGNREGA)",
+                            name: "મહાત્મા ગાંધી રાષ્ટ્રીય ગ્રામੀણ રોજગાર ગેરંટી અધિનિયમ (MGNREGA)",
                             ministry: "ગ્રામીણ વિકાસ મંત્રાલય",
                             beneficiaries: "રોજગાર ઇચ્છતા ગ્રામીણ પરિવારો"
                         }
@@ -2039,7 +2150,7 @@ const pageContent = {
                 },
                 {
                     question: "ડીબીટી ફંડ મેળવવા માટે હું મારું બેંક ખાતું કેવી રીતે બદલી શકું?",
-                    answer: "તમારું ડીબીટી-સક્ષમ ખાતું બદલવા માટે, તમારે તે *નવી* બેંકની શાખાની મુલાકાત લેવી આવશ્યક છે જ્યાં તમે ભંડોળ મેળવવા માંગો છો. ત્યાં આધાર સીડિંગ સંમતિ ફોર્મ સબમિટ કરો. તેઓ NPCI મેપરને અપડેટ કરશે, જે જૂના ખાતાને આપમેળે ઓવરરાઇડ કરશે."
+                    answer: "તમારું ડીબીટી-સક્ષમ ખાતું બદલવા માટે, તમારે તે *નવી* બેંકની શાખાની મુલાકાત લેવી આવશ्यક છે જ્યાં તમે ભંડોળ મેળવવા માંગો છો. ત્યાં આધાર સીડિંગ સંમતિ ફોર્મ સબમિટ કરો. તેઓ NPCI મેપરને અપડેટ કરશે, જે જૂના ખાતાને આપમેળે ઓવરરાઇડ કરશે."
                 },
                 {
                     question: "મારું નામ મારા આધાર કાર્ડ વિરુદ્ધ મારા બેંક ખાતામાં અલગ છે. મારે શું કરવું જોઈએ?",
@@ -2076,7 +2187,7 @@ const pageContent = {
                     link: "https://www.pnbindia.in/downloadprocess.aspx?fid=3532E743-4C98-43B0-A227-22F091054C35"
                 },
                 {
-                    name: "બેંક ઓફ બરોડા (BOB)",
+                    name: "બેંક ઓફ బరోડા (BOB)",
                     description: "BOB ગ્રાહકો માટે આધાર સીડિંગ અરજી ફોર્મ.",
                     link: "https://www.bankofbaroda.in/-/media/project/bob/countrysites/india/personal-banking/accounts/documents/application-for-linking-aadhaar-number.pdf"
                 },
@@ -2143,7 +2254,7 @@ const pageContent = {
         },
         printKit: {
             title: "છાપવા યોગ્ય જાગૃતિ કિટ",
-            subtitle: "શાળાઓ અને સમુદાયોમાં ઑફલાઇન ઝુંબેશ માટે આ સામગ્રી ડાઉનલોડ અને છાપો.",
+            subtitle: "શાળાઓ અને સમુદાયોમાં ઑફલાઇન ઝુંબેશ માટે આ સામગ્રી ડਾઉનલોડ અને છાપો.",
             poster: {
                 title: "શું તમારું બેંક ખાતું તમારી શિષ્યવૃત્તિ માટે તૈયાર છે?",
                 subtitle: "એક સામાન્ય ભૂલને તમારા ભંડોળને રોકવા ન દો! ખાતરી કરો કે તમારું ખાતું ડીબીટી-સક્ષમ છે.",
@@ -2164,7 +2275,7 @@ const pageContent = {
             },
             flyer2: {
                 title: "ડીબીટી હકીકતો અને માન્યતાઓ",
-                text: "શિષ્યવૃત્તિ પ્રક્રિયા વિશેની સામાન્ય ગેરસમજોમાં પડશો નહીં.",
+                text: "શિષ્યવૃત્તિ પ્રક્રિયા વિશેની સામાન્ય ਗેરસમજોમાં પડશો નહીં.",
                 myths: {
                     title: "સામાન્ય માન્યતાઓ:",
                     list: [

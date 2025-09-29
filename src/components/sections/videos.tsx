@@ -2,7 +2,7 @@
 "use client";
 
 import { useLanguage } from "@/hooks/use-language";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlayCircle, VideoOff } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -62,9 +62,9 @@ export function VideoSection() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 py-12">
+          <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-12">
             {videos.map((video, index) => (
-              <Card key={index} className="overflow-hidden group flex flex-col">
+              <Card key={index} className="overflow-hidden group flex flex-col shadow-md hover:shadow-lg transition-all duration-300">
                 <div
                   className="relative aspect-video w-full bg-secondary cursor-pointer"
                   onClick={() => playVideo(video.id)}
@@ -72,11 +72,11 @@ export function VideoSection() {
                   {videoPlaceholders[index] ? (
                     <Image
                       src={videoPlaceholders[index]!.imageUrl}
-                      alt={video.description}
+                      alt={videoPlaceholders[index]!.description}
                       data-ai-hint={videoPlaceholders[index]!.imageHint}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   ) : (
                     <div className="w-full h-full bg-muted flex items-center justify-center">
@@ -84,7 +84,7 @@ export function VideoSection() {
                     </div>
                   )}
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <PlayCircle className="h-12 w-12 text-white/80 transition-colors" />
+                    <PlayCircle className="h-16 w-16 text-white/80 transition-transform duration-300 group-hover:scale-110" />
                   </div>
                 </div>
                 <CardHeader className="flex-1">
@@ -98,7 +98,7 @@ export function VideoSection() {
 
       {activeVideoUrl && (
         <div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in-0"
             onClick={() => setActiveVideoUrl(null)}
         >
           <video
