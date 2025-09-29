@@ -22,11 +22,11 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
 import { pageContent } from '@/lib/data';
-import { Scheme, type Scheme as SchemeType } from '@/lib/types';
+import { type Scheme as SchemeType } from '@/lib/types';
 import { ArrowRight, GraduationCap, Landmark, Leaf, HeartHandshake } from 'lucide-react';
 import Link from 'next/link';
 
@@ -260,5 +260,3 @@ export default function EligibilityCheckerPage() {
     </div>
   );
 }
-
-    

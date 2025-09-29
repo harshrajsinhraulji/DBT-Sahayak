@@ -1,3 +1,4 @@
 {
+  "/eligibility-checker/page": "app/eligibility-checker/page.js",
   "/page": "app/page.js"
 }
