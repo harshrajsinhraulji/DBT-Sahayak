@@ -1,6 +1,18 @@
 
-import { IndiaMap } from '@/components/india-map';
+'use client';
+
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
+
+const IndiaMap = dynamic(() => import('@/components/india-map').then(mod => mod.IndiaMap), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[600px] flex items-center justify-center">
+      <Skeleton className="w-full h-full" />
+    </div>
+  ),
+});
 
 export default function DbtMapPage() {
   return (
