@@ -14,6 +14,11 @@ export const pageContent: Record<Language, LanguageContent> = {
         faq: "FAQ",
         contact: "Contact",
         about: "About Us",
+        resources: "Resources",
+        governance: "Governance",
+        aboutTeam: "About Team",
+        printKit: "Print Kit",
+        requestDrive: "Request a Drive"
       },
       login: "Login/Register"
     },
@@ -310,6 +315,12 @@ export const pageContent: Record<Language, LanguageContent> = {
     footer: {
       tagline: "An initiative by Team Code Technicians for Smart India Hackathon 2025.",
       credits: "Under the guidance of the Ministry of Social Justice & Empowerment.",
+      navigation: "Navigation",
+      resources: "Resources",
+      about: "About",
+      learnMore: "Learn About DBT",
+      github: "GitHub",
+      telegram: "Telegram"
     },
     languages: {
         en: "English",
@@ -329,6 +340,11 @@ export const pageContent: Record<Language, LanguageContent> = {
         faq: "अक्सर पूछे जाने वाले प्रश्न",
         contact: "संपर्क",
         about: "हमारे बारे में",
+        resources: "संसाधन",
+        governance: "शासन",
+        aboutTeam: "टीम के बारे में",
+        printKit: "प्रिंट करने योग्य किट",
+        requestDrive: "ड्राइव का अनुरोध करें"
       },
       login: "लॉगिन/रजिस्टर करें"
     },
@@ -396,7 +412,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         },
         {
           title: "मुख्यमंत्री युवा स्वावलंबन योजना (MYSY, गुजरात)",
-          description: "गुजरात के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करने हेतु राज्य स्तरीय योजना।",
+          description: "गुजरात के मेधाવી छात्रों के लिए उच्च शिक्षा प्राप्त करने हेतु राज्य स्तरीय योजना।",
           eligibility: "पाठ्यक्रम के अनुसार बदलता है। 10वीं/12वीं में विशिष्ट प्रतिशत और आय मानदंड की आवश्यकता है।",
           link: "https://mysy.guj.nic.in/",
         },
@@ -623,8 +639,14 @@ export const pageContent: Record<Language, LanguageContent> = {
       },
     },
     footer: {
-      tagline: "स्मार्ट इंडिया हैकथॉन 2025 के लिए टीम कोड टेक्नीशियन की एक पहल।",
+      tagline: "स्मार्ट इंडिया हैकथॉन २०२५ के लिए टीम कोड टेक्नीशियन की एक पहल।",
       credits: "सामाजिक न्याय और अधिकारिता मंत्रालय के मार्गदर्शन में।",
+      navigation: "नेविगेशन",
+      resources: "संसाधन",
+      about: "हमारे बारे में",
+      learnMore: "डीबीटी के बारे में जानें",
+      github: "गिटहब",
+      telegram: "टेलीग्राम"
     },
     languages: {
         en: "English",
@@ -644,6 +666,11 @@ export const pageContent: Record<Language, LanguageContent> = {
         faq: "વારંવાર પૂછાતા પ્રશ્નો",
         contact: "સંપર્ક",
         about: "અમારા વિશે",
+        resources: "સંસાધનો",
+        governance: "શાસન",
+        aboutTeam: "ટીમ વિશે",
+        printKit: "પ્રિન્ટ કીટ",
+        requestDrive: "ડ્રાઇવની વિનંતી કરો"
       },
       login: "લોગિન/રજીસ્ટર કરો"
     },
@@ -928,7 +955,7 @@ export const pageContent: Record<Language, LanguageContent> = {
             "આધાર સીડિંગ એક-વખતની પ્રક્રિયા છે અને તેને ક્યારેય તપાસવાની જરૂર નથી.",
           ],
         },
-        tip: "પ્રો ટિપ: શિષ્યવૃત્તિની મોસમ પહેલાં હંમેશા અધિકૃત યુઆઈડીએઆઈ વેબસાઇટ પર તમારી સીડिंग સ્થિતિ તપાસો!",
+        tip: "પ્રો ટિપ: શિષ્યવૃત્તિની મોસમ પહેલાં હંમેશા અધિકૃત યુઆઈડીએઆઈ વેબસાઇટ પર તમારી સીડિંગ સ્થિતિ તપાસો!",
       },
       instructions: {
         printButton: "પ્રિન્ટિંગ માટે કિટ તૈયાર કરો",
@@ -938,8 +965,14 @@ export const pageContent: Record<Language, LanguageContent> = {
       },
     },
     footer: {
-      tagline: "સ્માર્ટ ઇન્ડિયા હેકાથોન 2025 માટે ટીમ કોડ ટેકનિશિયન દ્વારા એક પહેલ.",
+      tagline: "સ્માર્ટ ઇન્ડિયા હેકાથોન ૨૦૨૫ માટે ટીમ કોડ ટેકનિશિયન દ્વારા એક પહેલ.",
       credits: "સામાજિક ન્યાય અને સશક્તિકરણ મંત્રાલયના માર્ગદર્શન હેઠળ.",
+      navigation: "નેવિગેશન",
+      resources: "સંસાધનો",
+      about: "અમારા વિશે",
+      learnMore: "ડીબીટી વિશે જાણો",
+      github: "ગિટહબ",
+      telegram: "ટેલિગ્રામ"
     },
     languages: {
         en: "English",

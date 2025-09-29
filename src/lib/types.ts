@@ -41,6 +41,11 @@ export type LanguageContent = {
       faq: string;
       contact: string;
       about: string;
+      resources: string;
+      governance: string;
+      aboutTeam: string;
+      printKit: string;
+      requestDrive: string;
     };
     login: string;
   };
@@ -164,6 +169,12 @@ subtitle: string;
   footer: {
     tagline: string;
     credits: string;
+    navigation: string;
+    resources: string;
+    about: string;
+    learnMore: string;
+    github: string;
+    telegram: string;
   };
   languages: {
     en: string;
