@@ -14,6 +14,7 @@ import { useLanguage } from "@/hooks/use-language";
 import { cn } from "@/lib/utils";
 import { PiggyBank, Tractor, Hammer, HandCoins, HeartPulse, GraduationCap, Home, HelpingHand, Sprout, ChevronDown } from "lucide-react";
 import { ReactNode, useState } from "react";
+import { WeatherWidget } from "../weather-widget";
 
 const iconMap: Record<string, ReactNode> = {
     Subsidies: <PiggyBank className="h-8 w-8" />,
@@ -57,6 +58,9 @@ export function AwarenessSection() {
         </div>
 
         <div className="mx-auto max-w-5xl py-12">
+            <div className="mb-8">
+                <WeatherWidget />
+            </div>
             <Accordion type="single" collapsible className="w-full space-y-4">
                 {awareness.categories.map((category, index) => {
                     const isExpanded = expandedCategories.includes(category.category);
@@ -114,5 +118,3 @@ export function AwarenessSection() {
     </section>
   );
 }
-
-    
