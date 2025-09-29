@@ -85,7 +85,8 @@ export default function IndiaMap() {
   };
 
   const handleLocationMouseOver = (event: React.MouseEvent<SVGPathElement>) => {
-    const mapStateName = event.currentTarget.attributes.name.value;
+    const mapStateName = event.currentTarget.getAttribute('name');
+    if (!mapStateName) return;
     const dataStateName = stateNameMapping[mapStateName];
     const stateInfo = performanceDataMap.get(dataStateName?.toUpperCase());
 
@@ -103,7 +104,8 @@ export default function IndiaMap() {
   };
 
   const handleLocationClick = (event: React.MouseEvent<SVGPathElement>) => {
-    const mapStateName = event.currentTarget.attributes.name.value;
+    const mapStateName = event.currentTarget.getAttribute('name');
+    if (!mapStateName) return;
     const dataStateName = stateNameMapping[mapStateName];
     const stateInfo = performanceDataMap.get(dataStateName?.toUpperCase());
     setStateData(stateInfo || null);
