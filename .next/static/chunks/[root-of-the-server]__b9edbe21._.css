@@ -621,16 +621,16 @@ body {
   display: none;
 }
 
+.aspect-\[4\/3\] {
+  aspect-ratio: 4 / 3;
+}
+
 .aspect-square {
   aspect-ratio: 1;
 }
 
 .aspect-video {
   aspect-ratio: 16 / 9;
-}
-
-.aspect-\[4\/3\] {
-  aspect-ratio: 4 / 3;
 }
 
 .h-10 {
@@ -733,6 +733,10 @@ body {
   max-height: 100vh;
 }
 
+.min-h-\[300px\] {
+  min-height: 300px;
+}
+
 .min-h-\[420px\] {
   min-height: 420px;
 }
@@ -741,16 +745,12 @@ body {
   min-height: 80px;
 }
 
-.min-h-screen {
-  min-height: 100vh;
-}
-
-.min-h-\[300px\] {
-  min-height: 300px;
-}
-
 .min-h-\[calc\(100vh-8rem\)\] {
   min-height: calc(100vh - 8rem);
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-10 {
@@ -841,10 +841,6 @@ body {
   width: 1px;
 }
 
-.w-\[240px\] {
-  width: 240px;
-}
-
 .w-auto {
   width: auto;
 }
@@ -923,6 +919,10 @@ body {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-\[80\%\] {
+  max-width: 80%;
 }
 
 .flex-1 {
@@ -1156,6 +1156,10 @@ body {
   gap: 2rem;
 }
 
+.gap-2\.5 {
+  gap: .625rem;
+}
+
 .gap-x-8 {
   column-gap: 2rem;
 }
@@ -1258,6 +1262,10 @@ body {
   white-space: nowrap;
 }
 
+.break-words {
+  overflow-wrap: break-word;
+}
+
 .rounded-\[inherit\] {
   border-radius: inherit;
 }
@@ -1314,6 +1322,10 @@ body {
   border-color: hsl(var(--accent));
 }
 
+.border-border {
+  border-color: hsl(var(--border));
+}
+
 .border-destructive {
   border-color: hsl(var(--destructive));
 }
@@ -1354,10 +1366,6 @@ body {
 
 .border-transparent {
   border-color: #0000;
-}
-
-.border-border {
-  border-color: hsl(var(--border));
 }
 
 .border-l-transparent {
@@ -2738,6 +2746,10 @@ body {
   background-color: rgb(20 83 45 / var(--tw-bg-opacity, 1));
 }
 
+.dark\:bg-green-900\/20:is(.dark *) {
+  background-color: #14532d33;
+}
+
 .dark\:bg-green-900\/50:is(.dark *) {
   background-color: #14532d80;
 }
@@ -2745,10 +2757,6 @@ body {
 .dark\:bg-red-900:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(127 29 29 / var(--tw-bg-opacity, 1));
-}
-
-.dark\:bg-green-900\/20:is(.dark *) {
-  background-color: #14532d33;
 }
 
 .dark\:text-green-300:is(.dark *) {

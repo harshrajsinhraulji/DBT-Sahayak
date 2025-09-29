@@ -51,16 +51,15 @@ export function Header() {
     e.preventDefault();
     setMobileMenuOpen(false);
 
-    if (href.startsWith('/') && !href.includes('#')) {
-        router.push(href);
+    // If the link is a hash link and we are on the homepage, scroll to it
+    if (href.startsWith('/#') && pathname === '/') {
+        const targetId = href.substring(href.indexOf('#') + 1);
+        const elem = document.getElementById(targetId);
+        elem?.scrollIntoView({ behavior: "smooth" });
     } else {
-        if (pathname !== '/') {
-            router.push(href);
-        } else {
-            const targetId = href.substring(href.indexOf('#') + 1);
-            const elem = document.getElementById(targetId);
-            elem?.scrollIntoView({ behavior: "smooth" });
-        }
+        // For all other cases (external pages, or hash links from other pages),
+        // just navigate to the href.
+        router.push(href);
     }
   };
   

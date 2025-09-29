@@ -3,7 +3,7 @@
 
 import { useLanguage } from "@/hooks/use-language";
 import { Logo } from "@/components/logo";
-import { Github, Send, Printer, Users, GanttChartSquare, BrainCircuit, Users2 } from "lucide-react";
+import { Github, Send, Printer, Users, GanttChartSquare, BrainCircuit, Users2, BookOpen, Search, GraduationCap, HelpCircle, Phone } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -29,10 +29,10 @@ export function Footer() {
           </div>
           <div className="grid gap-1">
              <h3 className="font-semibold text-foreground">Navigation</h3>
-             <Link href="/#education" className="text-muted-foreground hover:text-primary text-sm">Learn</Link>
-             <Link href="/#status" className="text-muted-foreground hover:text-primary text-sm">Check Status</Link>
-             <Link href="/#scholarships" className="text-muted-foreground hover:text-primary text-sm">Scholarships</Link>
-             <Link href="/#faq" className="text-muted-foreground hover:text-primary text-sm">FAQ</Link>
+             <Link href="/#education" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><BookOpen />{content.header.nav.education}</Link>
+             <Link href="/#status" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Search/>{content.header.nav.status}</Link>
+             <Link href="/#scholarships" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><GraduationCap/>{content.header.nav.scholarships}</Link>
+             <Link href="/#faq" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><HelpCircle/>{content.header.nav.faq}</Link>
           </div>
            <div className="grid gap-1">
              <h3 className="font-semibold text-foreground">Resources</h3>
@@ -44,7 +44,7 @@ export function Footer() {
            <div className="grid gap-1">
              <h3 className="font-semibold text-foreground">About</h3>
              <Link href="/about-team" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Users2 />About the Team</Link>
-             <Link href="/#contact" className="text-muted-foreground hover:text-primary text-sm">Contact Us</Link>
+             <Link href="/#contact" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Phone />Contact Us</Link>
           </div>
         </div>
          <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
