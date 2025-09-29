@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Skeleton } from '@/components/ui/skeleton';
 import { Legend } from '@/components/legend';
 import { useLanguage } from '@/hooks/use-language';
+import Link from 'next/link';
 
 const GoogleGeoChart = dynamic(() => import('@/components/google-geo-chart'), {
   ssr: false,
@@ -37,7 +38,12 @@ export default function DbtMapPage() {
             <Card className="lg:col-span-2 shadow-lg">
                 <CardHeader>
                     <CardTitle>India DBT Performance Geo Chart</CardTitle>
-                    <CardDescription>Hover over a state to see its performance score and category.</CardDescription>
+                    <CardDescription>
+                        Hover over a state to see its performance score and category. Data sourced from the official{' '}
+                        <Link href="https://dbtbharat.gov.in/ranking/state" target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                            DBT Bharat Portal
+                        </Link>.
+                    </CardDescription>
                 </CardHeader>
                 <CardContent className="flex items-center justify-center">
                     <GoogleGeoChart />

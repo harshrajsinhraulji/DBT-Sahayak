@@ -27,7 +27,7 @@ export default function GoogleGeoChart() {
     dbtPerformanceData.forEach(item => {
         const category = getCategory(item.Score);
         const tooltipContent = `
-            <div style="padding:10px; font-family: sans-serif;">
+            <div style="padding:10px; font-family: sans-serif; color: #333;">
                 <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${item.State}</div>
                 <div><strong>Rank:</strong> ${item.Rank}</div>
                 <div><strong>Score:</strong> ${item.Score}</div>
@@ -42,10 +42,10 @@ export default function GoogleGeoChart() {
     const opts = {
       region: 'IN',
       displayMode: 'regions',
-      colorAxis: { colors: ['#ef4444', '#facc15', '#fde047', '#22c55e'] },
+      colorAxis: {colors: ['#ef4444', '#fde047', '#a3e635', '#22c55e']}, // Red -> Yellow -> Light Green -> Dark Green
       resolution: 'provinces',
-      backgroundColor: resolvedTheme === 'dark' ? '#0f172a' : '#f8fafc',
-      datalessRegionColor: resolvedTheme === 'dark' ? '#334155' : '#e2e8f0',
+      backgroundColor: resolvedTheme === 'dark' ? '#020817' : '#ffffff',
+      datalessRegionColor: resolvedTheme === 'dark' ? '#1e293b' : '#f1f5f9',
       defaultColor: '#f5f5f5',
       width: '100%',
       height: 500,
@@ -61,8 +61,8 @@ export default function GoogleGeoChart() {
   useEffect(() => {
     if (isScriptLoaded && typeof google !== 'undefined' && google.load) {
       if (!apiKey) {
-        console.error("Google Maps API Key is missing. Please add it to your .env file.");
-        return;
+        console.error("Google Maps API Key is missing. The map may not render correctly.");
+        // Don't return, allow it to try and render without the key to show the error.
       }
       google.charts.load('current', {
         'packages': ['geochart'],
@@ -79,7 +79,6 @@ export default function GoogleGeoChart() {
   }, [resolvedTheme, isChartDrawn]);
 
   useEffect(() => {
-    // Redraw chart on window resize
     const handleResize = () => {
         if(isChartDrawn) drawChart();
     };
@@ -97,14 +96,14 @@ export default function GoogleGeoChart() {
       />
       {!apiKey && (
         <div className="text-destructive text-center p-4 border border-destructive rounded-md">
-            <strong>Warning:</strong> `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is not set. The map may not render correctly.
+            <strong>Warning:</strong> `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is not set. The map will likely fail to load.
         </div>
       )}
       <div id="visualization" style={{ width: '100%', maxWidth: '800px', position: 'relative' }}>
         {!isChartDrawn && (
           <div className="absolute inset-0 flex items-center justify-center bg-background/50">
             <LoaderCircle className="h-12 w-12 animate-spin text-primary" />
-            <p className="ml-4">Loading Map...</p>
+            <p className="ml-4">Loading Map Data...</p>
           </div>
         )}
       </div>

@@ -1,8 +1,7 @@
 (globalThis.TURBOPACK_CHUNK_LISTS = globalThis.TURBOPACK_CHUNK_LISTS || []).push({
     script: typeof document === "object" ? document.currentScript : undefined,
     chunks: [
-  "static/chunks/src_components_google-geo-chart_tsx_410a7ef0._.js",
-  "static/chunks/_0722cd35._.js"
+  "static/chunks/_be634150._.js"
 ],
     source: "dynamic"
 });

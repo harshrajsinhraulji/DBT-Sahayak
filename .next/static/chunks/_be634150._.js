@@ -19,6 +19,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/script.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__LoaderCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as LoaderCircle>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$dbt$2d$performance$2d$data$2e$json__$28$json$29$__ = __turbopack_context__.i("[project]/src/lib/dbt-performance-data.json (json)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$themes$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next-themes/dist/index.mjs [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -26,52 +27,81 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-// State name mapping to Google GeoChart's expected format
-const stateNameMapping = {
-    "ANDAMAN AND NICOBAR ISLANDS": "Andaman and Nicobar Islands",
-    "ANDHRA PRADESH": "Andhra Pradesh",
-    "ARUNACHAL PRADESH": "Arunachal Pradesh",
-    "ASSAM": "Assam",
-    "BIHAR": "Bihar",
-    "CHANDIGARH": "Chandigarh",
-    "CHHATTISGARH": "Chhattisgarh",
-    "DADRA AND NAGAR HAVELI": "Dadra and Nagar Haveli",
-    "DAMAN AND DIU": "Daman and Diu",
-    "DELHI": "Delhi",
-    "GOA": "Goa",
-    "GUJARAT": "Gujarat",
-    "HARYANA": "Haryana",
-    "HIMACHAL PRADESH": "Himachal Pradesh",
-    "JAMMU AND KASHMIR": "Jammu and Kashmir",
-    "JHARKHAND": "Jharkhand",
-    "KARNATAKA": "Karnataka",
-    "KERALA": "Kerala",
-    "LADAKH": "Ladakh",
-    "LAKSHADWEEP": "Lakshadweep",
-    "MADHYA PRADESH": "Madhya Pradesh",
-    "MAHARASHTRA": "Maharashtra",
-    "MANIPUR": "Manipur",
-    "MEGHALAYA": "Meghalaya",
-    "MIZORAM": "Mizoram",
-    "NAGALAND": "Nagaland",
-    "ODISHA": "Odisha",
-    "PUDUCHERRY": "Puducherry",
-    "PUNJAB": "Punjab",
-    "RAJASTHAN": "Rajasthan",
-    "SIKKIM": "Sikkim",
-    "TAMIL NADU": "Tamil Nadu",
-    "TELANGANA": "Telangana",
-    "THE DADRA AND NAGAR HAVELI AND DAMAN AND DIU": "Dadra and Nagar Haveli and Daman and Diu",
-    "TRIPURA": "Tripura",
-    "UTTAR PRADESH": "Uttar Pradesh",
-    "UTTARAKHAND": "Uttarakhand",
-    "WEST BENGAL": "West Bengal"
+;
+const getCategory = (score)=>{
+    if (score >= 80) return 'Excellent';
+    if (score >= 60) return 'Good';
+    if (score >= 40) return 'Moderate';
+    return 'Needs Improvement';
 };
 function GoogleGeoChart() {
     _s();
     const [isScriptLoaded, setIsScriptLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isChartDrawn, setIsChartDrawn] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const { resolvedTheme } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$themes$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"])();
     const apiKey = ("TURBOPACK compile-time value", "AIzaSyCUS8VinV2EYszMJObC4Hy2htmHV6SY8_w");
+    const drawChart = ()=>{
+        if (typeof google === 'undefined' || !google.visualization) return;
+        const dataArray = [
+            [
+                'State',
+                'Score',
+                {
+                    role: 'tooltip',
+                    type: 'string',
+                    p: {
+                        html: true
+                    }
+                }
+            ]
+        ];
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$dbt$2d$performance$2d$data$2e$json__$28$json$29$__["default"].forEach((item)=>{
+            const category = getCategory(item.Score);
+            const tooltipContent = `
+            <div style="padding:10px; font-family: sans-serif;">
+                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${item.State}</div>
+                <div><strong>Rank:</strong> ${item.Rank}</div>
+                <div><strong>Score:</strong> ${item.Score}</div>
+                <div><strong>Category:</strong> ${category}</div>
+            </div>
+        `;
+            dataArray.push([
+                item.State,
+                item.Score,
+                tooltipContent
+            ]);
+        });
+        const data = google.visualization.arrayToDataTable(dataArray);
+        const opts = {
+            region: 'IN',
+            displayMode: 'regions',
+            colorAxis: {
+                colors: [
+                    '#ef4444',
+                    '#facc15',
+                    '#fde047',
+                    '#22c55e'
+                ]
+            },
+            resolution: 'provinces',
+            backgroundColor: resolvedTheme === 'dark' ? '#0f172a' : '#f8fafc',
+            datalessRegionColor: resolvedTheme === 'dark' ? '#334155' : '#e2e8f0',
+            defaultColor: '#f5f5f5',
+            width: '100%',
+            height: 500,
+            tooltip: {
+                isHtml: true,
+                textStyle: {
+                    fontName: 'sans-serif',
+                    fontSize: 14
+                }
+            },
+            legend: 'none'
+        };
+        const geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
+        geochart.draw(data, opts);
+        setIsChartDrawn(true);
+    };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "GoogleGeoChart.useEffect": ()=>{
             if (isScriptLoaded && typeof google !== 'undefined' && google.load) {
@@ -84,58 +114,39 @@ function GoogleGeoChart() {
                     ],
                     'mapsApiKey': apiKey
                 });
-                google.charts.setOnLoadCallback(drawVisualization);
+                google.charts.setOnLoadCallback(drawChart);
             }
         }
     }["GoogleGeoChart.useEffect"], [
         isScriptLoaded,
         apiKey
     ]);
-    function drawVisualization() {
-        const dataArray = [
-            [
-                'State',
-                'DBT Score'
-            ]
-        ];
-        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$dbt$2d$performance$2d$data$2e$json__$28$json$29$__["default"].forEach((item)=>{
-            const stateName = stateNameMapping[item.State.toUpperCase()];
-            if (stateName) {
-                dataArray.push([
-                    stateName,
-                    item.Score
-                ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "GoogleGeoChart.useEffect": ()=>{
+            if (isChartDrawn) {
+                drawChart();
             }
-        });
-        const data = google.visualization.arrayToDataTable(dataArray);
-        const opts = {
-            region: 'IN',
-            displayMode: 'regions',
-            colorAxis: {
-                colors: [
-                    '#ef4444',
-                    '#facc15',
-                    '#22c55e'
-                ]
-            },
-            resolution: 'provinces',
-            backgroundColor: 'hsl(var(--background))',
-            datalessRegionColor: '#333333',
-            defaultColor: '#e5e7eb',
-            width: '100%',
-            height: 500,
-            tooltip: {
-                textStyle: {
-                    fontName: 'sans-serif',
-                    fontSize: 14
+        }
+    }["GoogleGeoChart.useEffect"], [
+        resolvedTheme,
+        isChartDrawn
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "GoogleGeoChart.useEffect": ()=>{
+            // Redraw chart on window resize
+            const handleResize = {
+                "GoogleGeoChart.useEffect.handleResize": ()=>{
+                    if (isChartDrawn) drawChart();
                 }
-            },
-            legend: 'none'
-        };
-        const geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
-        geochart.draw(data, opts);
-        setIsChartDrawn(true);
-    }
+            }["GoogleGeoChart.useEffect.handleResize"];
+            window.addEventListener('resize', handleResize);
+            return ({
+                "GoogleGeoChart.useEffect": ()=>window.removeEventListener('resize', handleResize)
+            })["GoogleGeoChart.useEffect"];
+        }
+    }["GoogleGeoChart.useEffect"], [
+        isChartDrawn
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -144,7 +155,7 @@ function GoogleGeoChart() {
                 onLoad: ()=>setIsScriptLoaded(true)
             }, void 0, false, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 102,
+                lineNumber: 93,
                 columnNumber: 7
             }, this),
             !apiKey && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -154,14 +165,14 @@ function GoogleGeoChart() {
                         children: "Warning:"
                     }, void 0, false, {
                         fileName: "[project]/src/components/google-geo-chart.tsx",
-                        lineNumber: 109,
+                        lineNumber: 100,
                         columnNumber: 13
                     }, this),
                     " `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is not set. The map may not render correctly."
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 108,
+                lineNumber: 99,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -178,7 +189,7 @@ function GoogleGeoChart() {
                             className: "h-12 w-12 animate-spin text-primary"
                         }, void 0, false, {
                             fileName: "[project]/src/components/google-geo-chart.tsx",
-                            lineNumber: 115,
+                            lineNumber: 106,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -186,24 +197,28 @@ function GoogleGeoChart() {
                             children: "Loading Map..."
                         }, void 0, false, {
                             fileName: "[project]/src/components/google-geo-chart.tsx",
-                            lineNumber: 116,
+                            lineNumber: 107,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/google-geo-chart.tsx",
-                    lineNumber: 114,
+                    lineNumber: 105,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 112,
+                lineNumber: 103,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true);
 }
-_s(GoogleGeoChart, "SAt8CfCVOhCUgKMM0ZX88zQX6K8=");
+_s(GoogleGeoChart, "RaP5vsjHqrWkSJ0p+A0UoERyy/Y=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$themes$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"]
+    ];
+});
 _c = GoogleGeoChart;
 var _c;
 __turbopack_context__.k.register(_c, "GoogleGeoChart");
