@@ -25,7 +25,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-// State name mapping to match GeoChart's expectations
+// State name mapping to Google GeoChart's expected format
 const stateNameMapping = {
     "ANDAMAN AND NICOBAR ISLANDS": "Andaman and Nicobar Islands",
     "ANDHRA PRADESH": "Andhra Pradesh",

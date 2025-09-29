@@ -51,13 +51,21 @@ const stateNameMapping: { [key: string]: string } = {
 export default function GoogleGeoChart() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const [isChartDrawn, setIsChartDrawn] = useState(false);
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
   useEffect(() => {
     if (isScriptLoaded && typeof google !== 'undefined' && google.load) {
-      google.charts.load('current', { 'packages': ['geochart'] });
+      if (!apiKey) {
+        console.error("Google Maps API Key is missing. Please add it to your .env file.");
+        return;
+      }
+      google.charts.load('current', {
+        'packages': ['geochart'],
+        'mapsApiKey': apiKey
+      });
       google.charts.setOnLoadCallback(drawVisualization);
     }
-  }, [isScriptLoaded]);
+  }, [isScriptLoaded, apiKey]);
 
   function drawVisualization() {
     const dataArray = [['State', 'DBT Score']];
@@ -75,7 +83,7 @@ export default function GoogleGeoChart() {
       displayMode: 'regions',
       colorAxis: { colors: ['#ef4444', '#facc15', '#22c55e'] }, // Red -> Yellow -> Green
       resolution: 'provinces',
-      backgroundColor: 'black',
+      backgroundColor: 'hsl(var(--background))',
       datalessRegionColor: '#333333',
       defaultColor: '#e5e7eb',
       width: '100%',
@@ -96,6 +104,11 @@ export default function GoogleGeoChart() {
         strategy="afterInteractive"
         onLoad={() => setIsScriptLoaded(true)}
       />
+      {!apiKey && (
+        <div className="text-destructive text-center p-4 border border-destructive rounded-md">
+            <strong>Warning:</strong> `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is not set. The map may not render correctly.
+        </div>
+      )}
       <div id="visualization" style={{ width: '100%', maxWidth: '800px', position: 'relative' }}>
         {!isChartDrawn && (
           <div className="absolute inset-0 flex items-center justify-center bg-background/50">
