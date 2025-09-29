@@ -1,123 +1,186 @@
 
 'use client';
 
-import React, { useState, memo } from 'react';
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  ZoomableGroup,
-} from 'react-simple-maps';
-import { scaleQuantile } from 'd3-scale';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import performanceData from '@/lib/dbt-performance-data.json';
-import INDIA_TOPO_JSON from '@/lib/india-states.json';
+import React, { useEffect, useRef, useState } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import { Button } from "./ui/button";
 
-const COLOR_RANGE = ['#ff4d4d', '#ffdb4d', '#4dff4d'];
+// Dataset is now imported from the JSON file
+import dbtData from "@/lib/dbt-performance-data.json";
 
 interface PerformanceData {
-    Rank: number;
-    State: string;
-    Score: number;
+  Rank: number;
+  State: string;
+  Score: number;
 }
 
-const dataMap = new Map<string, PerformanceData>();
-performanceData.forEach(d => dataMap.set(d.State.toUpperCase(), d));
+const DBTMap = () => {
+  const mapRef = useRef<L.Map | null>(null);
+  const geojsonLayerRef = useRef<L.GeoJSON | null>(null);
+  const [selectedState, setSelectedState] = useState<{ name: string; data: PerformanceData | null } | null>(null);
 
-const MapChart = ({ setTooltipContent }: { setTooltipContent: React.Dispatch<React.SetStateAction<string>> }) => {
-  const colorScale = scaleQuantile<string>()
-    .domain(performanceData.map(d => d.Score))
-    .range(COLOR_RANGE);
+  // build lookup map
+  const dataMap: { [key: string]: PerformanceData } = {};
+  dbtData.forEach((r) => {
+    dataMap[normalizeName(r.State)] = r as PerformanceData;
+  });
+
+  function normalizeName(s: string | null | undefined) {
+    if (!s && s !== 0) return "";
+    return String(s)
+      .trim()
+      .toUpperCase()
+      .replace(/\s+/g, " ")
+      .replace(/&/g, " AND ")
+      .replace(/^THE\s+/, "")
+      .replace(/[,\.]/g, "")
+      .replace(/\sAND\sTHE\s/, " AND THE ")
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "");
+  }
+
+  function getColor(score: number | null | undefined) {
+    if (score === null || score === undefined || isNaN(score)) return "#e6e6e6"; // grey for no data
+    if (score > 80) return "#16a34a"; // green
+    if (score > 50) return "#f59e0b"; // yellow/orange
+    return "#ef4444"; // red
+  }
+
+  function styleFeature(feature: any) {
+    const name = normalizeName(feature.properties.st_nm);
+    const row = dataMap[name];
+    const score = row ? row.Score : null;
+    return {
+      fillColor: getColor(score),
+      weight: 1,
+      opacity: 1,
+      color: "hsl(var(--background))",
+      fillOpacity: 0.85,
+    };
+  }
+
+  useEffect(() => {
+    if (mapRef.current) return; // already initialized
+
+    mapRef.current = L.map("dbt-map", { zoomControl: true, minZoom: 4, maxZoom: 7 }).setView([22.5, 82], 4.5);
+
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      maxZoom: 12,
+    }).addTo(mapRef.current);
+
+    const info = L.control({ position: "topright" });
+    info.onAdd = function () {
+      this._div = L.DomUtil.create("div", "dbt-info");
+      this.update();
+      return this._div;
+    };
+    info.update = function (props?: { displayName: string }) {
+      if (!props) {
+        this._div.innerHTML = `<div class="font-bold">DBT Performance</div><div class="text-xs mt-1.5">Hover a state to see Rank & Score</div>`;
+      } else {
+        const name = props.displayName;
+        const row = dataMap[normalizeName(name)];
+        this._div.innerHTML = `<div class="font-bold">${name}</div><div class="text-xs mt-1.5">Rank: <strong>${row ? row.Rank : "N/A"}</strong></div><div class="text-xs">Score: <strong>${row ? row.Score + "%" : "No data"}</strong></div>`;
+      }
+    };
+    info.addTo(mapRef.current);
+
+    const legend = L.control({ position: "bottomright" });
+    legend.onAdd = function () {
+      const div = L.DomUtil.create("div", "dbt-legend");
+      div.innerHTML = `
+        <div class="font-bold mb-1.5">Score Legend</div>
+        <div class="flex gap-2 items-center"><span class="bg-green-600 w-4 h-3 inline-block rounded-sm"></span><span>> 80</span></div>
+        <div class="flex gap-2 items-center mt-1.5"><span class="bg-yellow-500 w-4 h-3 inline-block rounded-sm"></span><span>51 - 80</span></div>
+        <div class="flex gap-2 items-center mt-1.5"><span class="bg-red-600 w-4 h-3 inline-block rounded-sm"></span><span><= 50</span></div>
+      `;
+      return div;
+    };
+    legend.addTo(mapRef.current);
+
+    fetch("/india_states.geojson")
+      .then((r) => {
+        if (!r.ok) throw new Error("Cannot load geojson");
+        return r.json();
+      })
+      .then((geo) => {
+        geojsonLayerRef.current = L.geoJson(geo, {
+          style: styleFeature,
+          onEachFeature: function (feature, layer) {
+            const displayName = feature.properties.st_nm || "Unknown";
+            const norm = normalizeName(displayName);
+            const row = dataMap[norm];
+            const rank = row ? row.Rank : "N/A";
+            const score = row ? row.Score + "%" : "No data";
+            layer.bindTooltip(`<strong>${displayName}</strong><br/>Rank: ${rank}<br/>Score: ${score}`, { sticky: true, className: 'info-tooltip' });
+
+            layer.on({
+              mouseover: (e) => {
+                const targetLayer = e.target;
+                targetLayer.setStyle({ weight: 2.5, color: "#111827", fillOpacity: 0.95 });
+                if (!L.Browser.ie) targetLayer.bringToFront();
+                info.update({ displayName });
+              },
+              mouseout: (e) => {
+                geojsonLayerRef.current?.resetStyle(e.target);
+                info.update();
+              },
+              click: () => {
+                const rowData = dataMap[norm];
+                setSelectedState({ name: displayName, data: rowData || null });
+              },
+            });
+          },
+        }).addTo(mapRef.current!);
+
+        if(mapRef.current) {
+            mapRef.current.fitBounds(geojsonLayerRef.current.getBounds(), { padding: [20, 20] });
+        }
+      })
+      .catch((err) => {
+        console.error("GeoJSON loading error:", err);
+        if(mapRef.current) {
+            const marker = L.marker([22.5, 82]).addTo(mapRef.current);
+            marker.bindPopup("Error: Could not load map data. Please check the console.").openPopup();
+        }
+      });
+
+    return () => {
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+    };
+  }, []);
 
   return (
-    <ComposableMap
-      projection="geoMercator"
-      projectionConfig={{
-        scale: 900,
-        center: [82, 22],
-      }}
-      style={{ width: '100%', height: 'auto' }}
-      data-tip=""
-    >
-      <ZoomableGroup>
-        <Geographies geography={INDIA_TOPO_JSON}>
-          {({ geographies }) =>
-            geographies.map(geo => {
-              const stateName = geo.properties.ST_NM.toUpperCase();
-              const d = dataMap.get(stateName);
-              return (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  onMouseEnter={() => {
-                    const { ST_NM } = geo.properties;
-                    const performance = dataMap.get(ST_NM.toUpperCase());
-                    setTooltipContent(
-                      performance
-                        ? `${ST_NM}: Rank ${performance.Rank} (Score: ${performance.Score})`
-                        : `${ST_NM}: No data`
-                    );
-                  }}
-                  onMouseLeave={() => {
-                    setTooltipContent('');
-                  }}
-                  style={{
-                    default: {
-                      fill: d ? colorScale(d.Score) : '#EEE',
-                      outline: 'none',
-                      stroke: '#FFF',
-                      strokeWidth: 0.5,
-                    },
-                    hover: {
-                      fill: d ? colorScale(d.Score) : '#EEE',
-                      outline: 'none',
-                      stroke: '#333',
-                      strokeWidth: 2,
-                    },
-                    pressed: {
-                      fill: '#333',
-                      outline: 'none',
-                    },
-                  }}
-                />
-              );
-            })
-          }
-        </Geographies>
-      </ZoomableGroup>
-    </ComposableMap>
+    <div>
+      <div id="dbt-map" className="h-[75vh] w-full rounded-lg shadow-md z-0" aria-label="DBT performance map" />
+
+      <Dialog open={!!selectedState} onOpenChange={(isOpen) => !isOpen && setSelectedState(null)}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="font-headline text-2xl">{selectedState?.name}</DialogTitle>
+            <DialogDescription>
+              DBT Performance Details
+            </DialogDescription>
+          </DialogHeader>
+          <div className="py-4">
+             <div className="text-sm text-muted-foreground">Rank</div>
+             <div className="text-3xl font-bold text-primary">{selectedState?.data ? selectedState.data.Rank : "N/A"}</div>
+             <div className="text-sm text-muted-foreground mt-4">Score</div>
+             <div className="text-3xl font-bold text-primary">{selectedState?.data ? selectedState.data.Score + "%" : "No data"}</div>
+             <div className="mt-6 text-muted-foreground text-sm">
+                <p><strong className="text-foreground">Why it matters:</strong> States with higher Aadhaar seeding and DBT efficiency reach beneficiaries faster and reduce leakages.</p>
+             </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </div>
   );
 };
 
-const MemoizedMapChart = memo(MapChart);
-
-const ColorLegend = () => (
-  <div className="flex items-center justify-center p-4">
-      <span className="font-semibold text-sm mr-2">Low (0)</span>
-      <div className="flex h-6 w-64 rounded-md overflow-hidden border">
-          <div style={{ flex: 1, background: 'linear-gradient(to right, #ff4d4d, #ffdb4d, #4dff4d)' }} />
-      </div>
-      <span className="font-semibold text-sm ml-2">High (100)</span>
-  </div>
-)
-
-export function IndiaMap() {
-  const [content, setContent] = useState('');
-  return (
-    <div className="relative w-full border rounded-lg p-2 bg-card">
-      <TooltipProvider>
-        <Tooltip open={!!content}>
-          <TooltipTrigger asChild>
-            <div>
-              <MemoizedMapChart setTooltipContent={setContent} />
-            </div>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>{content}</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-       <ColorLegend />
-    </div>
-  );
-}
+export default DBTMap;

@@ -42,6 +42,7 @@
     "embla-carousel-react": "^8.6.0",
     "firebase": "^11.9.1",
     "genkit": "^1.0.0",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.475.0",
     "next": "15.3.3",
     "next-themes": "^0.3.0",
@@ -59,6 +60,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -71,4 +73,3 @@
     "typescript": "^5"
   }
 }
-

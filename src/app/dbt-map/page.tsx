@@ -5,10 +5,11 @@ import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 
-const IndiaMap = dynamic(() => import('@/components/india-map').then(mod => mod.IndiaMap), {
+// Dynamically import the DBTMap component and disable server-side rendering
+const DBTMap = dynamic(() => import('@/components/india-map'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-[600px] flex items-center justify-center">
+    <div className="w-full h-[75vh] flex items-center justify-center">
       <Skeleton className="w-full h-full" />
     </div>
   ),
@@ -34,7 +35,8 @@ export default function DbtMapPage() {
             <CardDescription>Hover over a state to see its rank and score. Use your mouse wheel or trackpad to zoom and pan.</CardDescription>
           </CardHeader>
           <CardContent>
-            <IndiaMap />
+            {/* The dynamically imported map will render here */}
+            <DBTMap />
           </CardContent>
         </Card>
       </div>
