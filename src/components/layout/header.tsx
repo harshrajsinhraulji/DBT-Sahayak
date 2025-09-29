@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, User, LogOut, LayoutDashboard, Info, BookOpen, Search, GraduationCap, Users, HelpCircle, Phone, GanttChartSquare, Printer, BrainCircuit, FileCheck, Users2 } from "lucide-react";
+import { Menu, User, LogOut, LayoutDashboard, Info, BookOpen, Search, GraduationCap, Users, HelpCircle, Phone, GanttChartSquare, Printer, BrainCircuit, FileCheck, Users2, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -37,16 +37,17 @@ export function Header() {
 
   const navItems = [
     { href: "/#education", label: content.header.nav.education, icon: <BookOpen /> },
+    { href: "/#videos", label: content.header.nav.videos, icon: <Video /> },
     { href: "/#status", label: content.header.nav.status, icon: <Search /> },
     { href: "/#scholarships", label: content.header.nav.scholarships, icon: <GraduationCap /> },
-    { href: "/resources", label: 'Resources', icon: <BrainCircuit /> },
-    { href: "/governance", label: 'Governance', icon: <GanttChartSquare /> },
     { href: "/#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
     { href: "/#contact", label: content.header.nav.contact, icon: <Phone /> },
   ];
   
   const actionItems = [
       { href: "/form-checker", label: 'AI Form Check', icon: <FileCheck /> },
+      { href: "/governance", label: 'Governance', icon: <GanttChartSquare /> },
+      { href: "/resources", label: 'Resources', icon: <BrainCircuit /> },
       { href: "/about-team", label: 'About Team', icon: <Users2 /> },
   ];
 
@@ -54,14 +55,11 @@ export function Header() {
     e.preventDefault();
     setMobileMenuOpen(false);
 
-    // If the link is a hash link and we are on the homepage, scroll to it
     if (href.startsWith('/#') && pathname === '/') {
         const targetId = href.substring(href.indexOf('#') + 1);
         const elem = document.getElementById(targetId);
         elem?.scrollIntoView({ behavior: "smooth" });
     } else {
-        // For all other cases (external pages, or hash links from other pages),
-        // just navigate to the href.
         router.push(href);
     }
   };
