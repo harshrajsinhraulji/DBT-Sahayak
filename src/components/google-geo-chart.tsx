@@ -30,7 +30,7 @@ export default function GoogleGeoChart() {
   const drawChart = () => {
     if (typeof google === 'undefined' || !google.visualization) return;
 
-    const dataArray = [['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }]];
+    const dataArray = [['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }, 'Style']];
     dbtPerformanceData.forEach(item => {
         const category = getCategory(item.Score);
         const titleCaseState = toTitleCase(item.State);
@@ -42,8 +42,7 @@ export default function GoogleGeoChart() {
                 <div><strong>Category:</strong> ${category}</div>
             </div>
         `;
-        // Use the unambiguous StateCode for mapping, and the full name for the tooltip
-        dataArray.push([item.StateCode, item.Score, tooltipContent]);
+        dataArray.push([item.StateCode, item.Score, tooltipContent, item.Score]);
     });
 
     const data = google.visualization.arrayToDataTable(dataArray);
@@ -51,15 +50,24 @@ export default function GoogleGeoChart() {
     const opts = {
       region: 'IN',
       displayMode: 'regions',
-      colorAxis: {colors: ['#ef4444', '#fde047', '#22c55e']}, // Red -> Yellow -> Green
+      colorAxis: {minValue: 0,  colors: ['#ef4444', '#facc15', '#22c55e']}, // Red -> Yellow -> Green
       resolution: 'provinces',
       backgroundColor: resolvedTheme === 'dark' ? '#020817' : '#ffffff',
       datalessRegionColor: resolvedTheme === 'dark' ? '#1e293b' : '#f1f5f9',
       defaultColor: '#f5f5f5',
       width: '100%',
       height: 500,
-      tooltip: { isHtml: true, textStyle: { fontName: 'sans-serif', fontSize: 14 } },
+      tooltip: { isHtml: true, textStyle: { fontName: 'sans-serif', fontSize: 14 }, trigger: 'focus' },
       legend: 'none',
+      // This is the series that will act as a transparent overlay to remove stripes
+      series: {
+        '1': {
+          // Point to the 4th column ("Style")
+          'colorAxis': {
+            'colors': ['#FFFFFF00', '#FFFFFF00']
+          }
+        }
+      }
     };
 
     const geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
@@ -98,6 +106,7 @@ export default function GoogleGeoChart() {
   return (
     <>
       <Script
+        type="text/javascript"
         src="https://www.gstatic.com/charts/loader.js"
         strategy="afterInteractive"
         onLoad={() => setIsScriptLoaded(true)}
