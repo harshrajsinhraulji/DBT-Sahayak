@@ -19,16 +19,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
-import { ArrowRight, Info } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 import { useAuth } from "@/hooks/use-auth";
 
 export function StatusCheckerSection() {
@@ -37,12 +30,9 @@ export function StatusCheckerSection() {
   const { user } = useAuth();
   const [showLoginPrompt, setShowLoginPrompt] = useState(false);
   const [showStatusPrompt, setShowStatusPrompt] = useState(false);
-  const [showGuidance, setShowGuidance] = useState(false);
 
   const handleCheckStatusClick = () => {
-    // Directly open the portal for all users
     window.open("https://myaadhaar.uidai.gov.in/bank-seeding-status", "_blank");
-    // Then show the prompt to ask for their status
     setShowStatusPrompt(true);
   };
 
@@ -52,7 +42,6 @@ export function StatusCheckerSection() {
       if (user) {
         router.push('/dashboard');
       } else {
-        // If not logged in, prompt them to log in to get guidance
         setShowLoginPrompt(true);
       }
     }
@@ -61,15 +50,6 @@ export function StatusCheckerSection() {
   const handleLoginForGuidance = () => {
     setShowLoginPrompt(false);
     router.push("/login?redirect=/dashboard");
-  };
-  
-  const handleStartJourney = () => {
-    setShowStatusPrompt(false);
-    if (user) {
-        router.push('/dashboard');
-    } else {
-        setShowLoginPrompt(true);
-    }
   };
 
   return (
@@ -103,17 +83,28 @@ export function StatusCheckerSection() {
                     </li>
                   ))}
                 </ol>
+                 {showStatusPrompt ? (
+                    <div className="mt-6 p-4 bg-primary/10 rounded-lg text-center">
+                        <h4 className="font-bold text-primary">What was your status?</h4>
+                        <p className="text-sm text-muted-foreground mt-2 mb-4">After checking the portal, let us know what you found. This helps us guide you better.</p>
+                        <div className="flex justify-center gap-4">
+                            <Button variant="destructive" onClick={() => handleStatusResponse(false)}>It's NOT Enabled</Button>
+                            <Button className="bg-green-600 hover:bg-green-700" onClick={() => handleStatusResponse(true)}>Yes, it IS Enabled!</Button>
+                        </div>
+                    </div>
+                ) : (
+                     <div className="mt-6">
+                        <Button
+                        onClick={handleCheckStatusClick}
+                        size="lg"
+                        className="w-full bg-accent hover:bg-accent/90"
+                        >
+                        {content.statusChecker.cta} <ArrowRight className="ml-2 h-5 w-5" />
+                        </Button>
+                    </div>
+                )}
               </CardContent>
             </Card>
-          </div>
-          <div className="mt-6">
-            <Button
-              onClick={handleCheckStatusClick}
-              size="lg"
-              className="bg-accent hover:bg-accent/90"
-            >
-              {content.statusChecker.cta} <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
           </div>
         </div>
       </section>
@@ -135,28 +126,6 @@ export function StatusCheckerSection() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-
-      {/* Status Check Prompt Dialog */}
-      <AlertDialog open={showStatusPrompt} onOpenChange={setShowStatusPrompt}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Is Your Account DBT Enabled?</AlertDialogTitle>
-            <AlertDialogDescription>
-              After checking the UIDAI portal, what was your status? This helps us provide better guidance.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-             <AlertDialogAction onClick={() => handleStatusResponse(false)}>
-              No, it's NOT enabled
-            </AlertDialogAction>
-            <AlertDialogAction onClick={() => handleStatusResponse(true)}>
-              Yes, it IS enabled!
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
     </>
   );
 }
-
-    

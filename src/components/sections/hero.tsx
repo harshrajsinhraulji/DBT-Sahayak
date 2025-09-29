@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/hooks/use-language";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ArrowDown, ArrowRight, FileCheck, GraduationCap, Search } from "lucide-react";
+import { FileCheck, GraduationCap, Search } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import Link from "next/link";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
@@ -14,14 +14,6 @@ import Autoplay from "embla-carousel-autoplay";
 export function HeroSection() {
   const { content } = useLanguage();
   const heroBg = PlaceHolderImages.find((p) => p.id === "hero-background");
-  
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    const elem = document.getElementById('education');
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
   
   const heroCards = [
     {
@@ -60,6 +52,8 @@ export function HeroSection() {
           fill
           className="object-cover"
           priority
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN8WQ8AAn8B2p5IppEAAAAASUVORK5CYII="
         />
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-primary/60 to-accent/60" />

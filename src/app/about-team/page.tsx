@@ -84,7 +84,7 @@ export default function AboutTeamPage() {
                 </div>
                 <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-none">
                    {teamMembers.map((member, i) => (
-                       <Dialog key={i}>
+                       <Dialog key={member.name}>
                            <TooltipProvider>
                                <Tooltip>
                                    <TooltipTrigger asChild>

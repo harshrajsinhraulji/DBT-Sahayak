@@ -1325,7 +1325,7 @@ function FaqSection() {
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.v(JSON.parse("{\"placeholderImages\":[{\"id\":\"hero-background\",\"description\":\"Abstract blue and purple shapes\",\"imageUrl\":\"https://images.unsplash.com/photo-1620121692029-d088224ddc74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzU4OTAxMjMzfDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"abstract background\"},{\"id\":\"infographic-abstract\",\"description\":\"A stylish abstract data visualization graphic\",\"imageUrl\":\"https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkYXRhJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzU5NjcwOTMxfDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"data abstract\"},{\"id\":\"video-placeholder-1\",\"description\":\"Placeholder for 'What is DBT?' video\",\"imageUrl\":\"https://images.unsplash.com/photo-1687197180710-b2b9484a3c5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxibHVlJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzU4ODk5MzA0fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"blue abstract\"},{\"id\":\"video-placeholder-2\",\"description\":\"Placeholder for 'Linking vs Seeding' video\",\"imageUrl\":\"https://images.unsplash.com/photo-1593781243220-51578354c57d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxncmVlbiUyMGFic3RyYWN0fGVufDB8fHx8MTc1ODg5MjU3MHww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"green abstract\"},{\"id\":\"video-placeholder-3\",\"description\":\"Placeholder for 'How to Seed' video\",\"imageUrl\":\"https://images.unsplash.com/photo-1591968743883-decc954ccce8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8eWVsbG93JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzU4OTIxMzAwfDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"yellow abstract\"},{\"id\":\"video-placeholder-4\",\"description\":\"Placeholder for 'Common Myths' video\",\"imageUrl\":\"https://images.unsplash.com/photo-1567360425618-1594206637d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyZWQlMjBhYnN0cmFjdHxlbnwwfHx8fDE3NTg5MjEzMDB8MA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"red abstract\"},{\"id\":\"success-story-1\",\"description\":\"Happy student who received scholarship\",\"imageUrl\":\"https://images.unsplash.com/photo-1608453162650-cba45689c284?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoYXBweSUyMHN0dWRlbnR8ZW58MHx8fHwxNzU4ODcyMTA1fDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"happy student\"},{\"id\":\"success-story-2\",\"description\":\"Student studying with new books\",\"imageUrl\":\"https://images.unsplash.com/photo-1593698054469-2bb6fdf4b512?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzdHVkZW50JTIwc3R1ZHlpbmd8ZW58MHx8fHwxNzU4ODQwNDcwfDA&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"student studying\"},{\"id\":\"success-story-3\",\"description\":\"Group of students celebrating\",\"imageUrl\":\"https://images.unsplash.com/photo-1613893251438-c5f02a86cbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzdHVkZW50cyUyMGNlbGVicmF0aW5nfGVufDB8fHx8MTc1ODkyMDIxNXww&ixlib=rb-4.1.0&q=80&w=1080\",\"imageHint\":\"students celebrating\"}]}"));}}),
+__turbopack_context__.v(JSON.parse("{\"placeholderImages\":[{\"id\":\"hero-background\",\"description\":\"Abstract blue and purple shapes\",\"imageUrl\":\"https://picsum.photos/seed/h1/1200/800\",\"imageHint\":\"abstract background\"},{\"id\":\"infographic-abstract\",\"description\":\"A stylish abstract data visualization graphic\",\"imageUrl\":\"https://picsum.photos/seed/ia1/800/600\",\"imageHint\":\"data abstract\"},{\"id\":\"video-placeholder-1\",\"description\":\"Placeholder for 'What is DBT?' video\",\"imageUrl\":\"https://picsum.photos/seed/vp1/600/400\",\"imageHint\":\"blue abstract\"},{\"id\":\"video-placeholder-2\",\"description\":\"Placeholder for 'Linking vs Seeding' video\",\"imageUrl\":\"https://picsum.photos/seed/vp2/600/400\",\"imageHint\":\"green abstract\"},{\"id\":\"video-placeholder-3\",\"description\":\"Placeholder for 'How to Seed' video\",\"imageUrl\":\"https://picsum.photos/seed/vp3/600/400\",\"imageHint\":\"yellow abstract\"},{\"id\":\"video-placeholder-4\",\"description\":\"Placeholder for 'Common Myths' video\",\"imageUrl\":\"https://picsum.photos/seed/vp4/600/400\",\"imageHint\":\"red abstract\"},{\"id\":\"success-story-1\",\"description\":\"Happy student who received scholarship\",\"imageUrl\":\"https://picsum.photos/seed/ss1/600/400\",\"imageHint\":\"happy student\"},{\"id\":\"success-story-2\",\"description\":\"Student studying with new books\",\"imageUrl\":\"https://picsum.photos/seed/ss2/600/400\",\"imageHint\":\"student studying\"},{\"id\":\"success-story-3\",\"description\":\"Group of students celebrating\",\"imageUrl\":\"https://picsum.photos/seed/ss3/600/400\",\"imageHint\":\"students celebrating\"}]}"));}}),
 "[project]/src/lib/placeholder-images.ts [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -1600,13 +1600,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$embla$2d$car
 function HeroSection() {
     const { content } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$language$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useLanguage"])();
     const heroBg = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$placeholder$2d$images$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlaceHolderImages"].find((p)=>p.id === "hero-background");
-    const handleScroll = (e)=>{
-        e.preventDefault();
-        const elem = document.getElementById('education');
-        elem?.scrollIntoView({
-            behavior: "smooth"
-        });
-    };
     const heroCards = [
         {
             title: "Check your DBT Status",
@@ -1615,7 +1608,7 @@ function HeroSection() {
                 className: "h-8 w-8 text-white"
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/hero.tsx",
-                lineNumber: 30,
+                lineNumber: 22,
                 columnNumber: 15
             }, this),
             href: "#status",
@@ -1629,7 +1622,7 @@ function HeroSection() {
                 className: "h-8 w-8 text-white"
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/hero.tsx",
-                lineNumber: 38,
+                lineNumber: 30,
                 columnNumber: 15
             }, this),
             href: "#scholarships",
@@ -1643,7 +1636,7 @@ function HeroSection() {
                 className: "h-8 w-8 text-white"
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/hero.tsx",
-                lineNumber: 46,
+                lineNumber: 38,
                 columnNumber: 15
             }, this),
             href: "/form-checker",
@@ -1660,17 +1653,19 @@ function HeroSection() {
                 "data-ai-hint": heroBg.imageHint,
                 fill: true,
                 className: "object-cover",
-                priority: true
+                priority: true,
+                placeholder: "blur",
+                blurDataURL: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN8WQ8AAn8B2p5IppEAAAAASUVORK5CYII="
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/hero.tsx",
-                lineNumber: 56,
+                lineNumber: 48,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-gradient-to-t from-black/80 via-primary/60 to-accent/60"
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/hero.tsx",
-                lineNumber: 65,
+                lineNumber: 59,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1686,7 +1681,7 @@ function HeroSection() {
                                     children: content.hero.tagline
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/hero.tsx",
-                                    lineNumber: 70,
+                                    lineNumber: 64,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1694,7 +1689,7 @@ function HeroSection() {
                                     children: content.hero.title
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/hero.tsx",
-                                    lineNumber: 73,
+                                    lineNumber: 67,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1702,18 +1697,18 @@ function HeroSection() {
                                     children: content.hero.subtitle
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/hero.tsx",
-                                    lineNumber: 76,
+                                    lineNumber: 70,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/sections/hero.tsx",
-                            lineNumber: 69,
+                            lineNumber: 63,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/hero.tsx",
-                        lineNumber: 68,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1746,7 +1741,7 @@ function HeroSection() {
                                                                 children: card.icon
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/sections/hero.tsx",
-                                                                lineNumber: 94,
+                                                                lineNumber: 88,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardTitle"], {
@@ -1754,13 +1749,13 @@ function HeroSection() {
                                                                 children: card.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/sections/hero.tsx",
-                                                                lineNumber: 97,
+                                                                lineNumber: 91,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/sections/hero.tsx",
-                                                        lineNumber: 93,
+                                                        lineNumber: 87,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1769,55 +1764,55 @@ function HeroSection() {
                                                             children: card.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/sections/hero.tsx",
-                                                            lineNumber: 100,
+                                                            lineNumber: 94,
                                                             columnNumber: 41
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/sections/hero.tsx",
-                                                        lineNumber: 99,
+                                                        lineNumber: 93,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/sections/hero.tsx",
-                                                lineNumber: 92,
+                                                lineNumber: 86,
                                                 columnNumber: 33
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/hero.tsx",
-                                            lineNumber: 91,
+                                            lineNumber: 85,
                                             columnNumber: 30
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/src/components/sections/hero.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 84,
                                         columnNumber: 25
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/hero.tsx",
-                                lineNumber: 88,
+                                lineNumber: 82,
                                 columnNumber: 17
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/sections/hero.tsx",
-                            lineNumber: 83,
+                            lineNumber: 77,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/hero.tsx",
-                        lineNumber: 82,
+                        lineNumber: 76,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/sections/hero.tsx",
-                lineNumber: 67,
+                lineNumber: 61,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/hero.tsx",
-        lineNumber: 54,
+        lineNumber: 46,
         columnNumber: 5
     }, this);
 }
@@ -2793,11 +2788,8 @@ function StatusCheckerSection() {
     const { user } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$auth$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAuth"])();
     const [showLoginPrompt, setShowLoginPrompt] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [showStatusPrompt, setShowStatusPrompt] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [showGuidance, setShowGuidance] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const handleCheckStatusClick = ()=>{
-        // Directly open the portal for all users
         window.open("https://myaadhaar.uidai.gov.in/bank-seeding-status", "_blank");
-        // Then show the prompt to ask for their status
         setShowStatusPrompt(true);
     };
     const handleStatusResponse = (isSeeded)=>{
@@ -2806,7 +2798,6 @@ function StatusCheckerSection() {
             if (user) {
                 router.push('/dashboard');
             } else {
-                // If not logged in, prompt them to log in to get guidance
                 setShowLoginPrompt(true);
             }
         }
@@ -2814,14 +2805,6 @@ function StatusCheckerSection() {
     const handleLoginForGuidance = ()=>{
         setShowLoginPrompt(false);
         router.push("/login?redirect=/dashboard");
-    };
-    const handleStartJourney = ()=>{
-        setShowStatusPrompt(false);
-        if (user) {
-            router.push('/dashboard');
-        } else {
-            setShowLoginPrompt(true);
-        }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
@@ -2839,7 +2822,7 @@ function StatusCheckerSection() {
                                     children: content.statusChecker.title
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/status-checker.tsx",
-                                    lineNumber: 83,
+                                    lineNumber: 63,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2847,13 +2830,13 @@ function StatusCheckerSection() {
                                     children: content.statusChecker.description
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/status-checker.tsx",
-                                    lineNumber: 86,
+                                    lineNumber: 66,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/sections/status-checker.tsx",
-                            lineNumber: 82,
+                            lineNumber: 62,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2865,99 +2848,152 @@ function StatusCheckerSection() {
                                             children: "How to Check"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/status-checker.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 73,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/status-checker.tsx",
-                                        lineNumber: 92,
+                                        lineNumber: 72,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
-                                            className: "space-y-4 text-left",
-                                            children: content.statusChecker.steps.map((step, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                    className: "flex items-start gap-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
+                                                className: "space-y-4 text-left",
+                                                children: content.statusChecker.steps.map((step, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                        className: "flex items-start gap-4",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold",
+                                                                children: index + 1
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                                lineNumber: 79,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "flex-1 text-muted-foreground",
+                                                                children: step
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                                lineNumber: 82,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, index, true, {
+                                                        fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                        lineNumber: 78,
+                                                        columnNumber: 21
+                                                    }, this))
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                lineNumber: 76,
+                                                columnNumber: 17
+                                            }, this),
+                                            showStatusPrompt ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "mt-6 p-4 bg-primary/10 rounded-lg text-center",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                        className: "font-bold text-primary",
+                                                        children: "What was your status?"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                        lineNumber: 88,
+                                                        columnNumber: 25
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm text-muted-foreground mt-2 mb-4",
+                                                        children: "After checking the portal, let us know what you found. This helps us guide you better."
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                        lineNumber: 89,
+                                                        columnNumber: 25
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex justify-center gap-4",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                                variant: "destructive",
+                                                                onClick: ()=>handleStatusResponse(false),
+                                                                children: "It's NOT Enabled"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                                lineNumber: 91,
+                                                                columnNumber: 29
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                                className: "bg-green-600 hover:bg-green-700",
+                                                                onClick: ()=>handleStatusResponse(true),
+                                                                children: "Yes, it IS Enabled!"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                                lineNumber: 92,
+                                                                columnNumber: 29
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                        lineNumber: 90,
+                                                        columnNumber: 25
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                lineNumber: 87,
+                                                columnNumber: 21
+                                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "mt-6",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                    onClick: handleCheckStatusClick,
+                                                    size: "lg",
+                                                    className: "w-full bg-accent hover:bg-accent/90",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold",
-                                                            children: index + 1
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/sections/status-checker.tsx",
-                                                            lineNumber: 99,
-                                                            columnNumber: 23
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "flex-1 text-muted-foreground",
-                                                            children: step
+                                                        content.statusChecker.cta,
+                                                        " ",
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                                            className: "ml-2 h-5 w-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/sections/status-checker.tsx",
                                                             lineNumber: 102,
-                                                            columnNumber: 23
+                                                            columnNumber: 53
                                                         }, this)
                                                     ]
-                                                }, index, true, {
+                                                }, void 0, true, {
                                                     fileName: "[project]/src/components/sections/status-checker.tsx",
-                                                    lineNumber: 98,
-                                                    columnNumber: 21
-                                                }, this))
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/sections/status-checker.tsx",
-                                            lineNumber: 96,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
+                                                    lineNumber: 97,
+                                                    columnNumber: 25
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/sections/status-checker.tsx",
+                                                lineNumber: 96,
+                                                columnNumber: 22
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/src/components/sections/status-checker.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 75,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/status-checker.tsx",
-                                lineNumber: 91,
+                                lineNumber: 71,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/sections/status-checker.tsx",
-                            lineNumber: 90,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mt-6",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                onClick: handleCheckStatusClick,
-                                size: "lg",
-                                className: "bg-accent hover:bg-accent/90",
-                                children: [
-                                    content.statusChecker.cta,
-                                    " ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                        className: "ml-2 h-5 w-5"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/sections/status-checker.tsx",
-                                        lineNumber: 115,
-                                        columnNumber: 43
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/sections/status-checker.tsx",
-                                lineNumber: 110,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/sections/status-checker.tsx",
-                            lineNumber: 109,
+                            lineNumber: 70,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/sections/status-checker.tsx",
-                    lineNumber: 81,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/status-checker.tsx",
-                lineNumber: 77,
+                lineNumber: 57,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialog"], {
@@ -2971,20 +3007,20 @@ function StatusCheckerSection() {
                                     children: "Login for Personalized Guidance"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/status-checker.tsx",
-                                    lineNumber: 125,
+                                    lineNumber: 116,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogDescription"], {
                                     children: "It looks like your account isn't DBT-enabled. Please log in or create an account to get a personalized dashboard to track your progress."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/status-checker.tsx",
-                                    lineNumber: 126,
+                                    lineNumber: 117,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/sections/status-checker.tsx",
-                            lineNumber: 124,
+                            lineNumber: 115,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogFooter"], {
@@ -2993,7 +3029,7 @@ function StatusCheckerSection() {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/status-checker.tsx",
-                                    lineNumber: 131,
+                                    lineNumber: 122,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogAction"], {
@@ -3001,86 +3037,24 @@ function StatusCheckerSection() {
                                     children: "Login / Sign Up"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/status-checker.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 123,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/sections/status-checker.tsx",
-                            lineNumber: 130,
+                            lineNumber: 121,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/sections/status-checker.tsx",
-                    lineNumber: 123,
+                    lineNumber: 114,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/status-checker.tsx",
-                lineNumber: 122,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialog"], {
-                open: showStatusPrompt,
-                onOpenChange: setShowStatusPrompt,
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogContent"], {
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogHeader"], {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogTitle"], {
-                                    children: "Is Your Account DBT Enabled?"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/sections/status-checker.tsx",
-                                    lineNumber: 143,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogDescription"], {
-                                    children: "After checking the UIDAI portal, what was your status? This helps us provide better guidance."
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/sections/status-checker.tsx",
-                                    lineNumber: 144,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/sections/status-checker.tsx",
-                            lineNumber: 142,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogFooter"], {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogAction"], {
-                                    onClick: ()=>handleStatusResponse(false),
-                                    children: "No, it's NOT enabled"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/sections/status-checker.tsx",
-                                    lineNumber: 149,
-                                    columnNumber: 14
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogAction"], {
-                                    onClick: ()=>handleStatusResponse(true),
-                                    children: "Yes, it IS enabled!"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/sections/status-checker.tsx",
-                                    lineNumber: 152,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/sections/status-checker.tsx",
-                            lineNumber: 148,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/components/sections/status-checker.tsx",
-                    lineNumber: 141,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/src/components/sections/status-checker.tsx",
-                lineNumber: 140,
+                lineNumber: 113,
                 columnNumber: 7
             }, this)
         ]
