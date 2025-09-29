@@ -62,11 +62,11 @@ function GoogleGeoChart() {
             const category = getCategory(item.Score);
             const titleCaseState = toTitleCase(item.State);
             const tooltipContent = `
-            <div style="padding:10px; font-family: sans-serif; color: #333; min-width: 150px;">
-                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${titleCaseState}</div>
-                <div><strong>Rank:</strong> ${item.Rank}</div>
-                <div><strong>Score:</strong> ${item.Score}</div>
-                <div><strong>Category:</strong> ${category}</div>
+            <div style="padding:10px; font-family: sans-serif; color: #333; min-width: 150px; border-radius: 8px; background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; font-size: 16px; margin-bottom: 8px; color: #111;">${titleCaseState}</div>
+                <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Rank:</strong> <span>${item.Rank}</span></div>
+                <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Score:</strong> <span>${item.Score}</span></div>
+                <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Category:</strong> <span>${category}</span></div>
             </div>
         `;
             dataArray.push([
@@ -80,40 +80,24 @@ function GoogleGeoChart() {
             region: 'IN',
             displayMode: 'regions',
             colorAxis: {
-                minValue: 0,
                 colors: [
                     '#ef4444',
-                    '#facc15',
+                    '#fde047',
+                    '#a3e635',
                     '#22c55e'
                 ]
             },
             resolution: 'provinces',
-            backgroundColor: resolvedTheme === 'dark' ? '#020817' : '#ffffff',
+            backgroundColor: 'transparent',
             datalessRegionColor: resolvedTheme === 'dark' ? '#1e293b' : '#f1f5f9',
             defaultColor: '#f5f5f5',
             width: '100%',
             height: 500,
             tooltip: {
                 isHtml: true,
-                textStyle: {
-                    fontName: 'sans-serif',
-                    fontSize: 14
-                },
                 trigger: 'focus'
             },
-            legend: 'none',
-            // This is the series that will act as a transparent overlay to remove stripes
-            series: {
-                '1': {
-                    // Point to the 4th column ("Style")
-                    'colorAxis': {
-                        'colors': [
-                            '#FFFFFF00',
-                            '#FFFFFF00'
-                        ]
-                    }
-                }
-            }
+            legend: 'none'
         };
         const geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
         geochart.draw(data, opts);
@@ -172,24 +156,24 @@ function GoogleGeoChart() {
                 onLoad: ()=>setIsScriptLoaded(true)
             }, void 0, false, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 108,
+                lineNumber: 99,
                 columnNumber: 7
             }, this),
             !apiKey && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "text-destructive text-center p-4 border border-destructive rounded-md",
+                className: "text-destructive text-center p-4 border border-destructive rounded-md m-4",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                         children: "Warning:"
                     }, void 0, false, {
                         fileName: "[project]/src/components/google-geo-chart.tsx",
-                        lineNumber: 116,
+                        lineNumber: 107,
                         columnNumber: 13
                     }, this),
                     " `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is not set. The map will likely fail to load."
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 115,
+                lineNumber: 106,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -206,7 +190,7 @@ function GoogleGeoChart() {
                             className: "h-12 w-12 animate-spin text-primary"
                         }, void 0, false, {
                             fileName: "[project]/src/components/google-geo-chart.tsx",
-                            lineNumber: 122,
+                            lineNumber: 113,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -214,18 +198,18 @@ function GoogleGeoChart() {
                             children: "Loading Map Data..."
                         }, void 0, false, {
                             fileName: "[project]/src/components/google-geo-chart.tsx",
-                            lineNumber: 123,
+                            lineNumber: 114,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/google-geo-chart.tsx",
-                    lineNumber: 121,
+                    lineNumber: 112,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 119,
+                lineNumber: 110,
                 columnNumber: 7
             }, this)
         ]

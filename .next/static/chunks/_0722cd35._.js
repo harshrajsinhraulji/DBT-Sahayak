@@ -44,28 +44,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-const legendItems = [
-    {
-        color: '#22c55e',
-        label: 'Excellent',
-        range: '80 - 100'
-    },
-    {
-        color: '#a3e635',
-        label: 'Good',
-        range: '60 - 79.9'
-    },
-    {
-        color: '#fde047',
-        label: 'Moderate',
-        range: '40 - 59.9'
-    },
-    {
-        color: '#ef4444',
-        label: 'Needs Improvement',
-        range: '0 - 39.9'
-    }
-];
 function Legend() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
         className: "shadow-lg sticky top-24",
@@ -76,77 +54,188 @@ function Legend() {
                         children: "DBT Performance Legend"
                     }, void 0, false, {
                         fileName: "[project]/src/components/legend.tsx",
-                        lineNumber: 16,
+                        lineNumber: 9,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardDescription"], {
-                        children: "Color scale for state performance scores."
+                        children: "A composite index of DBT readiness and performance."
                     }, void 0, false, {
                         fileName: "[project]/src/components/legend.tsx",
-                        lineNumber: 17,
+                        lineNumber: 10,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/legend.tsx",
-                lineNumber: 15,
+                lineNumber: 8,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "space-y-4",
-                        children: legendItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center gap-3",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "h-6 w-6 rounded-sm border border-border",
+                                        className: "h-8 w-full rounded-md border border-border",
                                         style: {
-                                            backgroundColor: item.color
+                                            background: 'linear-gradient(to right, #ef4444, #fde047, #a3e635, #22c55e)'
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/legend.tsx",
-                                        lineNumber: 23,
-                                        columnNumber: 29
+                                        lineNumber: 15,
+                                        columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex-1",
+                                        className: "flex justify-between text-xs text-muted-foreground mt-1 px-1",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "font-semibold",
-                                                children: item.label
+                                                children: "Needs Improvement"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/legend.tsx",
-                                                lineNumber: 28,
-                                                columnNumber: 33
+                                                lineNumber: 20,
+                                                columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-sm text-muted-foreground ml-2",
-                                                children: [
-                                                    "(",
-                                                    item.range,
-                                                    ")"
-                                                ]
-                                            }, void 0, true, {
+                                                children: "Good"
+                                            }, void 0, false, {
                                                 fileName: "[project]/src/components/legend.tsx",
-                                                lineNumber: 29,
-                                                columnNumber: 33
+                                                lineNumber: 21,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: "Excellent"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/legend.tsx",
+                                                lineNumber: 22,
+                                                columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/legend.tsx",
-                                        lineNumber: 27,
-                                        columnNumber: 29
+                                        lineNumber: 19,
+                                        columnNumber: 25
                                     }, this)
                                 ]
-                            }, item.label, true, {
+                            }, void 0, true, {
                                 fileName: "[project]/src/components/legend.tsx",
-                                lineNumber: 22,
-                                columnNumber: 25
-                            }, this))
-                    }, void 0, false, {
+                                lineNumber: 14,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "space-y-2 text-sm",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex justify-between",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "font-semibold text-green-600",
+                                                children: "Excellent"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/legend.tsx",
+                                                lineNumber: 27,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "font-mono text-muted-foreground",
+                                                children: "80 - 100"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/legend.tsx",
+                                                lineNumber: 28,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/legend.tsx",
+                                        lineNumber: 26,
+                                        columnNumber: 26
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex justify-between",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "font-semibold text-lime-600",
+                                                children: "Good"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/legend.tsx",
+                                                lineNumber: 31,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "font-mono text-muted-foreground",
+                                                children: "60 - 79.9"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/legend.tsx",
+                                                lineNumber: 32,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/legend.tsx",
+                                        lineNumber: 30,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex justify-between",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "font-semibold text-yellow-600",
+                                                children: "Moderate"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/legend.tsx",
+                                                lineNumber: 35,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "font-mono text-muted-foreground",
+                                                children: "40 - 59.9"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/legend.tsx",
+                                                lineNumber: 36,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/legend.tsx",
+                                        lineNumber: 34,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex justify-between",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "font-semibold text-red-600",
+                                                children: "Needs Improvement"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/legend.tsx",
+                                                lineNumber: 39,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "font-mono text-muted-foreground",
+                                                children: "0 - 39.9"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/legend.tsx",
+                                                lineNumber: 40,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/legend.tsx",
+                                        lineNumber: 38,
+                                        columnNumber: 26
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/legend.tsx",
+                                lineNumber: 25,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/src/components/legend.tsx",
-                        lineNumber: 20,
+                        lineNumber: 13,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -158,7 +247,7 @@ function Legend() {
                                     className: "h-5 w-5 flex-shrink-0 mt-0.5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/legend.tsx",
-                                    lineNumber: 36,
+                                    lineNumber: 46,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -167,37 +256,37 @@ function Legend() {
                                             children: "DBT Score:"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/legend.tsx",
-                                            lineNumber: 38,
+                                            lineNumber: 48,
                                             columnNumber: 29
                                         }, this),
                                         " A composite index based on DBT payment success rates, Aadhaar seeding percentage, and grievance redressal efficiency."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/legend.tsx",
-                                    lineNumber: 37,
+                                    lineNumber: 47,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/legend.tsx",
-                            lineNumber: 35,
+                            lineNumber: 45,
                             columnNumber: 22
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/legend.tsx",
-                        lineNumber: 34,
+                        lineNumber: 44,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/legend.tsx",
-                lineNumber: 19,
+                lineNumber: 12,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/legend.tsx",
-        lineNumber: 14,
+        lineNumber: 7,
         columnNumber: 9
     }, this);
 }
@@ -300,7 +389,7 @@ function DbtMapPage() {
                     className: "grid grid-cols-1 lg:grid-cols-3 gap-8 items-start",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-                            className: "lg:col-span-2 shadow-lg",
+                            className: "lg:col-span-2 shadow-lg hover:shadow-xl transition-shadow duration-300",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardHeader"], {
                                     children: [
@@ -319,7 +408,7 @@ function DbtMapPage() {
                                                     href: "https://dbtbharat.gov.in/ranking/state",
                                                     target: "_blank",
                                                     rel: "noopener noreferrer",
-                                                    className: "text-primary underline",
+                                                    className: "text-primary underline hover:text-primary/80",
                                                     children: "DBT Bharat Portal"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/dbt-map/page.tsx",
@@ -340,7 +429,7 @@ function DbtMapPage() {
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
-                                    className: "flex items-center justify-center",
+                                    className: "flex items-center justify-center p-0 sm:p-2 md:p-4",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(GoogleGeoChart, {}, void 0, false, {
                                         fileName: "[project]/src/app/dbt-map/page.tsx",
                                         lineNumber: 49,
