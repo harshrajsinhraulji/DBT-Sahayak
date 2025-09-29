@@ -8,12 +8,14 @@ import { ScholarshipSection } from "@/components/sections/scholarships";
 import { StatusCheckerSection } from "@/components/sections/status-checker";
 import { TakeActionSection } from "@/components/sections/take-action";
 import { VideoSection } from "@/components/sections/videos";
+import { AwarenessSection } from "@/components/sections/awareness";
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroSection />
       <EducationSection />
+      <AwarenessSection />
       <VideoSection />
       <StatusCheckerSection />
       <TakeActionSection />

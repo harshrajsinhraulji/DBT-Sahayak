@@ -48,13 +48,14 @@ export type LanguageContent = {
       printKit: string;
       requestDrive: string;
       formChecker: string;
+      awareness: string;
     };
     login: string;
   };
   hero: {
     tagline: string;
     title: string;
-subtitle: string;
+    subtitle: string;
     cta: string;
   };
   education: {
@@ -124,9 +125,19 @@ subtitle: string;
   awareness: {
     title: string;
     subtitle: string;
-    stories: {
-      name: string;
-      story: string;
+    tableHeaders: {
+        scheme: string;
+        ministry: string;
+        beneficiaries: string;
+    };
+    categories: {
+        category: string;
+        description: string;
+        schemes: {
+            name: string;
+            ministry: string;
+            beneficiaries: string;
+        }[];
     }[];
   };
   faq: {

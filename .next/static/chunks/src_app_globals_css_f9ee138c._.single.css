@@ -1318,6 +1318,10 @@ body {
   border-style: dashed;
 }
 
+.border-none {
+  border-style: none;
+}
+
 .border-accent {
   border-color: hsl(var(--accent));
 }
@@ -1467,6 +1471,10 @@ body {
 
 .bg-white\/10 {
   background-color: #ffffff1a;
+}
+
+.bg-primary\/10 {
+  background-color: hsl(var(--primary) / .1);
 }
 
 .bg-gradient-to-t {
@@ -1656,6 +1664,10 @@ body {
 
 .pl-5 {
   padding-left: 1.25rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 
 .text-left {

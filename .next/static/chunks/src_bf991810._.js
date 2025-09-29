@@ -509,26 +509,27 @@ const pageContent = {
                 aboutTeam: "About Team",
                 printKit: "Print Kit",
                 requestDrive: "Request a Drive",
-                formChecker: "AI Form Check"
+                formChecker: "AI Form Check",
+                awareness: "DBT Schemes"
             },
             login: "Login/Register"
         },
         hero: {
-            tagline: "Direct Benefit Transfers made transparent and accessible.",
-            title: "Unlock Your Scholarship with a DBT-Enabled Account",
-            subtitle: "Understand the key difference between an Aadhaar-linked account and a DBT-enabled Aadhaar-seeded account to ensure you receive your scholarship funds without delay.",
-            cta: "Learn More"
+            tagline: "India's Direct Benefit Transfer, simplified.",
+            title: "A Comprehensive Guide to the DBT Ecosystem",
+            subtitle: "From subsidies and pensions to wages and scholarships, understand how Direct Benefit Transfer (DBT) impacts millions of lives across India. Ensure you are DBT-ready.",
+            cta: "Explore DBT Schemes"
         },
         education: {
             title: "Knowledge is Power",
-            subtitle: "Understand the essentials for hassle-free scholarship disbursement.",
+            subtitle: "Understand the essentials for hassle-free benefit disbursement.",
             card1: {
                 title: "Aadhaar Linked Account",
                 description: "Your Aadhaar number is connected to your bank account, primarily for identity verification (e-KYC). This does NOT guarantee receipt of government benefits."
             },
             card2: {
                 title: "DBT-Enabled Aadhaar Seeded Account",
-                description: "Your Aadhaar is mapped to a specific bank account on the National Payments Corporation of India (NPCI) server. This is MANDATORY to receive Direct Benefit Transfers (DBT) like scholarships."
+                description: "Your Aadhaar is mapped to a specific bank account on the National Payments Corporation of India (NPCI) server. This is MANDATORY to receive Direct Benefit Transfers (DBT)."
             },
             comparison: {
                 title: "Side-by-Side Comparison",
@@ -548,14 +549,14 @@ const pageContent = {
                         seeded: "Mapped via national NPCI server."
                     },
                     {
-                        feature: "Scholarship Funds",
+                        feature: "DBT Funds",
                         linked: "Does NOT guarantee receipt.",
                         seeded: "GUARANTEES receipt of DBT funds."
                     },
                     {
                         feature: "Requirement",
                         linked: "Good practice for banking.",
-                        seeded: "MANDATORY for all scholarships."
+                        seeded: "MANDATORY for all DBT Schemes."
                     }
                 ]
             }
@@ -609,7 +610,7 @@ const pageContent = {
             }
         },
         scholarships: {
-            title: "Available Scholarships",
+            title: "Popular Scholarship Schemes",
             subtitle: "Explore scholarship opportunities for which a DBT-enabled account is essential.",
             scholarships: [
                 {
@@ -704,20 +705,112 @@ const pageContent = {
             ]
         },
         awareness: {
-            title: "Success Stories",
-            subtitle: "Hear from students who benefited from timely scholarship disbursement.",
-            stories: [
+            title: "The Scope of DBT in India",
+            subtitle: "DBT is more than just scholarships. It's a unified platform for over 300 schemes across 50+ ministries. Explore the major categories.",
+            tableHeaders: {
+                scheme: "Key Schemes",
+                ministry: "Implementing Ministry",
+                beneficiaries: "Beneficiaries"
+            },
+            categories: [
                 {
-                    name: "Priya S.",
-                    story: "\"Thanks to my DBT-enabled account, I received my scholarship just in time to pay my college fees. The process was so smooth!\""
+                    category: "Subsidies",
+                    description: "Direct financial support to reduce the cost of essential goods.",
+                    schemes: [
+                        {
+                            name: "PAHAL (LPG subsidy), Fertilizer subsidy (pilot), Food subsidy (PDS in some states)",
+                            ministry: "Ministry of Petroleum, Ministry of Chemicals & Fertilizers, Ministry of Consumer Affairs",
+                            beneficiaries: "Households using LPG, farmers, ration card holders"
+                        }
+                    ]
                 },
                 {
-                    name: "Rohan K.",
-                    story: "\"I was confused about the seeding process, but DBT Sahayak's guide helped me get it done. I got my funds without any issues.\""
+                    category: "Income Support",
+                    description: "Direct cash transfers to supplement the income of citizens.",
+                    schemes: [
+                        {
+                            name: "PM-KISAN Samman Nidhi (₹6000/year to farmers), State-level farmer income support",
+                            ministry: "Ministry of Agriculture & Farmers’ Welfare",
+                            beneficiaries: "Small and marginal farmers"
+                        }
+                    ]
                 },
                 {
-                    name: "Anjali M.",
-                    story: "\"Don't delay! Getting your account Aadhaar-seeded is the most important step. It made a huge difference for me and my family.\""
+                    category: "Wage Payments",
+                    description: "Direct payment of wages for public works programs.",
+                    schemes: [
+                        {
+                            name: "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)",
+                            ministry: "Ministry of Rural Development",
+                            beneficiaries: "Rural households seeking employment"
+                        }
+                    ]
+                },
+                {
+                    category: "Social Security Pensions",
+                    description: "Regular financial assistance for vulnerable populations.",
+                    schemes: [
+                        {
+                            name: "National Social Assistance Programme (NSAP), Old-age, Widow, and Disability pensions",
+                            ministry: "Ministry of Rural Development, State Social Welfare Depts",
+                            beneficiaries: "Elderly, widows, disabled persons"
+                        }
+                    ]
+                },
+                {
+                    category: "Healthcare-linked",
+                    description: "Financial aid for medical expenses and maternal care.",
+                    schemes: [
+                        {
+                            name: "Janani Suraksha Yojana (JSY), Ayushman Bharat reimbursements, PMMVY",
+                            ministry: "Ministry of Health & Family Welfare, MoWCD",
+                            beneficiaries: "Pregnant women, newborns, low-income patients"
+                        }
+                    ]
+                },
+                {
+                    category: "Educational Benefits",
+                    description: "Support for students to continue their education.",
+                    schemes: [
+                        {
+                            name: "Scholarships (pre-matric, post-matric), Fellowships, Mid-day meal cash transfers",
+                            ministry: "Ministry of Education, Ministry of Social Justice, Ministry of Minority Affairs",
+                            beneficiaries: "Students (SC, ST, OBC, minorities, etc.)"
+                        }
+                    ]
+                },
+                {
+                    category: "Housing & Asset Support",
+                    description: "Financial assistance for building homes and creating assets.",
+                    schemes: [
+                        {
+                            name: "Pradhan Mantri Awas Yojana (PMAY), Indira Awaas Yojana (IAY - old)",
+                            ministry: "Ministry of Housing & Urban Affairs, MoRD",
+                            beneficiaries: "Rural and urban poor families"
+                        }
+                    ]
+                },
+                {
+                    category: "Relief & Emergency Transfers",
+                    description: "Immediate financial aid during disasters or emergencies.",
+                    schemes: [
+                        {
+                            name: "PM Garib Kalyan Yojana (COVID relief), State-level disaster relief funds",
+                            ministry: "Ministry of Finance, State Relief Departments",
+                            beneficiaries: "Poor households, migrants, disaster-affected families"
+                        }
+                    ]
+                },
+                {
+                    category: "Others",
+                    description: "Targeted welfare schemes for specific communities.",
+                    schemes: [
+                        {
+                            name: "Direct cash transfers for differently-abled, Tribal welfare schemes, Minority welfare DBTs",
+                            ministry: "Ministry of Social Justice, Ministry of Tribal Affairs, MoMA",
+                            beneficiaries: "Differently-abled, tribals, minorities"
+                        }
+                    ]
                 }
             ]
         },
@@ -916,26 +1009,27 @@ const pageContent = {
                 aboutTeam: "टीम के बारे में",
                 printKit: "प्रिंट किट",
                 requestDrive: "ड्राइव का अनुरोध करें",
-                formChecker: "एआई फॉर्म जांच"
+                formChecker: "एआई फॉर्म जांच",
+                awareness: "डीबीटी योजनाएं"
             },
             login: "लॉगिन/रजिस्टर करें"
         },
         hero: {
-            tagline: "प्रत्यक्ष लाभ हस्तांतरण को पारदर्शी और सुलभ बनाया गया।",
-            title: "डीबीटी-सक्षम खाते के साथ अपनी छात्रवृत्ति अनलॉक करें",
-            subtitle: "यह सुनिश्चित करने के लिए कि आपको अपनी छात्रवृत्ति राशि बिना किसी देरी के मिले, आधार-लिंक्ड खाते और डीबीटी-सक्षम आधार-सीडेड खाते के बीच मुख्य अंतर को समझें।",
-            cta: "और जानें"
+            tagline: "भारत का प्रत्यक्ष लाभ हस्तांतरण, सरलीकृत।",
+            title: "डीबीटी पारिस्थितिकी तंत्र के लिए एक व्यापक गाइड",
+            subtitle: "सब्सिडी और पेंशन से लेकर मजदूरी और छात्रवृत्ति तक, समझें कि प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) पूरे भारत में लाखों लोगों के जीवन को कैसे प्रभावित करता है। सुनिश्चित करें कि आप डीबीटी-तैयार हैं।",
+            cta: "डीबीटी योजनाएं देखें"
         },
         education: {
             title: "ज्ञान ही शक्ति है",
-            subtitle: "परेशानी मुक्त छात्रवृत्ति वितरण के लिए आवश्यक बातें समझें।",
+            subtitle: "परेशानी मुक्त लाभ वितरण के लिए आवश्यक बातें समझें।",
             card1: {
                 title: "आधार लिंक्ड खाता",
                 description: "आपका आधार नंबर पहचान सत्यापन (ई-केवाईसी) के लिए आपके बैंक खाते से जुड़ा होता है। यह सरकारी लाभों की प्राप्ति की गारंटी नहीं देता है।"
             },
             card2: {
                 title: "डीबीटी-सक्षम आधार सीडेड खाता",
-                description: "छात्रवृत्ति जैसे प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) प्राप्त करने के लिए आपका आधार भारतीय राष्ट्रीय भुगतान निगम (एनपीसीआई) सर्वर पर एक विशिष्ट बैंक खाते से मैप किया गया है। यह अनिवार्य है।"
+                description: "प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) प्राप्त करने के लिए आपका आधार भारतीय राष्ट्रीय भुगतान निगम (एनपीसीआई) सर्वर पर एक विशिष्ट बैंक खाते से मैप किया गया है। यह अनिवार्य है।"
             },
             comparison: {
                 title: "आमने-सामने तुलना",
@@ -955,14 +1049,14 @@ const pageContent = {
                         seeded: "राष्ट्रीय एनपीसीआई सर्वर के माध्यम से मैप किया गया।"
                     },
                     {
-                        feature: "छात्रवृत्ति निधि",
+                        feature: "डीबीटी फंड",
                         linked: "प्राप्ति की गारंटी नहीं।",
                         seeded: "डीबीटी फंड की प्राप्ति की गारंटी देता है।"
                     },
                     {
                         feature: "आवश्यकता",
                         linked: "बैंकिंग के लिए अच्छी आदत।",
-                        seeded: "सभी छात्रवृत्तियों के लिए अनिवार्य।"
+                        seeded: "सभी डीबीटी योजनाओं के लिए अनिवार्य।"
                     }
                 ]
             }
@@ -1016,7 +1110,7 @@ const pageContent = {
             }
         },
         scholarships: {
-            title: "उपलब्ध छात्रवृत्तियाँ",
+            title: "लोकप्रिय छात्रवृत्ति योजनाएं",
             subtitle: "उन छात्रवृत्ति अवसरों का अन्वेषण करें जिनके लिए डीबीटी-सक्षम खाता आवश्यक है।",
             scholarships: [
                 {
@@ -1111,20 +1205,112 @@ const pageContent = {
             ]
         },
         awareness: {
-            title: "सफलता की कहानियाँ",
-            subtitle: "समय पर छात्रवृत्ति वितरण से लाभान्वित होने वाले छात्रों से सुनें।",
-            stories: [
+            title: "भारत में डीबीटी का दायरा",
+            subtitle: "डीबीटी सिर्फ छात्रवृत्ति से कहीं बढ़कर है। यह 50+ मंत्रालयों की 300 से अधिक योजनाओं के लिए एक एकीकृत मंच है। प्रमुख श्रेणियों का अन्वेषण करें।",
+            tableHeaders: {
+                scheme: "प्रमुख योजनाएं",
+                ministry: "कार्यान्वयन मंत्रालय",
+                beneficiaries: "लाभार्थी"
+            },
+            categories: [
                 {
-                    name: "प्रिया एस.",
-                    story: "\"मेरे डीबीटी-सक्षम खाते के लिए धन्यवाद, मुझे अपनी कॉलेज की फीस का भुगतान करने के लिए समय पर मेरी छात्रवृत्ति मिली। प्रक्रिया बहुत आसान थी!\""
+                    category: "सब्सिडी",
+                    description: "आवश्यक वस्तुओं की लागत को कम करने के लिए प्रत्यक्ष वित्तीय सहायता।",
+                    schemes: [
+                        {
+                            name: "पहल (एलपीजी सब्सिडी), उर्वरक सब्सिडी (पायलट), खाद्य सब्सिडी (कुछ राज्यों में पीडीएस)",
+                            ministry: "पेट्रोलियम मंत्रालय, रसायन और उर्वरक मंत्रालय, उपभोक्ता मामले मंत्रालय",
+                            beneficiaries: "एलपीजी का उपयोग करने वाले परिवार, किसान, राशन कार्ड धारक"
+                        }
+                    ]
                 },
                 {
-                    name: "रोहन के.",
-                    story: "\"मैं सीडिंग प्रक्रिया के बारे में उलझन में था, लेकिन डीबीटी सहायक की गाइड ने मुझे इसे पूरा करने में मदद की। मुझे बिना किसी समस्या के मेरा फंड मिल गया।\""
+                    category: "आय सहायता",
+                    description: "नागरिकों की आय को पूरक करने के लिए प्रत्यक्ष नकद हस्तांतरण।",
+                    schemes: [
+                        {
+                            name: "पीएम-किसान सम्मान निधि (किसानों को ₹6000/वर्ष), राज्य स्तरीय किसान आय सहायता",
+                            ministry: "कृषि एवं किसान कल्याण मंत्रालय",
+                            beneficiaries: "छोटे और सीमांत किसान"
+                        }
+                    ]
                 },
                 {
-                    name: "अंजलि एम.",
-                    story: "\"देर न करें! अपने खाते को आधार-सीड करवाना सबसे महत्वपूर्ण कदम है। इसने मेरे और मेरे परिवार के लिए बहुत बड़ा बदलाव किया।\""
+                    category: "मजदूरी भुगतान",
+                    description: "सार्वजनिक निर्माण कार्यक्रमों के लिए मजदूरी का सीधा भुगतान।",
+                    schemes: [
+                        {
+                            name: "महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार गारंटी अधिनियम (मनरेगा)",
+                            ministry: "ग्रामीण विकास मंत्रालय",
+                            beneficiaries: "रोजगार चाहने वाले ग्रामीण परिवार"
+                        }
+                    ]
+                },
+                {
+                    category: "सामाजिक सुरक्षा पेंशन",
+                    description: "कमजोर आबादी के लिए नियमित वित्तीय सहायता।",
+                    schemes: [
+                        {
+                            name: "राष्ट्रीय सामाजिक सहायता कार्यक्रम (एनएसएपी), वृद्धावस्था, विधवा और विकलांगता पेंशन",
+                            ministry: "ग्रामीण विकास मंत्रालय, राज्य समाज कल्याण विभाग",
+                            beneficiaries: "बुजुर्ग, विधवाएं, विकलांग व्यक्ति"
+                        }
+                    ]
+                },
+                {
+                    category: "स्वास्थ्य सेवा से जुड़ा",
+                    description: "चिकित्सा खर्च और मातृ देखभाल के लिए वित्तीय सहायता।",
+                    schemes: [
+                        {
+                            name: "जननी सुरक्षा योजना (जेएसवाई), आयुष्मान भारत प्रतिपूर्ति, पीएमएमवीवाई",
+                            ministry: "स्वास्थ्य एवं परिवार कल्याण मंत्रालय, महिला एवं बाल विकास मंत्रालय",
+                            beneficiaries: "गर्भवती महिलाएं, नवजात शिशु, कम आय वाले रोगी"
+                        }
+                    ]
+                },
+                {
+                    category: "शैक्षिक लाभ",
+                    description: "छात्रों को अपनी शिक्षा जारी रखने के लिए सहायता।",
+                    schemes: [
+                        {
+                            name: "छात्रवृत्ति (प्री-मैट्रिक, पोस्ट-मैट्रिक), फेलोशिप, मध्याह्न भोजन नकद हस्तांतरण",
+                            ministry: "शिक्षा मंत्रालय, सामाजिक न्याय मंत्रालय, अल्पसंख्यक मामले मंत्रालय",
+                            beneficiaries: "छात्र (एससी, एसटी, ओबीसी, अल्पसंख्यक, आदि)"
+                        }
+                    ]
+                },
+                {
+                    category: "आवास और संपत्ति सहायता",
+                    description: "घर बनाने और संपत्ति बनाने के लिए वित्तीय सहायता।",
+                    schemes: [
+                        {
+                            name: "प्रधानमंत्री आवास योजना (पीएमएवाई), इंदिरा आवास योजना (आईएवाई - पुरानी)",
+                            ministry: "आवास एवं शहरी मामलों के मंत्रालय, ग्रामीण विकास मंत्रालय",
+                            beneficiaries: "ग्रामीण और शहरी गरीब परिवार"
+                        }
+                    ]
+                },
+                {
+                    category: "राहत और आपातकालीन हस्तांतरण",
+                    description: "आपदाओं या आपात स्थितियों के दौरान तत्काल वित्तीय सहायता।",
+                    schemes: [
+                        {
+                            name: "पीएम गरीब कल्याण योजना (कोविड राहत), राज्य स्तरीय आपदा राहत कोष",
+                            ministry: "वित्त मंत्रालय, राज्य राहत विभाग",
+                            beneficiaries: "गरीब परिवार, प्रवासी, आपदा प्रभावित परिवार"
+                        }
+                    ]
+                },
+                {
+                    category: "अन्य",
+                    description: "विशिष्ट समुदायों के लिए लक्षित कल्याणकारी योजनाएं।",
+                    schemes: [
+                        {
+                            name: "विकलांगों के लिए प्रत्यक्ष नकद हस्तांतरण, जनजातीय कल्याण योजनाएं, अल्पसंख्यक कल्याण डीबीटी",
+                            ministry: "सामाजिक न्याय मंत्रालय, जनजातीय मामले मंत्रालय, अल्पसंख्यक मामले मंत्रालय",
+                            beneficiaries: "विकलांग, आदिवासी, अल्पसंख्यक"
+                        }
+                    ]
                 }
             ]
         },
@@ -1323,26 +1509,27 @@ const pageContent = {
                 aboutTeam: "ટીમ વિશે",
                 printKit: "પ્રિન્ટ કીટ",
                 requestDrive: "ડ્રાઇવની વિનંતી કરો",
-                formChecker: "એઆઈ ફોર્મ તપાસ"
+                formChecker: "એઆઈ ફોર્મ તપાસ",
+                awareness: "ડીબીટી યોજનાઓ"
             },
             login: "લોગિન/રજીસ્ટર કરો"
         },
         hero: {
-            tagline: "ડાયરેક્ટ બેનિફિટ ટ્રાન્સફરને પારદર્શક અને સુલભ બનાવ્યું.",
-            title: "ડીબીટી-સક્ષમ ખાતા સાથે તમારી શિષ્યવૃત્તિ અનલૉક કરો",
-            subtitle: "તમને તમારી શિષ્યવૃત્તિની રકમ વિલંબ વિના મળે તેની ખાતરી કરવા માટે આધાર-લિંક્ડ ખાતા અને ડીબીટી-સક્ષમ આધાર-સીડેડ ખાતા વચ્ચેનો મુખ્ય તફાવત સમજો.",
-            cta: "વધુ જાણો"
+            tagline: "ભારતનું ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર, સરળ બનાવ્યું.",
+            title: "ડીબીટી ઇકોસિસ્ટમ માટે એક વ્યાપક માર્ગદર્શિકા",
+            subtitle: "સબસિડી અને પેન્શનથી લઈને મજૂરી અને શિષ્યવૃત્તિ સુધી, સમજો કે ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર (ડીબીટી) સમગ્ર ભારતમાં લાખો લોકોના જીવનને કેવી રીતે અસર કરે છે. ખાતરી કરો કે તમે ડીબીટી-તૈયાર છો.",
+            cta: "ડીબીટી યોજનાઓ શોધો"
         },
         education: {
             title: "જ્ઞાન એ જ શક્તિ છે",
-            subtitle: "મુશ્કેલી-મુક્ત શિષ્યવૃત્તિ વિતરણ માટે જરૂરી બાબતોને સમજો.",
+            subtitle: "મુશ્કેલી-મુક્ત લાભ વિતરણ માટે જરૂરી બાબતોને સમજો.",
             card1: {
                 title: "આધાર લિંક્ડ એકાઉન્ટ",
                 description: "તમારો આધાર નંબર ફક્ત ઓળખ ચકાસણી (e-KYC) માટે તમારા બેંક ખાતા સાથે જોડાયેલ છે. આ સરકારી લાભોની પ્રાપ્તિની ખાતરી આપતું નથી."
             },
             card2: {
                 title: "ડીબીટી-સક્ષમ આધાર સીડેડ એકાઉન્ટ",
-                description: "શિષ્યવૃત્તિ જેવા ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર (ડીબીટી) મેળવવા માટે તમારું આધાર નેશનલ પેમેન્ટ્સ કોર્પોરેશન ઓફ ઈન્ડિયા (NPCI) સર્વર પર ચોક્કસ બેંક ખાતા સાથે મેપ થયેલું છે. આ ફરજિયાત છે."
+                description: "ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર (ડીબીટી) મેળવવા માટે તમારું આધાર નેશનલ પેમેન્ટ્સ કોર્પોરેશન ઓફ ઈન્ડિયા (NPCI) સર્વર પર ચોક્કસ બેંક ખાતા સાથે મેપ થયેલું છે. આ ફરજિયાત છે."
             },
             comparison: {
                 title: "આમને-સામને તુલના",
@@ -1362,14 +1549,14 @@ const pageContent = {
                         seeded: "રાષ્ટ્રીય એનપીસીઆઈ સર્વર દ્વારા મેપ થયેલ."
                     },
                     {
-                        feature: "શિષ્યવૃત્તિ ભંડોળ",
+                        feature: "ડીબીટી ભંડોળ",
                         linked: "પ્રાપ્તિની ગેરંટી નથી.",
                         seeded: "ડીબીટી ભંડોળની પ્રાપ્તિની ગેરંટી આપે છે."
                     },
                     {
                         feature: "જરૂરિયાત",
                         linked: "બેંકિંગ માટે સારી પ્રથા.",
-                        seeded: "બધી શિષ્યવૃત્તિઓ માટે ફરજિયાત."
+                        seeded: "બધી ડીબીટી યોજનાઓ માટે ફરજિયાત."
                     }
                 ]
             }
@@ -1423,7 +1610,7 @@ const pageContent = {
             }
         },
         scholarships: {
-            title: "ઉપલબ્ધ શિષ્યવૃત્તિઓ",
+            title: "લોકપ્રિય શિષ્યવૃત્તિ યોજનાઓ",
             subtitle: "શિષ્યવૃત્તિની તકોનું અન્વેષણ કરો જેના માટે ડીબીટી-સક્ષમ ખાતું જરૂરી છે.",
             scholarships: [
                 {
@@ -1518,20 +1705,112 @@ const pageContent = {
             ]
         },
         awareness: {
-            title: "સફળતાની ગાથાઓ",
-            subtitle: "સમયસર શિષ્યવૃત્તિ વિતરણથી લાભ મેળવનારા વિદ્યાર્થીઓ પાસેથી સાંભળો.",
-            stories: [
+            title: "ભારતમાં ડીબીટીનો વ્યાપ",
+            subtitle: "ડીબીટી ફક્ત શિષ્યવૃત્તિ કરતાં ઘણું વધારે છે. તે 50+ મંત્રાલયોની 300 થી વધુ યોજનાઓ માટે એકીકૃત પ્લેટફોર્મ છે. મુખ્ય શ્રેણીઓનું અન્વેષણ કરો.",
+            tableHeaders: {
+                scheme: "મુખ્ય યોજનાઓ",
+                ministry: "અમલીકરણ મંત્રાલય",
+                beneficiaries: "લાભાર્થીઓ"
+            },
+            categories: [
                 {
-                    name: "પ્રિયા એસ.",
-                    story: "\"મારા ડીબીટી-સક્ષમ ખાતાનો આભાર, મને મારી કોલેજની ફી ભરવા માટે સમયસર શિષ્યવૃત્તિ મળી. પ્રક્રિયા ખૂબ જ સરળ હતી!\""
+                    category: "સબસિડી",
+                    description: "આવશ્યક ચીજવસ્તુઓનો ખર્ચ ઘટાડવા માટે સીધી નાણાકીય સહાય.",
+                    schemes: [
+                        {
+                            name: "પહેલ (LPG સબસિડી), ખાતર સબસિડી (પાયલોટ), ખાદ્ય સબસિડી (કેટલાક રાજ્યોમાં PDS)",
+                            ministry: "પેટ્રોલિયમ મંત્રાલય, રસાયણ અને ખાતર મંત્રાલય, ગ્રાહક બાબતોનું મંત્રાલય",
+                            beneficiaries: "LPG વાપરતા પરિવારો, ખેડૂતો, રેશનકાર્ડ ધારકો"
+                        }
+                    ]
                 },
                 {
-                    name: "રોહન કે.",
-                    story: "\"હું સીડિંગ પ્રક્રિયા વિશે મૂંઝવણમાં હતો, પરંતુ ડીબીટી સહાયકની માર્ગદર્શિકાએ મને તે પૂર્ણ કરવામાં મદદ કરી. મને કોઈપણ સમસ્યા વિના મારું ભંડોળ મળ્યું.\""
+                    category: "આવક સહાય",
+                    description: "નાગરિકોની આવકને પૂરક બનાવવા માટે સીધા રોકડ ટ્રાન્સફર.",
+                    schemes: [
+                        {
+                            name: "પીએમ-કિસાન સન્માન નિધિ (ખેડૂતોને ₹6000/વર્ષ), રાજ્ય સ્તરીય ખેડૂત આવક સહાય",
+                            ministry: "કૃષિ અને ખેડૂત કલ્યાણ મંત્રાલય",
+                            beneficiaries: "નાના અને સીમાંત ખેડૂતો"
+                        }
+                    ]
                 },
                 {
-                    name: "અંજલિ એમ.",
-                    story: "\"વિલંબ કરશો નહીં! તમારું ખાતું આધાર-સીડ કરાવવું એ સૌથી મહત્વપૂર્ણ પગલું છે. તેનાથી મારા અને મારા પરિવાર માટે ઘણો મોટો ફેરફાર થયો.\""
+                    category: "વેતન ચુકવણી",
+                    description: "જાહેર બાંધકામ કાર્યક્રમો માટે વેતનની સીધી ચુકવણી.",
+                    schemes: [
+                        {
+                            name: "મહાત્મા ગાંધી રાષ્ટ્રીય ગ્રામીણ રોજગાર ગેરંટી અધિનિયમ (MGNREGA)",
+                            ministry: "ગ્રામીણ વિકાસ મંત્રાલય",
+                            beneficiaries: "રોજગાર ઇચ્છતા ગ્રામીણ પરિવારો"
+                        }
+                    ]
+                },
+                {
+                    category: "સામાજિક સુરક્ષા પેન્શન",
+                    description: "નબળા વર્ગના લોકો માટે નિયમિત નાણાકીય સહાય.",
+                    schemes: [
+                        {
+                            name: "રાષ્ટ્રીય સામાજિક સહાય કાર્યક્રમ (NSAP), વૃદ્ધાવસ્થા, વિધવા અને વિકલાંગતા પેન્શન",
+                            ministry: "ગ્રામીણ વિકાસ મંત્રાલય, રાજ્ય સમાજ કલ્યાણ વિભાગો",
+                            beneficiaries: "વૃદ્ધો, વિધવાઓ, વિકલાંગ વ્યક્તિઓ"
+                        }
+                    ]
+                },
+                {
+                    category: "આરોગ્ય-સંબંધિત",
+                    description: "તબીબી ખર્ચ અને માતૃત્વ સંભાળ માટે નાણાકીય સહાય.",
+                    schemes: [
+                        {
+                            name: "જનની સુરક્ષા યોજના (JSY), આયુષ્માન ભારત ભરપાઈ, PMMVY",
+                            ministry: "આરોગ્ય અને પરિવાર કલ્યાણ મંત્રાલય, MoWCD",
+                            beneficiaries: "સગર્ભા સ્ત્રીઓ, નવજાત શિશુઓ, ઓછી આવક ધરાવતા દર્દીઓ"
+                        }
+                    ]
+                },
+                {
+                    category: "શૈક્ષણિક લાભો",
+                    description: "વિદ્યાર્થીઓને તેમનું શિક્ષણ ચાલુ રાખવા માટે સહાય.",
+                    schemes: [
+                        {
+                            name: "શિષ્યવૃત્તિ (પ્રી-મેટ્રિક, પોસ્ટ-મેટ્રિક), ફેલોશિપ, મધ્યાહન ભોજન રોકડ ટ્રાન્સફર",
+                            ministry: "શિક્ષણ મંત્રાલય, સામાજિક ન્યાય મંત્રાલય, લઘુમતી બાબતોનું મંત્રાલય",
+                            beneficiaries: "વિદ્યાર્થીઓ (SC, ST, OBC, લઘુમતીઓ, વગેરે)"
+                        }
+                    ]
+                },
+                {
+                    category: "આવાસ અને સંપત્તિ સહાય",
+                    description: "ઘર બનાવવા અને સંપત્તિ બનાવવા માટે નાણાકીય સહાય.",
+                    schemes: [
+                        {
+                            name: "પ્રધાનમંત્રી આવાસ યોજના (PMAY), ઇન્દિરા આવાસ યોજના (IAY - જૂની)",
+                            ministry: "આવાસ અને શહેરી બાબતોનું મંત્રાલય, MoRD",
+                            beneficiaries: "ગ્રામીણ અને શહેરી ગરીબ પરિવારો"
+                        }
+                    ]
+                },
+                {
+                    category: "રાહત અને કટોકટી ટ્રાન્સફર",
+                    description: "આપત્તિઓ અથવા કટોકટી દરમિયાન તાત્કાલિક નાણાકીય સહાય.",
+                    schemes: [
+                        {
+                            name: "પીએમ ગરીબ કલ્યાણ યોજના (કોવિડ રાહત), રાજ્ય સ્તરીય આપત્તિ રાહત ભંડોળ",
+                            ministry: "નાણા મંત્રાલય, રાજ્ય રાહત વિભાગો",
+                            beneficiaries: "ગરીબ પરિવારો, સ્થળાંતર કરનારાઓ, આપત્તિગ્રસ્ત પરિવારો"
+                        }
+                    ]
+                },
+                {
+                    category: "અન્ય",
+                    description: "ચોક્કસ સમુદાયો માટે લક્ષિત કલ્યાણકારી યોજનાઓ.",
+                    schemes: [
+                        {
+                            name: "વિકલાંગો માટે સીધા રોકડ ટ્રાન્સફર, આદિવાસી કલ્યાણ યોજનાઓ, લઘુમતી કલ્યાણ ડીબીટી",
+                            ministry: "સામાજિક ન્યાય મંત્રાલય, આદિજાતિ બાબતોનું મંત્રાલય, MoMA",
+                            beneficiaries: "વિકલાંગ, આદિવાસીઓ, લઘુમતીઓ"
+                        }
+                    ]
                 }
             ]
         },
