@@ -3,8 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, User, LogOut, LayoutDashboard, Megaphone, Info, BookOpen, Search, Gamepad2, GraduationCap, Printer, Users, HelpCircle, Phone, GanttChartSquare } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Menu, User, LogOut, LayoutDashboard, Info, BookOpen, Search, GraduationCap, Users, HelpCircle, Phone, GanttChartSquare, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -16,7 +15,7 @@ import {
 import { LanguageSwitcher } from "../language-switcher";
 import { useLanguage } from "@/hooks/use-language";
 import { Logo } from "../logo";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/use-auth";
 import {
   DropdownMenu,
@@ -33,35 +32,33 @@ export function Header() {
   const { content } = useLanguage();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
   const { user, logout, isAdmin } = useAuth();
 
   const navItems = [
     { href: "#education", label: content.header.nav.education, icon: <BookOpen /> },
     { href: "#status", label: content.header.nav.status, icon: <Search /> },
-    { href: "#myths", label: content.header.nav.myths, icon: <Gamepad2 /> },
-    { href: "#videos", label: content.header.nav.videos, icon: <Gamepad2 /> },
     { href: "#scholarships", label: content.header.nav.scholarships, icon: <GraduationCap /> },
-    { href: "#print", label: "Print Kit", icon: <Printer /> },
-    { href: "#awareness", label: "Awareness", icon: <Users /> },
     { href: "#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
     { href: "#about", label: content.header.nav.about, icon: <Info /> },
     { href: "#contact", label: content.header.nav.contact, icon: <Phone /> },
   ];
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const href = e.currentTarget.href;
-    const targetId = href.replace(/.*\\#/, "");
-    const elem = document.getElementById(targetId);
+    setMobileMenuOpen(false);
 
-    if (elem) {
-      elem?.scrollIntoView({
-        behavior: "smooth",
-      });
-      setMobileMenuOpen(false);
+    if (href.startsWith('/')) {
+        router.push(href);
+        return;
+    }
+    
+    if (pathname !== '/') {
+        router.push('/' + href);
     } else {
-      router.push(`/${href.slice(href.lastIndexOf('#'))}`);
-      setMobileMenuOpen(false);
+        const targetId = href.replace(/.*\\#/, "");
+        const elem = document.getElementById(targetId);
+        elem?.scrollIntoView({ behavior: "smooth" });
     }
   };
   
@@ -71,11 +68,6 @@ export function Header() {
 
   const handleDashboardClick = () => {
     router.push('/dashboard');
-  }
-  
-  const handleNavigation = (path: string) => {
-    router.push(path);
-    setMobileMenuOpen(false);
   }
 
   const handleLogoutClick = async () => {
@@ -102,7 +94,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              onClick={handleScroll}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
             >
               {item.label}
@@ -110,6 +102,7 @@ export function Header() {
           ))}
            <Link
               href="/governance"
+              onClick={(e) => handleNavClick(e, '/governance')}
               className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
             >
               Governance
@@ -175,7 +168,7 @@ export function Header() {
               <div className="mt-8 flex flex-col gap-1">
                 {!user && (
                     <>
-                    <Button onClick={() => handleNavigation('/login')} className="w-full justify-start mb-2" variant="default" size="lg"><User />{content.header.login}</Button>
+                    <Button onClick={() => { handleLoginClick(); setMobileMenuOpen(false); }} className="w-full justify-start mb-2" variant="default" size="lg"><User />{content.header.login}</Button>
                     <DropdownMenuSeparator />
                     </>
                 )}
@@ -183,7 +176,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    onClick={handleScroll}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
                   >
                     {item.icon}
@@ -192,7 +185,7 @@ export function Header() {
                 ))}
                  <Link
                     href="/governance"
-                    onClick={() => handleNavigation('/governance')}
+                    onClick={(e) => handleNavClick(e, '/governance')}
                     className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
                   >
                     <GanttChartSquare />
@@ -200,11 +193,19 @@ export function Header() {
                   </Link>
                 <Link
                   href="/request-drive"
-                  onClick={() => handleNavigation('/request-drive')}
+                  onClick={(e) => handleNavClick(e, '/request-drive')}
                   className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
                 >
-                  <Megaphone />
+                  <Users />
                   Request a Drive
+                </Link>
+                 <Link
+                  href="/print-kit"
+                  onClick={(e) => handleNavClick(e, '/print-kit')}
+                  className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
+                >
+                  <Printer />
+                  Print Kit
                 </Link>
               </div>
             </SheetContent>

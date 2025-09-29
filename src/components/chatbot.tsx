@@ -7,8 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Bot, X, MessageSquare, User, HelpCircle, Phone } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
-import type { Language } from "@/lib/types";
-import { chatbotData, type ChatNode } from "@/lib/chatbot-data";
+import { chatbotData } from "@/lib/chatbot-data";
 
 interface Message {
   role: "user" | "bot";
@@ -22,11 +21,16 @@ export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const { language } = useLanguage();
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
   const [isCompleted, setIsCompleted] = useState(false);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (scrollAreaRef.current) {
+        const viewport = scrollAreaRef.current.querySelector('[data-radix-scroll-area-viewport]');
+        if (viewport) {
+            viewport.scrollTop = viewport.scrollHeight;
+        }
+    }
   };
   
   const resetChat = () => {
@@ -50,7 +54,7 @@ export function Chatbot() {
 
   useEffect(() => {
     if (messages.length > 0) {
-      scrollToBottom();
+      setTimeout(scrollToBottom, 100);
     }
   }, [messages]);
 
@@ -107,7 +111,7 @@ export function Chatbot() {
               </div>
             </CardHeader>
             <CardContent className="flex-1 p-0 overflow-y-auto">
-              <ScrollArea className="h-full">
+              <ScrollArea className="h-full" ref={scrollAreaRef}>
                 <div className="p-4">
                   <div className="space-y-4">
                     {messages.map((message, index) => (
@@ -162,7 +166,6 @@ export function Chatbot() {
 
                       </div>
                     ))}
-                    <div ref={messagesEndRef} />
                   </div>
                 </div>
               </ScrollArea>

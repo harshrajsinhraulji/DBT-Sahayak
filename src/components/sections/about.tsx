@@ -2,8 +2,6 @@
 "use client"
 
 import { useLanguage } from "@/hooks/use-language";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users } from "lucide-react";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 
 export function AboutSection() {
@@ -31,20 +29,18 @@ export function AboutSection() {
                         </p>
                     </div>
                 </div>
-                <Card className="max-w-4xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardContent className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                       {teamMembers.map((name, i) => (
-                           <div key={i} className="flex flex-col items-center text-center gap-4 transition-transform duration-300 hover:scale-105">
-                               <Avatar className="h-24 w-24 border-2 border-primary text-2xl">
-                                    <AvatarFallback>{name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                               </Avatar>
-                               <div>
-                                   <p className="font-semibold text-lg text-foreground">{name}</p>
-                               </div>
+                <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:gap-x-8 lg:max-w-none lg:grid-cols-6">
+                   {teamMembers.map((name, i) => (
+                       <div key={i} className="flex flex-col items-center text-center gap-4 transition-transform duration-300 hover:scale-105">
+                           <Avatar className="h-24 w-24 border-2 border-primary text-2xl">
+                                <AvatarFallback>{name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                           </Avatar>
+                           <div>
+                               <p className="font-semibold text-lg text-foreground">{name}</p>
                            </div>
-                       ))}
-                    </CardContent>
-                </Card>
+                       </div>
+                   ))}
+                </div>
             </div>
         </section>
     )
