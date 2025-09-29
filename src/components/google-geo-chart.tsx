@@ -4,8 +4,9 @@
 import { useState, useEffect } from 'react';
 import Script from 'next/script';
 import { LoaderCircle } from 'lucide-react';
-import dbtPerformanceData from '@/lib/dbt-performance-data.json';
 import { useTheme } from 'next-themes';
+import dbtPerformanceData from '@/lib/dbt-performance-data.json';
+import stateCodes from '@/lib/state-codes.json';
 
 const getCategory = (score: number) => {
     if (score >= 80) return 'Excellent';
@@ -14,10 +15,10 @@ const getCategory = (score: number) => {
     return 'Needs Improvement';
 };
 
-const toTitleCase = (str: string) => {
-    if (!str) return '';
-    return str.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
-};
+// Create a mapping from full uppercase state names to their IN-XX code
+const stateNameToCodeMap = new Map<string, string>(
+  Object.entries(stateCodes).map(([code, name]) => [name.toUpperCase(), code])
+);
 
 export default function GoogleGeoChart() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
@@ -33,17 +34,23 @@ export default function GoogleGeoChart() {
     ];
     
     dbtPerformanceData.forEach(item => {
-        const category = getCategory(item.Score);
-        const titleCaseState = toTitleCase(item.State);
-        const tooltipContent = `
-            <div style="padding:10px; font-family: sans-serif; color: #333; min-width: 150px; border-radius: 8px; background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                <div style="font-weight: bold; font-size: 16px; margin-bottom: 8px; color: #111;">${titleCaseState}</div>
-                <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Rank:</strong> <span>${item.Rank}</span></div>
-                <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Score:</strong> <span>${item.Score}</span></div>
-                <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Category:</strong> <span>${category}</span></div>
-            </div>
-        `;
-        dataArray.push([item.State, item.Score, tooltipContent]);
+        const stateNameUpper = item.State.toUpperCase();
+        const stateCode = stateNameToCodeMap.get(stateNameUpper);
+        
+        if (stateCode) {
+            const category = getCategory(item.Score);
+            const tooltipContent = `
+                <div style="padding:10px; font-family: sans-serif; color: #333; min-width: 150px; border-radius: 8px; background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <div style="font-weight: bold; font-size: 16px; margin-bottom: 8px; color: #111;">${item.State}</div>
+                    <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Rank:</strong> <span>${item.Rank}</span></div>
+                    <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Score:</strong> <span>${item.Score}</span></div>
+                    <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Category:</strong> <span>${category}</span></div>
+                </div>
+            `;
+            dataArray.push([stateCode, item.Score, tooltipContent]);
+        } else {
+            console.warn(`No state code found for: ${item.State}`);
+        }
     });
 
     const data = google.visualization.arrayToDataTable(dataArray);
