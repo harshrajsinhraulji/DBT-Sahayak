@@ -160,7 +160,7 @@ export function Footer() {
                 </Dialog>
                 
                  <a href="https://github.com/harshrajsinhraulji/DBT-Sahayak" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Github className="h-4 w-4" />{content.footer.github}</a>
-                 <a href="https://t.me/your-telegram-bot" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Send className="h-4 w-4" />{content.footer.telegram}</a>
+                 <a href="https://t.me/DBTsahayakbot" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Send className="h-4 w-4" />{content.footer.telegram}</a>
 
             </div>
           </div>
@@ -169,3 +169,5 @@ export function Footer() {
     </footer>
   );
 }
+
+    

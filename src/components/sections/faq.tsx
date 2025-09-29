@@ -1,3 +1,4 @@
+
 "use client"
 
 import {
@@ -42,3 +43,5 @@ export function FaqSection() {
     </section>
   )
 }
+
+    

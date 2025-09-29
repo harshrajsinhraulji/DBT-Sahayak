@@ -85,3 +85,5 @@ export function EducationSection() {
     </section>
   )
 }
+
+    
