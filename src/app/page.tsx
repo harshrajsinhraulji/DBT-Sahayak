@@ -1,5 +1,4 @@
 
-import { AboutSection } from "@/components/sections/about";
 import { ContactSection } from "@/components/sections/contact";
 import { EducationSection } from "@/components/sections/education";
 import { FaqSection } from "@/components/sections/faq";

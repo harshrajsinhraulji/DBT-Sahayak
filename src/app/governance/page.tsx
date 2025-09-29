@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
-import { Briefcase, UserCircle, Building } from "lucide-react";
+import { Briefcase, UserCircle, Building, BookCopy } from "lucide-react";
 import { OrgChart } from "@/components/org-chart";
 
 export default function GovernancePage() {
@@ -22,20 +22,19 @@ export default function GovernancePage() {
                     </p>
                 </div>
 
-                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2 font-headline"><Building /> {mandate.title}</CardTitle>
-                        <CardDescription>{mandate.subtitle}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4 text-muted-foreground">
-                        {mandate.aboutText.map((text, i) => <p key={i} className="text-sm">{text}</p>)}
-                    </CardContent>
-                </Card>
-
                 <div className="grid gap-8 lg:grid-cols-2">
-                    <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <CardHeader>
-                            <CardTitle className="flex items-center gap-2 font-headline"><Briefcase /> {institutionalFramework.title}</CardTitle>
+                            <CardTitle className="flex items-center gap-2 font-headline"><BookCopy /> {mandate.title}</CardTitle>
+                            <CardDescription>{mandate.subtitle}</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-4 text-muted-foreground">
+                            {mandate.aboutText.map((text, i) => <p key={i} className="text-sm">{text}</p>)}
+                        </CardContent>
+                    </Card>
+                     <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2 font-headline"><Building /> {institutionalFramework.title}</CardTitle>
                             <CardDescription>{institutionalFramework.subtitle}</CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-6 text-sm text-muted-foreground flex-1">
@@ -47,16 +46,18 @@ export default function GovernancePage() {
                            ))}
                         </CardContent>
                     </Card>
-                    <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <CardHeader>
-                             <CardTitle className="flex items-center gap-2 font-headline"><UserCircle /> {mandate.orgChartTitle}</CardTitle>
-                             <CardDescription>An overview of the DBT Mission's team structure.</CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex-1 flex items-center justify-center p-6">
-                            <OrgChart />
-                        </CardContent>
-                    </Card>
                 </div>
+
+                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <CardHeader>
+                         <CardTitle className="flex items-center gap-2 font-headline"><UserCircle /> {mandate.orgChartTitle}</CardTitle>
+                         <CardDescription>An overview of the DBT Mission's team structure.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-1 flex items-center justify-center p-6">
+                        <OrgChart />
+                    </CardContent>
+                </Card>
+
             </div>
         </section>
     );

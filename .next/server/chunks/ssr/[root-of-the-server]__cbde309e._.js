@@ -1436,6 +1436,7 @@ const CheckFormOutputSchema = __TURBOPACK__imported__module__$5b$project$5d2f$no
 });
 const formCheckerPrompt = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$genkit$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ai"].definePrompt({
     name: 'aadhaarFormCheckerPrompt',
+    model: 'gemini-1.5-flash-latest',
     input: {
         schema: CheckFormInputSchema
     },
