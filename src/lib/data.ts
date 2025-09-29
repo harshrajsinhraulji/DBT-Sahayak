@@ -347,7 +347,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       navigation: "Navigation",
       resources: "Resources",
       about: "About",
-      learnMore: "Learn About DBT",
+      learnMore: "Learn More",
       github: "GitHub",
       telegram: "Telegram"
     },
@@ -702,7 +702,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       navigation: "नेविगेशन",
       resources: "संसाधन",
       about: "हमारे बारे में",
-      learnMore: "डीबीटी के बारे में जानें",
+      learnMore: "और जानें",
       github: "गिटहब",
       telegram: "टेलीग्राम"
     },
@@ -1057,7 +1057,7 @@ export const pageContent: Record<Language, LanguageContent> = {
       navigation: "નેવિગેશન",
       resources: "સંસાધનો",
       about: "અમારા વિશે",
-      learnMore: "ડીબીટી વિશે જાણો",
+      learnMore: "વધુ જાણો",
       github: "ગિટહબ",
       telegram: "ટેલિગ્રામ"
     },
