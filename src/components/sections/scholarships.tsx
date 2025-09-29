@@ -5,11 +5,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { useLanguage } from "@/hooks/use-language"
-import { GraduationCap, ArrowRight, Landmark, Leaf, HeartHandshake } from "lucide-react"
+import { GraduationCap, ArrowRight, Landmark, Leaf, HeartHandshake, UserCheck } from "lucide-react"
 import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { type Scheme } from "@/lib/types";
 import { ReactNode } from "react";
+import { Separator } from "../ui/separator";
 
 const categoryIcons: Record<string, ReactNode> = {
     scholarship: <GraduationCap className="h-8 w-8 text-accent" />,
@@ -87,8 +88,21 @@ export function ScholarshipSection() {
                     <p>No schemes found in this category.</p>
                 </div>
             )}
+            <Separator className="my-12" />
+            <div className="text-center">
+                <h3 className="text-2xl font-bold font-headline mb-4">Not sure where to start?</h3>
+                <p className="text-muted-foreground max-w-2xl mx-auto mb-6">Let our Eligibility Checker do the work. Answer a few questions to find the exact DBT schemes you qualify for.</p>
+                <Button asChild size="lg">
+                    <Link href="/eligibility-checker">
+                        <UserCheck className="mr-2 h-5 w-5" />
+                        Check Your Eligibility
+                    </Link>
+                </Button>
+            </div>
         </div>
       </div>
     </section>
   )
 }
+
+    

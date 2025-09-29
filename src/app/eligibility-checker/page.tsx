@@ -24,11 +24,12 @@ import {
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { pageContent } from '@/lib/data';
 import { type Scheme as SchemeType } from '@/lib/types';
 import { ArrowRight, GraduationCap, Landmark, Leaf, HeartHandshake } from 'lucide-react';
 import Link from 'next/link';
+import { useLanguage } from '@/hooks/use-language';
 
 const formSchema = z.object({
   age: z.coerce.number().min(1, 'Age must be at least 1').max(120, 'Age must be less than 120'),
@@ -40,9 +41,11 @@ const formSchema = z.object({
 
 export type EligibilityForm = z.infer<typeof formSchema>;
 
-const allSchemes = pageContent.en.scholarships.schemes.concat(pageContent.hi.scholarships.schemes, pageContent.gu.scholarships.schemes).filter(
-    (v,i,a)=>a.findIndex(t=>(t.title === v.title))===i
-);
+// Get a de-duplicated list of all schemes from all languages
+const allSchemes = pageContent.en.scholarships.schemes
+  .concat(pageContent.hi.scholarships.schemes, pageContent.gu.scholarships.schemes)
+  .filter((v, i, a) => a.findIndex(t => t.title === v.title) === i);
+
 
 const SchemeCard = ({ scheme }: { scheme: SchemeType }) => {
     const categoryIcons: Record<string, React.ReactNode> = {
@@ -81,6 +84,13 @@ export default function EligibilityCheckerPage() {
   const { toast } = useToast();
   const [eligibleSchemes, setEligibleSchemes] = useState<SchemeType[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const { language } = useLanguage();
+
+  const localizedSchemes = useMemo(() => {
+    const currentLangSchemes = pageContent[language].scholarships.schemes;
+    const schemeMap = new Map(currentLangSchemes.map(s => [s.title, s]));
+    return schemeMap;
+  }, [language]);
 
   const form = useForm<EligibilityForm>({
     resolver: zodResolver(formSchema),
@@ -94,7 +104,7 @@ export default function EligibilityCheckerPage() {
   });
 
   function checkEligibility(userInput: EligibilityForm): SchemeType[] {
-    return allSchemes.filter(scheme => {
+    const eligibleBaseSchemes = allSchemes.filter(scheme => {
         const criteria = scheme.eligibilityCriteria;
         if (!criteria) return false;
 
@@ -111,6 +121,9 @@ export default function EligibilityCheckerPage() {
 
         return ageMatch && incomeMatch && categoryMatch && occupationMatch && disabilityMatch;
     });
+
+    // Map back to the currently selected language version for display
+    return eligibleBaseSchemes.map(scheme => localizedSchemes.get(scheme.title)).filter(Boolean) as SchemeType[];
   }
 
   function onSubmit(values: EligibilityForm) {
@@ -260,3 +273,5 @@ export default function EligibilityCheckerPage() {
     </div>
   );
 }
+
+    

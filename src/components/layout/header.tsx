@@ -38,10 +38,7 @@ export function Header() {
   const navItems = [
     { href: "/#education", label: content.header.nav.education, icon: <BookOpen /> },
     { href: "/#status", label: content.header.nav.status, icon: <Search /> },
-    { href: "/#awareness", label: content.header.nav.awareness, icon: <Info /> },
     { href: "/#scholarships", label: content.header.nav.scholarships, icon: <GraduationCap /> },
-    { href: "/#myths", label: content.header.nav.myths, icon: <Lightbulb /> },
-    { href: "/#videos", label: content.header.nav.videos, icon: <Video /> },
     { href: "/#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
     { href: "/#contact", label: content.header.nav.contact, icon: <Phone /> },
   ];
