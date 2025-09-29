@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, User, LogOut, LayoutDashboard, Megaphone } from "lucide-react";
+import { Menu, User, LogOut, LayoutDashboard, Megaphone, Info, BookOpen, Search, Gamepad2, GraduationCap, Printer, Users, HelpCircle, Phone, GanttChartSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -36,14 +36,16 @@ export function Header() {
   const { user, logout, isAdmin } = useAuth();
 
   const navItems = [
-    { href: "#education", label: content.header.nav.education },
-    { href: "#videos", label: content.header.nav.videos },
-    { href: "#status", label: content.header.nav.status },
-    { href: "#scholarships", label: content.header.nav.scholarships },
-    { href: "#myths", label: content.header.nav.myths },
-    { href: "#faq", label: content.header.nav.faq },
-    { href: "#about", label: content.header.nav.about },
-    { href: "#contact", label: content.header.nav.contact },
+    { href: "#about", label: content.header.nav.about, icon: <Info /> },
+    { href: "#education", label: content.header.nav.education, icon: <BookOpen /> },
+    { href: "#status", label: content.header.nav.status, icon: <Search /> },
+    { href: "#myths", label: content.header.nav.myths, icon: <Gamepad2 /> },
+    { href: "#videos", label: content.header.nav.videos, icon: <Gamepad2 /> },
+    { href: "#scholarships", label: content.header.nav.scholarships, icon: <GraduationCap /> },
+    { href: "#print", label: "Print Kit", icon: <Printer /> },
+    { href: "#awareness", label: "Awareness", icon: <Users /> },
+    { href: "#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
+    { href: "#contact", label: content.header.nav.contact, icon: <Phone /> },
   ];
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -58,7 +60,6 @@ export function Header() {
       });
       setMobileMenuOpen(false);
     } else {
-       // If on a different page, navigate to home and then scroll
       router.push(`/${href.slice(href.lastIndexOf('#'))}`);
       setMobileMenuOpen(false);
     }
@@ -70,6 +71,11 @@ export function Header() {
 
   const handleDashboardClick = () => {
     router.push('/dashboard');
+  }
+  
+  const handleNavigation = (path: string) => {
+    router.push(path);
+    setMobileMenuOpen(false);
   }
 
   const handleLogoutClick = async () => {
@@ -103,10 +109,10 @@ export function Header() {
             </Link>
           ))}
            <Link
-              href="/request-drive"
+              href="/governance"
               className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
             >
-              Request a Drive
+              Governance
             </Link>
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
@@ -148,8 +154,7 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Button onClick={handleLoginClick}>
-              <User className="mr-2 h-4 w-4" />
+            <Button onClick={handleLoginClick} variant="ghost" className="hidden lg:inline-flex">
               {content.header.login}
             </Button>
           )}
@@ -167,23 +172,38 @@ export function Header() {
                   <span className="font-headline">{content.header.title}</span>
                 </SheetTitle>
               </SheetHeader>
-              <div className="mt-8 flex flex-col gap-4">
+              <div className="mt-8 flex flex-col gap-1">
+                {!user && (
+                    <>
+                    <Button onClick={() => handleNavigation('/login')} className="w-full justify-start mb-2" variant="default" size="lg"><User />{content.header.login}</Button>
+                    <DropdownMenuSeparator />
+                    </>
+                )}
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={handleScroll}
-                    className="rounded-md p-2 text-lg font-medium hover:bg-muted"
+                    className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
                   >
+                    {item.icon}
                     {item.label}
                   </Link>
                 ))}
+                 <Link
+                    href="/governance"
+                    onClick={() => handleNavigation('/governance')}
+                    className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
+                  >
+                    <GanttChartSquare />
+                    Governance
+                  </Link>
                 <Link
                   href="/request-drive"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center rounded-md p-2 text-lg font-medium hover:bg-muted"
+                  onClick={() => handleNavigation('/request-drive')}
+                  className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
                 >
-                  <Megaphone className="mr-2 h-5 w-5" />
+                  <Megaphone />
                   Request a Drive
                 </Link>
               </div>
