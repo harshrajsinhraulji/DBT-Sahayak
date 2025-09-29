@@ -3,7 +3,7 @@
 
 import { useLanguage } from "@/hooks/use-language";
 import { Logo } from "@/components/logo";
-import { Github, Send, Printer, Users, GanttChartSquare, BrainCircuit, Users2, BookOpen, Search, GraduationCap, HelpCircle, Phone, Info, Video } from "lucide-react";
+import { Github, Send, Printer, Users, GanttChartSquare, BrainCircuit, Users2, BookOpen, Search, GraduationCap, HelpCircle, Phone, Info } from "lucide-react";
 import Link from "next/link";
 import { NationalEmblemOfIndia } from "../national-emblem";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
@@ -46,10 +46,7 @@ export function Footer() {
             <div className="grid gap-2">
                <h3 className="font-semibold text-foreground">{content.footer.navigation}</h3>
                <Link href="/#education" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><BookOpen className="h-4 w-4" />{content.header.nav.education}</Link>
-               <Link href="/#videos" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Video className="h-4 w-4"/>{content.header.nav.videos}</Link>
                <Link href="/#status" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Search className="h-4 w-4"/>{content.header.nav.status}</Link>
-               <Link href="/#scholarships" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><GraduationCap className="h-4 w-4"/>{content.header.nav.scholarships}</Link>
-               <Link href="/#faq" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><HelpCircle className="h-4 w-4"/>{content.header.nav.faq}</Link>
                <Link href="/#contact" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Phone className="h-4 w-4"/>{content.header.nav.contact}</Link>
             </div>
              <div className="grid gap-2">

@@ -37,12 +37,8 @@ export function Header() {
 
   const navItems = [
     { href: "/#education", label: content.header.nav.education, icon: <BookOpen /> },
-    { href: "/#videos", label: content.header.nav.videos, icon: <Video /> },
     { href: "/#status", label: content.header.nav.status, icon: <Search /> },
     { href: "/#take-action", label: content.header.nav.takeAction, icon: <Megaphone /> },
-    { href: "/#scholarships", label: content.header.nav.scholarships, icon: <GraduationCap /> },
-    { href: "/#myths", label: content.header.nav.myths, icon: <Lightbulb /> },
-    { href: "/#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
     { href: "/#contact", label: content.header.nav.contact, icon: <Phone /> },
   ];
   
@@ -51,6 +47,7 @@ export function Header() {
       { href: "/governance", label: content.header.nav.governance, icon: <GanttChartSquare /> },
       { href: "/resources", label: content.header.nav.resources, icon: <BrainCircuit /> },
       { href: "/about-team", label: content.header.nav.aboutTeam, icon: <Users2 /> },
+      { href: "/request-drive", label: content.header.nav.requestDrive, icon: <Users /> },
       { href: "/print-kit", label: content.header.nav.printKit, icon: <Printer /> },
   ];
 
@@ -181,22 +178,6 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
-                <Link
-                  href="/request-drive"
-                  onClick={(e) => handleNavClick(e, '/request-drive')}
-                  className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
-                >
-                  <Users />
-                  {content.header.nav.requestDrive}
-                </Link>
-                 <Link
-                  href="/print-kit"
-                  onClick={(e) => handleNavClick(e, '/print-kit')}
-                  className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
-                >
-                  <Printer />
-                  {content.header.nav.printKit}
-                </Link>
               </div>
             </SheetContent>
           </Sheet>
