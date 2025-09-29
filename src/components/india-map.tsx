@@ -11,9 +11,7 @@ import {
 import { scaleQuantile } from 'd3-scale';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import performanceData from '@/lib/dbt-performance-data.json';
-
-const INDIA_TOPO_JSON =
-  'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json';
+import INDIA_TOPO_JSON from '@/lib/india-states.json';
 
 const COLOR_RANGE = ['#ff4d4d', '#ffdb4d', '#4dff4d'];
 
@@ -44,54 +42,46 @@ const MapChart = ({ setTooltipContent }: { setTooltipContent: React.Dispatch<Rea
       <ZoomableGroup>
         <Geographies geography={INDIA_TOPO_JSON}>
           {({ geographies }) =>
-            geographies
-              .filter(geo => geo.properties.NAME_LONG === 'India')
-              .map(indiaGeo => (
-                <Geographies key={indiaGeo.rsmKey} geography={`https://raw.githubusercontent.com/deldersveld/topojson/master/countries/india/india-states.json`}>
-                  {({ geographies: stateGeographies }) =>
-                    stateGeographies.map(geo => {
-                      const stateName = geo.properties.ST_NM.toUpperCase();
-                      const d = dataMap.get(stateName);
-                      return (
-                        <Geography
-                          key={geo.rsmKey}
-                          geography={geo}
-                          onMouseEnter={() => {
-                            const { ST_NM } = geo.properties;
-                            const performance = dataMap.get(ST_NM.toUpperCase());
-                            setTooltipContent(
-                              performance
-                                ? `${ST_NM}: Rank ${performance.Rank} (Score: ${performance.Score})`
-                                : `${ST_NM}: No data`
-                            );
-                          }}
-                          onMouseLeave={() => {
-                            setTooltipContent('');
-                          }}
-                          style={{
-                            default: {
-                              fill: d ? colorScale(d.Score) : '#EEE',
-                              outline: 'none',
-                              stroke: '#FFF',
-                              strokeWidth: 0.5,
-                            },
-                            hover: {
-                              fill: d ? colorScale(d.Score) : '#EEE',
-                              outline: 'none',
-                              stroke: '#333',
-                              strokeWidth: 2,
-                            },
-                            pressed: {
-                              fill: '#333',
-                              outline: 'none',
-                            },
-                          }}
-                        />
-                      );
-                    })
-                  }
-                </Geographies>
-              ))
+            geographies.map(geo => {
+              const stateName = geo.properties.ST_NM.toUpperCase();
+              const d = dataMap.get(stateName);
+              return (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  onMouseEnter={() => {
+                    const { ST_NM } = geo.properties;
+                    const performance = dataMap.get(ST_NM.toUpperCase());
+                    setTooltipContent(
+                      performance
+                        ? `${ST_NM}: Rank ${performance.Rank} (Score: ${performance.Score})`
+                        : `${ST_NM}: No data`
+                    );
+                  }}
+                  onMouseLeave={() => {
+                    setTooltipContent('');
+                  }}
+                  style={{
+                    default: {
+                      fill: d ? colorScale(d.Score) : '#EEE',
+                      outline: 'none',
+                      stroke: '#FFF',
+                      strokeWidth: 0.5,
+                    },
+                    hover: {
+                      fill: d ? colorScale(d.Score) : '#EEE',
+                      outline: 'none',
+                      stroke: '#333',
+                      strokeWidth: 2,
+                    },
+                    pressed: {
+                      fill: '#333',
+                      outline: 'none',
+                    },
+                  }}
+                />
+              );
+            })
           }
         </Geographies>
       </ZoomableGroup>

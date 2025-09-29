@@ -70,7 +70,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const INDIA_TOPO_JSON = 'https://raw.githubusercontent.com/deldersveld/topojson/master/countries/india/india-states.json';
+const INDIA_TOPO_JSON = 'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json';
 const COLOR_RANGE = [
     '#ff4d4d',
     '#ffdb4d',
@@ -97,43 +97,50 @@ const MapChart = ({ setTooltipContent })=>{
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ZoomableGroup"], {
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Geographies"], {
                 geography: INDIA_TOPO_JSON,
-                children: ({ geographies })=>geographies.map((geo)=>{
-                        const stateName = geo.properties.ST_NM.toUpperCase();
-                        const d = dataMap.get(stateName);
-                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Geography"], {
-                            geography: geo,
-                            onMouseEnter: ()=>{
-                                const { ST_NM } = geo.properties;
-                                const performance = dataMap.get(ST_NM.toUpperCase());
-                                setTooltipContent(performance ? `${ST_NM}: Rank ${performance.Rank} (Score: ${performance.Score})` : `${ST_NM}: No data`);
-                            },
-                            onMouseLeave: ()=>{
-                                setTooltipContent('');
-                            },
-                            style: {
-                                default: {
-                                    fill: d ? colorScale(d.Score) : '#EEE',
-                                    outline: 'none',
-                                    stroke: '#FFF',
-                                    strokeWidth: 0.5
-                                },
-                                hover: {
-                                    fill: d ? colorScale(d.Score) : '#EEE',
-                                    outline: 'none',
-                                    stroke: '#333',
-                                    strokeWidth: 2
-                                },
-                                pressed: {
-                                    fill: '#333',
-                                    outline: 'none'
-                                }
-                            }
-                        }, geo.rsmKey, false, {
+                children: ({ geographies })=>geographies.filter((geo)=>geo.properties.NAME_LONG === 'India').map((indiaGeo)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Geographies"], {
+                            geography: `https://raw.githubusercontent.com/deldersveld/topojson/master/countries/india/india-states.json`,
+                            children: ({ geographies: stateGeographies })=>stateGeographies.map((geo)=>{
+                                    const stateName = geo.properties.ST_NM.toUpperCase();
+                                    const d = dataMap.get(stateName);
+                                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$maps$2f$dist$2f$index$2e$umd$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Geography"], {
+                                        geography: geo,
+                                        onMouseEnter: ()=>{
+                                            const { ST_NM } = geo.properties;
+                                            const performance = dataMap.get(ST_NM.toUpperCase());
+                                            setTooltipContent(performance ? `${ST_NM}: Rank ${performance.Rank} (Score: ${performance.Score})` : `${ST_NM}: No data`);
+                                        },
+                                        onMouseLeave: ()=>{
+                                            setTooltipContent('');
+                                        },
+                                        style: {
+                                            default: {
+                                                fill: d ? colorScale(d.Score) : '#EEE',
+                                                outline: 'none',
+                                                stroke: '#FFF',
+                                                strokeWidth: 0.5
+                                            },
+                                            hover: {
+                                                fill: d ? colorScale(d.Score) : '#EEE',
+                                                outline: 'none',
+                                                stroke: '#333',
+                                                strokeWidth: 2
+                                            },
+                                            pressed: {
+                                                fill: '#333',
+                                                outline: 'none'
+                                            }
+                                        }
+                                    }, geo.rsmKey, false, {
+                                        fileName: "[project]/src/components/india-map.tsx",
+                                        lineNumber: 56,
+                                        columnNumber: 25
+                                    }, this);
+                                })
+                        }, indiaGeo.rsmKey, false, {
                             fileName: "[project]/src/components/india-map.tsx",
-                            lineNumber: 51,
+                            lineNumber: 50,
                             columnNumber: 17
-                        }, this);
-                    })
+                        }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/india-map.tsx",
                 lineNumber: 45,
@@ -161,7 +168,7 @@ const ColorLegend = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pro
                 children: "Low (0)"
             }, void 0, false, {
                 fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 98,
+                lineNumber: 106,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -173,12 +180,12 @@ const ColorLegend = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pro
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/india-map.tsx",
-                    lineNumber: 100,
+                    lineNumber: 108,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 99,
+                lineNumber: 107,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -186,13 +193,13 @@ const ColorLegend = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pro
                 children: "High (100)"
             }, void 0, false, {
                 fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 102,
+                lineNumber: 110,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/india-map.tsx",
-        lineNumber: 97,
+        lineNumber: 105,
         columnNumber: 3
     }, this);
 _c2 = ColorLegend;
@@ -213,17 +220,17 @@ function IndiaMap() {
                                     setTooltipContent: setContent
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/india-map.tsx",
-                                    lineNumber: 114,
+                                    lineNumber: 122,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/india-map.tsx",
-                                lineNumber: 113,
+                                lineNumber: 121,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/india-map.tsx",
-                            lineNumber: 112,
+                            lineNumber: 120,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipContent"], {
@@ -231,34 +238,34 @@ function IndiaMap() {
                                 children: content
                             }, void 0, false, {
                                 fileName: "[project]/src/components/india-map.tsx",
-                                lineNumber: 118,
+                                lineNumber: 126,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/india-map.tsx",
-                            lineNumber: 117,
+                            lineNumber: 125,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/india-map.tsx",
-                    lineNumber: 111,
+                    lineNumber: 119,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 110,
+                lineNumber: 118,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ColorLegend, {}, void 0, false, {
                 fileName: "[project]/src/components/india-map.tsx",
-                lineNumber: 122,
+                lineNumber: 130,
                 columnNumber: 8
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/india-map.tsx",
-        lineNumber: 109,
+        lineNumber: 117,
         columnNumber: 5
     }, this);
 }
