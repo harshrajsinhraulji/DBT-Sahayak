@@ -2951,6 +2951,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__XCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-x.js [app-client] (ecmascript) <export default as XCircle>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rotate$2d$cw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RotateCw$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/rotate-cw.js [app-client] (ecmascript) <export default as RotateCw>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$share$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Share2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/share-2.js [app-client] (ecmascript) <export default as Share2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$party$2d$popper$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PartyPopper$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/party-popper.js [app-client] (ecmascript) <export default as PartyPopper>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/progress.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/utils.ts [app-client] (ecmascript)");
 ;
@@ -2977,6 +2978,12 @@ const shuffleArray = (array)=>{
     return newArray;
 };
 const QUIZ_LENGTH = 8;
+// Sound URLs from a reliable CDN
+const SOUND_URLS = {
+    correct: "https://dbt-sahayak-dev.web.app/sounds/correct.mp3",
+    incorrect: "https://dbt-sahayak-dev.web.app/sounds/incorrect.mp3",
+    complete: "https://dbt-sahayak-dev.web.app/sounds/complete.mp3"
+};
 function MythBustersSection() {
     _s();
     const { content } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$language$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLanguage"])();
@@ -3005,9 +3012,24 @@ function MythBustersSection() {
     const [score, setScore] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const [answerStatus, setAnswerStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('unanswered');
     const [showResult, setShowResult] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const audioRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const playSound = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "MythBustersSection.useCallback[playSound]": (type)=>{
+            if (audioRef.current) {
+                audioRef.current.src = SOUND_URLS[type];
+                audioRef.current.play().catch({
+                    "MythBustersSection.useCallback[playSound]": (error)=>console.log("Audio play failed:", error)
+                }["MythBustersSection.useCallback[playSound]"]);
+            }
+        }
+    }["MythBustersSection.useCallback[playSound]"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "MythBustersSection.useEffect": ()=>{
             resetQuiz();
+            // Initialize audio element on the client
+            if ("TURBOPACK compile-time truthy", 1) {
+                audioRef.current = new Audio();
+            }
         }
     }["MythBustersSection.useEffect"], [
         allQuestions
@@ -3019,17 +3041,20 @@ function MythBustersSection() {
         if (userAnswer === currentQuestion.type) {
             setAnswerStatus('correct');
             setScore(score + 1);
+            playSound('correct');
         } else {
             setAnswerStatus('incorrect');
+            playSound('incorrect');
         }
-        setTimeout(()=>{
-            if (currentQuestionIndex < totalQuestions - 1) {
-                setCurrentQuestionIndex(currentQuestionIndex + 1);
-                setAnswerStatus('unanswered');
-            } else {
-                setShowResult(true);
-            }
-        }, 3000);
+    };
+    const handleNextQuestion = ()=>{
+        if (currentQuestionIndex < totalQuestions - 1) {
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+            setAnswerStatus('unanswered');
+        } else {
+            setShowResult(true);
+            playSound('complete');
+        }
     };
     const resetQuiz = ()=>{
         const totalAvailableQuestions = allQuestions.length;
@@ -3053,9 +3078,21 @@ function MythBustersSection() {
     if (!currentQuestion) {
         return null;
     }
+    const getCardClass = ()=>{
+        if (showResult) return 'bg-background';
+        switch(answerStatus){
+            case 'correct':
+                return 'bg-green-500/10 dark:bg-green-900/30';
+            case 'incorrect':
+                return 'bg-red-500/10 dark:bg-red-900/30';
+            default:
+                return 'bg-background';
+        }
+    };
+    const progressPercentage = (showResult ? totalQuestions : currentQuestionIndex) / totalQuestions * 100;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "myths",
-        className: "w-full py-12 md:py-24 lg:py-32 bg-background",
+        className: "w-full py-12 md:py-24 lg:py-32 bg-muted/50",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container px-4 md:px-6",
             children: [
@@ -3069,7 +3106,7 @@ function MythBustersSection() {
                                 children: content.mythBusters.title
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                lineNumber: 99,
+                                lineNumber: 132,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3077,24 +3114,24 @@ function MythBustersSection() {
                                 children: content.mythBusters.subtitle
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                lineNumber: 102,
+                                lineNumber: 135,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/sections/myth-busters.tsx",
-                        lineNumber: 98,
+                        lineNumber: 131,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/sections/myth-busters.tsx",
-                    lineNumber: 97,
+                    lineNumber: 130,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "mx-auto max-w-2xl py-12",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-                        className: "min-h-[420px] flex flex-col justify-between shadow-lg",
+                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("min-h-[450px] flex flex-col justify-between shadow-lg transition-colors duration-500", getCardClass()),
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardHeader"], {
                                 children: [
@@ -3103,21 +3140,42 @@ function MythBustersSection() {
                                         children: content.mythBusters.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 143,
                                         columnNumber: 15
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Progress"], {
-                                        value: (showResult ? totalQuestions : currentQuestionIndex) / totalQuestions * 100,
-                                        className: "w-full mt-2"
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center gap-4 pt-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Progress"], {
+                                                value: progressPercentage,
+                                                className: "w-full"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                                lineNumber: 145,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-sm font-bold text-muted-foreground whitespace-nowrap",
+                                                children: [
+                                                    currentQuestionIndex + 1,
+                                                    " / ",
+                                                    totalQuestions
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                                lineNumber: 146,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 144,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                lineNumber: 109,
+                                lineNumber: 142,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3125,24 +3183,31 @@ function MythBustersSection() {
                                 children: showResult ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex flex-col items-center gap-4 animate-in fade-in duration-500",
                                     children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$party$2d$popper$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PartyPopper$3e$__["PartyPopper"], {
+                                            className: "h-20 w-20 text-primary"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                            lineNumber: 153,
+                                            columnNumber: 19
+                                        }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-2xl font-bold font-headline",
+                                            className: "text-3xl font-bold font-headline",
                                             children: "Quiz Complete!"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 116,
+                                            lineNumber: 154,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-lg text-muted-foreground",
+                                            className: "text-xl text-muted-foreground",
                                             children: "You Scored"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 117,
+                                            lineNumber: 155,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-5xl font-bold text-primary font-headline",
+                                            className: "text-6xl font-bold text-primary font-headline",
                                             children: [
                                                 score,
                                                 " / ",
@@ -3150,7 +3215,7 @@ function MythBustersSection() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 118,
+                                            lineNumber: 156,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3158,18 +3223,18 @@ function MythBustersSection() {
                                             children: content.mythBusters.resultText
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 157,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                    lineNumber: 115,
+                                    lineNumber: 152,
                                     columnNumber: 17
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
-                                            className: "text-xl font-semibold mb-6",
+                                            className: "text-xl md:text-2xl font-semibold mb-8",
                                             children: [
                                                 "“",
                                                 currentQuestion.statement,
@@ -3177,7 +3242,7 @@ function MythBustersSection() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 123,
+                                            lineNumber: 161,
                                             columnNumber: 19
                                         }, this),
                                         answerStatus === 'unanswered' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3185,179 +3250,218 @@ function MythBustersSection() {
                                             children: "Is this a Myth or a Fact?"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 127,
+                                            lineNumber: 166,
                                             columnNumber: 22
-                                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("w-full animate-in fade-in duration-500", answerStatus === 'correct' ? 'bg-green-100 dark:bg-green-900 border-green-500' : 'bg-red-100 dark:bg-red-900 border-red-500'),
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardHeader"], {
-                                                className: "flex-row items-center gap-4 p-4",
-                                                children: [
-                                                    answerStatus === 'correct' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
-                                                        className: "h-8 w-8 text-green-500 flex-shrink-0"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                                        lineNumber: 135,
-                                                        columnNumber: 27
-                                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__XCircle$3e$__["XCircle"], {
-                                                        className: "h-8 w-8 text-red-500 flex-shrink-0"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                                        lineNumber: 136,
-                                                        columnNumber: 27
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "w-full space-y-4",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
+                                                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("w-full animate-in fade-in zoom-in-95 duration-500", answerStatus === 'correct' ? 'bg-green-100 dark:bg-green-900/50 border-green-500' : 'bg-red-100 dark:bg-red-900/50 border-red-500'),
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardHeader"], {
+                                                        className: "flex-row items-center gap-4 p-4",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                                className: "font-bold text-left",
+                                                            answerStatus === 'correct' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
+                                                                className: "h-10 w-10 text-green-500 flex-shrink-0"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                                                lineNumber: 175,
+                                                                columnNumber: 29
+                                                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__XCircle$3e$__["XCircle"], {
+                                                                className: "h-10 w-10 text-red-500 flex-shrink-0"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                                                lineNumber: 176,
+                                                                columnNumber: 29
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 children: [
-                                                                    answerStatus === 'correct' ? "Correct!" : "That's Incorrect.",
-                                                                    " It's a ",
-                                                                    currentQuestion.type,
-                                                                    "."
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                                        className: "font-bold text-left text-lg",
+                                                                        children: [
+                                                                            answerStatus === 'correct' ? "Correct!" : "That's Incorrect.",
+                                                                            " It's a ",
+                                                                            currentQuestion.type,
+                                                                            "."
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                                                        lineNumber: 178,
+                                                                        columnNumber: 29
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                        className: "text-sm text-muted-foreground mt-1 text-left",
+                                                                        children: currentQuestion.explanation
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                                                        lineNumber: 179,
+                                                                        columnNumber: 29
+                                                                    }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                                                lineNumber: 138,
-                                                                columnNumber: 27
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-sm text-muted-foreground mt-1 text-left",
-                                                                children: currentQuestion.explanation
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                                                lineNumber: 139,
+                                                                lineNumber: 177,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                                        lineNumber: 137,
+                                                        lineNumber: 173,
                                                         columnNumber: 25
                                                     }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                                lineNumber: 133,
-                                                columnNumber: 23
-                                            }, this)
-                                        }, void 0, false, {
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                                    lineNumber: 169,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                                    onClick: handleNextQuestion,
+                                                    className: "w-full",
+                                                    size: "lg",
+                                                    children: currentQuestionIndex < totalQuestions - 1 ? "Next Question" : "Finish Quiz"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                                    lineNumber: 183,
+                                                    columnNumber: 23
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 168,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                lineNumber: 113,
+                                lineNumber: 150,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardFooter"], {
                                 className: "flex justify-center gap-4 p-6",
-                                children: showResult ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                children: showResult ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex gap-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                             onClick: resetQuiz,
                                             variant: "outline",
+                                            size: "lg",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rotate$2d$cw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RotateCw$3e$__["RotateCw"], {}, void 0, false, {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rotate$2d$cw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RotateCw$3e$__["RotateCw"], {
+                                                    className: "mr-2"
+                                                }, void 0, false, {
                                                     fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                                    lineNumber: 150,
-                                                    columnNumber: 67
+                                                    lineNumber: 195,
+                                                    columnNumber: 77
                                                 }, this),
                                                 " Play Again"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 150,
+                                            lineNumber: 195,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                             onClick: shareScore,
+                                            size: "lg",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$share$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Share2$3e$__["Share2"], {}, void 0, false, {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$share$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Share2$3e$__["Share2"], {
+                                                    className: "mr-2"
+                                                }, void 0, false, {
                                                     fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                                    lineNumber: 151,
-                                                    columnNumber: 50
+                                                    lineNumber: 196,
+                                                    columnNumber: 60
                                                 }, this),
                                                 " Share Score"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 151,
+                                            lineNumber: 196,
                                             columnNumber: 21
                                         }, this)
                                     ]
-                                }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                    lineNumber: 194,
+                                    columnNumber: 17
+                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex justify-center gap-4 p-6",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                             size: "lg",
                                             variant: "destructive",
                                             onClick: ()=>handleAnswer('myth'),
                                             disabled: answerStatus !== 'unanswered',
-                                            className: "rounded-full px-6",
+                                            className: "rounded-full px-8 py-6 text-lg",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2d$off$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__LightbulbOff$3e$__["LightbulbOff"], {}, void 0, false, {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2d$off$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__LightbulbOff$3e$__["LightbulbOff"], {
+                                                    className: "mr-2"
+                                                }, void 0, false, {
                                                     fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                                    lineNumber: 162,
-                                                    columnNumber: 21
+                                                    lineNumber: 207,
+                                                    columnNumber: 25
                                                 }, this),
                                                 " Myth"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 155,
-                                            columnNumber: 19
+                                            lineNumber: 200,
+                                            columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                             size: "lg",
                                             onClick: ()=>handleAnswer('fact'),
                                             disabled: answerStatus !== 'unanswered',
-                                            className: "rounded-full px-6 bg-green-600 hover:bg-green-700",
+                                            className: "rounded-full px-8 py-6 text-lg bg-green-600 hover:bg-green-700",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__["Lightbulb"], {}, void 0, false, {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__["Lightbulb"], {
+                                                    className: "mr-2"
+                                                }, void 0, false, {
                                                     fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                                    lineNumber: 170,
-                                                    columnNumber: 21
+                                                    lineNumber: 215,
+                                                    columnNumber: 25
                                                 }, this),
                                                 " Fact"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                            lineNumber: 164,
-                                            columnNumber: 19
+                                            lineNumber: 209,
+                                            columnNumber: 21
                                         }, this)
                                     ]
-                                }, void 0, true)
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/sections/myth-busters.tsx",
+                                    lineNumber: 199,
+                                    columnNumber: 18
+                                }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/myth-busters.tsx",
-                                lineNumber: 147,
+                                lineNumber: 192,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/sections/myth-busters.tsx",
-                        lineNumber: 108,
+                        lineNumber: 141,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/sections/myth-busters.tsx",
-                    lineNumber: 107,
+                    lineNumber: 140,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/sections/myth-busters.tsx",
-            lineNumber: 96,
+            lineNumber: 129,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/sections/myth-busters.tsx",
-        lineNumber: 95,
+        lineNumber: 128,
         columnNumber: 5
     }, this);
 }
-_s(MythBustersSection, "fLTurwjyRQDTMb+XWmdLBvARD8Q=", false, function() {
+_s(MythBustersSection, "I3ixyoBNn1D1AU+J0OTtVHSqpYo=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$language$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLanguage"]
     ];
