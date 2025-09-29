@@ -30,7 +30,7 @@ export default function GoogleGeoChart() {
   const drawChart = () => {
     if (typeof google === 'undefined' || !google.visualization) return;
 
-    const dataArray = [['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }, 'Style']];
+    const dataArray = [['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }]];
     dbtPerformanceData.forEach(item => {
         const category = getCategory(item.Score);
         const titleCaseState = toTitleCase(item.State);
@@ -42,7 +42,7 @@ export default function GoogleGeoChart() {
                 <div><strong>Category:</strong> ${category}</div>
             </div>
         `;
-        dataArray.push([item.StateCode, item.Score, tooltipContent, item.Score]);
+        dataArray.push([item.StateCode, item.Score, tooltipContent]);
     });
 
     const data = google.visualization.arrayToDataTable(dataArray);
