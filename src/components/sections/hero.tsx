@@ -25,8 +25,8 @@ export function HeroSection() {
         borderColor: "border-blue-400"
     },
     {
-        title: "Explore Scholarships",
-        description: "Find scholarship opportunities waiting for you.",
+        title: "Explore All DBT Schemes",
+        description: "Find scholarships, pensions, subsidies and more.",
         icon: <GraduationCap className="h-8 w-8 text-white" />,
         href: "#scholarships",
         bgColor: "bg-purple-500/30",
@@ -43,7 +43,7 @@ export function HeroSection() {
   ]
 
   return (
-    <section className="relative w-full min-h-[90vh] py-20 flex items-center justify-center text-center text-white overflow-hidden">
+    <section className="relative w-full min-h-screen py-20 flex items-center justify-center text-center text-white overflow-hidden">
       {heroBg && (
         <Image
           src={heroBg.imageUrl}

@@ -1,9 +1,11 @@
 
-export type Scholarship = {
+
+export type Scheme = {
   title: string;
   description: string;
   eligibility: string;
   link: string;
+  category: 'scholarship' | 'pension' | 'subsidy' | 'other';
 };
 
 export type FAQ = {
@@ -113,7 +115,13 @@ export type LanguageContent = {
   scholarships: {
     title: string;
     subtitle: string;
-    scholarships: Scholarship[];
+    categories: {
+      all: string;
+      scholarships: string;
+      pensions: string;
+      subsidies: string;
+    };
+    schemes: Scheme[];
   };
   mythBusters: {
     title: string;

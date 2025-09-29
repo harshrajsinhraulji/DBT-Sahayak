@@ -499,7 +499,7 @@ const pageContent = {
                 videos: "Videos",
                 status: "Check Status",
                 takeAction: "Take Action",
-                scholarships: "Scholarships",
+                scholarships: "Schemes",
                 myths: "Myth Busters",
                 faq: "FAQ",
                 contact: "Contact",
@@ -610,44 +610,77 @@ const pageContent = {
             }
         },
         scholarships: {
-            title: "Popular Scholarship Schemes",
-            subtitle: "Explore scholarship opportunities for which a DBT-enabled account is essential.",
-            scholarships: [
+            title: "DBT Scheme Explorer",
+            subtitle: "Explore the wide range of schemes under DBT, from scholarships to pensions and subsidies.",
+            categories: {
+                all: "All",
+                scholarships: "Scholarships",
+                pensions: "Pensions",
+                subsidies: "Subsidies"
+            },
+            schemes: [
                 {
-                    title: "Post-Matric Scholarship for SC/OBC/EBC Students",
-                    description: "Financial assistance for students from Scheduled Castes, Other Backward Classes, and Economically Backward Classes for studies beyond matriculation.",
-                    eligibility: "Parental income limits apply (e.g., up to ₹2.5 lakh for SC, up to ₹1.5 lakh for OBC).",
-                    link: "https://scholarships.gov.in/"
+                    title: "Post-Matric Scholarship for SC/OBC/EBC",
+                    description: "Financial aid for students from Scheduled Castes, Other Backward Classes, and Economically Backward Classes for studies beyond matriculation.",
+                    eligibility: "Parental income limits apply (e.g., up to ₹2.5 lakh for SC).",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
                     title: "National Means-cum-Merit Scholarship (NMMS)",
-                    description: "For meritorious students of economically weaker sections to prevent drop-outs at class VIII and encourage them to continue their education.",
+                    description: "For meritorious students of economically weaker sections to prevent drop-outs at class VIII.",
                     eligibility: "Parental income up to ₹3.5 lakh. Must have scored at least 55% in Class VII.",
-                    link: "https://scholarships.gov.in/"
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
-                    title: "Central Sector Scheme of Scholarship for College and University Students (CSSS)",
-                    description: "For meritorious students from low-income families to meet day-to-day expenses while pursuing higher studies.",
-                    eligibility: "Must be in the top 20th percentile of successful candidates in Class XII from the respective board, with parental income less than ₹4.5 lakh.",
-                    link: "https://scholarships.gov.in/"
+                    title: "CSSS for College/University Students",
+                    description: "For meritorious students from low-income families to meet expenses while pursuing higher studies.",
+                    eligibility: "Top 20th percentile in Class XII, parental income < ₹4.5 lakh.",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
-                    title: "Mukhyamantri Yuva Swavalamban Yojana (MYSY, Gujarat)",
-                    description: "State-level scheme for meritorious students of Gujarat to pursue higher education.",
-                    eligibility: "Varies by course. Requires specific percentile in 10th/12th and income criteria.",
-                    link: "https://mysy.guj.nic.in/"
+                    title: "PM-KISAN Samman Nidhi",
+                    description: "An income support scheme providing ₹6,000 per year in three installments to all eligible farmer families.",
+                    eligibility: "All land-holding farmer families.",
+                    link: "https://pmkisan.gov.in/",
+                    category: "subsidy"
+                },
+                {
+                    title: "National Social Assistance Programme (NSAP)",
+                    description: "Provides financial assistance to the elderly, widows, and persons with disabilities under various components like old-age pensions.",
+                    eligibility: "Varies by scheme component, generally for BPL households.",
+                    link: "https://nsap.nic.in/",
+                    category: "pension"
+                },
+                {
+                    title: "PAHAL (LPG Subsidy)",
+                    description: "Subsidy on LPG cooking gas cylinders is directly transferred to the bank accounts of eligible consumers.",
+                    eligibility: "All households with a domestic LPG connection.",
+                    link: "https://dbtbharat.gov.in/scheme/pahal/",
+                    category: "subsidy"
+                },
+                {
+                    title: "Indira Gandhi National Old Age Pension Scheme",
+                    description: "A component of NSAP, providing a monthly pension to elderly persons belonging to a BPL household.",
+                    eligibility: "Age 60+ years, from a BPL family.",
+                    link: "https://nsap.nic.in/nsap/About_NSAP/ignop_guidelines.pdf",
+                    category: "pension"
                 },
                 {
                     title: "Scholarships for Students with Disabilities",
                     description: "For differently-abled students pursuing graduate and postgraduate degrees in specified institutions of excellence.",
-                    eligibility: "Students with more than 40% disability and a valid certificate. Parental income ceiling of ₹6 lakh per annum.",
-                    link: "https://scholarships.gov.in/"
+                    eligibility: "40%+ disability. Parental income ceiling of ₹6 lakh per annum.",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
                     title: "Prime Minister's Scholarship Scheme for RPF/RPSF",
-                    description: "Professional degree scholarships for the dependent wards of Railway Protection Force (RPF) and Railway Protection Special Force (RPSF) personnel.",
-                    eligibility: "Dependent wards of serving/ex-personnel and widows. Minimum 60% in 12th/Diploma/Graduation.",
-                    link: "https://scholarships.gov.in/"
+                    description: "Professional degree scholarships for the dependent wards of Railway Protection Force (RPF) personnel.",
+                    eligibility: "Wards of serving/ex-personnel. Minimum 60% in 12th/Diploma/Graduation.",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 }
             ]
         },
@@ -657,50 +690,46 @@ const pageContent = {
             resultText: "You're now a certified Myth & Fact expert! Share your knowledge to help others.",
             myths: [
                 {
-                    myth: "If my bank account is linked to Aadhaar, I will automatically get my scholarship.",
-                    fact: "This is a major myth. Your account must be specifically 'Seeded' with Aadhaar for DBT on the NPCI mapper. Linking is just for KYC and is a separate process."
+                    myth: "If my bank account is linked to Aadhaar, I will automatically get my DBT funds.",
+                    fact: "This is a major myth. Your account must be 'Seeded' with Aadhaar for DBT. Linking is just for KYC and is a separate process."
                 },
                 {
-                    myth: "I can receive my scholarship in any of my Aadhaar-linked bank accounts.",
-                    fact: "This is a myth. You can only receive DBT payments in the ONE bank account that is currently seeded with your Aadhaar. This is your designated DBT-enabled account."
+                    myth: "I can receive my DBT funds in any of my Aadhaar-linked bank accounts.",
+                    fact: "This is a myth. You can only receive DBT payments in the ONE bank account that is currently seeded with your Aadhaar."
                 },
                 {
                     myth: "My bank has my Aadhaar card photocopy, so my account is seeded.",
-                    fact: "This is a myth. Submitting a photocopy is not enough. You must fill out and submit the specific 'Aadhaar Seeding Consent Form' and explicitly request the bank to seed your account."
+                    fact: "This is a myth. Submitting a photocopy is not enough. You must fill out the specific 'Aadhaar Seeding Consent Form' and explicitly request seeding."
                 },
                 {
                     myth: "If my seeding fails, it's an issue with the NPCI or UIDAI.",
-                    fact: "This is a myth. The responsibility of updating the NPCI mapper rests solely with the banks. If your seeding fails, you must follow up directly with your bank branch."
+                    fact: "This is a myth. The responsibility for updating the NPCI mapper rests solely with the banks. You must follow up directly with your bank branch."
                 },
                 {
-                    myth: "My bank app shows my Aadhaar is 'active', so I'm ready for DBT.",
-                    fact: "This is a myth. A bank's internal system showing an 'active' Aadhaar link does not guarantee your account is on the NPCI mapper. The only way to be sure is by checking on the UIDAI or NPCI websites."
+                    myth: "DBT is only for scholarships.",
+                    fact: "This is a huge myth. DBT is a platform for over 300 schemes, including pensions (NSAP), subsidies (PM-KISAN, PAHAL), and wage payments (MGNREGA)."
                 }
             ],
             facts: [
                 {
                     fact: "You must submit a specific 'Aadhaar Seeding Consent Form' to your bank to enable DBT.",
-                    explanation: "This is a fact. Simply having a linked account is not enough; you must give explicit consent for seeding, which the bank then updates on the NPCI server."
+                    explanation: "This is a fact. Simply having a linked account is not enough; you must give explicit consent for seeding."
                 },
                 {
                     fact: "Only one bank account can be Aadhaar-seeded for DBT at any given time.",
-                    explanation: "This is a fact. If you seed a new account, it automatically de-links the previous one from the NPCI mapper. The latest seeded account gets the funds."
+                    explanation: "This is a fact. If you seed a new account, it automatically de-links the previous one from the NPCI mapper."
                 },
                 {
-                    fact: "If biometric authentication (fingerprint/iris) fails, there are alternative ways to get benefits.",
-                    explanation: "This is a fact. Government guidelines include an 'exception handling mechanism' to ensure you still get benefits, such as using OTP or other physical verification."
+                    fact: "If biometric authentication fails, there are alternative ways to get benefits.",
+                    explanation: "This is a fact. Government guidelines include an 'exception handling mechanism' to ensure you still get benefits."
                 },
                 {
                     fact: "If your name on Aadhaar and the bank account don't match exactly, seeding will fail.",
-                    explanation: "This is a fact. Your name must be identical in both records for the seeding process to succeed. You must get it corrected in either the Aadhaar or bank records."
-                },
-                {
-                    fact: "Aadhaar is not legally mandatory to receive subsidies.",
-                    explanation: "This is a fact. The Supreme Court has ruled that while Aadhaar is preferred for its efficiency, benefits cannot be denied solely because someone lacks an Aadhaar number. Other forms of ID must be accepted."
+                    explanation: "This is a fact. Your name must be identical in both records for the seeding process to succeed."
                 },
                 {
                     fact: "You can check your Aadhaar seeding status on both the UIDAI and NPCI websites.",
-                    explanation: "This is a fact. Both official portals provide a facility to check which bank account is currently seeded for DBT, as they fetch data from the same NPCI mapper."
+                    explanation: "This is a fact. Both official portals provide a facility to check which bank account is currently seeded for DBT."
                 }
             ]
         },
@@ -820,31 +849,31 @@ const pageContent = {
             faqs: [
                 {
                     question: "What is the difference between Aadhaar linking and Aadhaar seeding?",
-                    answer: "Aadhaar linking connects your Aadhaar to a bank account for identity verification (KYC). Aadhaar seeding is a separate, specific process of mapping your Aadhaar to a single bank account on the NPCI server to receive Direct Benefit Transfers (DBT). Seeding is mandatory for scholarships."
+                    answer: "Aadhaar linking connects your Aadhaar to a bank account for identity verification (KYC). Aadhaar seeding is a separate, specific process of mapping your Aadhaar to a single bank account on the NPCI server to receive Direct Benefit Transfers (DBT). Seeding is mandatory for scholarships and other schemes."
                 },
                 {
                     question: "Can I have multiple Aadhaar-seeded accounts?",
                     answer: "No, you can only have one Aadhaar-seeded account for receiving DBT at any given time. If you seed a new account, the previous one gets de-linked automatically. The subsidy will be credited to the last bank account that was successfully seeded."
                 },
                 {
-                    question: "How do I change my bank account to receive DBT funds?",
-                    answer: "To change your DBT-enabled account, you must visit the branch of the *new* bank where you want to receive funds. Submit the Aadhaar seeding consent form there. They will update the NPCI mapper, which automatically overrides the old account."
+                    question: "My DBT payment failed. What should I do?",
+                    answer: "First, check your seeding status on the UIDAI portal. If it's inactive or linked to the wrong account, visit your bank branch with the seeding form. Also, ensure your name and other details match exactly between your bank and Aadhaar records."
                 },
                 {
-                    question: "What should I do if my Aadhaar seeding request fails or is pending?",
-                    answer: "Revisit your bank branch. Common reasons for failure include a name mismatch between your Aadhaar and bank records, or an incorrect account number on the form. The responsibility for updating the NPCI mapper lies solely with the banks, so you must follow up with them."
+                    question: "How do I change my bank account to receive DBT funds?",
+                    answer: "To change your DBT-enabled account, you must visit the branch of the *new* bank where you want to receive funds. Submit the Aadhaar seeding consent form there. They will update the NPCI mapper, which automatically overrides the old account."
                 },
                 {
                     question: "My name is different in my Aadhaar card versus my bank account. What should I do?",
                     answer: "You must get your name corrected in one of the documents so they match exactly. You can visit an Aadhaar Enrolment Centre to update your Aadhaar details, or your bank branch to update your bank records. The name must be identical for seeding to succeed."
                 },
                 {
-                    question: "What happens if my biometric (fingerprint/iris) authentication fails?",
-                    answer: "Don't worry. Government guidelines have an 'exception handling mechanism'. Implementing agencies are required to provide alternate ways for you to prove your identity, such as through an OTP to your registered mobile number, or other physical verification methods to ensure you are not denied benefits."
+                    question: "Is there a deadline for Aadhaar seeding?",
+                    answer: "There is no official deadline, but it is highly recommended to complete the process as soon as possible. Many schemes will not disburse funds to non-seeded accounts, so you may miss out on benefits if you delay."
                 },
                 {
-                    question: "Is Aadhaar mandatory to receive my scholarship?",
-                    answer: "While Aadhaar is the preferred and most efficient method, the Supreme Court has ruled that essential benefits cannot be denied solely for lack of an Aadhaar number. If you don't have Aadhaar, you can typically use your Aadhaar Enrolment ID (EID) slip along with other alternate government-approved IDs (like a bank passbook) as specified by the scholarship scheme."
+                    question: "Is Aadhaar mandatory to receive my pension or subsidy?",
+                    answer: "While Aadhaar is the preferred and most efficient method, the Supreme Court has ruled that essential benefits cannot be denied solely for lack of an Aadhaar number. If you don't have Aadhaar, you can use alternate government-approved IDs as specified by the scheme."
                 },
                 {
                     question: "How do I know that DBT funds have come to my account?",
@@ -999,7 +1028,7 @@ const pageContent = {
                 videos: "वीडियो",
                 status: "स्थिति जांचें",
                 takeAction: "कार्रवाई करें",
-                scholarships: "छात्रवृत्तियाँ",
+                scholarships: "योजनाएं",
                 myths: "मिथक तोड़ें",
                 faq: "अक्सर पूछे जाने वाले प्रश्न",
                 contact: "संपर्क",
@@ -1110,44 +1139,77 @@ const pageContent = {
             }
         },
         scholarships: {
-            title: "लोकप्रिय छात्रवृत्ति योजनाएं",
-            subtitle: "उन छात्रवृत्ति अवसरों का अन्वेषण करें जिनके लिए डीबीटी-सक्षम खाता आवश्यक है।",
-            scholarships: [
+            title: "डीबीटी योजना एक्सप्लोरर",
+            subtitle: "डीबीटी के तहत योजनाओं की विस्तृत श्रृंखला का अन्वेषण करें, छात्रवृत्ति से लेकर पेंशन और सब्सिडी तक।",
+            categories: {
+                all: "सभी",
+                scholarships: "छात्रवृत्तियाँ",
+                pensions: "पेंशन",
+                subsidies: "सब्सिडी"
+            },
+            schemes: [
                 {
-                    title: "SC/OBC/EBC छात्रों के लिए पोस्ट-मैट्रिक छात्रवृत्ति",
+                    title: "SC/OBC/EBC के लिए पोस्ट-मैट्रिक छात्रवृत्ति",
                     description: "अनुसूचित जाति, अन्य पिछड़ा वर्ग और आर्थिक रूप से पिछड़े वर्ग के छात्रों को मैट्रिक के बाद की पढ़ाई के लिए वित्तीय सहायता।",
-                    eligibility: "माता-पिता की आय सीमा लागू होती है (जैसे, एससी के लिए ₹2.5 लाख तक, ओबीसी के लिए ₹1.5 लाख तक)।",
-                    link: "https://scholarships.gov.in/"
+                    eligibility: "माता-पिता की आय सीमा लागू (जैसे, SC के लिए ₹2.5 लाख तक)।",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
                     title: "राष्ट्रीय मीन्स-कम-मेरिट छात्रवृत्ति (NMMS)",
-                    description: "आर्थिक रूप से कमजोर वर्गों के मेधावी छात्रों के लिए ताकि वे कक्षा आठवीं में पढ़ाई न छोड़ें और अपनी शिक्षा जारी रख सकें।",
-                    eligibility: "माता-पिता की आय ₹3.5 लाख तक। कक्षा सातवीं में कम से कम 55% अंक प्राप्त किए हों।",
-                    link: "https://scholarships.gov.in/"
+                    description: "आर्थिक रूप से कमजोर वर्गों के मेधावी छात्रों के लिए ताकि वे आठवीं कक्षा में पढ़ाई न छोड़ें।",
+                    eligibility: "माता-पिता की आय ₹3.5 लाख तक। सातवीं कक्षा में कम से कम 55% अंक होने चाहिए।",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
-                    title: "कॉलेज और विश्वविद्यालय के छात्रों के लिए छात्रवृत्ति की केंद्रीय क्षेत्र योजना (CSSS)",
-                    description: "कम आय वाले परिवारों के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करते समय दिन-प्रतिदिन के खर्चों को पूरा करने के लिए।",
-                    eligibility: "संबंधित बोर्ड से कक्षा बारहवीं में सफल उम्मीदवारों के शीर्ष 20 प्रतिशत में होना चाहिए, माता-पिता की आय ₹4.5 लाख से कम हो।",
-                    link: "https://scholarships.gov.in/"
+                    title: "कॉलेज/विश्वविद्यालय के छात्रों के लिए CSSS",
+                    description: "कम आय वाले परिवारों के मेधावी छात्रों को उच्च अध्ययन के दौरान खर्चों को पूरा करने के लिए।",
+                    eligibility: "बारहवीं कक्षा में शीर्ष 20 प्रतिशत में, माता-पिता की आय < ₹4.5 लाख।",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
-                    title: "मुख्यमंत्री युवा स्वावलंबन योजना (MYSY, गुजरात)",
-                    description: "गुजरात के मेधावी छात्रों के लिए उच्च शिक्षा प्राप्त करने हेतु राज्य स्तरीय योजना।",
-                    eligibility: "पाठ्यक्रम के अनुसार बदलता है। 10वीं/12वीं में विशिष्ट प्रतिशत और आय मानदंड की आवश्यकता है।",
-                    link: "https://mysy.guj.nic.in/"
+                    title: "पीएम-किसान सम्मान निधि",
+                    description: "एक आय सहायता योजना जो सभी पात्र किसान परिवारों को तीन किस्तों में प्रति वर्ष ₹6,000 प्रदान करती है।",
+                    eligibility: "सभी भूमि-धारक किसान परिवार।",
+                    link: "https://pmkisan.gov.in/",
+                    category: "subsidy"
+                },
+                {
+                    title: "राष्ट्रीय सामाजिक सहायता कार्यक्रम (NSAP)",
+                    description: "वृद्धों, विधवाओं और विकलांग व्यक्तियों को वृद्धावस्था पेंशन जैसे विभिन्न घटकों के तहत वित्तीय सहायता प्रदान करता है।",
+                    eligibility: "योजना के घटक के अनुसार बदलता है, आम तौर पर बीपीएल परिवारों के लिए।",
+                    link: "https://nsap.nic.in/",
+                    category: "pension"
+                },
+                {
+                    title: "पहल (एलपीजी सब्सिडी)",
+                    description: "एलपीजी रसोई गैस सिलेंडरों पर सब्सिडी सीधे पात्र उपभोक्ताओं के बैंक खातों में स्थानांतरित की जाती है।",
+                    eligibility: "घरेलू एलपीजी कनेक्शन वाले सभी परिवार।",
+                    link: "https://dbtbharat.gov.in/scheme/pahal/",
+                    category: "subsidy"
+                },
+                {
+                    title: "इंदिरा गांधी राष्ट्रीय वृद्धावस्था पेंशन योजना",
+                    description: "एनएसएपी का एक घटक, जो एक बीपीएल परिवार के वृद्ध व्यक्तियों को मासिक पेंशन प्रदान करता है।",
+                    eligibility: "आयु 60+ वर्ष, एक बीपीएल परिवार से।",
+                    link: "https://nsap.nic.in/nsap/About_NSAP/ignop_guidelines.pdf",
+                    category: "pension"
                 },
                 {
                     title: "विकलांग छात्रों के लिए छात्रवृत्ति",
                     description: "उत्कृष्टता के निर्दिष्ट संस्थानों में स्नातक और स्नातकोत्तर डिग्री प्राप्त करने वाले विकलांग छात्रों के लिए।",
-                    eligibility: "40% से अधिक विकलांगતા और वैध प्रमाण पत्र वाले छात्र। प्रति वर्ष ₹6 लाख की माता-पिता की आय सीमा।",
-                    link: "https://scholarships.gov.in/"
+                    eligibility: "40%+ विकलांगता। ₹6 लाख प्रति वर्ष की माता-पिता की आय सीमा।",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
                     title: "आरपीएफ/आरपीएसएफ के लिए प्रधानमंत्री छात्रवृत्ति योजना",
-                    description: "रेलवे सुरक्षा बल (आरपीएफ) और रेलवे सुरक्षा विशेष बल (आरपीएसएफ) के कर्मियों के आश्रित बच्चों के लिए व्यावसायिक डिग्री छात्रवृत्ति।",
-                    eligibility: "सेवारत/पूर्व कर्मियों और विधवाओं के आश्रित बच्चे। 12वीं/डिप्लोमा/स्नातक में न्यूनतम 60%।",
-                    link: "https://scholarships.gov.in/"
+                    description: "रेलवे सुरक्षा बल (आरपीएफ) के कर्मियों के आश्रित बच्चों के लिए व्यावसायिक डिग्री छात्रवृत्ति।",
+                    eligibility: "सेवारत/पूर्व कर्मियों के आश्रित। 12वीं/डिप्लोमा/स्नातक में न्यूनतम 60%।",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 }
             ]
         },
@@ -1157,50 +1219,46 @@ const pageContent = {
             resultText: "अब आप एक प्रमाणित मिथक और तथ्य विशेषज्ञ हैं! दूसरों की मदद करने के लिए अपना ज्ञान साझा करें।",
             myths: [
                 {
-                    myth: "यदि मेरा बैंक खाता आधार से जुड़ा हुआ है, तो मुझे स्वतः ही मेरी छात्रवृत्ति मिल जाएगी।",
-                    fact: "यह एक बड़ा मिथक है। आपके खाते को केवल लिंक ही नहीं, बल्कि एनपीसीआई मैपर पर डीबीटी के लिए आधार के साथ विशेष रूप से 'सीड' किया जाना चाहिए। लिंकिंग केवल KYC के लिए है और यह एक अलग प्रक्रिया है।"
+                    myth: "यदि मेरा बैंक खाता आधार से जुड़ा हुआ है, तो मुझे स्वतः ही मेरी डीबीटी निधि मिल जाएगी।",
+                    fact: "यह एक बड़ा मिथक है। आपके खाते को डीबीटी के लिए आधार के साथ 'सीड' किया जाना चाहिए। लिंकिंग केवल केवाईसी के लिए है।"
                 },
                 {
-                    myth: "मैं अपने किसी भी आधार-लिंक्ड बैंक खाते में अपनी छात्रवृत्ति प्राप्त कर सकता हूँ।",
-                    fact: "यह एक मिथक है। आप केवल उसी एक बैंक खाते में डीबीटी भुगतान प्राप्त कर सकते हैं जो वर्तमान में आपके आधार के साथ सीड किया गया है। यह आपका निर्दिष्ट डीबीटी-सक्षम खाता है।"
+                    myth: "मैं अपने किसी भी आधार-लिंक्ड बैंक खाते में अपनी डीबीटी निधि प्राप्त कर सकता हूँ।",
+                    fact: "यह एक मिथक है। आप केवल उसी एक बैंक खाते में डीबीटी भुगतान प्राप्त कर सकते हैं जो वर्तमान में आपके आधार के साथ सीड किया गया है।"
                 },
                 {
                     myth: "मेरे बैंक के पास मेरे आधार कार्ड की फोटोकॉपी है, इसलिए मेरा खाता सीडेड है।",
-                    fact: "यह एक मिथक है। फोटोकॉपी जमा करना पर्याप्त नहीं है। आपको विशिष्ट 'आधार सीडिंग सहमति फॉर्म' भरना और जमा करना होगा और बैंक से अपने खाते को सीड करने का स्पष्ट रूप से अनुरोध करना होगा।"
+                    fact: "यह एक मिथक है। आपको विशिष्ट 'आधार सीडिंग सहमति फॉर्म' भरना होगा और स्पष्ट रूप से सीडिंग का अनुरोध करना होगा।"
                 },
                 {
                     myth: "यदि मेरी सीडिंग विफल हो जाती है, तो यह एनपीसीआई या यूआईडीएआई के साथ एक समस्या है।",
-                    fact: "यह एक मिथक है। एनपीसीआई मैपर को अपडेट करने की जिम्मेदारी पूरी तरह से बैंकों की है। यदि आपकी सीडिंग विफल हो जाती है, तो आपको सीधे अपनी बैंक शाखा से संपर्क करना होगा।"
+                    fact: "यह एक मिथक है। एनपीसीआई मैपर को अपडेट करने की जिम्मेदारी पूरी तरह से बैंकों की है। आपको अपनी बैंक शाखा से संपर्क करना होगा।"
                 },
                 {
-                    myth: "मेरा बैंक ऐप दिखाता है कि मेरा आधार 'सक्रिय' है, इसलिए मैं डीबीटी के लिए तैयार हूं।",
-                    fact: "यह एक मिथक है। किसी बैंक की आंतरिक प्रणाली में 'सक्रिय' आधार लिंक दिखाना इस बात की गारंटी नहीं देता है कि आपका खाता एनपीसीआई मैपर पर है। सुनिश्चित होने का एकमात्र तरीका यूआईडीएआई या एनपीसीआई वेबसाइटों पर जांच करना है।"
+                    myth: "डीबीटी केवल छात्रवृत्ति के लिए है।",
+                    fact: "यह एक बहुत बड़ा मिथक है। डीबीटी 300 से अधिक योजनाओं के लिए एक मंच है, जिसमें पेंशन (एनएसएपी), सब्सिडी (पीएम-किसान, पहल), और मजदूरी भुगतान (मनरेगा) शामिल हैं।"
                 }
             ],
             facts: [
                 {
                     fact: "डीबीटी को सक्षम करने के लिए आपको अपने बैंक में एक विशिष्ट 'आधार सीडिंग सहमति फॉर्म' जमा करना होगा।",
-                    explanation: "यह एक तथ्य है। केवल एक लिंक किया हुआ खाता होना पर्याप्त नहीं है; आपको सीडिंग के लिए स्पष्ट सहमति देनी होगी, जिसे बैंक फिर एनपीसीआई सर्वर पर अपडेट करता है।"
+                    explanation: "यह एक तथ्य है। केवल एक लिंक किया हुआ खाता होना पर्याप्त नहीं है; आपको सीडिंग के लिए स्पष्ट सहमति देनी होगी।"
                 },
                 {
-                    fact: "किसी भी समय डीबीटी के लिए केवल एक बैंक खाता आधार-सीड किया जा सकता है।",
-                    explanation: "यह एक तथ्य है। यदि आप कोई नया खाता सीड करते हैं, तो यह स्वचालित रूप से पिछले खाते को एनपीसीआई मैपर से डी-लिंक कर देता है। नवीनतम सीड किए गए खाते में फंड आता है।"
+                    fact: "किसी भी समय डीबीटी के लिए केवल एक बैंक खाता आधार-સીડ किया जा सकता है।",
+                    explanation: "यह एक तथ्य है। यदि आप कोई नया खाता सीड करते हैं, तो यह स्वचालित रूप से पिछले खाते को एनपीसीआई मैपर से डी-लिंक कर देता है।"
                 },
                 {
-                    fact: "यदि बॉयोमीट्रिक प्रमाणीकरण (फिंगरप्रिंट/आइरिस) विफल हो जाता है, तो लाभ प्राप्त करने के वैकल्पिक तरीके हैं।",
-                    explanation: "यह एक तथ्य है। सरकारी दिशानिर्देशों में एक 'अपवाद हैंडलिंग तंत्र' शामिल है ताकि यह सुनिश्चित हो सके कि आपको लाभ मिले, जैसे ओटीपी या अन्य भौतिक सत्यापन का उपयोग करना।"
+                    fact: "यदि बॉयोमीट्रिक प्रमाणीकरण विफल हो जाता है, तो लाभ प्राप्त करने के वैकल्पिक तरीके हैं।",
+                    explanation: "यह एक तथ्य है। सरकारी दिशानिर्देशों में एक 'अपवाद हैंडलिंग तंत्र' शामिल है ताकि यह सुनिश्चित हो सके कि आपको लाभ मिले।"
                 },
                 {
                     fact: "यदि आधार और बैंक खाते पर आपका नाम बिल्कुल मेल नहीं खाता है, तो सीडिंग विफल हो जाएगी।",
-                    explanation: "यह एक तथ्य है। सीडिंग प्रक्रिया के सफल होने के लिए आपका नाम दोनों रिकॉर्ड में समान होना चाहिए। आपको इसे आधार या बैंक रिकॉर्ड में से किसी एक में ठीक करवाना होगा।"
-                },
-                {
-                    fact: "सब्सिडी प्राप्त करने के लिए आधार कानूनी रूप से अनिवार्य नहीं है।",
-                    explanation: "यह एक तथ्य है। सुप्रीम कोर्ट ने फैसला सुनाया है कि यद्यपि आधार इसकी दक्षता के लिए पसंदीदा है, केवल आधार संख्या न होने के कारण लाभों से इनकार नहीं किया जा सकता है। अन्य आईडी के रूपों को स्वीकार किया जाना चाहिए।"
+                    explanation: "यह एक तथ्य है। सीडिंग प्रक्रिया के सफल होने के लिए आपका नाम दोनों रिकॉर्ड में समान होना चाहिए।"
                 },
                 {
                     fact: "आप यूआईडीएआई और एनपीसीआई दोनों वेबसाइटों पर अपनी आधार सीडिंग स्थिति की जांच कर सकते हैं।",
-                    explanation: "यह एक तथ्य है। दोनों आधिकारिक पोर्टल यह जांचने की सुविधा प्रदान करते हैं कि वर्तमान में कौन सा बैंक खाता डीबीटी के लिए सीड किया गया है, क्योंकि वे एक ही एनपीसीआई मैपर से डेटा प्राप्त करते हैं।"
+                    explanation: "यह एक तथ्य है। दोनों आधिकारिक पोर्टल यह जांचने की सुविधा प्रदान करते हैं कि वर्तमान में कौन सा बैंक खाता डीबीटी के लिए सीड किया गया है।"
                 }
             ]
         },
@@ -1320,31 +1378,31 @@ const pageContent = {
             faqs: [
                 {
                     question: "आधार लिंकिंग और आधार सीडिंग में क्या अंतर है?",
-                    answer: "आधार लिंकिंग आपके आधार को पहचान सत्यापन (केवाईसी) के लिए बैंक खाते से जोड़ता है। आधार सीडिंग आपके आधार को प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) प्राप्त करने के लिए एनपीसीआई सर्वर पर एक ही बैंक खाते से मैप करने की एक अलग, विशिष्ट प्रक्रिया है। छात्रवृत्ति के लिए सीडिंग अनिवार्य है।"
+                    answer: "आधार लिंकिंग आपके आधार को पहचान सत्यापन (केवाईसी) के लिए बैंक खाते से जोड़ता है। आधार सीडिंग आपके आधार को प्रत्यक्ष लाभ हस्तांतरण (डीबीटी) प्राप्त करने के लिए एनपीसीआई सर्वर पर एक ही बैंक खाते से मैप करने की एक अलग, विशिष्ट प्रक्रिया है। छात्रवृत्ति और अन्य योजनाओं के लिए सीडिंग अनिवार्य है।"
                 },
                 {
                     question: "क्या मेरे पास कई आधार-सीडेड खाते हो सकते हैं?",
                     answer: "नहीं, आपके पास किसी भी समय डीबीटी प्राप्त करने के लिए सिर्फ एक आधार-सीडेड खाता हो सकता है। यदि आप कोई नया खाता सीड करते हैं, तो पिछला खाता स्वचालित रूप से डी-लिंक हो जाता है। सब्सिडी अंतिम सफलतापूर्वक सीड किए गए बैंक खाते में जमा की जाएगी।"
                 },
                 {
-                    question: "डीबीटी फंड प्राप्त करने के लिए मैं अपना बैंक खाता कैसे बदलूं?",
-                    answer: "अपना डीबीटी-सक्षम खाता बदलने के लिए, आपको उस *नए* बैंक की शाखा में जाना होगा जहां आप फंड प्राप्त करना चाहते हैं। वहां आधार सीडिंग सहमति फॉर्म जमा करें। वे एनपीसीआई मैपर को अपडेट कर देंगे, जो पुराने खाते को स्वचालित रूप से ओवरराइड कर देगा।"
+                    question: "मेरा डीबीटी भुगतान विफल हो गया। मुझे क्या करना चाहिए?",
+                    answer: "सबसे पहले, यूआईडीएआई पोर्टल पर अपनी सीडिंग स्थिति की जांच करें। यदि यह निष्क्रिय है या गलत खाते से जुड़ा हुआ है, तो सीडिंग फॉर्म के साथ अपनी बैंक शाखा में जाएँ। यह भी सुनिश्चित करें कि आपके बैंक और आधार रिकॉर्ड के बीच आपका नाम और अन्य विवरण बिल्कुल मेल खाते हैं।"
                 },
                 {
-                    question: "यदि मेरा आधार सीडिंग अनुरोध विफल हो जाए या लंबित हो तो मुझे क्या करना चाहिए?",
-                    answer: "अपनी बैंक शाखा में फिर से जाएँ। विफलता के सामान्य कारणों में आपके आधार और बैंक रिकॉर्ड के बीच नाम का मेल न होना, या फॉर्म पर गलत खाता संख्या शामिल है। एनपीसीआई मैपर को अपडेट करने की जिम्मेदारी पूरी तरह से बैंकों की है, इसलिए आपको उनसे संपर्क करना होगा।"
+                    question: "डीबीटी फंड प्राप्त करने के लिए मैं अपना बैंक खाता कैसे बदलूं?",
+                    answer: "अपना डीबीटी-सक्षम खाता बदलने के लिए, आपको उस *नए* बैंक की शाखा में जाना होगा जहां आप फंड प्राप्त करना चाहते हैं। वहां आधार सीडिंग सहमति फॉर्म जमा करें। वे एनपीसीआई मैपर को अपडेट कर देंगे, जो पुराने खाते को स्वचालित रूप से ओवरराइड कर देगा।"
                 },
                 {
                     question: "मेरा नाम मेरे आधार कार्ड बनाम मेरे बैंक खाते में अलग है। मुझे क्या करना चाहिए?",
                     answer: "आपको अपने नाम को किसी एक दस्तावेज़ में ठीक करवाना होगा ताकि वे बिल्कुल मेल खाएं। आप अपने आधार की विवरण अपडेट करने के लिए किसी आधार नामांकन केंद्र पर जा सकते हैं, या अपने बैंक रिकॉर्ड को अपडेट करने के लिए अपनी बैंक शाखा में जा सकते हैं। सीडिंग के सफल होने के लिए नाम एक जैसा होना चाहिए।"
                 },
                 {
-                    question: "यदि मेरा बॉयोमीट्रिक (फिंगरप्रिंट/आइरिस) प्रमाणीकरण विफल हो जाता है तो क्या होगा?",
-                    answer: "चिंता न करें। सरकारी दिशानिर्देशों में एक 'अपवाद हैंडलिंग तंत्र' है। कार्यान्वयन एजेंसियों को आपको अपनी पहचान साबित करने के वैकल्पिक तरीके प्रदान करने की आवश्यकता होती है, जैसे कि आपके पंजीकृत मोबाइल नंबर पर ओटीपी के माध्यम से, या अन्य भौतिक सत्यापन तरीकों से ताकि आपको लाभों से इनकार न किया जाए।"
+                    question: "क्या आधार सीडिंग की कोई समय सीमा है?",
+                    answer: "कोई आधिकारिक समय सीमा नहीं है, लेकिन जल्द से जल्द प्रक्रिया पूरी करने की दृढ़ता से सिफारिश की जाती है। कई योजनाएं गैर-सीडेड खातों में धन का वितरण नहीं करेंगी, इसलिए यदि आप देरी करते हैं तो आप लाभों से वंचित रह सकते हैं।"
                 },
                 {
-                    question: "क्या मेरी छात्रवृत्ति प्राप्त करने के लिए आधार अनिवार्य है?",
-                    answer: "जबकि आधार पसंदीदा और सबसे कुशल तरीका है, सुप्रीम कोर्ट ने फैसला सुनाया है कि सिर्फ आधार संख्या न होने के कारण आवश्यक लाभों से इनकार नहीं किया जा सकता है। यदि आपके पास आधार नहीं है, तो आप आमतौर पर अपनी आधार नामांकन ID (EID) पर्ची का उपयोग अन्य वैकल्पिक सरकारी-अनुमोदित ID (जैसे बैंक पासबुक) के साथ कर सकते हैं जैसा कि छात्रवृत्ति योजना द्वारा निर्दिष्ट है।"
+                    question: "क्या मेरी पेंशन या सब्सिडी प्राप्त करने के लिए आधार अनिवार्य है?",
+                    answer: "जबकि आधार पसंदीदा और सबसे कुशल तरीका है, सुप्रीम कोर्ट ने फैसला सुनाया है कि सिर्फ आधार संख्या न होने के कारण आवश्यक लाभों से इनकार नहीं किया जा सकता है। यदि आपके पास आधार नहीं है, तो आप योजना द्वारा निर्दिष्ट वैकल्पिक सरकारी-अनुमोदित आईडी का उपयोग कर सकते हैं।"
                 },
                 {
                     question: "मुझे कैसे पता चलेगा कि मेरे खाते में डीबीटी फंड आ गया है?",
@@ -1461,7 +1519,7 @@ const pageContent = {
                 myths: {
                     title: "आम मिथक:",
                     list: [
-                        "मेरा आधार-लिंक्ड खाता स्वतः ही छात्रवृत्ति प्राप्त कर लेगा।",
+                        "मेरा आधार-लिंक्ed खाता स्वतः ही छात्रवृत्ति प्राप्त कर लेगा।",
                         "मैं अपने किसी भी खाते में फंड प्राप्त कर सकता हूँ।",
                         "आधार सीडिंग एक बार की प्रक्रिया है और इसे कभी जांचने की आवश्यकता नहीं है।"
                     ]
@@ -1499,7 +1557,7 @@ const pageContent = {
                 videos: "વીડિયો",
                 status: "સ્થિતિ તપાસો",
                 takeAction: "પગલાં લો",
-                scholarships: "શિષ્યવૃત્તિ",
+                scholarships: "યોજનાઓ",
                 myths: "માન્યતા તોડો",
                 faq: "વારંવાર પૂછાતા પ્રશ્નો",
                 contact: "સંપર્ક",
@@ -1610,44 +1668,77 @@ const pageContent = {
             }
         },
         scholarships: {
-            title: "લોકપ્રિય શિષ્યવૃત્તિ યોજનાઓ",
-            subtitle: "શિષ્યવૃત્તિની તકોનું અન્વેષણ કરો જેના માટે ડીબીટી-સક્ષમ ખાતું જરૂરી છે.",
-            scholarships: [
+            title: "ડીબીટી યોજના એક્સપ્લોરર",
+            subtitle: "ડીબીટી હેઠળની યોજનાઓની વ્યાપક શ્રેણીનું અન્વેષણ કરો, શિષ્યવૃત્તિથી લઈને પેન્શન અને સબસિડી સુધી.",
+            categories: {
+                all: "બધી",
+                scholarships: "શિષ્યવૃત્તિ",
+                pensions: "પેન્શન",
+                subsidies: "સબસિડી"
+            },
+            schemes: [
                 {
-                    title: "SC/OBC/EBC વિદ્યાર્થીઓ માટે પોસ્ટ-મેટ્રિક શિષ્યવૃત્તિ",
+                    title: "SC/OBC/EBC માટે પોસ્ટ-મેટ્રિક શિષ્યવૃત્તિ",
                     description: "અનુસૂચિત જાતિ, અન્ય પછાત વર્ગ અને આર્થિક રીતે પછાત વર્ગના વિદ્યાર્થીઓને મેટ્રિક પછીના અભ્યાસ માટે આર્થિક સહાય.",
-                    eligibility: "વાલીની આવક મર્યાદા લાગુ પડે છે (દા.ત., SC માટે ₹2.5 લાખ સુધી, OBC માટે ₹1.5 લાખ સુધી).",
-                    link: "https://scholarships.gov.in/"
+                    eligibility: "વાલીની આવક મર્યાદા લાગુ (દા.ત., SC માટે ₹2.5 લાખ સુધી).",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
                     title: "રાષ્ટ્રીય મીન્સ-કમ-મેરિટ શિષ્યવૃત્તિ (NMMS)",
-                    description: "આર્થિક રીતે નબળા વર્ગના હોશિયાર વિદ્યાર્થીઓને ધોરણ 8 માં અભ્યાસ છોડતા અટકાવવા અને તેમને તેમનું શિક્ષણ ચાલુ રાખવા પ્રોત્સાહિત કરવા માટે.",
-                    eligibility: "વાલીની આવક ₹3.5 લાખ સુધી. ધોરણ 7 માં ઓછામાં ઓછા 55% ગુણ મેળવેલા હોવા જોઈએ.",
-                    link: "https://scholarships.gov.in/"
+                    description: "આર્થિક રીતે નબળા વર્ગના હોશિયાર વિદ્યાર્થીઓ માટે જેથી તેઓ ધોરણ 8 માં અભ્યાસ ન છોડે.",
+                    eligibility: "વાલીની આવક ₹3.5 લાખ સુધી. ધોરણ 7 માં ઓછામાં ઓછા 55% ગુણ હોવા જોઈએ.",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
-                    title: "કૉલેજ અને યુનિવર્સિટીના વિદ્યાર્થીઓ માટે શિષ્યવૃત્તિની કેન્દ્રીય ક્ષેત્ર યોજના (CSSS)",
-                    description: "ઓછી આવક ધરાવતા પરિવારોના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ અભ્યાસ દરમિયાન રોજીંદા ખર્ચાઓને પહોંચી વળવા માટે.",
-                    eligibility: "સંબંધિત બોર્ડમાંથી ધોરણ 12 માં સફળ ઉમેદવારોના ટોચના 20મા પર્સેન્ટાઇલમાં હોવા જોઈએ, વાલીની આવક ₹4.5 લાખથી ઓછી હોય.",
-                    link: "https://scholarships.gov.in/"
+                    title: "કોલેજ/યુનિવર્સિટીના વિદ્યાર્થીઓ માટે CSSS",
+                    description: "ઓછી આવક ધરાવતા પરિવારોના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ અભ્યાસ દરમિયાન ખર્ચ પહોંચી વળવા.",
+                    eligibility: "ધોરણ 12 માં ટોચના 20 પર્સેન્ટાઇલમાં, વાલીની આવક < ₹4.5 લાખ.",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
-                    title: "મુખ્યમંત્રી યુવા સ્વાવલંબન યોજના (MYSY, ગુજરાત)",
-                    description: "ગુજરાતના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ શિક્ષણ મેળવવા માટે રાજ્ય સ્તરની યોજના.",
-                    eligibility: "અભ્યાસક્રમ મુજબ બદલાય છે. ૧૦મા/૧૨મા ધોરણમાં ચોક્કસ પર્સેન્ટાઇલ અને આવકના માપદંડની જરૂર છે.",
-                    link: "https://mysy.guj.nic.in/"
+                    title: "પીએમ-કિસાન સન્માન નિધિ",
+                    description: "એક આવક સહાય યોજના જે તમામ પાત્ર ખેડૂત પરિવારોને ત્રણ હપ્તામાં પ્રતિ વર્ષ ₹6,000 પૂરા પાડે છે.",
+                    eligibility: "બધા જમીન-ધારક ખેડૂત પરિવારો.",
+                    link: "https://pmkisan.gov.in/",
+                    category: "subsidy"
+                },
+                {
+                    title: "રાષ્ટ્રીય સામાજિક સહાય કાર્યક્રમ (NSAP)",
+                    description: "વૃદ્ધો, વિધવાઓ અને વિકલાંગ વ્યક્તિઓને વૃદ્ધાવસ્થા પેન્શન જેવા વિવિધ ઘટકો હેઠળ નાણાકીય સહાય પૂરી પાડે છે.",
+                    eligibility: "યોજનાના ઘટક મુજબ બદલાય છે, સામાન્ય રીતે BPL પરિવારો માટે.",
+                    link: "https://nsap.nic.in/",
+                    category: "pension"
+                },
+                {
+                    title: "પહેલ (LPG સબસિડી)",
+                    description: "LPG રાંધણ ગેસ સિલિન્ડરો પરની સબસિડી સીધા પાત્ર ગ્રાહકોના બેંક ખાતામાં ટ્રાન્સફર કરવામાં આવે છે.",
+                    eligibility: "ઘરેલું LPG કનેક્શન ધરાવતા તમામ પરિવારો.",
+                    link: "https://dbtbharat.gov.in/scheme/pahal/",
+                    category: "subsidy"
+                },
+                {
+                    title: "ઈન્દિરા ગાંધી રાષ્ટ્રીય વૃદ્ધાવસ્થા પેન્શન યોજના",
+                    description: "NSAP નો એક ઘટક, જે BPL પરિવારના વૃદ્ધ વ્યક્તિઓને માસિક પેન્શન પૂરું પાડે છે.",
+                    eligibility: "ઉંમર 60+ વર્ષ, BPL પરિવારમાંથી.",
+                    link: "https://nsap.nic.in/nsap/About_NSAP/ignop_guidelines.pdf",
+                    category: "pension"
                 },
                 {
                     title: "વિકલાંગ વિદ્યાર્થીઓ માટે શિષ્યવૃત્તિ",
                     description: "ઉત્કૃષ્ટતાની નિર્દિષ્ટ સંસ્થાઓમાં સ્નાતક અને અનુસ્નાતક ડિગ્રી મેળવતા વિકલાંગ વિદ્યાર્થીઓ માટે.",
-                    eligibility: "40% થી વધુ વિકલાંગતા અને માન્ય પ્રમાણપત્ર ધરાવતા વિદ્યાર્થીઓ. વાલીની વાર્ષિક આવક મર્યાદા ₹6 લાખ.",
-                    link: "https://scholarships.gov.in/"
+                    eligibility: "40%+ વિકલાંગતા. વાલીની વાર્ષિક આવક મર્યાદા ₹6 લાખ.",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 },
                 {
                     title: "આરપીએફ/આરપીએસએફ માટે પ્રધાનમંત્રી શિષ્યવૃત્તિ યોજના",
-                    description: "રેલવે સુરક્ષા દળ (આરપીએફ) અને રેલવે સુરક્ષા વિશેષ દળ (આરપીએસએફ) ના કર્મચારીઓના આશ્રિત બાળકો માટે વ્યાવસાયિક ડિગ્રી શિષ્યવૃત્તિ.",
-                    eligibility: "સેવારત/ભૂતપૂર્વ કર્મચારીઓ અને વિધવાઓના આશ્રિત બાળકો. 12મા/ડિપ્લોમા/સ્નાતકમાં ન્યૂનતમ 60%.",
-                    link: "https://scholarships.gov.in/"
+                    description: "રેલવે સુરક્ષા દળ (આરપીએફ) ના કર્મચારીઓના આશ્રિત બાળકો માટે વ્યાવસાયિક ડિગ્રી શિષ્યવૃત્તિ.",
+                    eligibility: "સેવારત/ભૂતપૂર્વ કર્મચારીઓના આશ્રિતો. 12મા/ડિપ્લોમા/સ્નાતકમાં ન્યૂનતમ 60%.",
+                    link: "https://scholarships.gov.in/",
+                    category: "scholarship"
                 }
             ]
         },
@@ -1657,50 +1748,46 @@ const pageContent = {
             resultText: "તમે હવે પ્રમાણિત માન્યતા અને હકીકત નિષ્ણાત છો! બીજાઓને મદદ કરવા માટે તમારું જ્ઞાન શેર કરો.",
             myths: [
                 {
-                    myth: "જો મારું બેંક ખાતું આધાર સાથે જોડાયેલું હોય, તો મને આપમેળે મારી શિષ્યવૃત્તિ મળી જશે.",
-                    fact: "આ એક મોટી માન્યતા છે. તમારું ખાતું ફક્ત લિંક જ નહીં, પણ NPCI મેપર પર DBT માટે આધાર સાથે ખાસ 'સીડ' થયેલું હોવું જોઈએ. લિંકિંગ ફક્ત KYC માટે છે અને તે એક અલગ પ્રક્રિયા છે."
+                    myth: "જો મારું બેંક ખાતું આધાર સાથે જોડાયેલું હોય, તો મને આપમેળે મારી ડીબીટી ભંડોળ મળી જશે.",
+                    fact: "આ એક મોટી માન્યતા છે. તમારું ખાતું ડીબીટી માટે આધાર સાથે 'સીડ' થયેલું હોવું જોઈએ. લિંકિંગ ફક્ત કેવાયસી માટે છે."
                 },
                 {
-                    myth: "હું મારા કોઈપણ આધાર-લિંક્ડ બેંક ખાતામાં મારી શિષ્યવૃત્તિ મેળવી શકું છું.",
-                    fact: "આ એક માન્યતા છે. તમે ફક્ત તે જ એક બેંક ખાતામાં DBT ચુકવણીઓ મેળવી શકો છો જે હાલમાં તમારા આધાર સાથે સીડ થયેલ છે. આ તમારું નિયુક્ત DBT-સક્ષમ ખાતું છે."
+                    myth: "હું મારા કોઈપણ આધાર-લિંક્ડ બેંક ખાતામાં મારી ડીબીટી ભંડોળ મેળવી શકું છું.",
+                    fact: "આ એક માન્યતા છે. તમે ફક્ત તે જ એક બેંક ખાતામાં ડીબીટી ચુકવણીઓ મેળવી શકો છો જે હાલમાં તમારા આધાર સાથે સીડ થયેલ છે."
                 },
                 {
                     myth: "મારી બેંક પાસે મારા આધાર કાર્ડની ફોટોકોપી છે, તેથી મારું ખાતું સીડ થયેલું છે.",
-                    fact: "આ એક માન્યતા છે. ફોટોકોપી સબમિટ કરવી પૂરતી નથી. તમારે ચોક્કસ 'આધાર સીડિંગ સંમતિ ફોર્મ' ભરીને સબમિટ કરવું પડશે અને બેંકને તમારું એકાઉન્ટ સીડ કરવા માટે સ્પષ્ટપણે વિનંતી કરવી પડશે."
+                    fact: "આ એક માન્યતા છે. તમારે વિશિષ્ટ 'આધાર સીડિંગ સંમતિ ફોર્મ' ભરવું પડશે અને સ્પષ્ટપણે સીડિંગની વિનંતી કરવી પડશે."
                 },
                 {
-                    myth: "જો મારી સીડિંગ નિષ્ફળ જાય, તો તે NPCI અથવા UIDAI સાથેની સમસ્યા છે.",
-                    fact: "આ એક માન્યતા છે. NPCI મેપરને અપડેટ કરવાની જવાબદારી સંપૂર્ણપણે બેંકોની છે. જો તમારી સીડિંગ નિષ્ફળ જાય, તો તમારે સીધી તમારી બેંક શાખાનો સંપર્ક કરવો આવશ્યક છે."
+                    myth: "જો મારી સીડિંગ નિષ્ફળ જાય, તો તે એનપીસીઆઈ અથવા યુઆઈડીએઆઈ સાથેની સમસ્યા છે.",
+                    fact: "આ એક માન્યતા છે. એનપીસીઆઈ મેપરને અપડેટ કરવાની જવાબદારી સંપૂર્ણપણે બેંકોની છે. તમારે તમારી બેંક શાખાનો સંપર્ક કરવો પડશે."
                 },
                 {
-                    myth: "મારી બેંક એપ બતાવે છે કે મારું આધાર 'સક્રિય' છે, તેથી હું DBT માટે તૈયાર છું.",
-                    fact: "આ એક માન્યતા છે. બેંકની આંતરિક સિસ્ટમમાં 'સક્રિય' આધાર લિંક બતાવવું એ ખાતરી આપતું નથી કે તમારું ખાતું NPCI મેપર પર છે. ખાતરી કરવાનો એકમાત્ર રસ્તો UIDAI અથવા NPCI વેબસાઇટ્સ પર તપાસ કરવાનો છે."
+                    myth: "ડીબીટી ફક્ત શિષ્યવૃત્તિ માટે છે.",
+                    fact: "આ એક મોટી માન્યતા છે. ડીબીટી ૩૦૦ થી વધુ યોજનાઓ માટે એક પ્લેટફોર્મ છે, જેમાં પેન્શન (એનએસએપી), સબસિડી (પીએમ-કિસાન, પહેલ), અને વેતન ચુકવણી (મનરેગા) શામેલ છે."
                 }
             ],
             facts: [
                 {
                     fact: "ડીબીટીને સક્ષમ કરવા માટે તમારે તમારી બેંકમાં એક વિશિષ્ટ 'આધાર સીડિંગ સંમતિ ફોર્મ' સબમિટ કરવું આવશ્યક છે.",
-                    explanation: "આ એક હકીકત છે. ફક્ત લિંક કરેલું એકાઉન્ટ હોવું પૂરતું નથી; તમારે સીડિંગ માટે સ્પષ્ટ સંમતિ આપવી આવશ્યક છે, જેને બેંક પછી NPCI સર્વર પર અપડેટ કરે છે."
+                    explanation: "આ એક હકીકત છે. ફક્ત લિંક કરેલું એકાઉન્ટ હોવું પૂરતું નથી; તમારે સીડિંગ માટે સ્પષ્ટ સંમતિ આપવી આવશ્યક છે."
                 },
                 {
                     fact: "કોઈપણ સમયે ડીબીટી માટે ફક્ત એક જ બેંક ખાતું આધાર-સીડ કરી શકાય છે.",
-                    explanation: "આ એક હકીકત છે. જો તમે નવું ખાતું સીડ કરો છો, તો તે આપમેળે પાછલા ખાતાને NPCI મેપરથી ડિ-લિંક કરે છે. નવીનતમ સીડ થયેલ ખાતામાં ભંડોળ આવે છે."
+                    explanation: "આ એક હકીકત છે. જો તમે નવું ખાતું સીડ કરો છો, તો તે આપમેળે પાછલા ખાતાને એનપીસીઆઈ મેપરથી ડિ-લિંક કરે છે."
                 },
                 {
-                    fact: "જો બાયોમેટ્રિક પ્રમાણીકરણ (ફિંગરપ્રિન્ટ/આઇરિસ) નિષ્ફળ જાય, તો લાભ મેળવવાના વૈકલ્પિક રસ્તાઓ છે.",
-                    explanation: "આ એક હકીકત છે. સરકારી માર્ગદર્શિકાઓમાં 'અપવાદ સંભાળવાની પદ્ધતિ' શામેલ છે જેથી ખાતરી કરી શકાય કે તમને લાભ મળે, જેમ કે OTP અથવા અન્ય ભૌતિક ચકાસણીનો ઉપયોગ કરવો."
+                    fact: "જો બાયોમેટ્રિક પ્રમાણીકરણ નિષ્ફળ જાય, તો લાભ મેળવવાના વૈકલ્પિક રસ્તાઓ છે.",
+                    explanation: "આ એક હકીકત છે. સરકારી માર્ગદર્શિકાઓમાં 'અપવાદ સંભાળવાની પદ્ધતિ' શામેલ છે જેથી ખાતરી કરી શકાય કે તમને લાભ મળે."
                 },
                 {
                     fact: "જો આધાર અને બેંક ખાતા પર તમારું નામ બરાબર મેળ ખાતું નથી, તો સીડિંગ નિષ્ફળ જશે.",
-                    explanation: "આ એક હકીકત છે. સીડિંગ પ્રક્રિયા સફળ થવા માટે તમારું નામ બંને રેકોર્ડમાં સરખું હોવું આવશ્યક છે. તમારે તેને આધાર અથવા બેંક રેકોર્ડમાંથી કોઈ એકમાં સુધારવું પડશે."
-                },
-                {
-                    fact: "સબસિડી મેળવવા માટે આધાર કાયદેસર રીતે ફરજિયાત નથી.",
-                    explanation: "આ એક હકીકત છે. સુપ્રીમ કોર્ટે ચુકાદો આપ્યો છે કે જયારે આધાર તેની કાર્યક્ષમતા માટે પસંદગીનો છે, ત્યારે ફક્ત આધાર નંબર ન હોવાના કારણે લાભો નકારી શકાય નહીં. ID ના અન્ય સ્વરૂપો સ્વીકારવા આવશ્યક છે."
+                    explanation: "આ એક હકીકત છે. સીડિંગ પ્રક્રિયા સફળ થવા માટે તમારું નામ બંને રેકોર્ડમાં સરખું હોવું આવશ્યક છે."
                 },
                 {
                     fact: "તમે યુઆઈડીએઆઈ અને એનપીસીઆઈ બંને વેબસાઇટ્સ પર તમારી આધાર સીડિંગની સ્થિતિ ચકાસી શકો છો.",
-                    explanation: "આ એક હકીકત છે. બંને અધિકૃત પોર્ટલ હાલમાં કયું બેંક ખાતું DBT માટે સીડ થયેલ છે તે તપાસવાની સુવિધા પૂરી પાડે છે, કારણ કે તેઓ એક જ NPCI મેપરથી ડેટા મેળવે છે."
+                    explanation: "આ એક હકીકત છે. બંને અધિકૃત પોર્ટલ હાલમાં કયું બેંક ખાતું ડીબીટી માટે સીડ થયેલ છે તે તપાસવાની સુવિધા પૂરી પાડે છે."
                 }
             ]
         },
@@ -1820,31 +1907,31 @@ const pageContent = {
             faqs: [
                 {
                     question: "આધાર લિંકિંગ અને આધાર સીડિંગ વચ્ચે શું તફાવત છે?",
-                    answer: "આધાર લિંકિંગ તમારા આધારને ઓળખ ચકાસણી (KYC) માટે બેંક ખાતા સાથે જોડે છે. આધાર સીડિંગ તમારા આધારને ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર (DBT) મેળવવા માટે NPCI સર્વર પર એક જ બેંક ખાતા સાથે મેપ કરવાની એક અલગ, વિશિષ્ટ પ્રક્રિયા છે. શિષ્યવૃત્તિ માટે સીડિંગ ફરજિયાત છે."
+                    answer: "આધાર લિંકિંગ તમારા આધારને ઓળખ ચકાસણી (KYC) માટે બેંક ખાતા સાથે જોડે છે. આધાર સીડિંગ તમારા આધારને ડાયરેક્ટ બેનિફિટ ટ્રાન્સફર (DBT) મેળવવા માટે NPCI સર્વર પર એક જ બેંક ખાતા સાથે મેપ કરવાની એક અલગ, વિશિષ્ટ પ્રક્રિયા છે. શિષ્યવૃત્તિ અને અન્ય યોજનાઓ માટે સીડિંગ ફરજિયાત છે."
                 },
                 {
                     question: "શું મારી પાસે બહુવિધ આધાર-સીડેડ ખાતા હોઈ શકે છે?",
                     answer: "ના, તમારી પાસે કોઈ પણ સમયે DBT મેળવવા માટે ફક્ત એક જ આધાર-સીડેડ ખાતું હોઈ શકે છે. જો તમે નવું ખાતું સીડ કરો છો, તો પાછલું ખાતું આપમેળે ડી-લિંક થઈ જાય છે. સબસિડી છેલ્લા સફળતાપૂર્વક સીડ થયેલા બેંક ખાતામાં જમા કરવામાં આવશે."
                 },
                 {
-                    question: "ડીબીટી ફંડ મેળવવા માટે હું મારું બેંક ખાતું કેવી રીતે બદલી શકું?",
-                    answer: "તમારું ડીબીટી-સક્ષમ ખાતું બદલવા માટે, તમારે તે *નવી* બેંકની શાખાની મુલાકાત લેવી આવશ્યક છે જ્યાં તમે ભંડોળ મેળવવા માંગો છો. ત્યાં આધાર સીડિંગ સંમતિ ફોર્મ સબમિટ કરો. તેઓ NPCI મેપરને અપડેટ કરશે, જે જૂના ખાતાને આપમેળે ઓવરરાઇડ કરશે."
+                    question: "મારી ડીબીટી ચુકવણી નિષ્ફળ ગઈ. મારે શું કરવું જોઈએ?",
+                    answer: "પ્રથમ, યુઆઈડીએઆઈ પોર્ટલ પર તમારી સીડિંગ સ્થિતિ તપાસો. જો તે નિષ્ક્રિય હોય અથવા ખોટા ખાતા સાથે જોડાયેલ હોય, તો સીડિંગ ફોર્મ સાથે તમારી બેંક શાખાની મુલાકાત લો. એ પણ સુનિશ્ચિત કરો કે તમારું નામ અને અન્ય વિગતો તમારા બેંક અને આધાર રેકોર્ડ્સ વચ્ચે બરાબર મેળ ખાય છે."
                 },
                 {
-                    question: "જો મારી આધાર સીડિંગ વિનંતી નિષ્ફળ જાય અથવા બાકી રહે તો મારે શું કરવું જોઈએ?",
-                    answer: "તમારી બેંક શાખાની ફરી મુલાકાત લો. નિષ્ફળતાના સામાન્ય કારણોમાં તમારા આધાર અને બેંક રેકોર્ડ વચ્ચે નામનો મેળ ન ખાવો, અથવા ફોર્મ પર ખોટો ખાતા નંબર શામેલ છે. NPCI મેપરને અપડેટ કરવાની જવાબદારી સંપૂર્ણપણે બેંકોની છે, તેથી તમારે તેમની સાથે ફોલો-અપ કરવું પડશે."
+                    question: "ડીબીટી ફંડ મેળવવા માટે હું મારું બેંક ખાતું કેવી રીતે બદલી શકું?",
+                    answer: "તમારું ડીબીટી-સક્ષમ ખાતું બદલવા માટે, તમારે તે *નવી* બેંકની શાખાની મુલાકાત લેવી આવશ્યક છે જ્યાં તમે ભંડોળ મેળવવા માંગો છો. ત્યાં આધાર સીડિંગ સંમતિ ફોર્મ સબમિટ કરો. તેઓ NPCI મેપરને અપડેટ કરશે, જે જૂના ખાતાને આપમેળે ઓવરરાઇડ કરશે."
                 },
                 {
                     question: "મારું નામ મારા આધાર કાર્ડ વિરુદ્ધ મારા બેંક ખાતામાં અલગ છે. મારે શું કરવું જોઈએ?",
                     answer: "તમારે તમારા નામને દસ્તાવેજોમાંથી એકમાં સુધારવું પડશે જેથી તે બરાબર મેળ ખાય. તમે તમારા આધારની વિગતો અપડેટ કરવા માટે આધાર નોંધણી કેન્દ્રની મુલાકાત લઈ શકો છો, અથવા તમારા બેંક રેકોર્ડને અપડેટ કરવા માટે તમારી બેંક શાખાની મુલાકાત લઈ શકો છો. સીડિંગ સફળ થવા માટે નામ એકસરખું હોવું આવશ્યક છે."
                 },
                 {
-                    question: "જો મારું બાયોમેટ્રિક (ફિંગરપ્રિન્ટ/આઇરિસ) પ્રમાણીકરણ નિષ્ફળ જાય તો શું થશે?",
-                    answer: "ચિંતા કરશો નહીં. સરકારી માર્ગદર્શિકાઓમાં એક 'અપવાદ સંભાળવાની પદ્ધતિ' છે. અમલીकरण એજન્સીઓને તમને તમારી ઓળખ સાબિત કરવાના વૈકલ્પિક માર્ગો પ્રદાન કરવાની જરૂર છે, જેમ કે તમારા નોંધાયેલા મોબાઇલ નંબર પર OTP દ્વારા, અથવા અન્ય ભૌતિક ચકાસણી પદ્ધતિઓ દ્વારા જેથી તમને લાભો નકારવામાં ન આવે."
+                    question: "શું આધાર સીડિંગની કોઈ સમયમર્યાદા છે?",
+                    answer: "કોઈ સત્તાવાર સમયમર્યાદા નથી, પરંતુ શક્ય તેટલી વહેલી તકે પ્રક્રિયા પૂર્ણ કરવાની ભારપૂર્વક ભલામણ કરવામાં આવે છે. ઘણી યોજનાઓ બિન-સીડ કરેલા ખાતાઓમાં ભંડોળનું વિતરણ કરશે નહીં, તેથી જો તમે વિલંબ કરો તો તમે લાભોથી વંચિત રહી શકો છો."
                 },
                 {
-                    question: "શું મારી શિષ્યવૃત્તિ મેળવવા માટે આધાર ફરજિયાત છે?",
-                    answer: "જ્યારે આધાર પસંદગીની અને સૌથી કાર્યક્ષમ પદ્ધતિ છે, ત્યારે સુપ્રીમ કોર્ટે ચુકાદો આપ્યો છે કે ફક્ત આધાર નંબર ન હોવાના કારણે આવશ્યક લાભો નકારી શકાય નહીં. જો તમારી પાસે આધાર નથી, તો તમે સામાન્ય રીતે તમારી આધાર નોંધણી ID (EID) સ્લિપનો ઉપયોગ અન્ય વૈકલ્પિક સરકારી-માન્ય ID (જેમ કે બેંક પાસબુક) સાથે કરી શકો છો, જે શિષ્યવૃત્તિ યોજના દ્વારા નિર્દિષ્ટ છે."
+                    question: "શું મારી પેન્શન કે સબસિડી મેળવવા માટે આધાર ફરજિયાત છે?",
+                    answer: "જ્યારે આધાર પસંદગીની અને સૌથી કાર્યક્ષમ પદ્ધતિ છે, ત્યારે સુપ્રીમ કોર્ટે ચુકાદો આપ્યો છે કે ફક્ત આધાર નંબર ન હોવાને કારણે આવશ્યક લાભો નકારી શકાય નહીં. જો તમારી પાસે આધાર નથી, તો તમે યોજના દ્વારા નિર્દિષ્ટ વૈકલ્પિક સરકારી-માન્ય ID નો ઉપયોગ કરી શકો છો."
                 },
                 {
                     question: "મને કેવી રીતે ખબર પડે કે મારા ખાતામાં ડીબીટી ફંડ આવ્યું છે?",
@@ -1925,7 +2012,7 @@ const pageContent = {
                     },
                     {
                         title: "અમલીકરણ મંત્રાલયો અને રાજ્યો",
-                        description: "વ્યક્તિગત મંત્રાલયો (દા.ત., મનરેગા માટે ગ્રામીણ વિકાસ) અને રાજ્ય સરકારો તેમની પોતાની યોજનાઓ અને લાભાર્થી યાદીઓનું સંચાલન કરે છે, જે કેન્દ્રીય ડીબીટી પ્લેટફોર્મ સાથે સંકલિત થાય છે."
+                        description: "વ્યક્તિગત મંત્રાલયો (દા.ત., મનરેગા માટે ગ્રામੀણ વિકાસ) અને રાજ્ય સરકારો તેમની પોતાની યોજનાઓ અને લાભાર્થી યાદીઓનું સંચાલન કરે છે, જે કેન્દ્રીય ડીબીટી પ્લેટફોર્મ સાથે સંકલિત થાય છે."
                     }
                 ]
             },
@@ -5717,28 +5804,28 @@ function Chatbot() {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                     onClick: ()=>setIsOpen(!isOpen),
                     size: "lg",
-                    className: "rounded-full w-16 h-16 shadow-lg",
+                    className: "rounded-full w-16 h-16 shadow-lg flex items-center justify-center",
                     children: [
-                        isOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                            className: "h-8 w-8 text-white"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/chatbot.tsx",
-                            lineNumber: 90,
-                            columnNumber: 21
-                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2d$circuit$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BrainCircuit$3e$__["BrainCircuit"], {
-                            className: "h-8 w-8 text-white"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/chatbot.tsx",
-                            lineNumber: 90,
-                            columnNumber: 60
-                        }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "sr-only",
                             children: "Toggle Chatbot"
                         }, void 0, false, {
                             fileName: "[project]/src/components/chatbot.tsx",
-                            lineNumber: 91,
+                            lineNumber: 90,
                             columnNumber: 11
+                        }, this),
+                        isOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                            className: "h-8 w-8 text-white"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/chatbot.tsx",
+                            lineNumber: 91,
+                            columnNumber: 21
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2d$circuit$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BrainCircuit$3e$__["BrainCircuit"], {
+                            className: "h-8 w-8 text-white"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/chatbot.tsx",
+                            lineNumber: 91,
+                            columnNumber: 60
                         }, this)
                     ]
                 }, void 0, true, {
