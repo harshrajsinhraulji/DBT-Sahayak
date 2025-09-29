@@ -8,8 +8,8 @@ export default function ResourcesPage() {
     return (
         <div className="flex flex-col">
             <AwarenessSection />
-            <MythBustersSection />
             <VideoSection />
+            <MythBustersSection />
             <FaqSection />
         </div>
     );

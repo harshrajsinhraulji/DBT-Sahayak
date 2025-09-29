@@ -6,6 +6,9 @@ import { ScholarshipSection } from "@/components/sections/scholarships";
 import { StatusCheckerSection } from "@/components/sections/status-checker";
 import { TakeActionSection } from "@/components/sections/take-action";
 import { ContactSection } from "@/components/sections/contact";
+import { MythBustersSection } from "@/components/sections/myth-busters";
+import { VideoSection } from "@/components/sections/videos";
+import { AwarenessSection } from "@/components/sections/awareness";
 
 export default function Home() {
   return (
@@ -13,8 +16,11 @@ export default function Home() {
       <HeroSection />
       <EducationSection />
       <StatusCheckerSection />
-      <TakeActionSection />
+      <AwarenessSection />
       <ScholarshipSection />
+      <TakeActionSection />
+      <MythBustersSection />
+      <VideoSection />
       <FaqSection />
       <ContactSection />
     </div>

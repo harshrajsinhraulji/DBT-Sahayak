@@ -118,8 +118,10 @@ export function Header() {
               <DropdownMenuContent className="w-56" align="end" forceMount>
                  {actionItems.map((item) => (
                     <DropdownMenuItem key={item.href} onClick={() => router.push(item.href)}>
-                      {item.icon}
-                      <span className="ml-2">{item.label}</span>
+                      <div className="flex items-center gap-2">
+                        {item.icon}
+                        <span>{item.label}</span>
+                      </div>
                     </DropdownMenuItem>
                   ))}
               </DropdownMenuContent>
@@ -184,21 +186,39 @@ export function Header() {
               <div className="mt-8 flex flex-col gap-1">
                 {!user && (
                     <>
-                    <Button onClick={() => { handleLoginClick(); setMobileMenuOpen(false); }} className="w-full justify-start mb-2" variant="default" size="lg"><User />{content.header.login}</Button>
+                    <Button onClick={() => { handleLoginClick(); setMobileMenuOpen(false); }} className="w-full justify-start mb-2" variant="default" size="lg"><User className="mr-2 h-4 w-4"/>{content.header.login}</Button>
                     <DropdownMenuSeparator />
                     </>
                 )}
-                {[...navItems, ...actionItems].map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
-                  >
-                    {item.icon}
-                    {item.label}
-                  </Link>
-                ))}
+                <div className="flex flex-col gap-1">
+                  <span className="px-3 py-2 text-xs font-semibold text-muted-foreground">Homepage Sections</span>
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
+                    >
+                      <div className="w-5">{item.icon}</div>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+                 <DropdownMenuSeparator />
+                 <div className="flex flex-col gap-1">
+                  <span className="px-3 py-2 text-xs font-semibold text-muted-foreground">Tools & Resources</span>
+                   {actionItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className="flex items-center gap-3 rounded-md p-3 text-base font-medium hover:bg-muted"
+                    >
+                      <div className="w-5">{item.icon}</div>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </SheetContent>
           </Sheet>
@@ -207,5 +227,3 @@ export function Header() {
     </header>
   );
 }
-
-    
