@@ -50,6 +50,7 @@ export function HeroSection() {
           alt={heroBg.description}
           data-ai-hint={heroBg.imageHint}
           fill
+          sizes="100vw"
           className="object-cover"
           priority
           placeholder="blur"
