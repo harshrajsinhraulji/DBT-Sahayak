@@ -2979,11 +2979,11 @@ const shuffleArray = (array)=>{
     return newArray;
 };
 const QUIZ_LENGTH = 8;
-// Sound URLs from a reliable CDN
+// Sound URLs from the public directory
 const SOUND_URLS = {
-    correct: "https://dbt-sahayak-dev.web.app/sounds/correct.mp3",
-    incorrect: "https://dbt-sahayak-dev.web.app/sounds/incorrect.mp3",
-    complete: "https://dbt-sahayak-dev.web.app/sounds/complete.mp3"
+    correct: "/sounds/correct.mp3",
+    incorrect: "/sounds/incorrect.mp3",
+    complete: "/sounds/complete.mp3"
 };
 function MythBustersSection() {
     _s();
@@ -3024,6 +3024,19 @@ function MythBustersSection() {
             }
         }
     }["MythBustersSection.useCallback[playSound]"], []);
+    const resetQuiz = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "MythBustersSection.useCallback[resetQuiz]": ()=>{
+            const totalAvailableQuestions = allQuestions.length;
+            const questionsToTake = Math.min(QUIZ_LENGTH, totalAvailableQuestions);
+            setQuizQuestions(shuffleArray(allQuestions).slice(0, questionsToTake));
+            setCurrentQuestionIndex(0);
+            setScore(0);
+            setAnswerStatus('unanswered');
+            setShowResult(false);
+        }
+    }["MythBustersSection.useCallback[resetQuiz]"], [
+        allQuestions
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "MythBustersSection.useEffect": ()=>{
             resetQuiz();
@@ -3033,12 +3046,12 @@ function MythBustersSection() {
             }
         }
     }["MythBustersSection.useEffect"], [
-        allQuestions
+        resetQuiz
     ]);
     const currentQuestion = quizQuestions[currentQuestionIndex];
     const totalQuestions = quizQuestions.length;
     const handleAnswer = (userAnswer)=>{
-        if (answerStatus !== 'unanswered') return;
+        if (answerStatus !== 'unanswered' || !currentQuestion) return;
         if (userAnswer === currentQuestion.type) {
             setAnswerStatus('correct');
             setScore(score + 1);
@@ -3056,15 +3069,6 @@ function MythBustersSection() {
             setShowResult(true);
             playSound('complete');
         }
-    };
-    const resetQuiz = ()=>{
-        const totalAvailableQuestions = allQuestions.length;
-        const questionsToTake = Math.min(QUIZ_LENGTH, totalAvailableQuestions);
-        setQuizQuestions(shuffleArray(allQuestions).slice(0, questionsToTake));
-        setCurrentQuestionIndex(0);
-        setScore(0);
-        setAnswerStatus('unanswered');
-        setShowResult(false);
     };
     const shareScore = ()=>{
         const text = `I scored ${score}/${totalQuestions} on the DBT Myth Busters Challenge! Test your knowledge on DBT Sahayak.`;
@@ -3462,7 +3466,7 @@ function MythBustersSection() {
         columnNumber: 5
     }, this);
 }
-_s(MythBustersSection, "I3ixyoBNn1D1AU+J0OTtVHSqpYo=", false, function() {
+_s(MythBustersSection, "rF3os4joSrYQEw0i83blAIcbhzg=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$language$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLanguage"]
     ];
