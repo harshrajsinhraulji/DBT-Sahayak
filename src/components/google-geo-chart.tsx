@@ -75,7 +75,9 @@ export default function GoogleGeoChart() {
       displayMode: 'regions',
       colorAxis: { colors: ['#ef4444', '#facc15', '#22c55e'] }, // Red -> Yellow -> Green
       resolution: 'provinces',
-      defaultColor: '#e5e7eb', // Muted gray for no data
+      backgroundColor: 'black',
+      datalessRegionColor: '#333333',
+      defaultColor: '#e5e7eb',
       width: '100%',
       height: 500,
       tooltip: { textStyle: { fontName: 'sans-serif', fontSize: 14 } },

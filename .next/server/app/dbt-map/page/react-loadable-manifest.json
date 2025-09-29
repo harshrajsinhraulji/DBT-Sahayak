@@ -1,10 +1,9 @@
 {
-  "[project]/src/components/india-map.tsx [app-client] (ecmascript, next/dynamic entry)": {
-    "id": "[project]/src/components/india-map.tsx [app-client] (ecmascript, next/dynamic entry)",
+  "[project]/src/components/google-geo-chart.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/google-geo-chart.tsx [app-client] (ecmascript, next/dynamic entry)",
     "files": [
-      "static/chunks/node_modules_30b3d3c2._.js",
-      "static/chunks/src_a6f0ece5._.js",
-      "static/chunks/src_components_india-map_tsx_93104f8e._.js"
+      "static/chunks/_be634150._.js",
+      "static/chunks/src_components_google-geo-chart_tsx_93104f8e._.js"
     ]
   }
 }
