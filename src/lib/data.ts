@@ -21,6 +21,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         printKit: "Print Kit",
         requestDrive: "Request a Drive",
         formChecker: "AI Form Check",
+        eligibilityChecker: "Eligibility Checker",
         awareness: "DBT Schemes"
       },
       login: "Login/Register"
@@ -107,63 +108,72 @@ export const pageContent: Record<Language, LanguageContent> = {
           description: "Financial aid for students from Scheduled Castes, Other Backward Classes, and Economically Backward Classes for studies beyond matriculation.",
           eligibility: "Parental income limits apply (e.g., up to ₹2.5 lakh for SC).",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 250000, categories: ['SC', 'OBC', 'EBC'], occupations: ['Student'] }
         },
         {
           title: "National Means-cum-Merit Scholarship (NMMS)",
           description: "For meritorious students of economically weaker sections to prevent drop-outs at class VIII.",
           eligibility: "Parental income up to ₹3.5 lakh. Must have scored at least 55% in Class VII.",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 350000, occupations: ['Student'] }
         },
         {
           title: "CSSS for College/University Students",
           description: "For meritorious students from low-income families to meet expenses while pursuing higher studies.",
           eligibility: "Top 20th percentile in Class XII, parental income < ₹4.5 lakh.",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 450000, occupations: ['Student'] }
         },
          {
           title: "PM-KISAN Samman Nidhi",
           description: "An income support scheme providing ₹6,000 per year in three installments to all eligible farmer families.",
           eligibility: "All land-holding farmer families.",
           link: "https://pmkisan.gov.in/",
-          category: "subsidy"
+          category: "subsidy",
+          eligibilityCriteria: { occupations: ['Farmer'] }
         },
         {
           title: "National Social Assistance Programme (NSAP)",
           description: "Provides financial assistance to the elderly, widows, and persons with disabilities under various components like old-age pensions.",
           eligibility: "Varies by scheme component, generally for BPL households.",
           link: "https://nsap.nic.in/",
-          category: "pension"
+          category: "pension",
+          eligibilityCriteria: { minAge: 60 }
         },
         {
             title: "PAHAL (LPG Subsidy)",
             description: "Subsidy on LPG cooking gas cylinders is directly transferred to the bank accounts of eligible consumers.",
             eligibility: "All households with a domestic LPG connection.",
             link: "https://dbtbharat.gov.in/scheme/pahal/",
-            category: "subsidy"
+            category: "subsidy",
+            eligibilityCriteria: {}
         },
         {
           title: "Indira Gandhi National Old Age Pension Scheme",
           description: "A component of NSAP, providing a monthly pension to elderly persons belonging to a BPL household.",
           eligibility: "Age 60+ years, from a BPL family.",
           link: "https://nsap.nic.in/nsap/About_NSAP/ignop_guidelines.pdf",
-          category: "pension"
+          category: "pension",
+          eligibilityCriteria: { minAge: 60 }
         },
         {
           title: "Scholarships for Students with Disabilities",
           description: "For differently-abled students pursuing graduate and postgraduate degrees in specified institutions of excellence.",
           eligibility: "40%+ disability. Parental income ceiling of ₹6 lakh per annum.",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 600000, requiresDisability: true, occupations: ['Student'] }
         },
         {
             title: "Prime Minister's Scholarship Scheme for RPF/RPSF",
             description: "Professional degree scholarships for the dependent wards of Railway Protection Force (RPF) personnel.",
             eligibility: "Wards of serving/ex-personnel. Minimum 60% in 12th/Diploma/Graduation.",
             link: "https://scholarships.gov.in/",
-            category: "scholarship"
+            category: "scholarship",
+            eligibilityCriteria: { occupations: ['Student'] }
         }
       ],
     },
@@ -462,6 +472,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         printKit: "प्रिंट किट",
         requestDrive: "ड्राइव का अनुरोध करें",
         formChecker: "एआई फॉर्म जांच",
+        eligibilityChecker: "पात्रता जांचकर्ता",
         awareness: "डीबीटी योजनाएं"
       },
       login: "लॉगिन/रजिस्टर करें"
@@ -548,63 +559,72 @@ export const pageContent: Record<Language, LanguageContent> = {
           description: "अनुसूचित जाति, अन्य पिछड़ा वर्ग और आर्थिक रूप से पिछड़े वर्ग के छात्रों को मैट्रिक के बाद की पढ़ाई के लिए वित्तीय सहायता।",
           eligibility: "माता-पिता की आय सीमा लागू (जैसे, SC के लिए ₹2.5 लाख तक)।",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 250000, categories: ['SC', 'OBC', 'EBC'], occupations: ['Student'] }
         },
         {
           title: "राष्ट्रीय मीन्स-कम-मेरिट छात्रवृत्ति (NMMS)",
           description: "आर्थिक रूप से कमजोर वर्गों के मेधावी छात्रों के लिए ताकि वे आठवीं कक्षा में पढ़ाई न छोड़ें।",
           eligibility: "माता-पिता की आय ₹3.5 लाख तक। सातवीं कक्षा में कम से कम 55% अंक होने चाहिए।",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 350000, occupations: ['Student'] }
         },
         {
           title: "कॉलेज/विश्वविद्यालय के छात्रों के लिए CSSS",
           description: "कम आय वाले परिवारों के मेधावी छात्रों को उच्च अध्ययन के दौरान खर्चों को पूरा करने के लिए।",
           eligibility: "बारहवीं कक्षा में शीर्ष 20 प्रतिशत में, माता-पिता की आय < ₹4.5 लाख।",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 450000, occupations: ['Student'] }
         },
          {
           title: "पीएम-किसान सम्मान निधि",
           description: "एक आय सहायता योजना जो सभी पात्र किसान परिवारों को तीन किस्तों में प्रति वर्ष ₹6,000 प्रदान करती है।",
           eligibility: "सभी भूमि-धारक किसान परिवार।",
           link: "https://pmkisan.gov.in/",
-          category: "subsidy"
+          category: "subsidy",
+          eligibilityCriteria: { occupations: ['Farmer'] }
         },
         {
           title: "राष्ट्रीय सामाजिक सहायता कार्यक्रम (NSAP)",
           description: "वृद्धों, विधवाओं और विकलांग व्यक्तियों को वृद्धावस्था पेंशन जैसे विभिन्न घटकों के तहत वित्तीय सहायता प्रदान करता है।",
           eligibility: "योजना के घटक के अनुसार बदलता है, आम तौर पर बीपीएल परिवारों के लिए।",
           link: "https://nsap.nic.in/",
-          category: "pension"
+          category: "pension",
+          eligibilityCriteria: { minAge: 60 }
         },
         {
             title: "पहल (एलपीजी सब्सिडी)",
             description: "एलपीजी रसोई गैस सिलेंडरों पर सब्सिडी सीधे पात्र उपभोक्ताओं के बैंक खातों में स्थानांतरित की जाती है।",
             eligibility: "घरेलू एलपीजी कनेक्शन वाले सभी परिवार।",
             link: "https://dbtbharat.gov.in/scheme/pahal/",
-            category: "subsidy"
+            category: "subsidy",
+            eligibilityCriteria: {}
         },
         {
           title: "इंदिरा गांधी राष्ट्रीय वृद्धावस्था पेंशन योजना",
           description: "एनएसएपी का एक घटक, जो एक बीपीएल परिवार के वृद्ध व्यक्तियों को मासिक पेंशन प्रदान करता है।",
           eligibility: "आयु 60+ वर्ष, एक बीपीएल परिवार से।",
           link: "https://nsap.nic.in/nsap/About_NSAP/ignop_guidelines.pdf",
-          category: "pension"
+          category: "pension",
+          eligibilityCriteria: { minAge: 60 }
         },
         {
           title: "विकलांग छात्रों के लिए छात्रवृत्ति",
           description: "उत्कृष्टता के निर्दिष्ट संस्थानों में स्नातक और स्नातकोत्तर डिग्री प्राप्त करने वाले विकलांग छात्रों के लिए।",
           eligibility: "40%+ विकलांगता। ₹6 लाख प्रति वर्ष की माता-पिता की आय सीमा।",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 600000, requiresDisability: true, occupations: ['Student'] }
         },
         {
             title: "आरपीएफ/आरपीएसएफ के लिए प्रधानमंत्री छात्रवृत्ति योजना",
             description: "रेलवे सुरक्षा बल (आरपीएफ) के कर्मियों के आश्रित बच्चों के लिए व्यावसायिक डिग्री छात्रवृत्ति।",
             eligibility: "सेवारत/पूर्व कर्मियों के आश्रित। 12वीं/डिप्लोमा/स्नातक में न्यूनतम 60%।",
             link: "https://scholarships.gov.in/",
-            category: "scholarship"
+            category: "scholarship",
+            eligibilityCriteria: { occupations: ['Student'] }
         }
       ],
     },
@@ -712,7 +732,7 @@ export const pageContent: Record<Language, LanguageContent> = {
                 category: "आवास और संपत्ति सहायता",
                 description: "घर बनाने और संपत्ति बनाने के लिए वित्तीय सहायता।",
                 schemes: [
-                    { name: "प्रधानमंत्री आवास योजना (पीएमएवाई), इंदिरा आवास योजना (आईएवाई - पुरानी)", ministry: "आवास एवं शहरी मामलों के मंत्रालय, ग्रामीण विकास मंत्रालय", beneficiaries: "ग्रामीण और शहरी गरीब परिवार" }
+                    { name: "प्रधानमंत्री आवास योजना (पीएमएवाई), इंदिरा आवास योजना (आईएवाई - पुरानी)", ministry: "आવાસ एवं शहरी मामलों के मंत्रालय, ग्रामीण विकास मंत्रालय", beneficiaries: "ग्रामीण और शहरी गरीब परिवार" }
                 ]
             },
             {
@@ -903,6 +923,7 @@ export const pageContent: Record<Language, LanguageContent> = {
         printKit: "પ્રિન્ટ કીટ",
         requestDrive: "ડ્રાઇવની વિનંતી કરો",
         formChecker: "એઆઈ ફોર્મ તપાસ",
+        eligibilityChecker: "પાત્રતા તપાસનાર",
         awareness: "ડીબીટી યોજનાઓ"
       },
       login: "લોગિન/રજીસ્ટર કરો"
@@ -989,63 +1010,72 @@ export const pageContent: Record<Language, LanguageContent> = {
           description: "અનુસૂચિત જાતિ, અન્ય પછાત વર્ગ અને આર્થિક રીતે પછાત વર્ગના વિદ્યાર્થીઓને મેટ્રિક પછીના અભ્યાસ માટે આર્થિક સહાય.",
           eligibility: "વાલીની આવક મર્યાદા લાગુ (દા.ત., SC માટે ₹2.5 લાખ સુધી).",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 250000, categories: ['SC', 'OBC', 'EBC'], occupations: ['Student'] }
         },
         {
           title: "રાષ્ટ્રીય મીન્સ-કમ-મેરિટ શિષ્યવૃત્તિ (NMMS)",
           description: "આર્થિક રીતે નબળા વર્ગના હોશિયાર વિદ્યાર્થીઓ માટે જેથી તેઓ ધોરણ 8 માં અભ્યાસ ન છોડે.",
           eligibility: "વાલીની આવક ₹3.5 લાખ સુધી. ધોરણ 7 માં ઓછામાં ઓછા 55% ગુણ હોવા જોઈએ.",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 350000, occupations: ['Student'] }
         },
         {
           title: "કોલેજ/યુનિવર્સિટીના વિદ્યાર્થીઓ માટે CSSS",
           description: "ઓછી આવક ધરાવતા પરિવારોના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ અભ્યાસ દરમિયાન ખર્ચ પહોંચી વળવા.",
           eligibility: "ધોરણ 12 માં ટોચના 20 પર્સેન્ટાઇલમાં, વાલીની આવક < ₹4.5 લાખ.",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 450000, occupations: ['Student'] }
         },
          {
           title: "પીએમ-કિસાન સન્માન નિધિ",
           description: "એક આવક સહાય યોજના જે તમામ પાત્ર ખેડૂત પરિવારોને ત્રણ હપ્તામાં પ્રતિ વર્ષ ₹6,000 પૂરા પાડે છે.",
           eligibility: "બધા જમીન-ધારક ખેડૂત પરિવારો.",
           link: "https://pmkisan.gov.in/",
-          category: "subsidy"
+          category: "subsidy",
+          eligibilityCriteria: { occupations: ['Farmer'] }
         },
         {
           title: "રાષ્ટ્રીય સામાજિક સહાય કાર્યક્રમ (NSAP)",
           description: "વૃદ્ધો, વિધવાઓ અને વિકલાંગ વ્યક્તિઓને વૃદ્ધાવસ્થા પેન્શન જેવા વિવિધ ઘટકો હેઠળ નાણાકીય સહાય પૂરી પાડે છે.",
           eligibility: "યોજનાના ઘટક મુજબ બદલાય છે, સામાન્ય રીતે BPL પરિવારો માટે.",
           link: "https://nsap.nic.in/",
-          category: "pension"
+          category: "pension",
+          eligibilityCriteria: { minAge: 60 }
         },
         {
             title: "પહેલ (LPG સબસિડી)",
             description: "LPG રાંધણ ગેસ સિલિન્ડરો પરની સબસિડી સીધા પાત્ર ગ્રાહકોના બેંક ખાતામાં ટ્રાન્સફર કરવામાં આવે છે.",
             eligibility: "ઘરેલું LPG કનેક્શન ધરાવતા તમામ પરિવારો.",
             link: "https://dbtbharat.gov.in/scheme/pahal/",
-            category: "subsidy"
+            category: "subsidy",
+            eligibilityCriteria: {}
         },
         {
           title: "ઈન્દિરા ગાંધી રાષ્ટ્રીય વૃદ્ધાવસ્થા પેન્શન યોજના",
           description: "NSAP નો એક ઘટક, જે BPL પરિવારના વૃદ્ધ વ્યક્તિઓને માસિક પેન્શન પૂરું પાડે છે.",
           eligibility: "ઉંમર 60+ વર્ષ, BPL પરિવારમાંથી.",
           link: "https://nsap.nic.in/nsap/About_NSAP/ignop_guidelines.pdf",
-          category: "pension"
+          category: "pension",
+          eligibilityCriteria: { minAge: 60 }
         },
         {
           title: "વિકલાંગ વિદ્યાર્થીઓ માટે શિષ્યવૃત્તિ",
           description: "ઉત્કૃષ્ટતાની નિર્દિષ્ટ સંસ્થાઓમાં સ્નાતક અને અનુસ્નાતક ડિગ્રી મેળવતા વિકલાંગ વિદ્યાર્થીઓ માટે.",
           eligibility: "40%+ વિકલાંગતા. વાલીની વાર્ષિક આવક મર્યાદા ₹6 લાખ.",
           link: "https://scholarships.gov.in/",
-          category: "scholarship"
+          category: "scholarship",
+          eligibilityCriteria: { maxIncome: 600000, requiresDisability: true, occupations: ['Student'] }
         },
         {
             title: "આરપીએફ/આરપીએસએફ માટે પ્રધાનમંત્રી શિષ્યવૃત્તિ યોજના",
             description: "રેલવે સુરક્ષા દળ (આરપીએફ) ના કર્મચારીઓના આશ્રિત બાળકો માટે વ્યાવસાયિક ડિગ્રી શિષ્યવૃત્તિ.",
             eligibility: "સેવારત/ભૂતપૂર્વ કર્મચારીઓના આશ્રિતો. 12મા/ડિપ્લોમા/સ્નાતકમાં ન્યૂનતમ 60%.",
             link: "https://scholarships.gov.in/",
-            category: "scholarship"
+            category: "scholarship",
+            eligibilityCriteria: { occupations: ['Student'] }
         }
       ],
     },
@@ -1326,3 +1356,5 @@ export const pageContent: Record<Language, LanguageContent> = {
     }
   },
 };
+
+    

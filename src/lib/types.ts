@@ -6,6 +6,14 @@ export type Scheme = {
   eligibility: string;
   link: string;
   category: 'scholarship' | 'pension' | 'subsidy' | 'other';
+  eligibilityCriteria?: {
+    minAge?: number;
+    maxAge?: number;
+    maxIncome?: number;
+    categories?: ('SC' | 'ST' | 'OBC' | 'EBC' | 'General' | 'Minority')[];
+    occupations?: ('Student' | 'Farmer' | 'Laborer' | 'Unemployed')[];
+    requiresDisability?: boolean;
+  }
 };
 
 export type FAQ = {
@@ -50,6 +58,7 @@ export type LanguageContent = {
       printKit: string;
       requestDrive: string;
       formChecker: string;
+      eligibilityChecker: string;
       awareness: string;
     };
     login: string;
@@ -62,7 +71,7 @@ export type LanguageContent = {
   };
   education: {
     title: string;
-    subtitle: string;
+    subtitle:string;
     card1: {
       title: string;
       description: string;
@@ -229,3 +238,5 @@ export type LanguageContent = {
     gu: string;
   }
 };
+
+    

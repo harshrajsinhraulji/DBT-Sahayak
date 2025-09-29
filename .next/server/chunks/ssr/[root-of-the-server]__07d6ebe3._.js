@@ -483,6 +483,7 @@ const pageContent = {
                 printKit: "Print Kit",
                 requestDrive: "Request a Drive",
                 formChecker: "AI Form Check",
+                eligibilityChecker: "Eligibility Checker",
                 awareness: "DBT Schemes"
             },
             login: "Login/Register"
@@ -597,63 +598,110 @@ const pageContent = {
                     description: "Financial aid for students from Scheduled Castes, Other Backward Classes, and Economically Backward Classes for studies beyond matriculation.",
                     eligibility: "Parental income limits apply (e.g., up to ₹2.5 lakh for SC).",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 250000,
+                        categories: [
+                            'SC',
+                            'OBC',
+                            'EBC'
+                        ],
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "National Means-cum-Merit Scholarship (NMMS)",
                     description: "For meritorious students of economically weaker sections to prevent drop-outs at class VIII.",
                     eligibility: "Parental income up to ₹3.5 lakh. Must have scored at least 55% in Class VII.",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 350000,
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "CSSS for College/University Students",
                     description: "For meritorious students from low-income families to meet expenses while pursuing higher studies.",
                     eligibility: "Top 20th percentile in Class XII, parental income < ₹4.5 lakh.",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 450000,
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "PM-KISAN Samman Nidhi",
                     description: "An income support scheme providing ₹6,000 per year in three installments to all eligible farmer families.",
                     eligibility: "All land-holding farmer families.",
                     link: "https://pmkisan.gov.in/",
-                    category: "subsidy"
+                    category: "subsidy",
+                    eligibilityCriteria: {
+                        occupations: [
+                            'Farmer'
+                        ]
+                    }
                 },
                 {
                     title: "National Social Assistance Programme (NSAP)",
                     description: "Provides financial assistance to the elderly, widows, and persons with disabilities under various components like old-age pensions.",
                     eligibility: "Varies by scheme component, generally for BPL households.",
                     link: "https://nsap.nic.in/",
-                    category: "pension"
+                    category: "pension",
+                    eligibilityCriteria: {
+                        minAge: 60
+                    }
                 },
                 {
                     title: "PAHAL (LPG Subsidy)",
                     description: "Subsidy on LPG cooking gas cylinders is directly transferred to the bank accounts of eligible consumers.",
                     eligibility: "All households with a domestic LPG connection.",
                     link: "https://dbtbharat.gov.in/scheme/pahal/",
-                    category: "subsidy"
+                    category: "subsidy",
+                    eligibilityCriteria: {}
                 },
                 {
                     title: "Indira Gandhi National Old Age Pension Scheme",
                     description: "A component of NSAP, providing a monthly pension to elderly persons belonging to a BPL household.",
                     eligibility: "Age 60+ years, from a BPL family.",
                     link: "https://nsap.nic.in/nsap/About_NSAP/ignop_guidelines.pdf",
-                    category: "pension"
+                    category: "pension",
+                    eligibilityCriteria: {
+                        minAge: 60
+                    }
                 },
                 {
                     title: "Scholarships for Students with Disabilities",
                     description: "For differently-abled students pursuing graduate and postgraduate degrees in specified institutions of excellence.",
                     eligibility: "40%+ disability. Parental income ceiling of ₹6 lakh per annum.",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 600000,
+                        requiresDisability: true,
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "Prime Minister's Scholarship Scheme for RPF/RPSF",
                     description: "Professional degree scholarships for the dependent wards of Railway Protection Force (RPF) personnel.",
                     eligibility: "Wards of serving/ex-personnel. Minimum 60% in 12th/Diploma/Graduation.",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 }
             ]
         },
@@ -1012,6 +1060,7 @@ const pageContent = {
                 printKit: "प्रिंट किट",
                 requestDrive: "ड्राइव का अनुरोध करें",
                 formChecker: "एआई फॉर्म जांच",
+                eligibilityChecker: "पात्रता जांचकर्ता",
                 awareness: "डीबीटी योजनाएं"
             },
             login: "लॉगिन/रजिस्टर करें"
@@ -1126,63 +1175,110 @@ const pageContent = {
                     description: "अनुसूचित जाति, अन्य पिछड़ा वर्ग और आर्थिक रूप से पिछड़े वर्ग के छात्रों को मैट्रिक के बाद की पढ़ाई के लिए वित्तीय सहायता।",
                     eligibility: "माता-पिता की आय सीमा लागू (जैसे, SC के लिए ₹2.5 लाख तक)।",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 250000,
+                        categories: [
+                            'SC',
+                            'OBC',
+                            'EBC'
+                        ],
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "राष्ट्रीय मीन्स-कम-मेरिट छात्रवृत्ति (NMMS)",
                     description: "आर्थिक रूप से कमजोर वर्गों के मेधावी छात्रों के लिए ताकि वे आठवीं कक्षा में पढ़ाई न छोड़ें।",
                     eligibility: "माता-पिता की आय ₹3.5 लाख तक। सातवीं कक्षा में कम से कम 55% अंक होने चाहिए।",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 350000,
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "कॉलेज/विश्वविद्यालय के छात्रों के लिए CSSS",
                     description: "कम आय वाले परिवारों के मेधावी छात्रों को उच्च अध्ययन के दौरान खर्चों को पूरा करने के लिए।",
                     eligibility: "बारहवीं कक्षा में शीर्ष 20 प्रतिशत में, माता-पिता की आय < ₹4.5 लाख।",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 450000,
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "पीएम-किसान सम्मान निधि",
                     description: "एक आय सहायता योजना जो सभी पात्र किसान परिवारों को तीन किस्तों में प्रति वर्ष ₹6,000 प्रदान करती है।",
                     eligibility: "सभी भूमि-धारक किसान परिवार।",
                     link: "https://pmkisan.gov.in/",
-                    category: "subsidy"
+                    category: "subsidy",
+                    eligibilityCriteria: {
+                        occupations: [
+                            'Farmer'
+                        ]
+                    }
                 },
                 {
                     title: "राष्ट्रीय सामाजिक सहायता कार्यक्रम (NSAP)",
                     description: "वृद्धों, विधवाओं और विकलांग व्यक्तियों को वृद्धावस्था पेंशन जैसे विभिन्न घटकों के तहत वित्तीय सहायता प्रदान करता है।",
                     eligibility: "योजना के घटक के अनुसार बदलता है, आम तौर पर बीपीएल परिवारों के लिए।",
                     link: "https://nsap.nic.in/",
-                    category: "pension"
+                    category: "pension",
+                    eligibilityCriteria: {
+                        minAge: 60
+                    }
                 },
                 {
                     title: "पहल (एलपीजी सब्सिडी)",
                     description: "एलपीजी रसोई गैस सिलेंडरों पर सब्सिडी सीधे पात्र उपभोक्ताओं के बैंक खातों में स्थानांतरित की जाती है।",
                     eligibility: "घरेलू एलपीजी कनेक्शन वाले सभी परिवार।",
                     link: "https://dbtbharat.gov.in/scheme/pahal/",
-                    category: "subsidy"
+                    category: "subsidy",
+                    eligibilityCriteria: {}
                 },
                 {
                     title: "इंदिरा गांधी राष्ट्रीय वृद्धावस्था पेंशन योजना",
                     description: "एनएसएपी का एक घटक, जो एक बीपीएल परिवार के वृद्ध व्यक्तियों को मासिक पेंशन प्रदान करता है।",
                     eligibility: "आयु 60+ वर्ष, एक बीपीएल परिवार से।",
                     link: "https://nsap.nic.in/nsap/About_NSAP/ignop_guidelines.pdf",
-                    category: "pension"
+                    category: "pension",
+                    eligibilityCriteria: {
+                        minAge: 60
+                    }
                 },
                 {
                     title: "विकलांग छात्रों के लिए छात्रवृत्ति",
                     description: "उत्कृष्टता के निर्दिष्ट संस्थानों में स्नातक और स्नातकोत्तर डिग्री प्राप्त करने वाले विकलांग छात्रों के लिए।",
                     eligibility: "40%+ विकलांगता। ₹6 लाख प्रति वर्ष की माता-पिता की आय सीमा।",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 600000,
+                        requiresDisability: true,
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "आरपीएफ/आरपीएसएफ के लिए प्रधानमंत्री छात्रवृत्ति योजना",
                     description: "रेलवे सुरक्षा बल (आरपीएफ) के कर्मियों के आश्रित बच्चों के लिए व्यावसायिक डिग्री छात्रवृत्ति।",
                     eligibility: "सेवारत/पूर्व कर्मियों के आश्रित। 12वीं/डिप्लोमा/स्नातक में न्यूनतम 60%।",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 }
             ]
         },
@@ -1316,7 +1412,7 @@ const pageContent = {
                     schemes: [
                         {
                             name: "प्रधानमंत्री आवास योजना (पीएमएवाई), इंदिरा आवास योजना (आईएवाई - पुरानी)",
-                            ministry: "आवास एवं शहरी मामलों के मंत्रालय, ग्रामीण विकास मंत्रालय",
+                            ministry: "आવાસ एवं शहरी मामलों के मंत्रालय, ग्रामीण विकास मंत्रालय",
                             beneficiaries: "ग्रामीण और शहरी गरीब परिवार"
                         }
                     ]
@@ -1541,6 +1637,7 @@ const pageContent = {
                 printKit: "પ્રિન્ટ કીટ",
                 requestDrive: "ડ્રાઇવની વિનંતી કરો",
                 formChecker: "એઆઈ ફોર્મ તપાસ",
+                eligibilityChecker: "પાત્રતા તપાસનાર",
                 awareness: "ડીબીટી યોજનાઓ"
             },
             login: "લોગિન/રજીસ્ટર કરો"
@@ -1655,63 +1752,110 @@ const pageContent = {
                     description: "અનુસૂચિત જાતિ, અન્ય પછાત વર્ગ અને આર્થિક રીતે પછાત વર્ગના વિદ્યાર્થીઓને મેટ્રિક પછીના અભ્યાસ માટે આર્થિક સહાય.",
                     eligibility: "વાલીની આવક મર્યાદા લાગુ (દા.ત., SC માટે ₹2.5 લાખ સુધી).",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 250000,
+                        categories: [
+                            'SC',
+                            'OBC',
+                            'EBC'
+                        ],
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "રાષ્ટ્રીય મીન્સ-કમ-મેરિટ શિષ્યવૃત્તિ (NMMS)",
                     description: "આર્થિક રીતે નબળા વર્ગના હોશિયાર વિદ્યાર્થીઓ માટે જેથી તેઓ ધોરણ 8 માં અભ્યાસ ન છોડે.",
                     eligibility: "વાલીની આવક ₹3.5 લાખ સુધી. ધોરણ 7 માં ઓછામાં ઓછા 55% ગુણ હોવા જોઈએ.",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 350000,
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "કોલેજ/યુનિવર્સિટીના વિદ્યાર્થીઓ માટે CSSS",
                     description: "ઓછી આવક ધરાવતા પરિવારોના હોશિયાર વિદ્યાર્થીઓને ઉચ્ચ અભ્યાસ દરમિયાન ખર્ચ પહોંચી વળવા.",
                     eligibility: "ધોરણ 12 માં ટોચના 20 પર્સેન્ટાઇલમાં, વાલીની આવક < ₹4.5 લાખ.",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 450000,
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "પીએમ-કિસાન સન્માન નિધિ",
                     description: "એક આવક સહાય યોજના જે તમામ પાત્ર ખેડૂત પરિવારોને ત્રણ હપ્તામાં પ્રતિ વર્ષ ₹6,000 પૂરા પાડે છે.",
                     eligibility: "બધા જમીન-ધારક ખેડૂત પરિવારો.",
                     link: "https://pmkisan.gov.in/",
-                    category: "subsidy"
+                    category: "subsidy",
+                    eligibilityCriteria: {
+                        occupations: [
+                            'Farmer'
+                        ]
+                    }
                 },
                 {
                     title: "રાષ્ટ્રીય સામાજિક સહાય કાર્યક્રમ (NSAP)",
                     description: "વૃદ્ધો, વિધવાઓ અને વિકલાંગ વ્યક્તિઓને વૃદ્ધાવસ્થા પેન્શન જેવા વિવિધ ઘટકો હેઠળ નાણાકીય સહાય પૂરી પાડે છે.",
                     eligibility: "યોજનાના ઘટક મુજબ બદલાય છે, સામાન્ય રીતે BPL પરિવારો માટે.",
                     link: "https://nsap.nic.in/",
-                    category: "pension"
+                    category: "pension",
+                    eligibilityCriteria: {
+                        minAge: 60
+                    }
                 },
                 {
                     title: "પહેલ (LPG સબસિડી)",
                     description: "LPG રાંધણ ગેસ સિલિન્ડરો પરની સબસિડી સીધા પાત્ર ગ્રાહકોના બેંક ખાતામાં ટ્રાન્સફર કરવામાં આવે છે.",
                     eligibility: "ઘરેલું LPG કનેક્શન ધરાવતા તમામ પરિવારો.",
                     link: "https://dbtbharat.gov.in/scheme/pahal/",
-                    category: "subsidy"
+                    category: "subsidy",
+                    eligibilityCriteria: {}
                 },
                 {
                     title: "ઈન્દિરા ગાંધી રાષ્ટ્રીય વૃદ્ધાવસ્થા પેન્શન યોજના",
                     description: "NSAP નો એક ઘટક, જે BPL પરિવારના વૃદ્ધ વ્યક્તિઓને માસિક પેન્શન પૂરું પાડે છે.",
                     eligibility: "ઉંમર 60+ વર્ષ, BPL પરિવારમાંથી.",
                     link: "https://nsap.nic.in/nsap/About_NSAP/ignop_guidelines.pdf",
-                    category: "pension"
+                    category: "pension",
+                    eligibilityCriteria: {
+                        minAge: 60
+                    }
                 },
                 {
                     title: "વિકલાંગ વિદ્યાર્થીઓ માટે શિષ્યવૃત્તિ",
                     description: "ઉત્કૃષ્ટતાની નિર્દિષ્ટ સંસ્થાઓમાં સ્નાતક અને અનુસ્નાતક ડિગ્રી મેળવતા વિકલાંગ વિદ્યાર્થીઓ માટે.",
                     eligibility: "40%+ વિકલાંગતા. વાલીની વાર્ષિક આવક મર્યાદા ₹6 લાખ.",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        maxIncome: 600000,
+                        requiresDisability: true,
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 },
                 {
                     title: "આરપીએફ/આરપીએસએફ માટે પ્રધાનમંત્રી શિષ્યવૃત્તિ યોજના",
                     description: "રેલવે સુરક્ષા દળ (આરપીએફ) ના કર્મચારીઓના આશ્રિત બાળકો માટે વ્યાવસાયિક ડિગ્રી શિષ્યવૃત્તિ.",
                     eligibility: "સેવારત/ભૂતપૂર્વ કર્મચારીઓના આશ્રિતો. 12મા/ડિપ્લોમા/સ્નાતકમાં ન્યૂનતમ 60%.",
                     link: "https://scholarships.gov.in/",
-                    category: "scholarship"
+                    category: "scholarship",
+                    eligibilityCriteria: {
+                        occupations: [
+                            'Student'
+                        ]
+                    }
                 }
             ]
         },
@@ -2712,6 +2856,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2d$round$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Users2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users-round.js [app-ssr] (ecmascript) <export default as Users2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$video$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Video$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/video.js [app-ssr] (ecmascript) <export default as Video>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/lightbulb.js [app-ssr] (ecmascript) <export default as Lightbulb>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/user-check.js [app-ssr] (ecmascript) <export default as UserCheck>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/sheet.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$language$2d$switcher$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/language-switcher.tsx [app-ssr] (ecmascript)");
@@ -2819,11 +2964,20 @@ function Header() {
     ];
     const actionItems = [
         {
+            href: "/eligibility-checker",
+            label: content.header.nav.eligibilityChecker,
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserCheck$3e$__["UserCheck"], {}, void 0, false, {
+                fileName: "[project]/src/components/layout/header.tsx",
+                lineNumber: 50,
+                columnNumber: 91
+            }, this)
+        },
+        {
             href: "/form-checker",
             label: content.header.nav.formChecker,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__FileCheck$3e$__["FileCheck"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 50,
+                lineNumber: 51,
                 columnNumber: 77
             }, this)
         },
@@ -2832,7 +2986,7 @@ function Header() {
             label: content.header.nav.governance,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$chart$2d$gantt$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__GanttChartSquare$3e$__["GanttChartSquare"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 51,
+                lineNumber: 52,
                 columnNumber: 74
             }, this)
         },
@@ -2841,7 +2995,7 @@ function Header() {
             label: content.header.nav.resources,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2d$circuit$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BrainCircuit$3e$__["BrainCircuit"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 72
             }, this)
         },
@@ -2850,7 +3004,7 @@ function Header() {
             label: content.header.nav.aboutTeam,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2d$round$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Users2$3e$__["Users2"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 53,
+                lineNumber: 54,
                 columnNumber: 73
             }, this)
         },
@@ -2859,7 +3013,7 @@ function Header() {
             label: content.header.nav.requestDrive,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 54,
+                lineNumber: 55,
                 columnNumber: 79
             }, this)
         },
@@ -2868,7 +3022,7 @@ function Header() {
             label: content.header.nav.printKit,
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$printer$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Printer$3e$__["Printer"], {}, void 0, false, {
                 fileName: "[project]/src/components/layout/header.tsx",
-                lineNumber: 55,
+                lineNumber: 56,
                 columnNumber: 71
             }, this)
         }
@@ -2913,7 +3067,7 @@ function Header() {
                             className: "h-8 w-8 text-primary"
                         }, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 93,
+                            lineNumber: 94,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2921,13 +3075,13 @@ function Header() {
                             children: content.header.title
                         }, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 94,
+                            lineNumber: 95,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/layout/header.tsx",
-                    lineNumber: 92,
+                    lineNumber: 93,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -2939,12 +3093,12 @@ function Header() {
                             children: item.label
                         }, item.href, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 100,
+                            lineNumber: 101,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/layout/header.tsx",
-                    lineNumber: 98,
+                    lineNumber: 99,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2960,12 +3114,12 @@ function Header() {
                                         children: "More"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/layout/header.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 114,
                                         columnNumber: 18
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 113,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -2981,34 +3135,34 @@ function Header() {
                                                     children: item.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 124,
+                                                    lineNumber: 125,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, item.href, true, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 122,
+                                            lineNumber: 123,
                                             columnNumber: 21
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 120,
+                                    lineNumber: 121,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 111,
+                            lineNumber: 112,
                             columnNumber: 12
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$language$2d$switcher$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["LanguageSwitcher"], {}, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 130,
+                            lineNumber: 131,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$theme$2d$switcher$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ThemeSwitcher"], {}, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 131,
+                            lineNumber: 132,
                             columnNumber: 11
                         }, this),
                         user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenu"], {
@@ -3024,22 +3178,22 @@ function Header() {
                                                 children: getInitials(user.displayName)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 137,
+                                                lineNumber: 138,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 136,
+                                            lineNumber: 137,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/layout/header.tsx",
-                                        lineNumber: 135,
+                                        lineNumber: 136,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 135,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -3057,7 +3211,7 @@ function Header() {
                                                         children: user.displayName
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 144,
+                                                        lineNumber: 145,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3065,23 +3219,23 @@ function Header() {
                                                         children: user.email
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 145,
+                                                        lineNumber: 146,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 143,
+                                                lineNumber: 144,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 143,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 150,
+                                            lineNumber: 151,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -3091,20 +3245,20 @@ function Header() {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 152,
+                                                    lineNumber: 153,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Dashboard"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 153,
+                                                    lineNumber: 154,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 151,
+                                            lineNumber: 152,
                                             columnNumber: 17
                                         }, this),
                                         isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -3114,20 +3268,20 @@ function Header() {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 157,
+                                                    lineNumber: 158,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Admin Panel"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 158,
+                                                    lineNumber: 159,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 156,
+                                            lineNumber: 157,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -3137,32 +3291,32 @@ function Header() {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 162,
+                                                    lineNumber: 163,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Log out"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 164,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 161,
+                                            lineNumber: 162,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 142,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 133,
+                            lineNumber: 134,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                             onClick: handleLoginClick,
@@ -3171,7 +3325,7 @@ function Header() {
                             children: content.header.login
                         }, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 168,
+                            lineNumber: 169,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Sheet"], {
@@ -3189,7 +3343,7 @@ function Header() {
                                                 className: "h-5 w-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 175,
+                                                lineNumber: 176,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3197,18 +3351,18 @@ function Header() {
                                                 children: "Open menu"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 176,
+                                                lineNumber: 177,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/header.tsx",
-                                        lineNumber: 174,
+                                        lineNumber: 175,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 173,
+                                    lineNumber: 174,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SheetContent"], {
@@ -3222,7 +3376,7 @@ function Header() {
                                                         className: "h-6 w-6 text-primary"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 182,
+                                                        lineNumber: 183,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3230,18 +3384,18 @@ function Header() {
                                                         children: content.header.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 183,
+                                                        lineNumber: 184,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 181,
+                                                lineNumber: 182,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 180,
+                                            lineNumber: 181,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3260,19 +3414,19 @@ function Header() {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {}, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                                    lineNumber: 189,
+                                                                    lineNumber: 190,
                                                                     columnNumber: 161
                                                                 }, this),
                                                                 content.header.login
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/layout/header.tsx",
-                                                            lineNumber: 189,
+                                                            lineNumber: 190,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                                             fileName: "[project]/src/components/layout/header.tsx",
-                                                            lineNumber: 190,
+                                                            lineNumber: 191,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
@@ -3290,42 +3444,42 @@ function Header() {
                                                         ]
                                                     }, item.href, true, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 194,
+                                                        lineNumber: 195,
                                                         columnNumber: 19
                                                     }, this))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 186,
+                                            lineNumber: 187,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 179,
+                                    lineNumber: 180,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 172,
+                            lineNumber: 173,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/layout/header.tsx",
-                    lineNumber: 110,
+                    lineNumber: 111,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/layout/header.tsx",
-            lineNumber: 91,
+            lineNumber: 92,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/layout/header.tsx",
-        lineNumber: 90,
+        lineNumber: 91,
         columnNumber: 5
     }, this);
 }
