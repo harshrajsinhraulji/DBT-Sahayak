@@ -1,5 +1,6 @@
 
 
+
 export type Scheme = {
   title: string;
   description: string;
@@ -60,6 +61,7 @@ export type LanguageContent = {
       formChecker: string;
       eligibilityChecker: string;
       awareness: string;
+      dbtMap: string;
     };
     login: string;
   };
@@ -238,5 +240,3 @@ export type LanguageContent = {
     gu: string;
   }
 };
-
-    

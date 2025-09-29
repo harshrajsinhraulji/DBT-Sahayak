@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, User, LogOut, LayoutDashboard, Info, BookOpen, Search, GraduationCap, Users, HelpCircle, Phone, GanttChartSquare, Printer, BrainCircuit, FileCheck, Users2, Video, Megaphone, Lightbulb, UserCheck } from "lucide-react";
+import { Menu, User, LogOut, LayoutDashboard, Info, BookOpen, Search, GraduationCap, Users, HelpCircle, Phone, GanttChartSquare, Printer, BrainCircuit, FileCheck, Users2, Video, Megaphone, Lightbulb, UserCheck, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -46,6 +46,7 @@ export function Header() {
   const actionItems = [
       { href: "/eligibility-checker", label: content.header.nav.eligibilityChecker, icon: <UserCheck /> },
       { href: "/form-checker", label: content.header.nav.formChecker, icon: <FileCheck /> },
+      { href: "/dbt-map", label: content.header.nav.dbtMap, icon: <Map /> },
       { href: "/governance", label: content.header.nav.governance, icon: <GanttChartSquare /> },
       { href: "/resources", label: content.header.nav.resources, icon: <BrainCircuit /> },
       { href: "/about-team", label: content.header.nav.aboutTeam, icon: <Users2 /> },

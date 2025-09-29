@@ -3,7 +3,7 @@
 
 import { useLanguage } from "@/hooks/use-language";
 import { Logo } from "@/components/logo";
-import { Github, Send, Printer, Users, GanttChartSquare, BrainCircuit, Users2, BookOpen, Search, GraduationCap, HelpCircle, Phone, Info } from "lucide-react";
+import { Github, Send, Printer, Users, GanttChartSquare, BrainCircuit, Users2, BookOpen, Search, GraduationCap, HelpCircle, Phone, Info, Map } from "lucide-react";
 import Link from "next/link";
 import { NationalEmblemOfIndia } from "../national-emblem";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
@@ -51,6 +51,7 @@ export function Footer() {
             </div>
              <div className="grid gap-2">
                <h3 className="font-semibold text-foreground">{content.footer.resources}</h3>
+               <Link href="/dbt-map" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Map className="h-4 w-4" />{content.header.nav.dbtMap}</Link>
                <Link href="/governance" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><GanttChartSquare className="h-4 w-4" />{content.header.nav.governance}</Link>
                <Link href="/resources" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><BrainCircuit className="h-4 w-4" />{content.header.nav.resources}</Link>
                <Link href="/print-kit" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Printer className="h-4 w-4" />{content.header.nav.printKit}</Link>

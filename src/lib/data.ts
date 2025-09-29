@@ -22,7 +22,8 @@ export const pageContent: Record<Language, LanguageContent> = {
         requestDrive: "Request a Drive",
         formChecker: "AI Form Check",
         eligibilityChecker: "Eligibility Checker",
-        awareness: "DBT Schemes"
+        awareness: "DBT Schemes",
+        dbtMap: "Performance Map",
       },
       login: "Login/Register"
     },
@@ -473,7 +474,8 @@ export const pageContent: Record<Language, LanguageContent> = {
         requestDrive: "ड्राइव का अनुरोध करें",
         formChecker: "एआई फॉर्म जांच",
         eligibilityChecker: "पात्रता जांचकर्ता",
-        awareness: "डीबीटी योजनाएं"
+        awareness: "डीबीटी योजनाएं",
+        dbtMap: "प्रदर्शन मानचित्र",
       },
       login: "लॉगिन/रजिस्टर करें"
     },
@@ -924,7 +926,8 @@ export const pageContent: Record<Language, LanguageContent> = {
         requestDrive: "ડ્રાઇવની વિનંતી કરો",
         formChecker: "એઆઈ ફોર્મ તપાસ",
         eligibilityChecker: "પાત્રતા તપાસનાર",
-        awareness: "ડીબીટી યોજનાઓ"
+        awareness: "ડીબીટી યોજનાઓ",
+        dbtMap: "પ્રદર્શન નકશો",
       },
       login: "લોગિન/રજીસ્ટર કરો"
     },
@@ -1356,5 +1359,3 @@ export const pageContent: Record<Language, LanguageContent> = {
     }
   },
 };
-
-    

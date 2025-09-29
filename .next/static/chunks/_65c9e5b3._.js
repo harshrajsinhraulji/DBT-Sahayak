@@ -386,7 +386,7 @@ function AboutTeamPage() {
                                     columnNumber: 29
                                 }, this)
                             ]
-                        }, i, true, {
+                        }, member.name, true, {
                             fileName: "[project]/src/app/about-team/page.tsx",
                             lineNumber: 87,
                             columnNumber: 24
