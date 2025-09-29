@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { LoaderCircle } from 'lucide-react';
 import dbtPerformanceData from '@/lib/dbt-performance-data.json';
 
-// State name mapping to match GeoChart's expectations
+// State name mapping to Google GeoChart's expected format
 const stateNameMapping: { [key: string]: string } = {
   "ANDAMAN AND NICOBAR ISLANDS": "Andaman and Nicobar Islands",
   "ANDHRA PRADESH": "Andhra Pradesh",
