@@ -30,16 +30,16 @@ export default function GoogleGeoChart() {
   const drawChart = () => {
     if (typeof google === 'undefined' || !google.visualization) return;
 
-    const dataArray = [['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }]];
+    const dataArray: (string | number | { role: string; type: string; p: { html: boolean } })[][] = [['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }]];
     dbtPerformanceData.forEach(item => {
         const category = getCategory(item.Score);
         const titleCaseState = toTitleCase(item.State);
         const tooltipContent = `
-            <div style="padding:10px; font-family: sans-serif; color: #333; min-width: 150px;">
-                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${titleCaseState}</div>
-                <div><strong>Rank:</strong> ${item.Rank}</div>
-                <div><strong>Score:</strong> ${item.Score}</div>
-                <div><strong>Category:</strong> ${category}</div>
+            <div style="padding:10px; font-family: sans-serif; color: #333; min-width: 150px; border-radius: 8px; background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; font-size: 16px; margin-bottom: 8px; color: #111;">${titleCaseState}</div>
+                <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Rank:</strong> <span>${item.Rank}</span></div>
+                <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Score:</strong> <span>${item.Score}</span></div>
+                <div style="display: flex; justify-content: space-between; padding: 2px 0;"><strong>Category:</strong> <span>${category}</span></div>
             </div>
         `;
         dataArray.push([item.StateCode, item.Score, tooltipContent]);
@@ -50,24 +50,15 @@ export default function GoogleGeoChart() {
     const opts = {
       region: 'IN',
       displayMode: 'regions',
-      colorAxis: {minValue: 0,  colors: ['#ef4444', '#facc15', '#22c55e']}, // Red -> Yellow -> Green
+      colorAxis: {colors: ['#ef4444', '#fde047', '#a3e635', '#22c55e']}, // Red -> Yellow -> Light Green -> Green
       resolution: 'provinces',
-      backgroundColor: resolvedTheme === 'dark' ? '#020817' : '#ffffff',
+      backgroundColor: 'transparent',
       datalessRegionColor: resolvedTheme === 'dark' ? '#1e293b' : '#f1f5f9',
       defaultColor: '#f5f5f5',
       width: '100%',
       height: 500,
-      tooltip: { isHtml: true, textStyle: { fontName: 'sans-serif', fontSize: 14 }, trigger: 'focus' },
+      tooltip: { isHtml: true, trigger: 'focus' },
       legend: 'none',
-      // This is the series that will act as a transparent overlay to remove stripes
-      series: {
-        '1': {
-          // Point to the 4th column ("Style")
-          'colorAxis': {
-            'colors': ['#FFFFFF00', '#FFFFFF00']
-          }
-        }
-      }
     };
 
     const geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
@@ -112,7 +103,7 @@ export default function GoogleGeoChart() {
         onLoad={() => setIsScriptLoaded(true)}
       />
       {!apiKey && (
-        <div className="text-destructive text-center p-4 border border-destructive rounded-md">
+        <div className="text-destructive text-center p-4 border border-destructive rounded-md m-4">
             <strong>Warning:</strong> `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is not set. The map will likely fail to load.
         </div>
       )}

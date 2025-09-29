@@ -35,17 +35,17 @@ export default function DbtMapPage() {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            <Card className="lg:col-span-2 shadow-lg">
+            <Card className="lg:col-span-2 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader>
                     <CardTitle>India DBT Performance Geo Chart</CardTitle>
                     <CardDescription>
                         Hover over a state to see its performance score and category. Data sourced from the official{' '}
-                        <Link href="https://dbtbharat.gov.in/ranking/state" target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                        <Link href="https://dbtbharat.gov.in/ranking/state" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
                             DBT Bharat Portal
                         </Link>.
                     </CardDescription>
                 </CardHeader>
-                <CardContent className="flex items-center justify-center">
+                <CardContent className="flex items-center justify-center p-0 sm:p-2 md:p-4">
                     <GoogleGeoChart />
                 </CardContent>
             </Card>

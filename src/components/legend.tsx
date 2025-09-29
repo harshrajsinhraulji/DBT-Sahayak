@@ -2,34 +2,44 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { HelpCircle } from "lucide-react";
 
-const legendItems = [
-    { color: '#22c55e', label: 'Excellent', range: '80 - 100' },
-    { color: '#a3e635', label: 'Good', range: '60 - 79.9' },
-    { color: '#fde047', label: 'Moderate', range: '40 - 59.9' },
-    { color: '#ef4444', label: 'Needs Improvement', range: '0 - 39.9' },
-];
-
 export function Legend() {
     return (
         <Card className="shadow-lg sticky top-24">
             <CardHeader>
                 <CardTitle>DBT Performance Legend</CardTitle>
-                <CardDescription>Color scale for state performance scores.</CardDescription>
+                <CardDescription>A composite index of DBT readiness and performance.</CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="space-y-4">
-                    {legendItems.map(item => (
-                        <div key={item.label} className="flex items-center gap-3">
-                            <div
-                                className="h-6 w-6 rounded-sm border border-border"
-                                style={{ backgroundColor: item.color }}
-                            />
-                            <div className="flex-1">
-                                <span className="font-semibold">{item.label}</span>
-                                <span className="text-sm text-muted-foreground ml-2">({item.range})</span>
-                            </div>
+                    <div>
+                        <div
+                            className="h-8 w-full rounded-md border border-border"
+                            style={{ background: 'linear-gradient(to right, #ef4444, #fde047, #a3e635, #22c55e)' }}
+                        />
+                        <div className="flex justify-between text-xs text-muted-foreground mt-1 px-1">
+                            <span>Needs Improvement</span>
+                            <span>Good</span>
+                            <span>Excellent</span>
                         </div>
-                    ))}
+                    </div>
+                    <div className="space-y-2 text-sm">
+                         <div className="flex justify-between">
+                            <span className="font-semibold text-green-600">Excellent</span>
+                            <span className="font-mono text-muted-foreground">80 - 100</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span className="font-semibold text-lime-600">Good</span>
+                            <span className="font-mono text-muted-foreground">60 - 79.9</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span className="font-semibold text-yellow-600">Moderate</span>
+                            <span className="font-mono text-muted-foreground">40 - 59.9</span>
+                        </div>
+                         <div className="flex justify-between">
+                            <span className="font-semibold text-red-600">Needs Improvement</span>
+                            <span className="font-mono text-muted-foreground">0 - 39.9</span>
+                        </div>
+                    </div>
                 </div>
                 <div className="mt-6 border-t pt-4">
                      <div className="flex items-start gap-3 text-sm text-muted-foreground">
