@@ -1,8 +1,8 @@
 (globalThis.TURBOPACK_CHUNK_LISTS = globalThis.TURBOPACK_CHUNK_LISTS || []).push({
     script: typeof document === "object" ? document.currentScript : undefined,
     chunks: [
-  "static/chunks/src_components_india-map_tsx_7c02d439._.js",
-  "static/chunks/_43ebffdd._.js"
+  "static/chunks/node_modules_510f89e3._.js",
+  "static/chunks/src_a6f0ece5._.js"
 ],
     source: "dynamic"
 });
