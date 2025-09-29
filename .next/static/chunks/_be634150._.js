@@ -34,6 +34,10 @@ const getCategory = (score)=>{
     if (score >= 40) return 'Moderate';
     return 'Needs Improvement';
 };
+// Function to convert state names to title case
+const toTitleCase = (str)=>{
+    return str.replace(/\w\S*/g, (txt)=>txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+};
 function GoogleGeoChart() {
     _s();
     const [isScriptLoaded, setIsScriptLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -57,16 +61,17 @@ function GoogleGeoChart() {
         ];
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$dbt$2d$performance$2d$data$2e$json__$28$json$29$__["default"].forEach((item)=>{
             const category = getCategory(item.Score);
+            const titleCaseState = toTitleCase(item.State);
             const tooltipContent = `
             <div style="padding:10px; font-family: sans-serif; color: #333;">
-                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${item.State}</div>
+                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${titleCaseState}</div>
                 <div><strong>Rank:</strong> ${item.Rank}</div>
                 <div><strong>Score:</strong> ${item.Score}</div>
                 <div><strong>Category:</strong> ${category}</div>
             </div>
         `;
             dataArray.push([
-                item.State,
+                titleCaseState,
                 item.Score,
                 tooltipContent
             ]);
@@ -104,10 +109,9 @@ function GoogleGeoChart() {
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "GoogleGeoChart.useEffect": ()=>{
-            if (isScriptLoaded && typeof google !== 'undefined' && google.load) {
+            if (isScriptLoaded && typeof google !== 'undefined') {
                 if ("TURBOPACK compile-time falsy", 0) {
                     "TURBOPACK unreachable";
-                // Don't return, allow it to try and render without the key to show the error.
                 }
                 google.charts.load('current', {
                     'packages': [
@@ -155,7 +159,7 @@ function GoogleGeoChart() {
                 onLoad: ()=>setIsScriptLoaded(true)
             }, void 0, false, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 92,
+                lineNumber: 101,
                 columnNumber: 7
             }, this),
             !apiKey && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -165,14 +169,14 @@ function GoogleGeoChart() {
                         children: "Warning:"
                     }, void 0, false, {
                         fileName: "[project]/src/components/google-geo-chart.tsx",
-                        lineNumber: 99,
+                        lineNumber: 108,
                         columnNumber: 13
                     }, this),
                     " `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is not set. The map will likely fail to load."
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 98,
+                lineNumber: 107,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -189,7 +193,7 @@ function GoogleGeoChart() {
                             className: "h-12 w-12 animate-spin text-primary"
                         }, void 0, false, {
                             fileName: "[project]/src/components/google-geo-chart.tsx",
-                            lineNumber: 105,
+                            lineNumber: 114,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -197,18 +201,18 @@ function GoogleGeoChart() {
                             children: "Loading Map Data..."
                         }, void 0, false, {
                             fileName: "[project]/src/components/google-geo-chart.tsx",
-                            lineNumber: 106,
+                            lineNumber: 115,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/google-geo-chart.tsx",
-                    lineNumber: 104,
+                    lineNumber: 113,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/google-geo-chart.tsx",
-                lineNumber: 102,
+                lineNumber: 111,
                 columnNumber: 7
             }, this)
         ]

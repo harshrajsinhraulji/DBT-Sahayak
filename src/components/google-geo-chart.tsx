@@ -35,16 +35,16 @@ export default function GoogleGeoChart() {
     const dataArray = [['State', 'Score', { role: 'tooltip', type: 'string', p: { html: true } }]];
     dbtPerformanceData.forEach(item => {
         const category = getCategory(item.Score);
+        const titleCaseState = toTitleCase(item.State);
         const tooltipContent = `
             <div style="padding:10px; font-family: sans-serif; color: #333;">
-                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${toTitleCase(item.State)}</div>
+                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${titleCaseState}</div>
                 <div><strong>Rank:</strong> ${item.Rank}</div>
                 <div><strong>Score:</strong> ${item.Score}</div>
                 <div><strong>Category:</strong> ${category}</div>
             </div>
         `;
-        // Correctly format the state name for Google Charts
-        dataArray.push([toTitleCase(item.State), item.Score, tooltipContent]);
+        dataArray.push([titleCaseState, item.Score, tooltipContent]);
     });
 
     const data = google.visualization.arrayToDataTable(dataArray);
@@ -69,7 +69,7 @@ export default function GoogleGeoChart() {
   }
 
   useEffect(() => {
-    if (isScriptLoaded && typeof google !== 'undefined' && google.load) {
+    if (isScriptLoaded && typeof google !== 'undefined') {
       if (!apiKey) {
         console.error("Google Maps API Key is missing. The map may not render correctly.");
       }
