@@ -3,13 +3,12 @@
 
 import { useLanguage } from "@/hooks/use-language";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Building, UserCircle, Briefcase } from "lucide-react";
-import { OrgChart } from "../org-chart";
+import { Users } from "lucide-react";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 
 export function AboutSection() {
     const { content } = useLanguage();
-    const { title, mandate, ourTeam, institutionalFramework } = content.about;
+    const { ourTeam } = content.about;
     const teamMembers = [
         "Harshrajsinh Raulji",
         "Vraj Rana",
@@ -22,70 +21,30 @@ export function AboutSection() {
     return (
         <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background">
             <div className="container px-4 md:px-6">
-                <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                     <div className="space-y-2">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                            {title}
+                            {ourTeam.title}
                         </h2>
+                         <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                            {ourTeam.subtitle}
+                        </p>
                     </div>
                 </div>
-                <div className="mx-auto grid max-w-6xl items-start gap-8 py-12 lg:grid-cols-2">
-                    {/* Mandate Section */}
-                    <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <CardHeader>
-                            <CardTitle className="flex items-center gap-2 font-headline"><Building /> {mandate.title}</CardTitle>
-                            <CardDescription>{mandate.subtitle}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-4 text-muted-foreground">
-                            {mandate.aboutText.map((text, i) => <p key={i} className="text-sm">{text}</p>)}
-                        </CardContent>
-                    </Card>
-                    {/* Team Section */}
-                    <Card className="lg:row-start-2 h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <CardHeader>
-                             <CardTitle className="flex items-center gap-2 font-headline"><Users /> {ourTeam.title}</CardTitle>
-                             <CardDescription>{ourTeam.subtitle}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex-1 grid grid-cols-2 gap-4 pt-6">
-                           {teamMembers.map((name, i) => (
-                               <div key={i} className="flex items-center gap-4 p-2 rounded-md transition-all duration-300 hover:bg-muted/50 hover:scale-105">
-                                   <Avatar className="h-12 w-12 border-2 border-primary">
-                                        <AvatarFallback>{name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                                   </Avatar>
-                                   <div>
-                                       <p className="font-semibold text-foreground">{name}</p>
-                                   </div>
+                <Card className="max-w-4xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <CardContent className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                       {teamMembers.map((name, i) => (
+                           <div key={i} className="flex flex-col items-center text-center gap-4 transition-transform duration-300 hover:scale-105">
+                               <Avatar className="h-24 w-24 border-2 border-primary text-2xl">
+                                    <AvatarFallback>{name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                               </Avatar>
+                               <div>
+                                   <p className="font-semibold text-lg text-foreground">{name}</p>
                                </div>
-                           ))}
-                        </CardContent>
-                    </Card>
-                    {/* Institutional Framework */}
-                     <Card className="lg:row-span-2 h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <CardHeader>
-                            <CardTitle className="flex items-center gap-2 font-headline"><Briefcase /> {institutionalFramework.title}</CardTitle>
-                            <CardDescription>{institutionalFramework.subtitle}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-6 text-sm text-muted-foreground">
-                            {institutionalFramework.points.map((point, i) => (
-                               <div key={i}>
-                                   <h4 className="font-semibold text-foreground">{point.title}</h4>
-                                   <p className="text-xs">{point.description}</p>
-                               </div>
-                           ))}
-                        </CardContent>
-                    </Card>
-                </div>
-                 <div className="pt-12">
-                    <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <CardHeader>
-                             <CardTitle className="flex items-center gap-2 font-headline"><UserCircle /> {mandate.orgChartTitle}</CardTitle>
-                             <CardDescription>An overview of the DBT Mission's team structure within the Cabinet Secretariat.</CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex-1 flex items-center justify-center p-6">
-                            <OrgChart />
-                        </CardContent>
-                    </Card>
-                </div>
+                           </div>
+                       ))}
+                    </CardContent>
+                </Card>
             </div>
         </section>
     )

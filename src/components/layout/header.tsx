@@ -36,7 +36,6 @@ export function Header() {
   const { user, logout, isAdmin } = useAuth();
 
   const navItems = [
-    { href: "#about", label: content.header.nav.about, icon: <Info /> },
     { href: "#education", label: content.header.nav.education, icon: <BookOpen /> },
     { href: "#status", label: content.header.nav.status, icon: <Search /> },
     { href: "#myths", label: content.header.nav.myths, icon: <Gamepad2 /> },
@@ -45,6 +44,7 @@ export function Header() {
     { href: "#print", label: "Print Kit", icon: <Printer /> },
     { href: "#awareness", label: "Awareness", icon: <Users /> },
     { href: "#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
+    { href: "#about", label: content.header.nav.about, icon: <Info /> },
     { href: "#contact", label: content.header.nav.contact, icon: <Phone /> },
   ];
 
