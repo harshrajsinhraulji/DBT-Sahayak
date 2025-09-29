@@ -9,6 +9,7 @@ import { NationalEmblemOfIndia } from "../national-emblem";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
+import { Button } from "../ui/button";
 
 export function Footer() {
   const { content } = useLanguage();
@@ -28,16 +29,12 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm">
-              An initiative by Team Code Technicians for Smart India Hackathon 2025. {content.footer.credits}
+              {content.footer.tagline}
             </p>
-            <div className="flex items-center gap-4">
-              <a href="https://t.me/your-telegram-bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="text-muted-foreground hover:text-primary transition-colors"><Send /></a>
-              <a href="https://github.com/harshrajsinhraulji/DBT-Sahayak" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors"><Github /></a>
-            </div>
-             <div className="flex items-center gap-4 pt-4 border-t border-dashed">
+             <div className="flex items-center gap-4">
                 <NationalEmblemOfIndia className="h-10 w-10 text-muted-foreground" />
                 <div>
-                  <p className="text-xs font-semibold">Under the guidance of:</p>
+                  <p className="text-xs font-semibold text-muted-foreground">Under the guidance of:</p>
                   <a href="https://socialjustice.gov.in" target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline font-semibold">
                     Ministry of Social Justice & Empowerment
                   </a>
@@ -68,7 +65,7 @@ export function Footer() {
 
                 <Dialog>
                     <DialogTrigger asChild>
-                       <button className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2 text-left"><Info className="h-4 w-4" />Learn About DBT</button>
+                       <Button variant="link" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2 p-0 h-auto justify-start"><Info className="h-4 w-4" />Learn About DBT</Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[625px]">
                         <DialogHeader>
@@ -112,6 +109,9 @@ export function Footer() {
                         </ScrollArea>
                     </DialogContent>
                 </Dialog>
+                
+                 <a href="https://github.com/harshrajsinhraulji/DBT-Sahayak" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Github className="h-4 w-4" />GitHub</a>
+                 <a href="https://t.me/your-telegram-bot" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-2"><Send className="h-4 w-4" />Telegram</a>
 
             </div>
           </div>

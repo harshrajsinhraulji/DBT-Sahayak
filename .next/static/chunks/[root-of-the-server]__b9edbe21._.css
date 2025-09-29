@@ -573,10 +573,6 @@ body {
   margin-top: .5rem;
 }
 
-.mt-3 {
-  margin-top: .75rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -725,16 +721,16 @@ body {
   max-height: 24rem;
 }
 
+.max-h-\[70vh\] {
+  max-height: 70vh;
+}
+
 .max-h-\[90vh\] {
   max-height: 90vh;
 }
 
 .max-h-screen {
   max-height: 100vh;
-}
-
-.max-h-\[70vh\] {
-  max-height: 70vh;
 }
 
 .min-h-\[300px\] {
@@ -905,6 +901,10 @@ body {
   max-width: 700px;
 }
 
+.max-w-\[80\%\] {
+  max-width: 80%;
+}
+
 .max-w-\[900px\] {
   max-width: 900px;
 }
@@ -923,10 +923,6 @@ body {
 
 .max-w-sm {
   max-width: 24rem;
-}
-
-.max-w-\[80\%\] {
-  max-width: 80%;
 }
 
 .flex-1 {
@@ -1100,10 +1096,6 @@ body {
   flex-direction: column-reverse;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
 .items-start {
   align-items: flex-start;
 }
@@ -1140,8 +1132,16 @@ body {
   gap: 2.5rem;
 }
 
+.gap-12 {
+  gap: 3rem;
+}
+
 .gap-2 {
   gap: .5rem;
+}
+
+.gap-2\.5 {
+  gap: .625rem;
 }
 
 .gap-3 {
@@ -1158,14 +1158,6 @@ body {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-2\.5 {
-  gap: .625rem;
-}
-
-.gap-12 {
-  gap: 3rem;
 }
 
 .gap-x-8 {
@@ -1634,6 +1626,10 @@ body {
   padding-right: .5rem;
 }
 
+.pr-6 {
+  padding-right: 1.5rem;
+}
+
 .pr-8 {
   padding-right: 2rem;
 }
@@ -1650,20 +1646,8 @@ body {
   padding-top: 3rem;
 }
 
-.pt-3 {
-  padding-top: .75rem;
-}
-
 .pt-4 {
   padding-top: 1rem;
-}
-
-.pt-8 {
-  padding-top: 2rem;
-}
-
-.pr-6 {
-  padding-right: 1.5rem;
 }
 
 .text-left {
@@ -2801,12 +2785,12 @@ body {
     display: flex;
   }
 
-  .sm\:max-w-sm {
-    max-width: 24rem;
-  }
-
   .sm\:max-w-\[625px\] {
     max-width: 625px;
+  }
+
+  .sm\:max-w-sm {
+    max-width: 24rem;
   }
 
   .sm\:grid-cols-1 {
@@ -2891,12 +2875,12 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:px-6 {
@@ -2964,6 +2948,10 @@ body {
     flex-basis: 33.3333%;
   }
 
+  .lg\:grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2974,10 +2962,6 @@ body {
 
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .lg\:gap-12 {
@@ -3090,14 +3074,6 @@ body {
 .\[\&_svg\]\:size-4 svg {
   width: 1rem;
   height: 1rem;
-}
-
-.\[\&_svg\]\:h-4 svg {
-  height: 1rem;
-}
-
-.\[\&_svg\]\:w-4 svg {
-  width: 1rem;
 }
 
 .\[\&_svg\]\:shrink-0 svg {

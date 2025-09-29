@@ -38,13 +38,16 @@ export function Header() {
   const navItems = [
     { href: "/#education", label: content.header.nav.education, icon: <BookOpen /> },
     { href: "/#status", label: content.header.nav.status, icon: <Search /> },
-    { href: "/form-checker", label: 'AI Form Check', icon: <FileCheck /> },
     { href: "/#scholarships", label: content.header.nav.scholarships, icon: <GraduationCap /> },
     { href: "/resources", label: 'Resources', icon: <BrainCircuit /> },
     { href: "/governance", label: 'Governance', icon: <GanttChartSquare /> },
-    { href: "/about-team", label: 'About Team', icon: <Users2 /> },
     { href: "/#faq", label: content.header.nav.faq, icon: <HelpCircle /> },
     { href: "/#contact", label: content.header.nav.contact, icon: <Phone /> },
+  ];
+  
+  const actionItems = [
+      { href: "/form-checker", label: 'AI Form Check', icon: <FileCheck /> },
+      { href: "/about-team", label: 'About Team', icon: <Users2 /> },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -91,7 +94,7 @@ export function Header() {
           </span>
         </Link>
         <nav className="hidden items-center gap-4 text-sm lg:flex">
-          {navItems.map((item) => (
+          {[...navItems, ...actionItems].map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -166,7 +169,7 @@ export function Header() {
                     <DropdownMenuSeparator />
                     </>
                 )}
-                {navItems.map((item) => (
+                {[...navItems, ...actionItems].map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
