@@ -6,6 +6,7 @@
   "/governance/page": "app/governance/page.js",
   "/login/page": "app/login/page.js",
   "/page": "app/page.js",
+  "/print-kit/page": "app/print-kit/page.js",
   "/request-drive/page": "app/request-drive/page.js",
   "/resources/page": "app/resources/page.js",
   "/signup/page": "app/signup/page.js"

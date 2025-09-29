@@ -6,10 +6,6 @@
           "moduleId": "[project]/.next-internal/server/app/about-team/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/chat-flow.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
-        "app/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/chat-flow.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
         "app/form-checker/page": {
           "moduleId": "[project]/.next-internal/server/app/form-checker/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/chat-flow.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/ai/flows/check-form-flow.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
@@ -37,7 +33,6 @@
       },
       "layer": {
         "app/about-team/page": "action-browser",
-        "app/dashboard/page": "action-browser",
         "app/form-checker/page": "action-browser",
         "app/governance/page": "action-browser",
         "app/login/page": "action-browser",
