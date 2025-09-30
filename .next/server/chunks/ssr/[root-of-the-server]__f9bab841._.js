@@ -128,7 +128,7 @@ const firebaseConfig = {
     apiKey: ("TURBOPACK compile-time value", "AIzaSyBUjfBxveru9rBX_6wyOQvGY5dNeZ3Vx4c"),
     authDomain: ("TURBOPACK compile-time value", "dbt-sahayak-database.firebaseapp.com"),
     projectId: ("TURBOPACK compile-time value", "dbt-sahayak-database"),
-    storageBucket: ("TURBOPACK compile-time value", "dbt-sahayak-database.appspot.com"),
+    storageBucket: ("TURBOPACK compile-time value", "dbt-sahayak-database.firebasestorage.app"),
     messagingSenderId: ("TURBOPACK compile-time value", "36334179231"),
     appId: ("TURBOPACK compile-time value", "1:36334179231:web:5fd14a0515801ec918a3aa"),
     measurementId: ("TURBOPACK compile-time value", "G-QMET9YF77M")
